@@ -50,9 +50,6 @@ h3 {  }
 
 a, input {
 	-webkit-transition: all 0.6s ease 0.1s;
-	-moz-transition: all 0.6s ease 0.1s;
-	-ms-transition: all 0.6s ease 0.1s;
-	-o-transition: all 0.6s ease 0.1s;
 	transition: all 0.6s ease 0.1s;
 }
 a { color:#373737; text-decoration: none; }
@@ -91,7 +88,7 @@ body {
 .floatRight { float: right !important; }
 .clear { clear:both !important; } 
 .marginCenter { display: block; margin: auto; }
-.imgFrame { padding: 6px; background: #FFF; -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
+.imgFrame { padding: 6px; background: #FFF; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
 .noPadding { padding:0 !important; }
 .noPaddingLeft { padding-left:0 !important; }
 .noPaddingRight { padding-right:0 !important; }
@@ -103,7 +100,7 @@ body {
 */
 
 #websiteContainer { min-height: 100%; height: auto !important; height: 100%; margin:0 auto -200px; }
-.pageContent { min-height: 500px; margin-top: 70px !important; padding: 20px; background: rgba(255,255,255,0.9); -webkit-box-shadow: 0 0 10px 2px rgba(0,0,0,.3); box-shadow: 0 0 10px 2px rgba(0,0,0,.3); }
+.pageContent { min-height: 500px; margin-top: 70px !important; padding: 20px; background: rgba(255,255,255,0.9); box-shadow: 0 0 10px 2px rgba(0,0,0,.3); }
 .pageHeader h1 {  }
 /* 
 ====================
@@ -129,7 +126,7 @@ body {
 .mainNav .navbar > li { position: relative; display: inline-block; line-height: 40px; }
 .mainNav .navbar > li > a { font-family: inherit; color: #000; outline: 0; }
 .mainNav .navbar > li ul { margin-bottom: 0px; }
-.mainNav .navbar > li .navdrop { display: none; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; -ms-transition: all .2s ease-in-out; -o-transition: all .2s ease-in-out; transition: all .2s ease-in-out; }
+.mainNav .navbar > li .navdrop { display: none; -webkit-transition: all .2s ease-in-out; transition: all .2s ease-in-out; }
 .mainNav .navbar > li > a:first-child { position: relative; padding: 0 25px; display: block; font-size: 14px; }
 .mainNav .navbar > li.has-drop > a:first-child { /* padding-right: 40px; */ position: relative; }
 /*
@@ -178,9 +175,6 @@ p.copyright {  }
   #searchsubmit:hover { 
     background:; color:; 
     -webkit-transition: all 0.6s ease 0.1s;
-    -moz-transition: all 0.6s ease 0.1s;
-    -ms-transition: all 0.6s ease 0.1s;
-    -o-transition: all 0.6s ease 0.1s;
     transition: all 0.6s ease 0.1s;
   }
 /* 
