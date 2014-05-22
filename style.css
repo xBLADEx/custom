@@ -1,0 +1,258 @@
+/*
+Theme Name: Custom
+Author: Rich Edmunds
+Version: 5.3
+Description: Rich Edmunds Custom Theme for WordPress.
+*/
+
+/*
+====================
+	LEGEND
+====================
+
+COLORS
+TYPOGRAPHY
+HTML ELEMENTS
+CUSTOM CLASSES
+BASIC STRUCTURE
+HEADER
+NAVIGATION
+HOME PAGE
+FOOTER
+BLOG
+WORDPRESS
+FOUNDATION
+PLUGINS
+RESPONSIVE
+*/
+
+/* 
+====================
+	COLORS
+====================
+*/
+
+/* #F7F6E4, #E2D5C1, #5F3711, #F6F6E2, #D4C098 */
+/* FRENCH   COFFEE   BROWN    CREAM    STAIN  */
+
+/* 
+====================
+	TYPOGRAPHY
+====================
+*/
+
+body, ul, ol, li, p, a { font-size: 16px; }
+ul { margin-left: 30px; }
+h1, h2, h3, h4, h5, h6 {  }
+h1 {  }
+h2 {  }
+h3 {  }
+
+a, input {
+	-webkit-transition: all 0.6s ease 0.1s;
+	-moz-transition: all 0.6s ease 0.1s;
+	-ms-transition: all 0.6s ease 0.1s;
+	-o-transition: all 0.6s ease 0.1s;
+	transition: all 0.6s ease 0.1s;
+}
+a { color:#373737; text-decoration: none; }
+a:hover, a:visited:hover, a:focus, a:visited:focus {  }
+a:hover, a:active { outline: 0; }
+
+::-webkit-input-placeholder { color: #999; }
+:-moz-placeholder { color: #999; }
+::-moz-placeholder { color: #999; }
+:-ms-input-placeholder { color: #999; }
+/* 
+====================
+	HTML ELEMENTS
+====================
+*/
+
+html, body { margin:0; padding:0; width: 100%; height: 100%; }
+body { 
+  background:#F7F6E4; 
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+}
+
+/* 
+====================
+	CUSTOM CLASSES
+====================
+*/
+
+.center { text-align: center; }
+.bold { font-weight: bold !important; }
+.hide { display: none !important; } 
+.floatLeft { float: left !important; }
+.floatRight { float: right !important; }
+.clear { clear:both !important; } 
+.marginCenter { display: block; margin: auto; }
+.imgFrame { padding: 6px; background: #FFF; -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
+.noPadding { padding:0 !important; }
+.noPaddingLeft { padding-left:0 !important; }
+.noPaddingRight { padding-right:0 !important; }
+
+/* 
+====================
+	BASIC STRUCTURE
+====================
+*/
+
+#websiteContainer { min-height: 100%; height: auto !important; height: 100%; margin:0 auto -200px; }
+.pageContent { min-height: 500px; margin-top: 70px !important; padding: 20px; background: rgba(255,255,255,0.9); -webkit-box-shadow: 0 0 10px 2px rgba(0,0,0,.3); box-shadow: 0 0 10px 2px rgba(0,0,0,.3); }
+.pageHeader h1 {  }
+/* 
+====================
+	HEADER
+====================
+*/
+
+.logo { display: block; background:url('./images/logo.png') no-repeat; width:; height:; }
+.headerBackground { 
+	width:100%; height:100px; 
+	-webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,.5); box-shadow: 0 2px 10px 0 rgba(0,0,0,.5);
+	position: relative; z-index: 8;
+}
+/* 
+====================
+	NAVIGATION
+====================
+*/
+
+.mainNav { display: block; height: 40px; width: 100%; z-index: 98; }
+.mainNav .navbar { margin: 0px; padding: 0px; z-index: 99; }
+.mainNav .navbar li, .mainNav .navbar li li { list-style: none; margin: 0px; padding: 0px; }
+.mainNav .navbar > li { position: relative; display: inline-block; line-height: 40px; }
+.mainNav .navbar > li > a { font-family: inherit; color: #000; outline: 0; }
+.mainNav .navbar > li ul { margin-bottom: 0px; }
+.mainNav .navbar > li .navdrop { display: none; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; -ms-transition: all .2s ease-in-out; -o-transition: all .2s ease-in-out; transition: all .2s ease-in-out; }
+.mainNav .navbar > li > a:first-child { position: relative; padding: 0 25px; display: block; font-size: 14px; }
+.mainNav .navbar > li.has-drop > a:first-child { /* padding-right: 40px; */ position: relative; }
+/*
+.mainNav .navbar > li.has-drop > a:first-child:after {  content: ""; display: block; width: 0; height: 0; border: solid 4px; border-color: #e6e6e6 transparent transparent transparent; position: absolute; right: 20px; top: 18px; }
+.mainNav .navbar > li.has-drop > a.drop-toggle { position: absolute; right: 0; top: 0; padding: 20px; z-index: 2; display: block; } 
+*/ 
+.mainNav .navbar > li.active { background: #333; cursor: pointer; }
+.mainNav .navbar > li.active > a { color: #fff; }
+.mainNav .navbar > li:hover {  }
+	.mainNav .navbar > li:hover a { }
+.mainNav .navbar > li:hover .navdrop { display: block; }
+.navdrop { padding: 20px; margin: 0; position: absolute; top: 40px; left: 0px; min-width: 100%; width: auto; z-index: 40; }
+.navdrop *:first-child { margin-top: 0; }
+.navdrop *:last-child { margin-bottom: 0; }
+ul.navdrop, .navbar li ul { padding: 0; list-style: none; }
+ul.navdrop li a, .navbar li ul li a { background: #222; color: #ccc; display: block; font-size: 12px; height: auto; line-height: 1; padding: 15px 20px; white-space: nowrap; min-width: 190px; }
+ul.navdrop li a:hover, .navbar li ul li a:hover, .navbar li ul li.active a { background: #ebebeb; color: #333; }
+
+/* 
+====================
+	HOME PAGE
+====================
+*/
+
+
+
+/* 
+====================
+	FOOTER
+====================
+*/
+
+.footer, .push { height:200px; }
+.footer { 
+  position: relative;
+  width:100%; height:200px; margin-top: 100px;
+}
+.footer p {  }
+p.copyright {  }
+/* 
+====================
+  BLOG
+====================
+*/
+#searchsubmit { padding:10px 20px; border:0; color:; text-align: center; background: transparent; }
+  #searchsubmit:hover { 
+    background:; color:; 
+    -webkit-transition: all 0.6s ease 0.1s;
+    -moz-transition: all 0.6s ease 0.1s;
+    -ms-transition: all 0.6s ease 0.1s;
+    -o-transition: all 0.6s ease 0.1s;
+    transition: all 0.6s ease 0.1s;
+  }
+/* 
+====================
+	WORDPRESS
+====================
+*/
+
+img { }
+.alignleft { float:left; margin: 0 20px 20px 0; padding: 6px; background: #FFF; -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
+.alignright { float:right; margin: 0 0 20px 20px; padding: 6px; background: #FFF; -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
+.aligncenter { margin:0 auto; text-align:center; display: block; padding: 6px; background: #FFF; -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
+/* WordPress Search */
+.formSearch { float:right; width:260px; margin: 20px 0; }
+#formSearchBox { width: 100% !Important; margin: 0; }
+.formSearchButton { border:0; outline:0; }
+
+/* 
+====================
+	FOUNDATION
+====================
+*/
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], 
+input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], 
+input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	background-color: #fff;
+	font-family: inherit;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	color: rgba(0,0,0,0.75);
+	display: block;
+	font-size: 0.875rem;
+	margin: 0 0 1rem 0;
+	padding: 0.5rem;
+	height: 2.3125rem;
+	width: auto;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: -webkit-box-shadow 0.45s,border-color 0.45s ease-in-out;
+	-moz-transition: -moz-box-shadow 0.45s,border-color 0.45s ease-in-out;
+	transition: box-shadow 0.45s,border-color 0.45s ease-in-out;
+}
+.button { background:; color:; }
+	.button:hover { background:; }
+
+/* 
+====================
+	PLUGINS
+====================
+*/
+
+
+
+/* 
+====================
+  RESPONSIVE
+====================
+*/
+/* Custom */
+@media only screen and (max-width:1280px) {
+  
+}
+/* iPad */
+@media only screen and (min-width: 768px) and (max-width: 1024px) { 
+
+}
+/* iPhone */
+@media only screen and (min-width:320px) and (max-width:568px) { 
+  
+}
