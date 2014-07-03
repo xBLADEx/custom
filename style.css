@@ -1,15 +1,14 @@
 /*
 Theme Name: Custom
+Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
-Version: 5.3
-Description: Rich Edmunds Custom Theme for WordPress.
-*/
+Author URI: http://www.richedmunds.com/
+Description: Custom Theme for WordPress.
+Version: 5.3.0
 
-/*
 ====================
 	LEGEND
 ====================
-
 COLORS
 TYPOGRAPHY
 HTML ELEMENTS
@@ -30,32 +29,28 @@ RESPONSIVE
 ====================
 	COLORS
 ====================
+FRENCH #F7F6E4
+COFFEE #E2D5C1
+BROWN #5F3711
+CREAM #F6F6E2
+STAIN #D4C098 
 */
-
-/* #F7F6E4, #E2D5C1, #5F3711, #F6F6E2, #D4C098 */
-/* FRENCH   COFFEE   BROWN    CREAM    STAIN  */
 
 /* 
 ====================
 	TYPOGRAPHY
 ====================
 */
-
 body, ul, ol, li, p, a { font-size: 16px; }
 ul { margin-left: 30px; }
 h1, h2, h3, h4, h5, h6 {  }
 h1 {  }
 h2 {  }
 h3 {  }
-
-a, input {
-	-webkit-transition: all 0.6s ease 0.1s;
-	transition: all 0.6s ease 0.1s;
-}
+a, input { -webkit-transition: all 0.6s ease 0.1s; transition: all 0.6s ease 0.1s; }
 a { color:#373737; text-decoration: none; }
 a:hover, a:visited:hover, a:focus, a:visited:focus {  }
 a:hover, a:active { outline: 0; }
-
 ::-webkit-input-placeholder { color: #999; }
 :-moz-placeholder { color: #999; }
 ::-moz-placeholder { color: #999; }
@@ -65,16 +60,22 @@ a:hover, a:active { outline: 0; }
 	HTML ELEMENTS
 ====================
 */
-
 html, body { margin:0; padding:0; width: 100%; height: 100%; }
-body { 
-  background:#F7F6E4; 
-  /* -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
-}
-
+body { background:#F7F6E4; /* background-size: cover; */ }
+/* 
+====================
+	CUSTOM CLASSES
+====================
+*/
+.center { text-align: center; }
+.bold { font-weight: bold !important; }
+.hide { display: none !important; } 
+.clear { clear:both !important; } 
+.marginCenter { display: block; margin: auto; }
+.imgFrame { padding: 6px; background: #FFF; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
+.noPadding { padding:0 !important; }
+.noPaddingLeft { padding-left:0 !important; }
+.noPaddingRight { padding-right:0 !important; }
 /* 
 ====================
 	CUSTOM CLASSES
