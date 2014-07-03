@@ -17,6 +17,7 @@ BASIC STRUCTURE
 HEADER
 NAVIGATION
 HOME PAGE
+PAGE
 FOOTER
 BLOG
 WORDPRESS
@@ -60,106 +61,78 @@ a:hover, a:active { outline: 0; }
 	HTML ELEMENTS
 ====================
 */
-html, body { margin:0; padding:0; width: 100%; height: 100%; }
-body { background:#F7F6E4; /* background-size: cover; */ }
+body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 /* 
 ====================
 	CUSTOM CLASSES
 ====================
 */
 .center { text-align: center; }
-.bold { font-weight: bold !important; }
-.hide { display: none !important; } 
-.clear { clear:both !important; } 
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+.clear { clear:both; } 
 .marginCenter { display: block; margin: auto; }
 .imgFrame { padding: 6px; background: #FFF; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
 .noPadding { padding:0 !important; }
 .noPaddingLeft { padding-left:0 !important; }
 .noPaddingRight { padding-right:0 !important; }
-/* 
-====================
-	CUSTOM CLASSES
-====================
-*/
-
-.center { text-align: center; }
-.bold { font-weight: bold !important; }
-.hide { display: none !important; } 
-.floatLeft { float: left !important; }
-.floatRight { float: right !important; }
-.clear { clear:both !important; } 
-.marginCenter { display: block; margin: auto; }
-.imgFrame { padding: 6px; background: #FFF; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
-.noPadding { padding:0 !important; }
-.noPaddingLeft { padding-left:0 !important; }
-.noPaddingRight { padding-right:0 !important; }
-
 /* 
 ====================
 	BASIC STRUCTURE
 ====================
 */
-
 #websiteContainer { min-height: 100%; height: auto !important; height: 100%; margin:0 auto -200px; }
-.pageContent { min-height: 500px; margin-top: 70px !important; padding: 20px; background: rgba(255,255,255,0.9); box-shadow: 0 0 10px 2px rgba(0,0,0,.3); }
-.pageHeader h1 {  }
 /* 
 ====================
 	HEADER
 ====================
 */
-
 .logo { display: block; background:url('./images/logo.png') no-repeat; width:; height:; }
-.headerBackground { 
-	width:100%; height:100px; 
-	-webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,.5); box-shadow: 0 2px 10px 0 rgba(0,0,0,.5);
-	position: relative; z-index: 8;
-}
+.headerBackground { width:100%; background:#FFF; position: relative; z-index: 8; }
 /* 
 ====================
 	NAVIGATION
 ====================
 */
-
-.mainNav { display: block; height: 40px; width: 100%; z-index: 98; }
-.mainNav .navbar { margin: 0px; padding: 0px; z-index: 99; }
-.mainNav .navbar li, .mainNav .navbar li li { list-style: none; margin: 0px; padding: 0px; }
-.mainNav .navbar > li { position: relative; display: inline-block; line-height: 40px; }
-.mainNav .navbar > li > a { font-family: inherit; color: #000; outline: 0; }
-.mainNav .navbar > li ul { margin-bottom: 0px; }
-.mainNav .navbar > li .navdrop { display: none; -webkit-transition: all .2s ease-in-out; transition: all .2s ease-in-out; }
-.mainNav .navbar > li > a:first-child { position: relative; padding: 0 25px; display: block; font-size: 14px; }
-.mainNav .navbar > li.has-drop > a:first-child { /* padding-right: 40px; */ position: relative; }
-/*
-.mainNav .navbar > li.has-drop > a:first-child:after {  content: ""; display: block; width: 0; height: 0; border: solid 4px; border-color: #e6e6e6 transparent transparent transparent; position: absolute; right: 20px; top: 18px; }
-.mainNav .navbar > li.has-drop > a.drop-toggle { position: absolute; right: 0; top: 0; padding: 20px; z-index: 2; display: block; } 
-*/ 
-.mainNav .navbar > li.active { background: #333; cursor: pointer; }
-.mainNav .navbar > li.active > a { color: #fff; }
-.mainNav .navbar > li:hover {  }
-	.mainNav .navbar > li:hover a { }
-.mainNav .navbar > li:hover .navdrop { display: block; }
-.navdrop { padding: 20px; margin: 0; position: absolute; top: 40px; left: 0px; min-width: 100%; width: auto; z-index: 40; }
-.navdrop *:first-child { margin-top: 0; }
-.navdrop *:last-child { margin-bottom: 0; }
-ul.navdrop, .navbar li ul { padding: 0; list-style: none; }
-ul.navdrop li a, .navbar li ul li a { background: #222; color: #ccc; display: block; font-size: 12px; height: auto; line-height: 1; padding: 15px 20px; white-space: nowrap; min-width: 190px; }
-ul.navdrop li a:hover, .navbar li ul li a:hover, .navbar li ul li.active a { background: #ebebeb; color: #333; }
-
+.mainNav { position: relative; z-index: 99; }
+.mainNav ul.navbar { margin: 0px; padding: 0px; }
+.mainNav ul.navbar li { list-style: none; margin: 0px; padding: 0px; }
+.mainNav ul.navbar > li { position: relative; float: left; }
+.mainNav ul.navbar > li > a { display: block; padding: 0 25px; font-size: 16px; font-family: inherit; color: #222; }
+.mainNav ul.navbar > li:hover { background: #222; }
+	.mainNav ul.navbar > li:hover a { color: #FFF; }
+	.mainNav ul.navbar > li:hover.has-drop > a:first-child:after { border-color:#FFF transparent transparent transparent; }
+/* Dropdown Link */
+.mainNav ul.navbar > li.has-drop > a:first-child { position: relative; padding-right: 40px; }
+.mainNav ul.navbar > li.has-drop > a:first-child:after { content: ""; display: block; width: 0; height: 0; border: 4px solid; border-color: #222 transparent transparent transparent; position: absolute; right: 10px; top: 10px; }
+/* Sub Nav */
+.mainNav ul.navbar > li ul.navdrop { display: none; }
+.mainNav ul.navbar > li:hover ul.navdrop { display: block; }
+.mainNav ul.navbar > li ul.navdrop { margin: 0; width: 100%; position: absolute; left: 0px; z-index: 98; }
+.mainNav ul.navbar > li ul.navdrop li { background: #222; }
+.mainNav ul.navbar > li ul.navdrop li a { display: block; padding: 15px 20px; font-size: 12px; color:#FFF; white-space: nowrap; }
+	.mainNav ul.navbar > li ul.navdrop li:hover { background:#FFF; }
+	.mainNav ul.navbar > li ul.navdrop li:hover a { color:#222; }
+/* Current Page Link */ 
+.mainNav ul.navbar > li.current-menu-item { background: #222; }
+.mainNav ul.navbar > li.current-menu-item > a { color: #FFF; }
 /* 
 ====================
 	HOME PAGE
 ====================
 */
-
-
-
+/* 
+====================
+	PAGE
+====================
+*/
+.pageContent { min-height: 500px; background: rgba(255,255,255,0.8); }
+.pageHeader h1 {  }
 /* 
 ====================
 	FOOTER
 ====================
 */
-
 .footer, .push { height:200px; }
 .footer { 
   position: relative;
@@ -183,7 +156,6 @@ p.copyright {  }
 	WORDPRESS
 ====================
 */
-
 img { }
 .alignleft { float:left; margin: 0 20px 20px 0; padding: 6px; background: #FFF; -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
 .alignright { float:right; margin: 0 0 20px 20px; padding: 6px; background: #FFF; -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
@@ -192,8 +164,7 @@ img { }
 .formSearch { float:right; width:260px; margin: 20px 0; }
 #formSearchBox { width: 100% !Important; margin: 0; }
 .formSearchButton { border:0; outline:0; }
-
-/* 
+/*
 ====================
 	FOUNDATION
 ====================
@@ -225,15 +196,11 @@ input[type="number"], input[type="search"], input[type="tel"], input[type="time"
 }
 .button { background:; color:; }
 	.button:hover { background:; }
-
 /* 
 ====================
 	PLUGINS
 ====================
 */
-
-
-
 /* 
 ====================
   RESPONSIVE

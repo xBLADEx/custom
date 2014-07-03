@@ -223,12 +223,9 @@ add_filter( 'wp_title', 'foundation_title', 10, 2 );
 
 // Register wp_nav_menu() menus (http://codex.wordpress.org/Function_Reference/register_nav_menus)
 register_nav_menus(array(
-    'mainNav' => __('Main Navigation')
+    'mainNav' => 'Main Navigation',
+    'secondaryNav' => 'Secondary Navigation'
 ));
-register_nav_menus(array(
-    'secondaryNav' => __('Secondary Navigation')
-));
-
 // Navigation Walker
 
 class Custom_Navigation_Walker extends Walker_Nav_Menu {
@@ -266,10 +263,10 @@ class Custom_Navigation_Walker extends Walker_Nav_Menu {
         if ($args->has_children && $this->nav_bar['item_type'] == 'li') {
             if ($depth == 0 && $this->nav_bar['in_top_bar'] == false) {
                 $classes[]     = 'has-drop';
-                $flyout_toggle = '<a href="#" class="drop-toggle"><span></span></a>';
+                //$flyout_toggle = '<a href="#" class="drop-toggle"><span></span></a>';
             } else if ($this->nav_bar['in_top_bar'] == true) {
                 $classes[]     = 'has-dropdown';
-                $flyout_toggle = '';
+                //$flyout_toggle = '';
             }
         }
         /**
