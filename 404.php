@@ -15,10 +15,8 @@ get_header();
 	</div>
 </div>
 <div class="row pageContent">
-
 	<div class="large-12 columns">
 		
 	</div>
-
 </div><?php //.row .pageContent ?>
 <?php get_footer(); ?>

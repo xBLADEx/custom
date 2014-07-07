@@ -7,6 +7,7 @@
 ?>
 
 </div><?php //#websiteContainer ?>
+</main>
 <div class="push"></div>
 <div class="footer">
 	<footer class="row">

@@ -4,129 +4,110 @@
 	FUNCTIONS
 ====================
 */
-
-//Initiate Foundation, for WordPress
+// Initiate Foundation
 if ( ! function_exists( 'foundation_setup' ) ) {
 	function foundation_setup() {
 		// Support for Featured Images
 		add_theme_support( 'post-thumbnails' ); 
 		// Automatic Feed Links & Post Formats
 		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
+		// Enable support for Post Formats. See http://codex.wordpress.org/Post_Formats
+		add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery', 'status' ) );
 	}
 	add_action( 'after_setup_theme', 'foundation_setup' );
 }
-
 // Enqueue Scripts and Styles for Front-End
 if ( ! function_exists( 'foundation_assets' ) ) {
-	function foundation_assets() {
-		if (!is_admin()) {
+	function foundation_assets() { 
+		if (!is_admin()) { 
+			// http://codex.wordpress.org/Function_Reference/wp_enqueue_style
+			// wp_enqueue_style( $handle, $src, $deps, $ver, $media );
+			wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300,400' );
+			wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css', array(), '3.0.1' );
+			wp_enqueue_style( 'foundation', get_template_directory_uri().'/css/foundation.css', array(), '5.3.0' );
+			wp_enqueue_style( 'custom', get_stylesheet_uri(), array(), '5.3.5' );
+			// http://codex.wordpress.org/Function_Reference/wp_enqueue_script
+			// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
 			wp_deregister_script('jquery');
-
-			// Load JavaScript			
-			wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/vendor/jquery.js', null, '2.1.1', true );
-			wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', null, '5.3.0', true );
-			wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', null, '2.8.2', true );
-			wp_enqueue_script( 'custom', get_template_directory_uri().'/js/custom.js', null, '1.0', true);
-			
-			// Load Stylesheets
-			wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css' );
-			wp_enqueue_style( 'foundation', get_template_directory_uri().'/css/foundation.css' );
-			wp_enqueue_style( 'app', get_stylesheet_uri(), array('foundation') );
-
-			// Load Google Fonts API
-			wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300,400' );	
+			wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), '2.1.1', true );
+			wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array(), '5.3.0', true );
+			wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.2', true );
+			wp_enqueue_script( 'custom', get_template_directory_uri().'/js/custom.js', array(), '1.0', true);
 		}
 	}
 	add_action( 'wp_enqueue_scripts', 'foundation_assets' );
 }
-
-
 // Create pagination
 if ( ! function_exists( 'foundation_pagination' ) ) {
 	function foundation_pagination() {
 	global $wp_query;
 	$big = 999999999;
-	$links = paginate_links( array(
-		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format' => '?paged=%#%',
-		'prev_next' => true,
-		'prev_text' => '&laquo;',
-		'next_text' => '&raquo;',
-		'current' => max( 1, get_query_var('paged') ),
-		'total' => $wp_query->max_num_pages,
-		'type' => 'list'
-	)
-	);
+	$links = paginate_links( array( // http://codex.wordpress.org/Function_Reference/paginate_links
+		'base' 					=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format' 				=> '?paged=%#%',
+		'total' 				=> $wp_query->max_num_pages,
+		'current' 				=> max( 1, get_query_var('paged') ),
+		'show_all'  			=> False,
+		'end_size'  			=> 1,
+		'mid_size'  			=> 2,		
+		'prev_next' 			=> true,
+		'prev_text' 			=> '&laquo;',
+		'next_text' 			=> '&raquo;',
+		'type' 					=> 'list',
+		'add_args'     			=> False,
+		'add_fragment' 			=> '',
+		'before_page_number' 	=> '',
+		'after_page_number' 	=> ''
+	) );
 	$pagination = str_replace('page-numbers','pagination',$links);
 	echo $pagination;
 	}
 }
-
 // Register Sidebars
 if ( ! function_exists( 'foundation_widgets' ) ) {
 	function foundation_widgets() {
 		// Sidebar Right
 		register_sidebar( array(
-				'id' => 'foundation_sidebar_right',
-				'name' => __( 'Sidebar Right', 'foundation' ),
-				'description' => __( 'This sidebar is located on the right-hand side of each page.', 'foundation' ),
-				'before_widget' => '<aside class="large-3 columns sidebar">',
-				'after_widget' => '</aside>',
-				'before_title' => '<h5>',
-				'after_title' => '</h5>',
-			) );
+			'name' 			=> 'Sidebar Right',
+			'id' 			=> 'sidebarRight',
+			'description' 	=> '',
+			'class'			=> '',
+			'before_widget' => '<div class="sidebarWidget">',
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h5>',
+			'after_title' 	=> '</h5>'
+		) );
 		// Sidebar Left
 		register_sidebar( array(
-				'id' => 'foundation_sidebar_left',
-				'name' => __( 'Sidebar Left', 'foundation' ),
-				'description' => __( 'This sidebar is located on the left-hand side of each page.', 'foundation' ),
-				'before_widget' => '<aside class="large-3 columns sidebar">',
-				'after_widget' => '</aside>',
-				'before_title' => '<h5>',
-				'after_title' => '</h5>',
-			) );
-		// Sidebar Footer Column One
-		register_sidebar( array(
-				'id' => 'foundation_sidebar_footer_one',
-				'name' => __( 'Sidebar Footer One', 'foundation' ),
-				'description' => __( 'This sidebar is located in column one of your theme footer.', 'foundation' ),
-				'before_widget' => '<div class="large-3 columns">',
-				'after_widget' => '</div>',
-				'before_title' => '<h5>',
-				'after_title' => '</h5>',
-			) );
-		// Sidebar Footer Column Two
-		register_sidebar( array(
-				'id' => 'foundation_sidebar_footer_two',
-				'name' => __( 'Sidebar Footer Two', 'foundation' ),
-				'description' => __( 'This sidebar is located in column two of your theme footer.', 'foundation' ),
-				'before_widget' => '<div class="large-3 columns">',
-				'after_widget' => '</div>',
-				'before_title' => '<h5>',
-				'after_title' => '</h5>',
-			) );
-		}
+			'name' 			=> 'Sidebar Left',
+			'id' 			=> 'sidebarLeft',
+			'description' 	=> '',
+			'class'			=> '',
+			'before_widget' => '<div class="sidebarWidget">',
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h5>',
+			'after_title' 	=> '</h5>'
+		) );
+	}
 	add_action( 'widgets_init', 'foundation_widgets' );
 }
-
 // Custom Post Excerpt
 if ( ! function_exists( 'foundation_excerpt' ) ) {
 	function foundation_excerpt($text) {
         global $post;
         if ( '' == $text ) {
-                $text = get_the_content('');
-                $text = apply_filters('the_content', $text);
-                $text = str_replace('\]\]\>', ']]&gt;', $text);
-                $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-                $text = strip_tags($text, '<p>');
-                $excerpt_length = 80;
-                $words = explode(' ', $text, $excerpt_length + 1);
-                if (count($words)> $excerpt_length) {
-                        array_pop($words);
-                        array_push($words, '<br><br><a href="'.get_permalink($post->ID) .'" class="button secondary small">' . __('Continue Reading', 'foundation') . '</a>');
-                        $text = implode(' ', $words);
-                }
+            $text = get_the_content('');
+            $text = apply_filters('the_content', $text);
+            $text = str_replace('\]\]\>', ']]&gt;', $text);
+            $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
+            $text = strip_tags($text, '<p>');
+            $excerpt_length = 80;
+            $words = explode(' ', $text, $excerpt_length + 1);
+            if (count($words)> $excerpt_length) {
+                array_pop($words);
+                array_push($words, '<br><br><a href="'.get_permalink($post->ID) .'" class="button secondary small">' . __('Continue Reading', 'foundation') . '</a>');
+                $text = implode(' ', $words);
+            }
         }
         return $text;
 	}

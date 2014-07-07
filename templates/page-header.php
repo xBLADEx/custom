@@ -1,3 +1,10 @@
+<?php
+/* 
+====================
+	PAGE HEADER
+====================
+*/
+?>
 <div class="row">
 	<div class="large-12 columns">
 		<header class="pageHeader">

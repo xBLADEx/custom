@@ -6,14 +6,14 @@
 */
 get_header(); 
 ?>
-<?php get_template_part('templates/page', 'header'); ?>
 <div class="row pageContent">
     <div class="large-12 columns">
 		<?php if ( have_posts() ) { ?>
 			<?php while ( have_posts() ) { the_post(); ?>			
 				<article id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php get_template_part('templates/page', 'header'); ?>
 					<?php if ( has_post_thumbnail() ) { ?>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail(); ?></a>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
 					<?php } ?>					
 					<?php the_content(); ?>
 				</article>

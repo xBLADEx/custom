@@ -6,8 +6,7 @@
 */
 ?>
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" ><![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
+<html>
 <head>
 	<meta charset="UTF-8">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -16,6 +15,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<main>
 	<div id="websiteContainer">
 		<div class="headerBackground">
 			<div class="row">
