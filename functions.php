@@ -103,9 +103,9 @@ if ( ! function_exists( 'foundation_excerpt' ) ) {
             $text = strip_tags($text, '<p>');
             $excerpt_length = 80;
             $words = explode(' ', $text, $excerpt_length + 1);
-            if (count($words)> $excerpt_length) {
+            if (count($words) > $excerpt_length) {
                 array_pop($words);
-                array_push($words, '<br><br><a href="'.get_permalink($post->ID) .'" class="button secondary small">' . __('Continue Reading', 'foundation') . '</a>');
+                array_push($words, '... <br><br><a href="'.get_permalink($post->ID) .'" class="button">Read More</a>');
                 $text = implode(' ', $words);
             }
         }
@@ -114,7 +114,6 @@ if ( ! function_exists( 'foundation_excerpt' ) ) {
 	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 	add_filter('get_the_excerpt', 'foundation_excerpt');
 }
-
 // Comments Template
 if ( ! function_exists( 'foundation_comment' ) ) {
 function foundation_comment( $comment, $args, $depth ) {

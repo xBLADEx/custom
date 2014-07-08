@@ -1,7 +1,7 @@
 <?php
 /* 
 ====================
-	TEMPLATE NAME: SIDEBAR LEFT
+	TEMPLATE NAME: Sidebar Left
 ====================
 */
 get_header(); 
