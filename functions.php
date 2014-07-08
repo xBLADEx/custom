@@ -3,6 +3,20 @@
 ====================
 	FUNCTIONS
 ====================
+
+====================
+	LEGEND
+====================
+THEME SUPPORT
+ENQUEUE SCRIPTS
+PAGINATION
+SIDEBARS
+POST EXCERPT
+COMMENTS TEMPLATE
+STICKY POST
+TITLE TAG
+WALKER NAVIGATION
+CUSTOM QUICKTAGS
 */
 // Initiate Foundation
 if ( ! function_exists( 'foundation_setup' ) ) {
@@ -116,58 +130,53 @@ if ( ! function_exists( 'foundation_excerpt' ) ) {
 }
 // Comments Template
 if ( ! function_exists( 'foundation_comment' ) ) {
-function foundation_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) {
-		case 'pingback' :
-		case 'trackback' :
-		// Display trackbacks differently than normal comments.
-	?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:', 'foundation' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'foundation' ), '<span>', '</span>' ); ?></p>
-	<?php
-		break;
-		default :
-		global $post;
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<header>
-				<?php
-					echo "<span class='th alignleft' style='margin-right:1rem;'>";
-					echo get_avatar( $comment, 44 );
-					echo "</span>";
-					printf( '%2$s %1$s',
-						get_comment_author_link(),
-						( $comment->user_id === $post->post_author ) ? '<span class="label">' . __( 'Post Author', 'foundation' ) . '</span>' : ''
-					);
-					printf( '<br><a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-						esc_url( get_comment_link( $comment->comment_ID ) ),
-						get_comment_time( 'c' ),
-						sprintf( __( '%1$s at %2$s', 'foundation' ), get_comment_date(), get_comment_time() )
-					);
-				?>
-			</header>
-
-			<?php if ( '0' == $comment->comment_approved ) { ?>
-				<p><?php _e( 'Your comment is awaiting moderation.', 'foundation' ); ?></p>
-			<?php } ?>
-
-			<section>
-				<?php comment_text(); ?>
-			</section><!-- .comment-content -->
-
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'foundation' ), 'after' => ' &darr; <br><br>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-
-			</div>
-		</article>
-	<?php
-		break;
+	function foundation_comment( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
+		switch ( $comment->comment_type ) {
+			case 'pingback' :
+			case 'trackback' :
+			// Display trackbacks differently than normal comments.
+		?>
+		<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+			<p>Pingback: <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'foundation' ), '<span>', '</span>' ); ?></p>
+		<?php
+			break;
+			default :
+			global $post;
+		?>
+		<li id="li-comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+			<article id="comment-<?php comment_ID(); ?>" class="comment">
+				<header>
+					<?php
+						echo "<span class='commentGravatar'>";
+						echo get_avatar( $comment, 44 );
+						echo "</span>";
+						printf( '%2$s %1$s',
+							get_comment_author_link(),
+							( $comment->user_id === $post->post_author ) ? '<span>Posted by: </span>' : ''
+						);
+						printf( '<br><a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+							esc_url( get_comment_link( $comment->comment_ID ) ),
+							get_comment_time( 'c' ),
+							sprintf( __( '%1$s at %2$s', 'foundation' ), get_comment_date(), get_comment_time() )
+						);
+					?>
+				</header>
+				<?php if ( '0' == $comment->comment_approved ) { ?>
+					<p>Your comment is awaiting moderation.</p>
+				<?php } ?>
+				<section>
+					<?php comment_text(); ?>
+				</section>
+				<div class="reply">
+					<?php comment_reply_link( array_merge( $args, array( 'reply_text' => 'Reply', 'after' => ' &darr; <br><br>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				</div>
+			</article>
+		<?php
+			break;
+		}
 	}
 }
-}
-
 // Remove Class from Sticky Post
 if ( ! function_exists( 'foundation_remove_sticky' ) ) {
 	function foundation_remove_sticky($classes) {
@@ -176,53 +185,40 @@ if ( ! function_exists( 'foundation_remove_sticky' ) ) {
 	}
 	add_filter('post_class','foundation_remove_sticky');
 }
-
-// Custom Foundation Title Tag
+// Custom Title Tag
 function foundation_title( $title, $sep ) {
 	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
+	if ( is_feed() ) { return $title; }
 	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
+	$title .= " ".get_bloginfo( 'name' );
 	// Add the site description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
 		$title = "$title $sep $site_description";
-
+	}
 	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
+	if ( $paged >= 2 || $page >= 2 ) {
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'foundation' ), max( $paged, $page ) );
-
+	}
 	return $title;
 }
-
 add_filter( 'wp_title', 'foundation_title', 10, 2 );
-
-// Register wp_nav_menu() menus (http://codex.wordpress.org/Function_Reference/register_nav_menus)
-register_nav_menus(array(
-    'mainNav' => 'Main Navigation',
-    'secondaryNav' => 'Secondary Navigation'
+// Register wp_nav_menu()
+register_nav_menus( array( // http://codex.wordpress.org/Function_Reference/register_nav_menus
+    'mainNav' 		=> 'Main Navigation',
+    'secondaryNav' 	=> 'Secondary Navigation'
 ));
 // Navigation Walker
-
 class Custom_Navigation_Walker extends Walker_Nav_Menu {
-    /**
-     * Specify the item type to allow different walkers
-     * @var array
-     */
-    var $nav_bar = '';
-    
+    // Specify the item type to allow different walkers
+    var $nav_bar = ''; 
     function __construct($nav_args = '') {
-        $defaults      = array(
-            'item_type' => 'li',
-            'in_top_bar' => false
+        $defaults = array(
+            'item_type' 	=> 'li',
+            'in_top_bar' 	=> false
         );
         $this->nav_bar = apply_filters('req_nav_args', wp_parse_args($nav_args, $defaults));
-    }
-    
+    }  
     function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
         $id_field = $this->db_fields['id'];
         if (is_object($args[0])) {
@@ -230,14 +226,12 @@ class Custom_Navigation_Walker extends Walker_Nav_Menu {
         }
         return parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
     }
-    
     function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
         global $wp_query;
-        $indent = ($depth) ? str_repeat("\t", $depth) : '';
-        $class_names = $value = '';
-        $classes   = empty($item->classes) ? array() : (array) $item->classes;
-        $classes[] = 'menu-item-' . $item->ID;
-        
+        $indent 		= ($depth) ? str_repeat("\t", $depth) : '';
+        $class_names 	= $value = '';
+        $classes   		= empty($item->classes) ? array() : (array) $item->classes;
+        $classes[] 		= 'menu-item-' . $item->ID;      
         // Check for flyout
         $flyout_toggle = '';
         if ($args->has_children && $this->nav_bar['item_type'] == 'li') {
@@ -249,37 +243,27 @@ class Custom_Navigation_Walker extends Walker_Nav_Menu {
                 //$flyout_toggle = '';
             }
         }
-        /**
-         * Add class names to the li.divider from parent menu item
-         * @var string
-         *
-         * @since  required+ Foundation 1.0.7
-         */
+        // Add class names to the li.divider from parent menu item
         $class_names_divider = join(' ', $item->classes);
         $class_names         = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
-        $class_names         = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-        
+        $class_names         = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';     
         if($depth > 0) {
             $output .= $indent . '<li id="menu-item-' . $item->ID . '"' . $value . $class_names . '>';
         } else {
             $output .= $indent . ($this->nav_bar['in_top_bar'] == true ? '<li class="divider' . $class_names_divider . '"></li>' : '') . '<' . $this->nav_bar['item_type'] . ' id="menu-item-' . $item->ID . '"' . $value . $class_names . '>';
         }
-        
         $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
         $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
         $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
         $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
-        
         $item_output = $args->before;
         $item_output .= '<a ' . $attributes . '>';
         $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
         $item_output .= '</a>';
-        $item_output .= $flyout_toggle; // Add possible flyout toggle
+        //$item_output .= $flyout_toggle; // Add possible flyout toggle
         $item_output .= $args->after;
-        
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
-    
     function end_el(&$output, $item, $depth = 0, $args = array()) {
         if ($depth > 0) {
             $output .= "</li>\n";
@@ -287,7 +271,6 @@ class Custom_Navigation_Walker extends Walker_Nav_Menu {
             $output .= "</" . $this->nav_bar['item_type'] . ">\n";
         }
     }
-    
     function start_lvl(&$output, $depth = 0, $args = array()) {
         if ($depth == 0 && $this->nav_bar['item_type'] == 'li') {
             $indent = str_repeat("\t", 1);
@@ -298,31 +281,28 @@ class Custom_Navigation_Walker extends Walker_Nav_Menu {
         }
     }
 }
-
 // Yes you can overwrite the whole function
-if(!function_exists('required_side_nav')) { /* Displays a simple subnav with child pages of the current */ 
+if( ! function_exists('required_side_nav') ) { // Displays a simple subnav with child pages of the current
     function required_side_nav($nav_args = '') {
         global $post;
         $defaults = array(
             'show_home' => false,
-            'depth' => 1,
-            'before' => '<ul class="side-nav">',
-            'after' => '</ul>',
+            'depth' 	=> 1,
+            'before' 	=> '<ul class="side-nav">',
+            'after' 	=> '</ul>',
             'item_type' => 'li'
         );
         $nav_args = apply_filters('req_side_nav_args', wp_parse_args($nav_args, $defaults));
         $args = array(
-            'title_li' => '',
-            'depth' => $nav_args['depth'],
-            'sort_column' => 'menu_order',
-            'echo' => 0
+            'title_li' 		=> '',
+            'depth' 		=> $nav_args['depth'],
+            'sort_column' 	=> 'menu_order',
+            'echo' 			=> 0
         );
-        
         // Make sure the dl only shows 1 level
         if ($nav_args['item_type'] != 'li') {
             $args['depth'] = 0;
         }
-        
         if ($post->post_parent) {
             // So we have a post parent
             $args['child_of'] = $post->post_parent;
@@ -330,15 +310,12 @@ if(!function_exists('required_side_nav')) { /* Displays a simple subnav with chi
             // So we don't have a post parent, so you are!
             $args['child_of'] = $post->ID;
         }
-        
         // Filter the $args if you want to do something different!
         $children = wp_list_pages($args);
-        
         // Point as back home or not?
         if ($nav_args['show_home'] == true) {
             $nav_args['before'] .= '<li><a href="' . get_home_url() . '">' . __('&larr; Home', 'requiredfoundation') . '</a></li><li class="divider"></li>';
         }
-        
         // Do we have children?
         if ($children) {
             $output = $nav_args['before'] . $children . $nav_args['after'];
@@ -356,7 +333,6 @@ if(!function_exists('required_side_nav')) { /* Displays a simple subnav with chi
     }
 }
 // End Navigation Walker
-
 // Filter certain buttons from showing in the wordpress html editor for pages/posts
 function custom_remove_quicktags( $qtInit ) {
 	// Whatever is in the below string displays in the editor. !Important! No spaces after the comma.
@@ -364,13 +340,11 @@ function custom_remove_quicktags( $qtInit ) {
 	return $qtInit;
 }
 add_filter('quicktags_settings', 'custom_remove_quicktags');
-
 // Add custom buttons to the wordpress html editor for pages/posts
 function custom_add_quicktags() { ?>
-	<script type="text/javascript">
-	<!--
+	<script>
 		if(typeof(QTags) == 'function') {
-			QTags.addButton( 'eg_article', 'article', '<article class="">\n', '\n</article>', 'd', 'Article', 1 );
+			QTags.addButton( 'eg_div6', 'div 6', '<div class="medium-6 columns">\n', '\n</div>', 'd', 'Div 6', 1 );
 			QTags.addButton( 'eg_div', 'div', '<div class="">\n', '\n</div>', 'd', 'Division', 1 );
 			QTags.addButton( 'eg_h2', 'H2', '<h2>', '</h2>', '2', 'Heading 2', 1 );
 			QTags.addButton( 'eg_h3', 'H3', '<h3>', '</h3>', '3', 'Heading 3', 1 );
@@ -385,7 +359,6 @@ function custom_add_quicktags() { ?>
 			QTags.addButton( 'eg_unordered', 'ul', '<ul>\n', '\n</ul>', 'u', 'Unordered List', 20 );
 			QTags.addButton( 'eg_listitem', 'li', '<li>', '</li>', 'l', 'List Item', 20 );
 		}
-	//-->
 	</script>
 <?php
 }
