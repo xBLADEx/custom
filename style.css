@@ -4,7 +4,7 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.3.6
+Version: 5.3.7
 
 ====================
 	LEGEND
@@ -23,6 +23,7 @@ BLOG
 SIDEBAR
 WORDPRESS
 FOUNDATION
+STYLES
 PLUGINS
 RESPONSIVE
 */
@@ -74,6 +75,7 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 .clear { clear:both; } 
 .marginCenter { display: block; margin: auto; }
 .imgFrame { padding: 6px; background: #FFF; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
+.noMargin { margin:0 !important; }
 .noPadding { padding:0 !important; }
 .noPaddingLeft { padding-left:0 !important; }
 .noPaddingRight { padding-right:0 !important; }
@@ -148,6 +150,7 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 .date {  }
 .categories {  }
 .tags {  }
+.tags span {  }
 /* Comments */
 h4.commentTitle {  }
 ol.commentList {  }
@@ -182,6 +185,13 @@ ol.commentList {  }
 	FOUNDATION
 ====================
 */
+/*
+====================
+	STYLES
+====================
+*/
+.button {  }
+	.button:hover {  }
 /* 
 ====================
 	PLUGINS

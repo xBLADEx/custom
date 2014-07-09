@@ -24,7 +24,7 @@ get_header();
 				<?php the_excerpt(); ?>
 			</section> 
 			<footer>
-				<p class="tags"><?php the_tags('Tags: ', ', ', ''); ?></p>
+				<p class="tags"><?php the_tags('<span>','</span><span>','</span>'); ?></p>
 			</footer> 
 	    </article>
 		<?php } ?>  

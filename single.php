@@ -12,17 +12,16 @@ get_header();
 			while ( have_posts() ) { the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php get_template_part('templates/page', 'header'); ?>
-					<p class="date">Date: <time datetime="<?php echo get_the_time('c'); ?>"><?php the_time('m/d/Y'); ?></time></p>
-					<p><?php _e('Written by', 'foundation' );?> <?php the_author_link(); ?> on <?php the_time(get_option('date_format')); ?></p>
 					<?php if ( has_post_thumbnail()) { ?>
-					<a href="<?php the_permalink(); ?>" class="th" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail(); ?></a>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail(); ?></a>
 					<?php } ?>
-					<?php the_content(); ?>
+					<p class="date">Date: <?php the_time(get_option('date_format')); ?></p>
+					<p class="categories">In: <?php the_category(', '); ?></p>
+					<section>
+						<?php the_content(); ?>						
+					</section>
 					<footer>
-						<p><?php wp_link_pages(); ?></p>
-						<h6><?php _e('Posted Under:', 'foundation' );?> <?php the_category(', '); ?></h6>
-						<?php the_tags('<span class="radius secondary label">','</span><span class="radius secondary label">','</span>'); ?>
-						<?php get_template_part('author-box'); ?>
+						<p class="tags"><?php the_tags('<span>','</span><span>','</span>'); ?></p>
 						<?php comments_template(); ?>
 					</footer>
 				</article>				
