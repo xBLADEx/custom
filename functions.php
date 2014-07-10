@@ -17,6 +17,7 @@ STICKY POST
 TITLE TAG
 WALKER NAVIGATION
 CUSTOM QUICKTAGS
+LOGIN LOGO
 */
 // Initiate Foundation
 if ( ! function_exists( 'foundation_setup' ) ) {
@@ -363,4 +364,14 @@ function custom_add_quicktags() { ?>
 <?php
 }
 add_action('admin_print_footer_scripts', 'custom_add_quicktags');
+// Custom Login Logo
+function my_login_logo() { // http://codex.wordpress.org/Customizing_the_Login_Form ?>
+    <style>
+        body.login div#login h1 a {
+            background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/loginLogo.jpg');
+            padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
 ?>
