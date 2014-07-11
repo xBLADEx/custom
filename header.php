@@ -19,7 +19,10 @@
 	<main id="websiteContainer">
 		<header class="headerBackground">
 			<div class="row">
-	            <div class="large-12 columns">
+				<div class="medium-3 columns">
+					<a href="/" class="logo"><img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt=""></a>
+				</div>
+	            <div class="medium-9 columns">
 	            	<?php //get_template_part('templates/form', 'search'); ?>
 	                <nav class="mainNav" role="navigation">
 	                    <?php get_template_part('templates/menu', 'nav'); ?>
@@ -27,4 +30,3 @@
 	            </div>
 	        </div>
 		</header>
-		

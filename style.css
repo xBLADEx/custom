@@ -4,7 +4,7 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.3.8
+Version: 5.3.9
 
 ====================
 	LEGEND
@@ -46,7 +46,7 @@ STAIN #D4C098
 */
 body, ul, ol, li, p, a { font-size: 16px; }
 ul { margin-left: 30px; }
-h1, h2, h3, h4, h5, h6 {  }
+h1, h2, h3, h4, h5, h6 { margin:0 0 10px 0; }
 h1 {  }
 h2 {  }
 h3 {  }
@@ -90,8 +90,8 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 	HEADER
 ====================
 */
-.logo { display: block; background:url('./images/logo.png') no-repeat; width:; height:; }
-.headerBackground { width:100%; background:#FFF; position: relative; z-index: 8; }
+.logo { /* display: block; background:url('./images/logo.png') no-repeat; width:; height:; */ }
+.headerBackground { width:100%; background:#FFF; position: relative; z-index: 100; }
 /* 
 ====================
 	NAVIGATION
@@ -190,8 +190,12 @@ ol.commentList {  }
 	STYLES
 ====================
 */
-.button {  }
-	.button:hover {  }
+button, .button { 
+	background: #2ba6cb; color: #FFF; margin: 0; padding: 10px 15px;
+	position: relative; display: inline-block; border:0px; cursor: pointer;
+	font-size: 16px; text-decoration: none; text-align: center; -webkit-appearance: none;
+}
+button:hover .button:hover { background: #2285a2; color: #FFF; }
 /* 
 ====================
 	PLUGINS
