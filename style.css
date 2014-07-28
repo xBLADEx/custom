@@ -4,7 +4,7 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.3.10
+Version: 5.3.11
 
 ====================
 	LEGEND
@@ -25,6 +25,7 @@ WORDPRESS
 FOUNDATION
 STYLES
 PLUGINS
+MOBILE
 RESPONSIVE
 */
 
@@ -204,6 +205,12 @@ button:hover .button:hover { background: #2285a2; color: #FFF; }
 */
 /* 
 ====================
+	MOBILE
+====================
+*/
+.mobileMenu, .mobileBackground { display: none; }
+/* 
+====================
   RESPONSIVE
 ====================
 */
@@ -213,7 +220,20 @@ button:hover .button:hover { background: #2285a2; color: #FFF; }
 }
 /* iPad @media only screen and (min-width: 768px) and (max-width: 1024px) {} */
 @media only screen and (max-width: 1024px) { 
-
+	.mobileBackground { display: block; position: fixed; z-index: 999; background:#D4C098; padding:10px 0; width:100%; }
+	.mobileMenu { padding-top:62px; background:#5F3711; width:100%; position: fixed; z-index: 99; }
+		.mobileMenu .mainNav ul.navbar > li { position: relative; float: none; border-top:1px solid #F6F6E2; }
+		.mobileMenu .mainNav ul.navbar > li > a { display: block; padding: 10px 25px; font-size: 16px; font-family: inherit; color: #F6F6E2; }
+		/* Mobile Sub Nav */
+		.mobileMenu .mainNav ul.navbar > li ul.navdrop { margin: 0; width: 100%; position: relative; left: 0px; z-index: 98; }
+		.mainNav ul.navbar > li ul.navdrop li:hover { background: #D4C098; }
+	p.mobileIdentity { float: left; margin:0 0 0 10px; color:#5F3711; text-transform: uppercase; line-height: 40px; }
+	a.menuIcon { padding: 4px; font:bold 10px 'Arial'; text-transform: uppercase; color: #F6F6E2; border: 1px solid #F6F6E2; display: block; width: 40px; float:right; margin-right: 10px; }
+	a.menuIcon span { background: #F6F6E2; width: 30px; height: 4px; display: block; margin-bottom: 3px; }
+	a.menuIcon:hover { color: #5F3711; border: 1px solid #5F3711; }
+	a.menuIcon:hover span { background: #5F3711; }
+	.headerBackground { padding-top:62px; }
+	a.logo img { display: block; margin: 10px auto; }
 }
 /* iPhone @media only screen and (min-width:320px) and (max-width:568px) {} */
 @media only screen and (max-width:568px) { 
