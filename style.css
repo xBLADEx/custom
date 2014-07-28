@@ -4,7 +4,7 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.3.9
+Version: 5.3.10
 
 ====================
 	LEGEND
@@ -72,7 +72,8 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 .center { text-align: center; }
 .bold { font-weight: bold; }
 .italic { font-style: italic; }
-.clear { clear:both; } 
+.clear { clear:both; }
+.hidden { display: none !important; } 
 .marginCenter { display: block; margin: auto; }
 .imgFrame { padding: 6px; background: #FFF; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
 .noMargin { margin:0 !important; }
