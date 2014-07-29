@@ -2291,7 +2291,7 @@ p {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
-  text-rendering: optimizeLegibility; }
+  /* text-rendering: optimizeLegibility; */ }
   p.lead {
     font-size: 1.21875rem;
     line-height: 1.6; }
@@ -2306,7 +2306,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-style: normal;
   color: #222222;
-  text-rendering: optimizeLegibility;
+  /* text-rendering: optimizeLegibility; */
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
   line-height: 1.4; }
@@ -4208,11 +4208,11 @@ textarea[rows] {
 
 /* Add height value for select elements to match text input height */
 select {
-  -webkit-appearance: none !important;
-  background-color: #fafafa;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
-  background-position: 100% center;
-  background-repeat: no-repeat;
+  /* -webkit-appearance: none !important; */
+  /* background-color: #fafafa; */
+  /* background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+); */
+  /* background-position: 100% center; */
+  /* background-repeat: no-repeat; */
   border: 1px solid #cccccc;
   padding: 0.5rem;
   font-size: 0.875rem;

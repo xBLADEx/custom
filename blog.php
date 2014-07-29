@@ -37,9 +37,9 @@ get_header();
 					<p class="date">Date: <time datetime="<?php echo get_the_time('c'); ?>"><?php the_time( 'm/d/Y' ); ?></time></p>
 					<p class="categories">In: <?php the_category( ', ' ); ?></p>
 				</header>
-				<section>	
+				<div>	
 					<?php the_excerpt(); ?>
-				</section> 
+				</div> 
 				<footer>
 					<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
 				</footer>
