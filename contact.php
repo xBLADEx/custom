@@ -8,10 +8,10 @@ get_header();
 ?>
 <div class="row pageContent">
     <div class="large-12 columns">
-    	<?php get_template_part('templates/page', 'header'); ?>
+    	<?php get_template_part( 'templates/page', 'header' ); ?>
     	<div class="row">
     		<div class="medium-6 columns">
-    			<?php get_template_part('templates/form', 'contact'); ?>
+    			<?php get_template_part( 'templates/form', 'contact' ); ?>
     		</div>
     		<div class="medium-6 columns">
 				<?php if ( have_posts() ) { ?>

@@ -24,8 +24,8 @@ if ( post_password_required() ) { return; }
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { // Are there comments to navigate through ?>
 	<nav>
 		<h4>Comment navigation</h4>
-		<div><?php previous_comments_link('&larr; Older Comments'); ?></div>
-		<div><?php next_comments_link('Newer Comments &rarr;'); ?></div>
+		<div><?php previous_comments_link( '&larr; Older Comments' ); ?></div>
+		<div><?php next_comments_link( 'Newer Comments &rarr;' ); ?></div>
 	</nav>
 	<?php } // Check for comment navigation ?>
 	<?php

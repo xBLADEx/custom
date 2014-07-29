@@ -30,7 +30,7 @@
 	            <div class="hide-for-small medium-9 columns">
 	            	<?php //get_template_part('templates/form', 'search'); ?>
 	                <nav class="mainNav" role="navigation">
-	                    <?php get_template_part('templates/menu', 'nav'); ?>
+	                    <?php get_template_part( 'templates/menu', 'nav' ); ?>
 	                </nav>
 	            </div>
 	        </div>

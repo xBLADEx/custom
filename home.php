@@ -6,7 +6,7 @@
 */
 get_header(); 
 ?>
-<?php //echo do_shortcode('[flexslider]'); ?>
+<?php //echo do_shortcode( '[flexslider]' ); ?>
 <div class="row">
     <div class="large-12 columns">
 		<?php if ( have_posts() ) { ?>

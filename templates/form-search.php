@@ -6,7 +6,7 @@
 */
 ?>
 <div class="clearfix">
-	<form action="/" id="formSearch" method="get">
+	<form action="/" id="formSearch" method="GET">
 		<input id="formSearchButton" name="submit" type="submit" value="Find">
 		<input id="formSearchBox" name="s" placeholder="Search" type="text">
 	</form>

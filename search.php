@@ -22,14 +22,14 @@ get_header(); ?>
 						<?php if ( has_post_thumbnail() ) { ?>
 							<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
 						<?php } ?>
-						<p class="date">Date: <time datetime="<?php echo get_the_time('c'); ?>"><?php the_time('m/d/Y'); ?></time></p>
-						<p class="categories">In: <?php the_category(', '); ?></p>
+						<p class="date">Date: <time datetime="<?php echo get_the_time('c'); ?>"><?php the_time( 'm/d/Y' ); ?></time></p>
+						<p class="categories">In: <?php the_category( ', ' ); ?></p>
 					</header>
 					<section>
 						<?php the_excerpt(); ?>						
 					</section>
 					<footer>
-						<p class="tags"><?php the_tags('<span>','</span><span>','</span>'); ?></p>
+						<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
 					</footer>
 				</article>
 			<?php } foundation_pagination();
@@ -38,6 +38,6 @@ get_header(); ?>
 			}
 		?>
 	</div>
-	<?php get_template_part('templates/page', 'sidebarRight'); ?>
+	<?php get_template_part( 'templates/page', 'sidebarRight' ); ?>
 </div><?php //.row ?>
 <?php get_footer(); ?>
