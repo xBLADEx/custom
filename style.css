@@ -4,7 +4,7 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.3.13
+Version: 5.3.14
 
 ====================
 	LEGEND
@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 { margin:0 0 10px 0; }
 h1 {  }
 h2 {  }
 h3 {  }
-a, input { -webkit-transition: all 0.6s ease 0.1s; transition: all 0.6s ease 0.1s; }
+a, input { /* -webkit-transition: all 0.6s ease 0.1s; transition: all 0.6s ease 0.1s; */ }
 a { color:#373737; text-decoration: none; }
 a:hover, a:visited:hover, a:focus, a:visited:focus {  }
 a:hover, a:active { outline: 0; }
@@ -93,7 +93,7 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 ====================
 */
 .logo { /* display: block; background:url('./images/logo.png') no-repeat; width:; height:; */ }
-.headerBackground { width:100%; background:#FFF; position: relative; z-index: 100; }
+.headerBackground { width:100%; background:#FFF; position: relative; z-index: 100; border-bottom: 1px solid #E2D5C1; }
 /* 
 ====================
 	NAVIGATION
@@ -148,6 +148,7 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 */
 #searchsubmit { padding:10px 20px; border:0; color:; text-align: center; background: transparent; }
   #searchsubmit:hover { background:; color:; }
+h2 a {  }
 .postContainer {  }
 .date {  }
 .categories {  }
@@ -221,12 +222,14 @@ button:hover .button:hover { background: #2285a2; color: #FFF; }
 /* iPad @media only screen and (min-width: 768px) and (max-width: 1024px) {} */
 @media only screen and (max-width: 1024px) { 
 	.mobileBackground { display: block; position: fixed; z-index: 999; background:#D4C098; padding:10px 0; width:100%; }
-	.mobileMenu { padding-top:62px; background:#5F3711; width:100%; position: fixed; z-index: 99; }
+	.mobileMenu { padding-top:62px; background:#5F3711; width:100%; position: fixed; z-index: 101; }
 		.mobileMenu .mainNav ul.navbar > li { position: relative; float: none; border-top:1px solid #F6F6E2; }
 		.mobileMenu .mainNav ul.navbar > li > a { display: block; padding: 10px 25px; font-size: 16px; font-family: inherit; color: #F6F6E2; }
 		/* Mobile Sub Nav */
 		.mobileMenu .mainNav ul.navbar > li ul.navdrop { margin: 0; width: 100%; position: relative; left: 0px; z-index: 98; }
 		.mainNav ul.navbar > li ul.navdrop li:hover { background: #D4C098; }
+		.mainNav ul.navbar > li ul.navdrop li a { display: block; padding: 15px 20px 15px 40px; font-size: 14px; color: #FFF; white-space: nowrap; }
+		.mainNav ul.navbar > li.has-drop > a:first-child:after { display: none; }
 	p.mobileIdentity { float: left; margin:0 0 0 10px; color:#5F3711; text-transform: uppercase; line-height: 40px; }
 	a.menuIcon { padding: 4px; font:bold 10px 'Arial'; text-transform: uppercase; color: #F6F6E2; border: 1px solid #F6F6E2; display: block; width: 40px; float:right; margin-right: 10px; }
 	a.menuIcon span { background: #F6F6E2; width: 30px; height: 4px; display: block; margin-bottom: 3px; }

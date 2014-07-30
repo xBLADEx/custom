@@ -34,8 +34,8 @@ get_header();
 					<?php if ( has_post_thumbnail() ) { ?>
 						<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
 					<?php } ?>
-					<p class="date">Date: <time datetime="<?php echo get_the_time('c'); ?>"><?php the_time( 'm/d/Y' ); ?></time></p>
-					<p class="categories">In: <?php the_category( ', ' ); ?></p>
+					<p class="date">Date: <?php the_time( get_option( 'date_format' ) ); ?></p>
+					<p class="categories">Categories: <?php the_category( ', ' ); ?></p>
 				</header>
 				<div>	
 					<?php the_excerpt(); ?>
