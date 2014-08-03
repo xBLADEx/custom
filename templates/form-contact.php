@@ -50,8 +50,7 @@ if ( isset( $_POST['submit'] ) ) {
 	$subject 	= WEBSITE . ' Contact Form'. "\r\n";
 	$headers	= 'MIME-Version: 1.0' . "\r\n";
 	$headers	.= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-	$headers	.= 'From: contact@' . DOMAIN . "\r\n";
-	$headers	.= 'Reply-To: noreply@' . DOMAIN . "\r\n";
+	$headers  	.= "From: contact@" . DOMAIN . "\r\nReply-To: noreply@" . DOMAIN . "\r\n";
 	$message 	= '<html><body>';
 	$message 	.= '<table rules="all" style="border-color: #B8B8B8;" cellpadding="10">';
 	$message 	.= '<tr style="background: #5979FF; color: #FFF; font-weight:bold;"><th>FIELD</th><th>INFORMATION</th></tr>';
