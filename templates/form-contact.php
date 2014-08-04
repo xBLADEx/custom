@@ -19,8 +19,8 @@ if ( isset( $_POST['submit'] ) ) {
 	// Set required fields
 	$required_fields = array(
 		'fullName',
-		'phone',
-		'email'
+		'email',
+		'phone'
 	);
 	// Check if required fields are blank
 	$field_errors = true;
@@ -31,19 +31,19 @@ if ( isset( $_POST['submit'] ) ) {
 	}
 	// Grab form fields
 	$fullName 	= $_POST["fullName"];
-	$phone 		= $_POST["phone"];
 	$email 		= $_POST["email"];
+	$phone 		= $_POST["phone"];
 	$comment 	= $_POST["comment"];
 	// Sanitize Information
 	if ( $fullName != '' ) {
 		$fullName = filter_var( $fullName, FILTER_SANITIZE_STRING );
 	}
+	if ( $email != '' ) {
+		$email = filter_var( $email, FILTER_SANITIZE_EMAIL );
+	}
 	if ( $phone != '' ) {
 		$regex = '/([0-9]{3})\.?([0-9]{3})\.?([0-9]{4})/';
 		$phone = preg_replace( $regex, '$1-$2-$3', $phone ); // http://php.net/manual/en/function.preg-match.php
-	}
-	if ( $email != '' ) {
-		$email = filter_var( $email, FILTER_SANITIZE_EMAIL );
 	}
 	// Set mail() variables http://php.net/manual/en/function.mail.php
 	$to 		= EMAIL;
@@ -55,8 +55,8 @@ if ( isset( $_POST['submit'] ) ) {
 	$message 	.= '<table rules="all" style="border-color: #B8B8B8;" cellpadding="10">';
 	$message 	.= '<tr style="background: #5979FF; color: #FFF; font-weight:bold;"><th>FIELD</th><th>INFORMATION</th></tr>';
 	$message 	.= "<tr><td><strong>Name:</strong></td><td>" . strip_tags( $fullName ) . "</td></tr>";
-	$message 	.= "<tr><td><strong>Phone:</strong></td><td>" . strip_tags( $phone ) . "</td></tr>";
 	$message 	.= "<tr><td><strong>Email:</strong></td><td>" . strip_tags( $email ) . "</td></tr>";
+	$message 	.= "<tr><td><strong>Phone:</strong></td><td>" . strip_tags( $phone ) . "</td></tr>";
 	$message 	.= "<tr><td><strong>Comment:</strong></td><td>" . strip_tags( $comment ) . "</td></tr>";
 	$message 	.= "</table>";
 	$message 	.= "</body></html>";
@@ -74,8 +74,8 @@ if ( isset( $_POST['submit'] ) ) {
 } else { ?>
 	<form method="POST">
 		<input type="text" name="fullName" placeholder="Full Name" required>
-		<input type="tel" maxlength="10" name="phone" pattern="\d{3}\d{3}\d{4}" placeholder="Phone" required>
 		<input type="email" name="email" placeholder="Email" required>
+		<input type="tel" maxlength="10" name="phone" pattern="\d{3}\d{3}\d{4}" placeholder="Phone" required>
 		<textarea name="comment" placeholder="Message"></textarea>
 		<input type="text" name="mainAddress" value="" class="hidden">
 		<input type="submit" name="submit" value="Submit" class="button">

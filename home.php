@@ -7,6 +7,7 @@
 get_header(); 
 ?>
 <?php //echo do_shortcode( '[flexslider]' ); ?>
+<?php //echo get_post_meta( $post->ID, 'key', true ); ?>
 <div class="row">
     <div class="large-12 columns">
 		<?php if ( have_posts() ) { ?>
