@@ -18,6 +18,7 @@ TITLE TAG
 WALKER NAVIGATION
 CUSTOM QUICKTAGS
 LOGIN LOGO
+BLANK SEARCH RESULTS FIX
 */
 // Initiate Foundation
 if ( ! function_exists( 'foundation_setup' ) ) {
@@ -376,4 +377,14 @@ function my_login_logo() { // http://codex.wordpress.org/Customizing_the_Login_F
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
+// Fix blank search results
+function blankSearch( $query ) {
+    // If 's' request variable is set but empty
+    if ( isset( $_GET['s'] ) && empty( $_GET['s'] ) && $query->is_main_query() ) {
+        $query->is_search = true;
+        $query->is_home = false;
+    }
+    return $query;
+}
+add_filter( 'pre_get_posts', 'blankSearch' );
 ?>
