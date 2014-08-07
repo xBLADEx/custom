@@ -16,7 +16,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<main id="websiteContainer">
+	<main id="websiteContainer" role="main">
 		<div class="mobileBackground">
 			<p class="mobileIdentity"><?php bloginfo( 'name' ); ?></p>
 			<a class="menuIcon" href="#"><span></span><span></span><span></span>Menu</a>

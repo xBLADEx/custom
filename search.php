@@ -7,7 +7,7 @@
 get_header(); ?>
 <div class="row">
 	<div class="large-12 columns">
-		<header class="pageHeader">
+		<header class="pageHeader" role="banner">
 			<h1><?php printf( __( 'Search Results for: %s', 'twentyfourteen' ), get_search_query() ); ?></h1>	
 		</header>
 	</div>
@@ -16,7 +16,7 @@ get_header(); ?>
 	<div class="large-9 columns">
 		<?php if ( have_posts() ) { 
 				while ( have_posts() ) { the_post(); ?>
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 					<header>
 						<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 						<?php if ( has_post_thumbnail() ) { ?>
@@ -25,9 +25,9 @@ get_header(); ?>
 						<p class="date">Date: <time datetime="<?php echo get_the_time('c'); ?>"><?php the_time( 'm/d/Y' ); ?></time></p>
 						<p class="categories">In: <?php the_category( ', ' ); ?></p>
 					</header>
-					<section>
+					<div>
 						<?php the_excerpt(); ?>						
-					</section>
+					</div>
 					<footer>
 						<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
 					</footer>

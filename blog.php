@@ -28,7 +28,7 @@ get_header();
 	<?php foreach ( $postsArray as $post ){ 
 		setup_postdata( $post ); ?>
 		<div class="postContainer">
-		    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 				<header>
 					<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 					<?php if ( has_post_thumbnail() ) { ?>
