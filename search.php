@@ -32,7 +32,7 @@ get_header(); ?>
 						<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
 					</footer>
 				</article>
-			<?php } foundation_pagination();
+			<?php } blade_pagination();
 			} else {
 				echo "Sorry, no search results found.";
 			}

@@ -4,7 +4,7 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.3.19
+Version: 5.3.20
 
 ====================
 	LEGEND
@@ -45,7 +45,7 @@ STAIN #D4C098
 	TYPOGRAPHY
 ====================
 */
-body, ul, ol, li, p, a { font-size: 16px; }
+body, span, ul, ol, li, p, a { font-size: 16px; }
 ul { margin-left: 30px; }
 h1, h2, h3, h4, h5, h6 { margin:0 0 10px 0; }
 h1 {  }
@@ -153,6 +153,12 @@ h2 a {  }
 .categories {  }
 .tags {  }
 .tags span {  }
+/* Pagination */
+ul.page-numbers { margin: 0 0 20px 0; }
+ul.page-numbers li { display: inline-block; }
+ul.page-numbers li a.page-numbers { padding: 10px; background: #E2D5C1; }
+	ul.page-numbers li a.page-numbers:hover { background: #5F3711; color:#E2D5C1; }
+ul.page-numbers li span.current { padding: 10px; background: #5F3711; color:#E2D5C1; }
 /* Comments */
 h4.commentTitle {  }
 ol.commentList {  }

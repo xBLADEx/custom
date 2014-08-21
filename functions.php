@@ -56,29 +56,28 @@ if ( ! function_exists( 'foundation_assets' ) ) {
 	add_action( 'wp_enqueue_scripts', 'foundation_assets' );
 }
 // Create pagination
-if ( ! function_exists( 'foundation_pagination' ) ) {
-	function foundation_pagination() {
-	global $wp_query;
-	$big = 999999999;
-	$links = paginate_links( array( // http://codex.wordpress.org/Function_Reference/paginate_links
-		'base' 					=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format' 				=> '?paged=%#%',
-		'total' 				=> $wp_query->max_num_pages,
-		'current' 				=> max( 1, get_query_var( 'paged' ) ),
-		'show_all'  			=> False,
-		'end_size'  			=> 1,
-		'mid_size'  			=> 2,		
-		'prev_next' 			=> true,
-		'prev_text' 			=> '&laquo;',
-		'next_text' 			=> '&raquo;',
-		'type' 					=> 'list',
-		'add_args'     			=> False,
-		'add_fragment' 			=> '',
-		'before_page_number' 	=> '',
-		'after_page_number' 	=> ''
-	) );
-	$pagination = str_replace( 'page-numbers', 'pagination', $links );
-	echo $pagination;
+if ( ! function_exists( 'blade_pagination' ) ) {
+	function blade_pagination() {
+		global $custom_query;
+		$big = 999999999;
+		$pagArg = array( // http://codex.wordpress.org/Function_Reference/paginate_links
+			'base'         			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format'       			=> '?page=%#%',
+			'total'        			=> $custom_query->max_num_pages,
+			'current'      			=> max( 1, get_query_var('paged') ),
+			'show_all'     			=> False,
+			'end_size'     			=> 1,
+			'mid_size'     			=> 2,
+			'prev_next'    			=> True,
+			'prev_text'    			=> '&laquo; Previous',
+			'next_text'    			=> 'Next &raquo;',
+			'type'         			=> 'list',
+			'add_args'     			=> False,
+			'add_fragment' 			=> '',
+			'before_page_number' 	=> '',
+			'after_page_number' 	=> ''
+		);
+		echo paginate_links( $pagArg ); 
 	}
 }
 // Register Sidebars

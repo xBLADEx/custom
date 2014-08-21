@@ -27,7 +27,7 @@ get_header();
 				<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
 			</footer> 
 	    </article>
-		<?php } ?>  
+		<?php } blade_pagination(); ?>  
     <?php } else { ?>
 		<article>
 			<header>

@@ -9,35 +9,28 @@ get_header();
 <?php get_template_part( 'templates/page', 'header' ); ?>
 <div class="row pageContent">
     <div class="large-9 columns">
-    <?php $postsArray = get_posts( array( // http://codex.wordpress.org/Template_Tags/get_posts
-		'posts_per_page'   => 10,
-		'offset'           => 0,
-		'category'         => '',
-		'orderby'          => 'post_date',
-		'order'            => 'DESC',
-		'include'          => '',
-		'exclude'          => '',
-		'meta_key'         => '',
-		'meta_value'       => '',
-		'post_type'        => 'post',
-		'post_mime_type'   => '',
-		'post_parent'      => '',
-		'post_status'      => 'publish',
-		'suppress_filters' => true ) ); 
-	?>    
-	<?php foreach ( $postsArray as $post ){ 
-		setup_postdata( $post ); ?>
+    <?php
+    	$args = array(
+			'post_type' 		=> 'post',
+			'post_status'		=> 'publish',
+			'posts_per_page'	=> '10',
+			'orderby'			=> 'date',
+		); 
+	?>
+    <?php $custom_query = new WP_Query( $args ); // http://codex.wordpress.org/Class_Reference/WP_Query ?>
+    <?php if ( $custom_query->have_posts() ) { ?>	
+    	<?php while ( $custom_query->have_posts() ) { $custom_query->the_post(); ?>
 		<div class="postContainer">
-		    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
+		    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header>
 					<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 					<?php if ( has_post_thumbnail() ) { ?>
 						<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
 					<?php } ?>
 					<p class="date">Date: <?php the_time( get_option( 'date_format' ) ); ?></p>
-					<p class="categories">Categories: <?php the_category( ', ' ); ?></p>
+					<p class="categories">In: <?php the_category( ', ' ); ?></p>
 				</header>
-				<div>	
+				<div>
 					<?php the_excerpt(); ?>
 				</div> 
 				<footer>
@@ -45,6 +38,9 @@ get_header();
 				</footer>
 		    </article>
 	    </div>
+	    <?php } ?>
+	    <?php blade_pagination(); ?>
+	    <?php wp_reset_postdata(); ?>
     <?php } ?>
     </div>
 	<?php get_template_part( 'templates/page', 'sidebarRight' ); ?>
