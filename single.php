@@ -13,7 +13,7 @@ get_header();
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 					<?php get_template_part( 'templates/page', 'header' ); ?>
 					<?php if ( has_post_thumbnail() ) { ?>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail(); ?></a>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
 					<?php } ?>
 					<p class="date">Date: <?php the_time( get_option( 'date_format' ) ); ?></p>
 					<p class="categories">Categories: <?php the_category( ', ' ); ?></p>

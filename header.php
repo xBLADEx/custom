@@ -8,11 +8,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
 	<title><?php wp_title(); ?></title>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link rel="icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="<?php bloginfo( 'template_directory' ); ?>/images/favicon.ico" type="image/x-icon">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -25,7 +24,7 @@
 		<header class="headerBackground">
 			<div class="row">
 				<div class="medium-3 small-12 columns">
-					<a href="/" class="logo"><img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt=""></a>
+					<a href="/" class="logo"><img src="<?php bloginfo( 'template_directory' ); ?>/images/logo.png" alt=""></a>
 				</div>
 	            <div class="hide-for-small medium-9 columns">
 	            	<?php //get_template_part('templates/form', 'search'); ?>
