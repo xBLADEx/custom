@@ -8,7 +8,7 @@ get_header(); ?>
 <div class="row">
 	<div class="large-12 columns">
 		<header class="pageHeader" role="banner">
-			<h1><?php printf( __( 'Search Results for: %s', 'twentyfourteen' ), get_search_query() ); ?></h1>	
+			<h1><?php printf( 'Search Results for: %s', get_search_query() ); ?></h1>	
 		</header>
 	</div>
 </div>
