@@ -7,6 +7,14 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 		$('.mobileMenu').slideToggle('fast');
 	});
+	// Slick Slider
+	/*$('.home-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });*/
 	// IE 9 Placeholder Fix
 	$('[placeholder]').focus(function() {
 	  var input = $(this);
