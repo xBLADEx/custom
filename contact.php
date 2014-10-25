@@ -6,7 +6,7 @@
 */
 get_header(); 
 ?>
-<div class="row pageContent">
+<div class="row page-content">
     <div class="large-12 columns">
     	<?php get_template_part( 'templates/page', 'header' ); ?>
     	<div class="row">
@@ -27,5 +27,5 @@ get_header();
 			</div>
 		</div>
     </div>
-</div><?php //.row ?>
+</div>
 <?php get_footer(); ?>

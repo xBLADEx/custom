@@ -4,7 +4,7 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.3.24
+Version: 5.4.6.1
 
 ====================
 	LEGEND
@@ -27,9 +27,7 @@ STYLES
 PLUGINS
 MOBILE
 RESPONSIVE
-*/
 
-/* 
 ====================
 	COLORS
 ====================
@@ -38,9 +36,7 @@ COFFEE #E2D5C1
 BROWN #5F3711
 CREAM #F6F6E2
 STAIN #D4C098 
-*/
 
-/* 
 ====================
 	TYPOGRAPHY
 ====================
@@ -74,52 +70,52 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 .italic { font-style: italic; }
 .clear { clear:both; }
 .hidden { display: none !important; } 
-.marginCenter { display: block; margin: auto; }
-.imgFrame { padding: 6px; background: #FFF; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
-.noMargin { margin:0 !important; }
-.noPadding { padding:0 !important; }
-.noPaddingLeft { padding-left:0 !important; }
-.noPaddingRight { padding-right:0 !important; }
+.margin-center { display: block; margin: auto; }
+.margin-none { margin:0 !important; }
+.padding-none { padding:0 !important; }
+.padding-left-none { padding-left:0 !important; }
+.padding-right-none { padding-right:0 !important; }
+.img-frame { padding: 6px; background: #FFF; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
 /* 
 ====================
 	BASIC STRUCTURE
 ====================
 */
-#websiteContainer { min-height: 100%; height: auto !important; height: 100%; margin:0 auto -200px; }
+#website-container { min-height: 100%; height: auto !important; height: 100%; margin:0 auto -200px; }
 /* 
 ====================
 	HEADER
 ====================
 */
 .logo { /* display: block; background:url('./images/logo.png') no-repeat; width:; height:; */ }
-.headerBackground { width:100%; background:#FFF; position: relative; z-index: 100; border-bottom: 1px solid #E2D5C1; }
+.header-background { width:100%; background:#FFF; position: relative; z-index: 100; border-bottom: 1px solid #E2D5C1; }
 /* 
 ====================
 	NAVIGATION
 ====================
 */
-.mainNav { position: relative; z-index: 99; }
-.mainNav ul.navbar { margin: 0px; padding: 0px; }
-.mainNav ul.navbar li { list-style: none; margin: 0px; padding: 0px; }
-.mainNav ul.navbar > li { position: relative; float: left; }
-.mainNav ul.navbar > li > a { display: block; padding: 0 25px; font-size: 16px; font-family: inherit; color: #222; }
-.mainNav ul.navbar > li:hover { background: #222; }
-	.mainNav ul.navbar > li:hover a { color: #FFF; }
-	.mainNav ul.navbar > li:hover.has-drop > a:first-child:after { border-color:#FFF transparent transparent transparent; }
+.main-nav { position: relative; z-index: 99; }
+.main-nav ul.navbar { margin: 0px; padding: 0px; }
+.main-nav ul.navbar li { list-style: none; margin: 0px; padding: 0px; }
+.main-nav ul.navbar > li { position: relative; float: left; }
+.main-nav ul.navbar > li > a { display: block; padding: 0 25px; font-size: 16px; font-family: inherit; color: #222; }
+.main-nav ul.navbar > li:hover { background: #222; }
+	.main-nav ul.navbar > li:hover a { color: #FFF; }
+	.main-nav ul.navbar > li:hover.has-drop > a:first-child:after { border-color:#FFF transparent transparent transparent; }
 /* Dropdown Link */
-.mainNav ul.navbar > li.has-drop > a:first-child { position: relative; padding-right: 40px; }
-.mainNav ul.navbar > li.has-drop > a:first-child:after { content: ""; display: block; width: 0; height: 0; border: 4px solid; border-color: #222 transparent transparent transparent; position: absolute; right: 10px; top: 10px; }
+.main-nav ul.navbar > li.has-drop > a:first-child { position: relative; padding-right: 40px; }
+.main-nav ul.navbar > li.has-drop > a:first-child:after { content: ""; display: block; width: 0; height: 0; border: 4px solid; border-color: #222 transparent transparent transparent; position: absolute; right: 10px; top: 10px; }
 /* Sub Nav */
-.mainNav ul.navbar > li ul.navdrop { display: none; }
-.mainNav ul.navbar > li:hover ul.navdrop { display: block; }
-.mainNav ul.navbar > li ul.navdrop { margin: 0; width: 100%; position: absolute; left: 0px; z-index: 98; }
-.mainNav ul.navbar > li ul.navdrop li { background: #222; }
-.mainNav ul.navbar > li ul.navdrop li a { display: block; padding: 15px 20px; font-size: 12px; color:#FFF; white-space: nowrap; }
-	.mainNav ul.navbar > li ul.navdrop li:hover { background:#FFF; }
-	.mainNav ul.navbar > li ul.navdrop li:hover a { color:#222; }
+.main-nav ul.navbar > li ul.navdrop { display: none; }
+.main-nav ul.navbar > li:hover ul.navdrop { display: block; }
+.main-nav ul.navbar > li ul.navdrop { margin: 0; width: 100%; position: absolute; left: 0px; z-index: 98; }
+.main-nav ul.navbar > li ul.navdrop li { background: #222; }
+.main-nav ul.navbar > li ul.navdrop li a { display: block; padding: 15px 20px; font-size: 12px; color:#FFF; white-space: nowrap; }
+	.main-nav ul.navbar > li ul.navdrop li:hover { background:#FFF; }
+	.main-nav ul.navbar > li ul.navdrop li:hover a { color:#222; }
 /* Current Page Link */ 
-.mainNav ul.navbar > li.current-menu-item { background: #222; }
-.mainNav ul.navbar > li.current-menu-item > a { color: #FFF; }
+.main-nav ul.navbar > li.current-menu-item { background: #222; }
+.main-nav ul.navbar > li.current-menu-item > a { color: #FFF; }
 /* 
 ====================
 	HOME PAGE
@@ -130,8 +126,8 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 	PAGE
 ====================
 */
-.pageContent { min-height: 500px; background: rgba(255,255,255,0.8); }
-.pageHeader h1 {  }
+.page-content { min-height: 500px; background: rgba(255,255,255,0.8); }
+.page-header h1 {  }
 /* 
 ====================
 	FOOTER
@@ -145,10 +141,10 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
   BLOG
 ====================
 */
-#searchsubmit { padding:10px 20px; border:0; color:; text-align: center; background: transparent; }
-  #searchsubmit:hover { background:; color:; }
+#searchsubmit { padding:10px 20px; border:0; /* color:; */ text-align: center; background: transparent; }
+#searchsubmit:hover { /* background:; */ /* color:; */  }
 h2 a {  }
-.postContainer {  }
+.post-container {  }
 .date {  }
 .categories {  }
 .tags {  }
@@ -160,12 +156,12 @@ ul.page-numbers li a.page-numbers { padding: 10px; background: #E2D5C1; }
 	ul.page-numbers li a.page-numbers:hover { background: #5F3711; color:#E2D5C1; }
 ul.page-numbers li span.current { padding: 10px; background: #5F3711; color:#E2D5C1; }
 /* Comments */
-h4.commentTitle {  }
-ol.commentList {  }
+h4.comment-title {  }
+ol.comment-list {  }
 .comment {  }
-.commentGravatar {  }
+.comment-gravatar {  }
+.comment-form {  }
 .reply {  }
-.commentForm {  }
 #commentform #submit {  }
 /* 
 ====================
@@ -174,7 +170,7 @@ ol.commentList {  }
 */ 
 #sidebar-right {  }
 #sidebar-left {  }
-.sidebarWidget {  }
+.sidebar-widget {  }
 /* 
 ====================
 	WORDPRESS
@@ -184,10 +180,10 @@ ol.commentList {  }
 .alignright { float:right; margin: 0 0 20px 20px; }
 .aligncenter { margin:20px auto; display: block; text-align:center; }
 /* WordPress Search */
-#formSearch { float:right; width:260px; margin: 20px 0; }
-	#formSearchBox { width:auto; margin: 0; float:right; }
-	#formSearchButton { border:0; outline:0; float:right; padding: 9px 20px; background:; color:; }
-		#formSearchButton:hover { background:; color:; }
+#form-search { float:right; width:260px; margin: 20px 0; }
+#form-search-box { width:auto; margin: 0; float:right; }
+#form-search-button { border:0; outline:0; float:right; padding: 9px 20px; /* background:; */ /* color:; */  }
+#form-search-button:hover { /* background:; */ /* color:; */ }
 /*
 ====================
 	FOUNDATION
@@ -214,7 +210,7 @@ button:hover, .button:hover { background: #2285a2; color: #FFF; }
 	MOBILE
 ====================
 */
-.mobileMenu, .mobileBackground { display: none; }
+.mobile-menu, .mobile-background { display: none; }
 /* 
 ====================
   RESPONSIVE
@@ -226,21 +222,21 @@ button:hover, .button:hover { background: #2285a2; color: #FFF; }
 }
 /* iPad @media only screen and (min-width: 768px) and (max-width: 1024px) {} */
 @media only screen and (max-width: 1024px) { 
-	.mobileBackground { display: block; position: fixed; z-index: 999; background:#D4C098; padding:10px 0; width:100%; }
-	.mobileMenu { padding-top:62px; background:#5F3711; width:100%; position: fixed; z-index: 101; }
-		.mobileMenu .mainNav ul.navbar > li { position: relative; float: none; border-top:1px solid #F6F6E2; }
-		.mobileMenu .mainNav ul.navbar > li > a { display: block; padding: 10px 25px; font-size: 16px; font-family: inherit; color: #F6F6E2; }
+	.mobile-background { display: block; position: fixed; z-index: 999; background:#D4C098; padding:10px 0; width:100%; }
+	.mobile-menu { padding-top:62px; background:#5F3711; width:100%; position: fixed; z-index: 101; }
+		.mobile-menu .main-nav ul.navbar > li { position: relative; float: none; border-top:1px solid #F6F6E2; }
+		.mobile-menu .main-nav ul.navbar > li > a { display: block; padding: 10px 25px; font-size: 16px; font-family: inherit; color: #F6F6E2; }
 		/* Mobile Sub Nav */
-		.mobileMenu .mainNav ul.navbar > li ul.navdrop { margin: 0; width: 100%; position: relative; left: 0px; z-index: 98; }
-		.mainNav ul.navbar > li ul.navdrop li:hover { background: #D4C098; }
-		.mainNav ul.navbar > li ul.navdrop li a { display: block; padding: 15px 20px 15px 40px; font-size: 14px; color: #FFF; white-space: nowrap; }
-		.mainNav ul.navbar > li.has-drop > a:first-child:after { display: none; }
-	p.mobileIdentity { float: left; margin:0 0 0 10px; color:#5F3711; text-transform: uppercase; line-height: 40px; }
-	a.menuIcon { padding: 4px; font:bold 10px 'Arial'; text-transform: uppercase; color: #F6F6E2; border: 1px solid #F6F6E2; display: block; width: 40px; float:right; margin-right: 10px; }
-	a.menuIcon span { background: #F6F6E2; width: 30px; height: 4px; display: block; margin-bottom: 3px; }
-	a.menuIcon:hover { color: #5F3711; border: 1px solid #5F3711; }
-	a.menuIcon:hover span { background: #5F3711; }
-	.headerBackground { padding-top:62px; }
+		.mobile-menu .main-nav ul.navbar > li ul.navdrop { margin: 0; width: 100%; position: relative; left: 0px; z-index: 98; }
+		.main-nav ul.navbar > li ul.navdrop li:hover { background: #D4C098; }
+		.main-nav ul.navbar > li ul.navdrop li a { display: block; padding: 15px 20px 15px 40px; font-size: 14px; color: #FFF; white-space: nowrap; }
+		.main-nav ul.navbar > li.has-drop > a:first-child:after { display: none; }
+	p.mobile-identity { float: left; margin:0 0 0 10px; color:#5F3711; text-transform: uppercase; line-height: 40px; }
+	a.menu-icon { padding: 4px; font:bold 10px 'Arial'; text-transform: uppercase; color: #F6F6E2; border: 1px solid #F6F6E2; display: block; width: 40px; float:right; margin-right: 10px; }
+	a.menu-icon span { background: #F6F6E2; width: 30px; height: 4px; display: block; margin-bottom: 3px; }
+	a.menu-icon:hover { color: #5F3711; border: 1px solid #5F3711; }
+	a.menu-icon:hover span { background: #5F3711; }
+	.header-background { padding-top:62px; }
 	a.logo img { display: block; margin: 10px auto; }
 }
 /* iPhone @media only screen and (min-width:320px) and (max-width:568px) {} */

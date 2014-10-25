@@ -6,7 +6,7 @@
 */
 get_header(); 
 ?>
-<div class="row">
+<div class="row page-content">
     <div class="large-12 columns">
 		<?php if ( have_posts() ) { ?>
 			<?php while ( have_posts() ) { the_post(); ?>

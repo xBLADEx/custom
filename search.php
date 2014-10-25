@@ -7,12 +7,12 @@
 get_header(); ?>
 <div class="row">
 	<div class="large-12 columns">
-		<header class="pageHeader" role="banner">
+		<header class="page-header" role="banner">
 			<h1><?php printf( 'Search Results for: %s', get_search_query() ); ?></h1>	
 		</header>
 	</div>
 </div>
-<div class="row pageContent">
+<div class="row page-content">
 	<div class="large-9 columns">
 		<?php if ( have_posts() ) { 
 				while ( have_posts() ) { the_post(); ?>
@@ -39,5 +39,5 @@ get_header(); ?>
 		?>
 	</div>
 	<?php get_template_part( 'templates/page', 'sidebarRight' ); ?>
-</div><?php //.row ?>
+</div>
 <?php get_footer(); ?>

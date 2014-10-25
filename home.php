@@ -14,7 +14,7 @@ get_header();
 	<div><img src="<?php echo get_template_directory_uri(); ?>/images/slides/2.jpg" alt=""></div>
 </div>*/
 ?>
-<div class="row">
+<div class="row page-content">
     <div class="large-12 columns">
 		<?php if ( have_posts() ) { ?>
 			<?php while ( have_posts() ) { the_post(); ?>
@@ -22,5 +22,5 @@ get_header();
 			<?php } ?>			
 		<?php } ?>
     </div>
-</div><?php //.row ?>
+</div>
 <?php get_footer(); ?>

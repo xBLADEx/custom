@@ -6,8 +6,8 @@
 */
 ?>
 <div class="clearfix">
-	<form action="/" id="formSearch" method="GET">
-		<input id="formSearchButton" name="submit" type="submit" value="Find">
-		<input id="formSearchBox" name="s" placeholder="Search" type="text">
+	<form action="/" id="form-search" method="GET">
+		<input id="form-search-button" name="submit" type="submit" value="Find">
+		<input id="form-search-box" name="s" placeholder="Search" type="text">
 	</form>
 </div>

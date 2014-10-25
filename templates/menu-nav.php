@@ -7,7 +7,7 @@
 ?>
 <?php // http://codex.wordpress.org/Function_Reference/wp_nav_menu
 wp_nav_menu( array(
-	'theme_location'	=> 'mainNav',
+	'theme_location'	=> 'main_nav',
 	'menu'				=> '',
 	'container'       	=> false,
 	'container_class' 	=> '',

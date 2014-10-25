@@ -7,7 +7,7 @@
 get_header(); 
 ?>
 <?php get_template_part( 'templates/page', 'header' ); ?>
-<div class="row pageContent">
+<div class="row page-content">
     <div class="large-9 columns">
     <?php if ( have_posts() ) { ?>
     	<?php while ( have_posts() ) { the_post(); ?>    

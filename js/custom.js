@@ -1,11 +1,11 @@
 jQuery(document).ready(function($){
 	// Create Mobile Menu
-	var mobileMenu = $('.mainNav').clone();
-	mobileMenu.appendTo('.mobileMenu');
+	var mobileMenu = $('.main-nav').clone();
+	mobileMenu.appendTo('.mobile-menu');
 	// Toggle Moblie Menu
-	$('a.menuIcon').on('click', function(e) {
+	$('a.menu-icon').on('click', function(e) {
 		e.preventDefault();
-		$('.mobileMenu').slideToggle('fast');
+		$('.mobile-menu').slideToggle('fast');
 	});
 	// Slick Slider
 	/*$('.home-slider').slick({

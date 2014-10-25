@@ -39,17 +39,17 @@ if ( ! function_exists( 'foundation_assets' ) ) {
 		if ( ! is_admin() ) { 
 			// http://codex.wordpress.org/Function_Reference/wp_enqueue_style
 			// wp_enqueue_style( $handle, $src, $deps, $ver, $media );
-			wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300,400' );
+			// wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300,400', array(), '1.0' );
 			wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/normalize.css', array(), '3.0.1' );
-			wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation.css', array(), '5.3.0' );
+			wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation.css', array(), '5.4.6' );
 			wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css', array(), '1.0' );
-			wp_enqueue_style( 'custom', get_stylesheet_uri(), array(), '5.3.5' );
+			wp_enqueue_style( 'custom', get_stylesheet_uri(), array(), '5.4.6' );
 			// http://codex.wordpress.org/Function_Reference/wp_enqueue_script
 			// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
 			wp_deregister_script( 'jquery' );
 			wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), '2.1.1', true );
-			wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array(), '5.3.0', true );
-			wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.2', true );
+			wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array(), '5.4.6', true );
+			wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', true );
 			wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array(), '1.3.6', true );
 			wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array(), '1.0', true);
 		}
@@ -109,7 +109,7 @@ if ( ! function_exists( 'foundation_widgets' ) ) {
 			'id' 			=> 'sidebar-right',
 			'description' 	=> '',
 			'class'			=> '',
-			'before_widget' => '<div class="sidebarWidget">',
+			'before_widget' => '<div class="sidebar-widget">',
 			'after_widget' 	=> '</div>',
 			'before_title' 	=> '<h5>',
 			'after_title' 	=> '</h5>'
@@ -120,7 +120,7 @@ if ( ! function_exists( 'foundation_widgets' ) ) {
 			'id' 			=> 'sidebar-left',
 			'description' 	=> '',
 			'class'			=> '',
-			'before_widget' => '<div class="sidebarWidget">',
+			'before_widget' => '<div class="sidebar-widget">',
 			'after_widget' 	=> '</div>',
 			'before_title' 	=> '<h5>',
 			'after_title' 	=> '</h5>'
@@ -171,7 +171,7 @@ if ( ! function_exists( 'foundation_comment' ) ) {
 			<article id="comment-<?php comment_ID(); ?>" class="comment">
 				<header>
 					<?php
-						echo "<span class='commentGravatar'>";
+						echo "<span class='comment-gravatar'>";
 						echo get_avatar( $comment, 44 );
 						echo "</span>";
 						printf( '%2$s %1$s',
@@ -228,7 +228,7 @@ function foundation_title( $title, $sep ) {
 add_filter( 'wp_title', 'foundation_title', 10, 2 );
 // Register wp_nav_menu()
 register_nav_menus( array( // http://codex.wordpress.org/Function_Reference/register_nav_menus
-    'mainNav' 		=> 'Main Navigation',
+    'main_nav' 		=> 'Main Navigation',
     'secondaryNav' 	=> 'Secondary Navigation'
 ));
 // Navigation Walker
@@ -390,7 +390,7 @@ add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
 function my_login_logo() { // http://codex.wordpress.org/Customizing_the_Login_Form ?>
     <style>
         body.login div#login h1 a {
-            background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/loginLogo.jpg');
+            background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/login-logo.jpg');
             padding-bottom: 30px;
         }
     </style>

@@ -6,7 +6,7 @@
 */
 get_header(); 
 ?>
-<div class="row pageContent">
+<div class="row page-content">
     <?php get_template_part( 'templates/page', 'sidebarLeft' ); ?>	
     <div class="large-9 columns">
 		<?php if ( have_posts() ) { ?>
@@ -21,5 +21,5 @@ get_header();
 			<?php } ?>			
 		<?php } ?>
     </div>
-</div><?php //.row ?>
+</div>
 <?php get_footer(); ?>

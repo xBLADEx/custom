@@ -8,13 +8,13 @@
 if ( post_password_required() ) { return; }
 ?>
 <?php if ( have_comments() ) { ?>
-	<h4 class="commentTitle">
+	<h4 class="comment-title">
 		<?php
 			printf( _n( '1 reply to &ldquo;%2$s&rdquo;', '%1$s replies to &ldquo;%2$s&rdquo;', get_comments_number(), 'foundation' ),
 				number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 		?>
 	</h4>
-	<ol class="commentList">
+	<ol class="comment-list">
 		<?php wp_list_comments( array( // http://codex.wordpress.org/Function_Reference/wp_list_comments
 			'callback' => 'foundation_comment', 
 			'style' => 'ol' 
@@ -36,7 +36,7 @@ if ( post_password_required() ) { return; }
 	<?php } ?>
 <?php } // have_comments() ?>
 <?php if ( comments_open() ) { ?>
-	<div class="panel commentForm">
+	<div class="panel comment-form">
 		<?php comment_form(); // http://codex.wordpress.org/Function_Reference/comment_form ?>
 	</div>
 <?php } ?>
