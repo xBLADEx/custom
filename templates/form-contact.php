@@ -10,7 +10,7 @@ if ( isset( $_POST['submit'] ) ) {
 	// Define emails, website, and domain.
 	define( 'EMAIL',	'rich@sorensonadvertising.com' );
 	define( 'WEBSITE',	get_bloginfo( 'name' ) );
-	define( 'DOMAIN',	$_SERVER['HTTP_HOST'] );
+	define( 'DOMAIN',	str_replace( "www.", "", $_SERVER['HTTP_HOST'] ) );
 	// If trap value is set redirect to home page.
 	if ( $_POST['mainAddress'] != '' ) {
 		echo '<html><head><meta http-equiv="refresh" content="0; url=/"></head><body></body></html>';
@@ -64,7 +64,7 @@ if ( isset( $_POST['submit'] ) ) {
 	$message = wordwrap( $message, 70 );
 	// If no errors - send. Else - alert.
 	if ( $field_errors ) {
-		mail( $to, $subject, $message, $headers );
+		wp_mail( $to, $subject, $message, $headers );
 		echo '<p class="alert-box success">Thank you for contacting us!</p>';
 	} else {
 		echo '<p class="alert-box alert">Please fill out the required fields.</p>';
