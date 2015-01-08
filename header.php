@@ -16,17 +16,13 @@
 </head>
 <body <?php body_class(); ?>>
 	<main id="website-container" role="main">
-		<div class="mobile-background">
-			<p class="mobile-identity"><?php bloginfo( 'name' ); ?></p>
-			<a class="menu-icon" href="#"><span></span><span></span><span></span>Menu</a>
-		</div>
-		<div class="mobile-menu"></div>
+		<a href="#" class="menu-icon"><span>Menu</span></a>
 		<header class="header-background">
 			<div class="row">
 				<div class="small-12 medium-3 columns">
 					<a href="/" class="logo"><img src="<?php bloginfo( 'template_directory' ); ?>/images/logo.png" alt=""></a>
 				</div>
-	            <div class="hide-for-small medium-9 columns">
+	            <div class="medium-9 columns">
 	            	<?php //get_template_part('templates/form', 'search'); ?>
 	                <nav class="main-nav" role="navigation">
 	                    <?php get_template_part( 'templates/menu', 'nav' ); ?>

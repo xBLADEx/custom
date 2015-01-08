@@ -4,7 +4,7 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.4.6.2
+Version: 5.4.6.3
 
 ====================
 	LEGEND
@@ -31,11 +31,8 @@ RESPONSIVE
 ====================
 	COLORS
 ====================
-FRENCH #F7F6E4
-COFFEE #E2D5C1
-BROWN #5F3711
-CREAM #F6F6E2
-STAIN #D4C098 
+WHITE 	#FFFFFF
+BLACK	#000000
 
 ====================
 	TYPOGRAPHY
@@ -59,7 +56,7 @@ a:hover, a:active { outline: 0; }
 	HTML ELEMENTS
 ====================
 */
-body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
+body { background:#000; color: #222222; }
 /* 
 ====================
 	CUSTOM CLASSES
@@ -68,6 +65,7 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 .center { text-align: center; }
 .bold { font-weight: bold; }
 .italic { font-style: italic; }
+.small { font-size: 10px; }
 .clear { clear:both; }
 .hidden { display: none !important; } 
 .margin-center { display: block; margin: auto; }
@@ -76,6 +74,7 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 .padding-left-none { padding-left:0 !important; }
 .padding-right-none { padding-right:0 !important; }
 .img-frame { padding: 6px; background: #FFF; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
+.iframe { width:100%; min-height: 600px; border:0; }
 /* 
 ====================
 	BASIC STRUCTURE
@@ -87,8 +86,8 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 	HEADER
 ====================
 */
-.logo { /* display: block; background:url('./images/logo.png') no-repeat; width:; height:; */ }
-.header-background { width:100%; background:#FFF; position: relative; z-index: 100; border-bottom: 1px solid #E2D5C1; }
+.logo {  }
+.header-background { width:100%; background:#FFF; position: relative; z-index: 100; }
 /* 
 ====================
 	NAVIGATION
@@ -134,7 +133,7 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 ====================
 */
 .push { padding: 100px 0; }
-.footer { position: relative; width:100%; background:#E2D5C1; }
+.footer { position: relative; width:100%; background:#FFF; }
 .footer p.copyright { text-align: center; margin:0; font-size: 14px; }
 /* 
 ====================
@@ -142,7 +141,7 @@ body { background:#F7F6E4; color: #222222; /* background-size: cover; */ }
 ====================
 */
 #searchsubmit { padding:10px 20px; border:0; /* color:; */ text-align: center; background: transparent; }
-#searchsubmit:hover { /* background:; */ /* color:; */  }
+#searchsubmit:hover { /* background:; color:; */  }
 h2 a {  }
 .post-container {  }
 .date {  }
@@ -153,7 +152,7 @@ h2 a {  }
 ul.page-numbers { margin: 0 0 20px 0; }
 ul.page-numbers li { display: inline-block; }
 ul.page-numbers li a.page-numbers { padding: 10px; background: #E2D5C1; }
-	ul.page-numbers li a.page-numbers:hover { background: #5F3711; color:#E2D5C1; }
+ul.page-numbers li a.page-numbers:hover { background: #5F3711; color:#E2D5C1; }
 ul.page-numbers li span.current { padding: 10px; background: #5F3711; color:#E2D5C1; }
 /* Comments */
 h4.comment-title {  }
@@ -182,8 +181,8 @@ ol.comment-list {  }
 /* WordPress Search */
 #form-search { float:right; width:260px; margin: 20px 0; }
 #form-search-box { width:auto; margin: 0; float:right; }
-#form-search-button { border:0; outline:0; float:right; padding: 9px 20px; /* background:; */ /* color:; */  }
-#form-search-button:hover { /* background:; */ /* color:; */ }
+#form-search-button { border:0; outline:0; float:right; padding: 9px 20px; /* background:; color:; */  }
+#form-search-button:hover { /* background:; color:; */ }
 /*
 ====================
 	FOUNDATION
@@ -210,7 +209,11 @@ button:hover, .button:hover { background: #2285a2; color: #FFF; }
 	MOBILE
 ====================
 */
-.mobile-menu, .mobile-background { display: none; }
+.menu-icon { display: none; position: absolute; top: 20px; left: 20px; z-index: 999; width: 40px; height: 50px; cursor: pointer; }
+.menu-icon span { position: absolute; top: 50%; left: 0; display: block; width: 100%; height: 8%; background-color: #000; font-size: 0px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.menu-icon span:before, .menu-icon span:after { content: ""; position: absolute; left: 0; width: 100%; height: 100%; background: #000; }
+.menu-icon span:before { -webkit-transform: translateY(-250%); transform: translateY(-250%); }
+.menu-icon span:after { -webkit-transform: translateY(250%); transform: translateY(250%); }
 /* 
 ====================
   RESPONSIVE
@@ -218,28 +221,15 @@ button:hover, .button:hover { background: #2285a2; color: #FFF; }
 */
 /* Custom @media only screen and (max-width:1280px) {} */
 @media only screen and (max-width:1280px) {
-  
+	
 }
 /* iPad @media only screen and (min-width: 768px) and (max-width: 1024px) {} */
 @media only screen and (max-width: 1024px) { 
-	.mobile-background { display: block; position: fixed; z-index: 999; background:#D4C098; padding:10px 0; width:100%; }
-	.mobile-menu { padding-top:62px; background:#5F3711; width:100%; position: fixed; z-index: 101; }
-		.mobile-menu .main-nav ul.navbar > li { position: relative; float: none; border-top:1px solid #F6F6E2; }
-		.mobile-menu .main-nav ul.navbar > li > a { display: block; padding: 10px 25px; font-size: 16px; font-family: inherit; color: #F6F6E2; }
-		/* Mobile Sub Nav */
-		.mobile-menu .main-nav ul.navbar > li ul.navdrop { margin: 0; width: 100%; position: relative; left: 0px; z-index: 98; }
-		.main-nav ul.navbar > li ul.navdrop li:hover { background: #D4C098; }
-		.main-nav ul.navbar > li ul.navdrop li a { display: block; padding: 15px 20px 15px 40px; font-size: 14px; color: #FFF; white-space: nowrap; }
-		.main-nav ul.navbar > li.has-drop > a:first-child:after { display: none; }
-	p.mobile-identity { float: left; margin:0 0 0 10px; color:#5F3711; text-transform: uppercase; line-height: 40px; }
-	a.menu-icon { padding: 4px; font:bold 10px 'Arial'; text-transform: uppercase; color: #F6F6E2; border: 1px solid #F6F6E2; display: block; width: 40px; float:right; margin-right: 10px; }
-	a.menu-icon span { background: #F6F6E2; width: 30px; height: 4px; display: block; margin-bottom: 3px; }
-	a.menu-icon:hover { color: #5F3711; border: 1px solid #5F3711; }
-	a.menu-icon:hover span { background: #5F3711; }
-	.header-background { padding-top:62px; }
-	a.logo img { display: block; margin: 10px auto; }
+	.menu-icon { display: block; }
+	.main-nav { display: none; }
+	.main-nav ul.navbar > li { position: relative; float: none; border-top: 1px solid #000; }
 }
 /* iPhone @media only screen and (min-width:320px) and (max-width:568px) {} */
 @media only screen and (max-width:568px) { 
-  
+	
 }

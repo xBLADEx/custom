@@ -1,20 +1,19 @@
 jQuery(document).ready(function($){
-	// Create Mobile Menu
-	var mobileMenu = $('.main-nav').clone();
-	mobileMenu.appendTo('.mobile-menu');
-	// Toggle Moblie Menu
-	$('a.menu-icon').on('click', function(e) {
+	// Mobile Menu
+	$('.menu-icon').on('click', function(e){
 		e.preventDefault();
-		$('.mobile-menu').slideToggle('fast');
+		$('.main-nav').slideToggle();
 	});
 	// Slick Slider
-	/*$('.home-slider').slick({
+	$('.home-slider').slick({
         dots: true,
         infinite: true,
-        speed: 300,
+        autoplay: false,
+        speed: 2000,
+        autoplaySpeed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1
-    });*/
+    });
 	// IE 9 Placeholder Fix
 	$('[placeholder]').focus(function() {
 	  var input = $(this);
