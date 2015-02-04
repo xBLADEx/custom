@@ -4,16 +4,15 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.4.6.5
+Version: 5.5.1.0
 
 ====================
 	LEGEND
 ====================
 COLORS
 TYPOGRAPHY
-HTML ELEMENTS
 CUSTOM CLASSES
-BASIC STRUCTURE
+MAIN HTML
 HEADER
 NAVIGATION
 HOME PAGE
@@ -44,19 +43,13 @@ h1, h2, h3, h4, h5, h6 { margin:0 0 10px 0; }
 h1 {  }
 h2 {  }
 h3 {  }
-a, input { /* -webkit-transition: all 0.6s ease 0.1s; transition: all 0.6s ease 0.1s; */ }
-a { color:#373737; text-decoration: none; }
+a { color:red; text-decoration: none; outline: 0; }
+a:hover { color:green; }
 a:hover, a:visited:hover, a:focus, a:visited:focus {  }
-a:hover, a:active { outline: 0; }
+a:active {  }
 ::-webkit-input-placeholder { color: #999; }
 :-moz-placeholder { color: #999; }
 ::-moz-placeholder { color: #999; }
-/* 
-====================
-	HTML ELEMENTS
-====================
-*/
-body { background:#000; color: #222222; }
 /* 
 ====================
 	CUSTOM CLASSES
@@ -77,10 +70,17 @@ body { background:#000; color: #222222; }
 .iframe { width:100%; min-height: 600px; border:0; }
 /* 
 ====================
-	BASIC STRUCTURE
+	MAIN HTML
 ====================
 */
+body { background:#000; color: #222222; }
 #website-container { min-height: 100%; height: auto !important; height: 100%; margin:0 auto -200px; }
+button, .button { 
+	background: #000; color: #FFF; margin: 0; padding: 10px 15px;
+	position: relative; display: inline-block; border:0px; cursor: pointer;
+	font-family: inherit; font-size: 16px; text-decoration: none; text-align: center; -webkit-appearance: none;
+}
+button:hover, .button:hover { background: #FFF; color: #000; }
 /* 
 ====================
 	HEADER
@@ -99,8 +99,8 @@ body { background:#000; color: #222222; }
 .main-nav ul.navbar > li { position: relative; float: left; }
 .main-nav ul.navbar > li > a { display: block; padding: 0 25px; font-size: 16px; font-family: inherit; color: #222; }
 .main-nav ul.navbar > li:hover { background: #222; }
-	.main-nav ul.navbar > li:hover a { color: #FFF; }
-	.main-nav ul.navbar > li:hover.has-drop > a:first-child:after { border-color:#FFF transparent transparent transparent; }
+.main-nav ul.navbar > li:hover a { color: #FFF; }
+.main-nav ul.navbar > li:hover.has-drop > a:first-child:after { border-color:#FFF transparent transparent transparent; }
 /* Dropdown Link */
 .main-nav ul.navbar > li.has-drop > a:first-child { position: relative; padding-right: 40px; }
 .main-nav ul.navbar > li.has-drop > a:first-child:after { content: ""; display: block; width: 0; height: 0; border: 4px solid; border-color: #222 transparent transparent transparent; position: absolute; right: 10px; top: 10px; }
@@ -110,8 +110,8 @@ body { background:#000; color: #222222; }
 .main-nav ul.navbar > li ul.navdrop { margin: 0; width: 100%; position: absolute; left: 0px; z-index: 98; }
 .main-nav ul.navbar > li ul.navdrop li { background: #222; }
 .main-nav ul.navbar > li ul.navdrop li a { display: block; padding: 15px 20px; font-size: 12px; color:#FFF; white-space: nowrap; }
-	.main-nav ul.navbar > li ul.navdrop li:hover { background:#FFF; }
-	.main-nav ul.navbar > li ul.navdrop li:hover a { color:#222; }
+.main-nav ul.navbar > li ul.navdrop li:hover { background:#FFF; }
+.main-nav ul.navbar > li ul.navdrop li:hover a { color:#222; }
 /* Current Page Link */ 
 .main-nav ul.navbar > li.current-menu-item { background: #222; }
 .main-nav ul.navbar > li.current-menu-item > a { color: #FFF; }
@@ -140,8 +140,8 @@ body { background:#000; color: #222222; }
   BLOG
 ====================
 */
-#searchsubmit { padding:10px 20px; border:0; /* color:; */ text-align: center; background: transparent; }
-#searchsubmit:hover { /* background:; color:; */  }
+#searchsubmit { padding:10px 20px; border:0; background: #000; color:#FFF; text-align: center;  }
+#searchsubmit:hover { background:#FFF; color:#000; }
 h2 a {  }
 .post-container {  }
 .date {  }
@@ -181,8 +181,8 @@ ol.comment-list {  }
 /* WordPress Search */
 #form-search { float:right; width:260px; margin: 20px 0; }
 #form-search-box { width:auto; margin: 0; float:right; }
-#form-search-button { border:0; outline:0; float:right; padding: 9px 20px; /* background:; color:; */  }
-#form-search-button:hover { /* background:; color:; */ }
+#form-search-button { border:0; outline:0; float:right; padding: 9px 20px; background:#000; color:#FFF; }
+#form-search-button:hover { background:#FFF; color:#000; }
 /*
 ====================
 	FOUNDATION
@@ -193,12 +193,6 @@ ol.comment-list {  }
 	STYLES
 ====================
 */
-button, .button { 
-	background: #2ba6cb; color: #FFF; margin: 0; padding: 10px 15px;
-	position: relative; display: inline-block; border:0px; cursor: pointer;
-	font-family: inherit; font-size: 16px; text-decoration: none; text-align: center; -webkit-appearance: none;
-}
-button:hover, .button:hover { background: #2285a2; color: #FFF; }
 /* 
 ====================
 	PLUGINS
@@ -210,7 +204,7 @@ button:hover, .button:hover { background: #2285a2; color: #FFF; }
 ====================
 */
 .menu-icon { display: none; position: absolute; top: 20px; left: 20px; z-index: 999; width: 40px; height: 50px; cursor: pointer; }
-.menu-icon span { position: absolute; top: 50%; left: 0; display: block; width: 100%; height: 8%; background-color: #000; font-size: 0px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.menu-icon span { position: absolute; top: 50%; left: 0; display: block; width: 100%; height: 8%; background-color: #000; font-size: 0px; }
 .menu-icon span:before, .menu-icon span:after { content: ""; position: absolute; left: 0; width: 100%; height: 100%; background: #000; }
 .menu-icon span:before { -webkit-transform: translateY(-250%); transform: translateY(-250%); }
 .menu-icon span:after { -webkit-transform: translateY(250%); transform: translateY(250%); }

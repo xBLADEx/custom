@@ -41,16 +41,16 @@ if ( ! function_exists( 'foundation_assets' ) ) {
 			// wp_enqueue_style( $handle, $src, $deps, $ver, $media );
 			// wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300,400', array(), '1.0' );
 			wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/normalize.css', array(), '3.0.1' );
-			wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation.css', array(), '5.4.6' );
-			wp_enqueue_style( 'jquery-ui-css', '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css', array(), '1.11.2' );
+			wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation.css', array(), '5.5.1' );
+			// wp_enqueue_style( 'jquery-ui-css', '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css', array(), '1.11.2' );
 			wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css', array(), '1.0' );
-			wp_enqueue_style( 'custom', get_stylesheet_uri(), array(), '5.4.6' );
+			wp_enqueue_style( 'custom', get_stylesheet_uri(), array(), '5.5.1' );
 			// http://codex.wordpress.org/Function_Reference/wp_enqueue_script
 			// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
 			wp_deregister_script( 'jquery' );
 			wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), '2.1.1', true );
-			wp_enqueue_script( 'jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js', array(), '1.11.2', true );
-			wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array(), '5.4.6', true );
+			// wp_enqueue_script( 'jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js', array(), '1.11.2', true );
+			wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array(), '5.5.1', true );
 			wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', true );
 			wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array(), '1.3.6', true );
 			wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array(), '1.0', true);
