@@ -392,7 +392,7 @@ add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
 function my_login_logo() { // http://codex.wordpress.org/Customizing_the_Login_Form ?>
     <style>
         body.login div#login h1 a {
-            background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/login-logo.jpg');
+            background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/logo-login.jpg');
             padding-bottom: 30px;
         }
     </style>
