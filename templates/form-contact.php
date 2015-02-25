@@ -75,7 +75,7 @@ if ( isset( $_POST['submit'] ) ) {
 	<form method="POST">
 		<input type="text" name="fullName" placeholder="Full Name" required>
 		<input type="email" name="email" placeholder="Email" required>
-		<input type="tel" maxlength="10" name="phone" pattern="\d{3}\d{3}\d{4}" placeholder="Phone" required>
+		<input type="tel" maxlength="12" name="phone" pattern="\d{3}[\-]?\d{3}[\-]?\d{4}" placeholder="Phone" required>
 		<textarea name="comment" placeholder="Message"></textarea>
 		<input type="text" name="mainAddress" value="" class="hidden">
 		<input type="submit" name="submit" value="Submit" class="button">

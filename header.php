@@ -8,10 +8,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title><?php wp_title(); ?></title>
-	<link rel="icon" href="<?php bloginfo( 'template_directory' ); ?>/images/favicon.ico" type="image/x-icon">
+	<link href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" rel="icon" type="image/x-icon">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -20,7 +20,7 @@
 		<header class="header-background">
 			<div class="row">
 				<div class="small-12 medium-3 columns">
-					<a href="/" class="logo"><img src="<?php bloginfo( 'template_directory' ); ?>/images/logo.png" alt=""></a>
+					<a href="/" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt=""></a>
 				</div>
 	            <div class="medium-9 columns">
 	            	<?php //get_template_part('templates/form', 'search'); ?>
@@ -30,3 +30,14 @@
 	            </div>
 	        </div>
 		</header>
+		<?php
+			/*if ( ! is_front_page() ) {
+				switch ( $post->post_name ) {
+					case 'url':
+						get_template_part( 'templates/header', 'name' );
+						break;
+					default:
+						get_template_part( 'templates/header', 'default' );
+				}
+			}*/
+		?>

@@ -7,7 +7,7 @@
 get_header(); 
 ?>
 <div class="row page-content">
-    <div class="large-9 columns">
+    <div class="medium-9 columns">
 		<?php if ( have_posts() ) { ?>
 			<?php while ( have_posts() ) { the_post(); ?>			
 				<article id="page-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
@@ -20,6 +20,8 @@ get_header();
 			<?php } ?>			
 		<?php } ?>
     </div>
-    <?php get_template_part( 'templates/page', 'sidebarRight' ); ?>
+    <aside class="medium-3 columns" role="complementary">
+		<?php dynamic_sidebar( 'Sidebar Right' ); ?>
+	</aside>
 </div>
 <?php get_footer(); ?>

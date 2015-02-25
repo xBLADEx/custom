@@ -20,6 +20,7 @@ WALKER NAVIGATION
 CUSTOM QUICKTAGS
 LOGIN LOGO
 BLANK SEARCH RESULTS FIX
+SHORTCODES
 */
 // Initiate Foundation
 if ( ! function_exists( 'foundation_setup' ) ) {
@@ -120,6 +121,17 @@ if ( ! function_exists( 'foundation_widgets' ) ) {
 		register_sidebar( array(
 			'name' 			=> 'Sidebar Left',
 			'id' 			=> 'sidebar-left',
+			'description' 	=> '',
+			'class'			=> '',
+			'before_widget' => '<div class="sidebar-widget">',
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h5>',
+			'after_title' 	=> '</h5>'
+		) );
+		// Sidebar Blog
+		register_sidebar( array(
+			'name' 			=> 'Sidebar Blog',
+			'id' 			=> 'sidebar-blog',
 			'description' 	=> '',
 			'class'			=> '',
 			'before_widget' => '<div class="sidebar-widget">',
@@ -408,4 +420,13 @@ function blankSearch( $query ) {
     return $query;
 }
 add_filter( 'pre_get_posts', 'blankSearch' );
+// SHORTCODES 
+add_shortcode( 'name', 'function_name' ); // [name]
+function function_name() {
+	ob_start();
+	?>
+	
+	<?php 
+	return ob_get_clean();
+}
 ?>

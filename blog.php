@@ -43,6 +43,8 @@ get_header();
 	    <?php wp_reset_postdata(); ?>
     <?php } ?>
     </div>
-	<?php get_template_part( 'templates/page', 'sidebarRight' ); ?>
+	<aside class="medium-3 columns" role="complementary">
+		<?php dynamic_sidebar( 'Sidebar Blog' ); ?>
+	</aside>
 </div>
 <?php get_footer(); ?>
