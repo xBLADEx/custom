@@ -4,7 +4,12 @@
 	INDEX
 ====================
 */
-get_header(); 
+if ( function_exists( 'get_header' ) ) {
+	get_header();
+} else {
+	header("Location: http://" . $_SERVER['HTTP_HOST'] . "");
+	exit;
+}
 ?>
 <div class="row page-content">
     <div class="large-12 columns">
@@ -14,5 +19,5 @@ get_header();
 			<?php } ?>
 		<?php } ?>
     </div>
-</div><?php //.row ?>
+</div>
 <?php get_footer(); ?>
