@@ -10,7 +10,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title><?php wp_title(); ?></title>
+	<title><?php wp_title('-', true, 'right'); ?></title>
 	<link href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" rel="icon" type="image/x-icon">
 	<?php wp_head(); ?>
 </head>
