@@ -7,6 +7,7 @@
 ====================
 	LEGEND
 ====================
+DEFINE
 THEME SUPPORT
 ENQUEUE SCRIPTS
 HEADER CLEAN UP
@@ -22,6 +23,11 @@ LOGIN LOGO
 BLANK SEARCH RESULTS FIX
 SHORTCODES
 */
+// DEFINE
+define( 'THEME_URI', get_template_directory_uri() );
+define( 'THEME_IMAGES', THEME_URI . '/images' );
+define( 'THEME_CSS', THEME_URI . '/css' );
+define( 'THEME_JS', THEME_URI . '/js' );
 // Initiate Foundation
 if ( ! function_exists( 'foundation_setup' ) ) {
 	function foundation_setup() {
@@ -41,20 +47,20 @@ if ( ! function_exists( 'foundation_assets' ) ) {
 			// http://codex.wordpress.org/Function_Reference/wp_enqueue_style
 			// wp_enqueue_style( $handle, $src, $deps, $ver, $media );
 			// wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300,400', array(), '1.0' );
-			wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/normalize.css', array(), '3.0.1' );
-			wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation.css', array(), '5.5.1' );
+			wp_enqueue_style( 'normalize', THEME_CSS . '/normalize.css', array(), '3.0.1' );
+			wp_enqueue_style( 'foundation', THEME_CSS . '/foundation.css', array(), '5.5.1' );
 			// wp_enqueue_style( 'jquery-ui-css', '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css', array(), '1.11.2' );
-			wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css', array(), '1.0' );
+			wp_enqueue_style( 'slick', THEME_CSS . '/slick.css', array(), '1.0' );
 			wp_enqueue_style( 'custom', get_stylesheet_uri(), array(), '5.5.1' );
 			// http://codex.wordpress.org/Function_Reference/wp_enqueue_script
 			// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
 			wp_deregister_script( 'jquery' );
-			wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), '2.1.1', true );
+			wp_enqueue_script( 'jquery', THEME_JS . '/vendor/jquery.js', array(), '2.1.1', true );
 			// wp_enqueue_script( 'jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js', array(), '1.11.2', true );
-			wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array(), '5.5.1', true );
-			wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', true );
-			wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array(), '1.3.6', true );
-			wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array(), '1.0', true);
+			wp_enqueue_script( 'foundation', THEME_JS . '/foundation.min.js', array(), '5.5.1', true );
+			wp_enqueue_script( 'modernizr', THEME_JS . '/vendor/modernizr.js', array(), '2.8.3', true );
+			wp_enqueue_script( 'slick', THEME_JS . '/slick.min.js', array(), '1.3.6', true );
+			wp_enqueue_script( 'custom', THEME_JS . '/custom.js', array(), '1.0', true);
 		}
 	}
 	add_action( 'wp_enqueue_scripts', 'foundation_assets' );
@@ -404,7 +410,7 @@ add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
 function my_login_logo() { // http://codex.wordpress.org/Customizing_the_Login_Form ?>
     <style>
         body.login div#login h1 a {
-            background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/logo-login.jpg');
+            background-image: url('<?php echo THEME_IMAGES; ?>/logo-login.jpg');
             padding-bottom: 30px;
         }
     </style>
