@@ -12,22 +12,24 @@ jQuery(document).ready(function($){
         speed: 2000,
         autoplaySpeed: 1000,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        pauseOnHover: false,
+        fade: false
     });
+    // IE 9 Placeholder Fix
     if ( ! Modernizr.input.placeholder ) {
-		// IE 9 Placeholder Fix
 		$('[placeholder]').focus(function() {
 			var input = $(this);
 			if ( input.val() == input.attr('placeholder') ) { input.val(''); }
 		}).blur(function() {
 			var input = $(this);
-			if (input.val() == '' || input.val() == input.attr('placeholder')) { input.val(input.attr('placeholder')); }
+			if ( input.val() == '' || input.val() == input.attr('placeholder') ) { input.val(input.attr('placeholder')); }
 		}).blur();
 		// Clear Placeholder Text
 		$('[placeholder]').parents('form').submit(function() {
 			$(this).find('[placeholder]').each(function() {
 				var input = $(this);
-				if (input.val() == input.attr('placeholder')) { input.val(''); }
+				if ( input.val() == input.attr('placeholder') ) { input.val(''); }
 			});
 		});
 	}
