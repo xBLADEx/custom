@@ -4,7 +4,7 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.5.1.7
+Version: 5.5.1.8
 
 ====================
 	LEGEND
@@ -191,6 +191,8 @@ ol.comment-list {  }
 	STYLES
 ====================
 */
+.browser-banner { background: #F00; color:#FFF; margin:0 auto; padding: 10px; max-width: 1140px; }
+.browser-banner a { color:#FFF; text-decoration: underline; }
 /* 
 ====================
 	PLUGINS
