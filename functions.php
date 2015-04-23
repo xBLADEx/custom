@@ -34,7 +34,7 @@ if ( ! function_exists( 'foundation_setup' ) ) {
 		// Support for Featured Images
 		add_theme_support( 'post-thumbnails' ); 
 		// Automatic Feed Links & Post Formats
-		add_theme_support( 'automatic-feed-links' );
+		// add_theme_support( 'automatic-feed-links' );
 		// Enable support for Post Formats. See http://codex.wordpress.org/Post_Formats
 		// add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery', 'status' ) );
 	}
