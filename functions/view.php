@@ -5,7 +5,11 @@
 ====================
 */
 
-// Blank search results fix
+/* 
+====================
+	BLANK SEARCH FIX
+====================
+*/
 if ( ! function_exists( 'blank_search' ) ) {
 	function blank_search( $query ) {
 	    // If "s" request variable is set but empty
@@ -17,8 +21,11 @@ if ( ! function_exists( 'blank_search' ) ) {
 	}
 	add_filter( 'pre_get_posts', 'blank_search' );
 }
-
-// SHORTCODES 
+/* 
+====================
+	SHORTCODES
+====================
+*/
 add_shortcode( 'name', 'function_name' ); // [name]
 function function_name() {
 	ob_start();

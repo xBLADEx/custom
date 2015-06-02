@@ -21,7 +21,11 @@ add_filter( 'img_caption_shortcode', 'reverie_cleaner_caption', 10, 3 );
 add_filter( 'get_image_tag_class', 'reverie_image_tag_class', 0, 4 );
 add_filter( 'get_image_tag', 'reverie_image_editor', 0, 4 );
 add_filter( 'the_content', 'reverie_img_unautop', 30 );
-
+/* 
+====================
+	REMOVE CSS / JS VERSION
+====================
+*/
 if ( ! function_exists( 'remove_cssjs_ver' ) ) {
 	function remove_cssjs_ver( $src ) { // Remove version number after Scripts and Styles
 	    if ( strpos( $src, '?ver=' ) ) {
@@ -40,8 +44,11 @@ if ( ! function_exists( 'remove_recent_comments_style' ) ) {
 	}
 	add_action( 'widgets_init', 'remove_recent_comments_style' );
 }
-
-// Custom Title Tag
+/* 
+====================
+	TITLE TAG
+====================
+*/
 if ( ! function_exists( 'custom_title' ) ) {
 	function custom_title( $title, $sep ) {
 		if ( is_feed() ) { return $title; }
@@ -61,8 +68,11 @@ if ( ! function_exists( 'custom_title' ) ) {
 	}
 	add_filter( 'wp_title', 'custom_title', 10, 2 );
 }
-
-// POST RELATED
+/* 
+====================
+	POST RELATED
+====================
+*/
 // Customized the output of caption, you can remove the filter to restore back to the WP default output. 
 // Courtesy of DevPress. http://devpress.com/blog/captions-in-wordpress/
 if ( ! function_exists( 'reverie_cleaner_caption' ) ) {
@@ -94,6 +104,11 @@ if ( ! function_exists( 'reverie_cleaner_caption' ) ) {
 		return $output;
 	}
 }
+/* 
+====================
+	CLEAN INSERTED IMAGES ATTRIBUTES
+====================
+*/
 // Clean the output of attributes of images in editor. 
 // Courtesy of SitePoint. http://www.sitepoint.com/wordpress-change-img-tag-html/
 if ( ! function_exists( 'reverie_image_tag_class' ) ) {

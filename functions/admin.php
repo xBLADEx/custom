@@ -4,8 +4,11 @@
 	FUNCTIONS - ADMIN
 ====================
 */
-
-// Filter certain buttons from showing in the wordpress html editor for pages/posts
+/* 
+====================
+	REMOVE QUICKTAGS
+====================
+*/
 if ( ! function_exists( 'custom_remove_quicktags' ) ) {
 	function custom_remove_quicktags( $qt_init ) {
 		// Whatever is in the below string displays in the editor. !Important! No spaces after the comma.
@@ -14,8 +17,11 @@ if ( ! function_exists( 'custom_remove_quicktags' ) ) {
 	}
 	add_filter( 'quicktags_settings', 'custom_remove_quicktags' );
 }
-
-// Add custom buttons to the wordpress html editor for pages/posts
+/* 
+====================
+	ADD QUICKTAGS
+====================
+*/
 if ( ! function_exists( 'custom_add_quicktags' ) ) {
 	function custom_add_quicktags() { ?>
 		<script>
@@ -40,8 +46,11 @@ if ( ! function_exists( 'custom_add_quicktags' ) ) {
 	}
 	add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
 }
-
-// Login Logo
+/* 
+====================
+	LOGIN LOGO
+====================
+*/
 if ( ! function_exists( 'custom_login_logo' ) ) {
 	function custom_login_logo() { // http://codex.wordpress.org/Customizing_the_Login_Form 
 	?>

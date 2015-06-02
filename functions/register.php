@@ -4,8 +4,11 @@
 	FUNCTIONS - REGISTER
 ====================
 */
-
-// Register Sidebars
+/* 
+====================
+    SIDEBARS
+====================
+*/
 if ( ! function_exists( 'custom_widgets' ) ) {
 	function custom_widgets() {
 		// Sidebar Right
@@ -44,16 +47,22 @@ if ( ! function_exists( 'custom_widgets' ) ) {
 	}
 	add_action( 'widgets_init', 'custom_widgets' );
 }
-
-// Register wp_nav_menu()
+/* 
+====================
+    NAVIGATION
+====================
+*/
 register_nav_menus( 
 	array( // http://codex.wordpress.org/Function_Reference/register_nav_menus
 	    'main_nav' 		=> 'Main Navigation',
 	    'secondary_nav' => 'Secondary Navigation'
 	)
 );
-
-// Navigation Walker
+/* 
+====================
+    WALKER NAV MENU
+====================
+*/
 class Custom_Navigation_Walker extends Walker_Nav_Menu {
     // Specify the item type to allow different walkers
     var $nav_bar = ''; 
@@ -122,8 +131,11 @@ class Custom_Navigation_Walker extends Walker_Nav_Menu {
         }
     }
 }
-
-
+/* 
+====================
+    SIDE NAV
+====================
+*/
 if ( ! function_exists( 'required_side_nav' ) ) { // Displays a simple subnav with child pages of the current
     function required_side_nav( $nav_args = '' ) {
         global $post;

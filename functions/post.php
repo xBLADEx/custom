@@ -5,7 +5,11 @@
 ====================
 */
 
-// Post Excerpt
+/* 
+====================
+	POST EXCERPT
+====================
+*/
 if ( ! function_exists( 'custom_excerpt' ) ) {
 	function custom_excerpt( $text ) {
         global $post;
@@ -28,8 +32,11 @@ if ( ! function_exists( 'custom_excerpt' ) ) {
 	remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 	add_filter( 'get_the_excerpt', 'custom_excerpt' );
 }
-
-// Comments Template
+/* 
+====================
+	COMMENTS TEMPLATE
+====================
+*/
 if ( ! function_exists( 'foundation_comment' ) ) {
 	function foundation_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
@@ -78,8 +85,11 @@ if ( ! function_exists( 'foundation_comment' ) ) {
 		}
 	}
 }
-
-// Remove Class from Sticky Post
+/* 
+====================
+	REMOVE CLASS STICKY POST
+====================
+*/
 if ( ! function_exists( 'custom_remove_sticky' ) ) {
 	function custom_remove_sticky( $classes ) {
 		$classes = array_diff( $classes, array( 'sticky' ) );
@@ -87,8 +97,11 @@ if ( ! function_exists( 'custom_remove_sticky' ) ) {
 	}
 	add_filter( 'post_class', 'custom_remove_sticky' );
 }
-
-// Pagination
+/* 
+====================
+	PAGINATION
+====================
+*/
 if ( ! function_exists( 'blade_pagination' ) ) {
 	function blade_pagination() {
 		global $custom_query;
