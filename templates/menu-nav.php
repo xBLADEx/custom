@@ -22,6 +22,6 @@ wp_nav_menu( array(
 	'link_after'      	=> '',
 	'items_wrap' 		=> '<ul class="navbar">%3$s</ul>',
 	'depth' 			=> 2,
-	'walker' 			=> new Custom_Navigation_Walker()
+	'walker' 			=> new Custom_Nav_Menu()
 ) ); 
 ?>
