@@ -10,9 +10,10 @@
 
 	jQuery(document).ready(function($) {
 		// Mobile Menu
+		var mainNav = $('.main-nav');
 		$('.menu-icon').on('click', function(e) {
 			e.preventDefault();
-			$('.main-nav').slideToggle();
+			mainNav.slideToggle();
 		});
 		// Slick Slider
 		$('.home-slider').slick({
