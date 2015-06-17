@@ -8,7 +8,7 @@
 
 	'use strict';
 
-	jQuery(document).ready(function($) {
+	$(function() { // Shorthand Document Ready
 		// Mobile Menu
 		var mainNav = $('.main-nav');
 		$('.menu-icon').on('click', function(e) {
