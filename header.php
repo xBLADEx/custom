@@ -15,7 +15,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<main id="website-container" role="main">
+	<main class="website-container" role="main">
 		<a href="#" class="menu-icon"><span>Menu</span></a>
 		<header class="header-background">
 			<div class="row">
