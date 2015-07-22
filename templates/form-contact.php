@@ -62,7 +62,7 @@ if ( isset( $_POST['submit'] ) ) {
 	$message 	.= "<tr><td><strong>Name:</strong></td><td>" . strip_tags( $full_name ) . "</td></tr>";
 	$message 	.= "<tr><td><strong>Email:</strong></td><td>" . strip_tags( $email ) . "</td></tr>";
 	$message 	.= "<tr><td><strong>Phone:</strong></td><td>" . strip_tags( $phone ) . "</td></tr>";
-	$message 	.= "<tr><td><strong>Comment:</strong></td><td>" . strip_tags( $comment ) . "</td></tr>";
+	$message 	.= "<tr><td><strong>Comment:</strong></td><td>" . strip_tags( stripslashes( $comment ) ) . "</td></tr>";
 	$message 	.= "</table>";
 	$message 	.= "</body></html>";
 	// Message lines should not exceed 70 characters (PHP rule), so wrap it
