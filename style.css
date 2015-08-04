@@ -4,7 +4,7 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.5.1.21
+Version: 5.5.1.22
 
 ====================
 	LEGEND
@@ -40,12 +40,14 @@ BLACK	#000000
 @font-face { font-family: 'icomoon'; src:url('./fonts/icomoon.eot?-xort90'); src:url('./fonts/icomoon.eot?#iefix-xort90') format('embedded-opentype'), url('./fonts/icomoon.woff?-xort90') format('woff'), url('./fonts/icomoon.ttf?-xort90') format('truetype'), url('./fonts/icomoon.svg?-xort90#icomoon') format('svg'); font-weight: normal; font-style: normal; }
 [class^="icon-"], [class*=" icon-"] { font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-body, div, ul, ol, li, p, span, a { font-size: 16px; }
+body, div, ul, ol, li, p, span, a { font-size: 16px; color: #222222; }
 ul { margin-left: 30px; }
 h1 { margin: 0 0 10px 0; }
 h2 { margin: 0 0 10px 0; }
 h3 { margin: 0 0 10px 0; }
 h4 { margin: 0 0 10px 0; }
+h5 { margin: 0 0 10px 0; }
+h6 { margin: 0 0 10px 0; }
 a:link { color: #000; text-decoration: none; }
 a:visited {  }
 a:hover { color: #FFF; }
@@ -87,7 +89,7 @@ a:active {  }
 	MAIN HTML
 ====================
 */
-body { background: #FFF; color: #222222; }
+body { background: #FFF; }
 .website-container { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -200px; }
 button, .button { 
 	background: #000; color: #FFF; margin: 0; padding: 10px 15px;
@@ -141,7 +143,7 @@ button:focus, .button:focus { background: #FFF; color: #000; outline: 1px solid 
 ====================
 */
 .page-content { min-height: 500px; }
-.page-header h1 {  }
+.page-header {  }
 /* Contact */
 .form-comment { min-height: 100px; max-height: 160px; }
 /* 
