@@ -4,7 +4,7 @@ Theme URI: http://www.richedmunds.com/
 Author: Rich Edmunds
 Author URI: http://www.richedmunds.com/
 Description: Custom Theme for WordPress.
-Version: 5.5.1.23
+Version: 5.5.1.24
 
 ====================
 	LEGEND
@@ -111,27 +111,27 @@ button:focus, .button:focus { background: #FFF; color: #000; outline: 1px solid 
 ====================
 */
 .main-nav { position: relative; z-index: 99; }
-.main-nav ul.navbar { margin: 0; padding: 0; }
-.main-nav ul.navbar li { list-style: none; margin: 0; padding: 0; }
-.main-nav ul.navbar > li { position: relative; float: left; }
-.main-nav ul.navbar > li > a { display: block; padding: 0 25px; font-size: 16px; font-family: inherit; color: #222; }
-.main-nav ul.navbar > li:hover { background: #222; }
-.main-nav ul.navbar > li:hover a { color: #FFF; }
-.main-nav ul.navbar > li:hover.has-flyout > a:first-child:after { border-color: #FFF transparent transparent transparent; }
+.navbar { margin: 0; padding: 0; }
+.navbar li { list-style: none; margin: 0; padding: 0; }
+.navbar > li { position: relative; float: left; }
+.navbar > li > a { display: block; padding: 0 25px; font-size: 16px; color: #222; }
+.navbar > li:hover { background: #222; }
+.navbar > li:hover a { color: #FFF; }
+.navbar > .has-flyout:hover > a:first-child:after { border-color: #FFF transparent transparent transparent; }
 /* Dropdown Link */
-.main-nav ul.navbar > li.has-flyout > a:first-child { position: relative; padding-right: 40px; }
-.main-nav ul.navbar > li.has-flyout > a:first-child:after { content: ""; display: block; width: 0; height: 0; border: 4px solid; border-color: #222 transparent transparent transparent; position: absolute; top: 10px; right: 10px; }
+.navbar > li.has-flyout > a:first-child { position: relative; padding-right: 40px; }
+.navbar > li.has-flyout > a:first-child:after { content: ""; display: block; width: 0; height: 0; border: 4px solid; border-color: #222 transparent transparent transparent; position: absolute; top: 10px; right: 10px; }
 /* Sub Nav */
-.main-nav ul.navbar > li ul.flyout { display: none; }
-.main-nav ul.navbar > li:hover ul.flyout { display: block; }
-.main-nav ul.navbar > li ul.flyout { margin: 0; width: 100%; position: absolute; left: 0; z-index: 98; }
-.main-nav ul.navbar > li ul.flyout li { background: #222; }
-.main-nav ul.navbar > li ul.flyout li a { display: block; padding: 15px 20px; font-size: 12px; color: #FFF; white-space: nowrap; }
-.main-nav ul.navbar > li ul.flyout li:hover { background: #FFF; }
-.main-nav ul.navbar > li ul.flyout li:hover a { color: #222; }
+.navbar > li .flyout { display: none; }
+.navbar > li:hover .flyout { display: block; }
+.navbar > li .flyout { margin: 0; width: 100%; position: absolute; left: 0; z-index: 98; }
+.navbar > li .flyout li { background: #222; }
+.navbar > li .flyout li a { display: block; padding: 15px 20px; font-size: 12px; color: #FFF; white-space: nowrap; }
+.navbar > li .flyout li:hover { background: #FFF; }
+.navbar > li .flyout li:hover a { color: #222; }
 /* Current Page Link */ 
-.main-nav ul.navbar > li.current-menu-item { background: #222; }
-.main-nav ul.navbar > li.current-menu-item > a { color: #FFF; }
+.navbar > .current-menu-item { background: #222; }
+.navbar > .current-menu-item > a { color: #FFF; }
 /* 
 ====================
 	HOME PAGE
