@@ -23,6 +23,18 @@ add_filter( 'get_image_tag', 'reverie_image_editor', 0, 4 );
 add_filter( 'the_content', 'reverie_img_unautop', 30 );
 /* 
 ====================
+	HEADER OTHER
+====================
+*/
+if ( ! function_exists( 'remove_wp_open_sans' ) ) {
+	function remove_wp_open_sans() {
+		wp_deregister_style( 'open-sans' );
+		wp_register_style( 'open-sans', false );
+	}
+	add_action( 'wp_enqueue_scripts', 'remove_wp_open_sans' );
+}
+/* 
+====================
 	REMOVE CSS / JS VERSION
 ====================
 */
