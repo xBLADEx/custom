@@ -1,0 +1,17 @@
+{
+  "name": "blade-bower",
+  "description": "Custom Theme",
+  "dependencies": {
+    "font-awesome": "^4.5.0",
+    "slick-carousel": "^1.5.9",
+    "foundation-sites": "^6.1.2"
+  },
+  "authors": [
+    "Rich Edmunds"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://HIDDENBLADE@bitbucket.org/HIDDENBLADE/dev-sorenson.git"
+  },
+  "license": "MIT"
+}
