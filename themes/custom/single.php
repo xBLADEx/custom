@@ -1,14 +1,12 @@
 <?php
-/* 
-====================
-	SINGLE
-====================
-*/
-get_header(); 
+//--------------------------------------------------------------
+// Single
+//--------------------------------------------------------------
+get_header();
 ?>
 <div class="row page-content">
     <div class="medium-9 columns">
-		<?php 
+		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) { the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -22,8 +20,8 @@ get_header();
 						<?php comments_template(); ?>
 					</div>
 				</article>
-			<?php 
-			} 
+			<?php
+			}
 		} ?>
     </div>
 	<aside class="medium-3 columns">

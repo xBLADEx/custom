@@ -1,16 +1,13 @@
 <?php
-/* 
-====================
-	FUNCTIONS - ADMIN
-====================
-*/
+//--------------------------------------------------------------
+// Admin
+//--------------------------------------------------------------
 define( 'DISALLOW_FILE_EDIT', true );
 update_option( 'image_default_link_type', 'none' );
-/* 
-====================
-	REMOVE QUICKTAGS
-====================
-*/
+
+//--------------------------------------------------------------
+// Remove Quicktags
+//--------------------------------------------------------------
 if ( ! function_exists( 'custom_remove_quicktags' ) ) {
 	function custom_remove_quicktags( $qt_init ) {
 		// Whatever is in the below string displays in the editor. !Important! No spaces after the comma.
@@ -19,11 +16,10 @@ if ( ! function_exists( 'custom_remove_quicktags' ) ) {
 	}
 	add_filter( 'quicktags_settings', 'custom_remove_quicktags' );
 }
-/* 
-====================
-	ADD QUICKTAGS
-====================
-*/
+
+//--------------------------------------------------------------
+// Add Quicktags
+//--------------------------------------------------------------
 if ( ! function_exists( 'custom_add_quicktags' ) ) {
 	function custom_add_quicktags() { ?>
 		<script>
@@ -48,13 +44,12 @@ if ( ! function_exists( 'custom_add_quicktags' ) ) {
 	}
 	add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
 }
-/* 
-====================
-	LOGIN LOGO
-====================
-*/
+
+//--------------------------------------------------------------
+// Login Logo
+//--------------------------------------------------------------
 if ( ! function_exists( 'custom_login_logo' ) ) {
-	function custom_login_logo() { // http://codex.wordpress.org/Customizing_the_Login_Form 
+	function custom_login_logo() { // http://codex.wordpress.org/Customizing_the_Login_Form
 	?>
 	    <style>
 	        body.login div#login h1 a {
@@ -62,15 +57,14 @@ if ( ! function_exists( 'custom_login_logo' ) ) {
 	            padding-bottom: 30px;
 	        }
 	    </style>
-	<?php 
+	<?php
 	}
 	add_action( 'login_enqueue_scripts', 'custom_login_logo' );
 }
-/* 
-====================
-	THEME OPTIONS
-====================
-*/
+
+//--------------------------------------------------------------
+// Theme Options
+//--------------------------------------------------------------
 class Custom_Theme_Options {
 
 	public $options;
@@ -85,10 +79,10 @@ class Custom_Theme_Options {
 		add_options_page( // https://codex.wordpress.org/Function_Reference/add_menu_page
 			'Theme Options', 	// Page Title
 			'Theme Options', 	// Menu Title
-			'manage_options',	// Capability 
+			'manage_options',	// Capability
 			'theme-options',	// Slug
 			array( 'Custom_Theme_Options', 'display_options_page' ) // Function
-		); 
+		);
 	}
 
 	// Add Menu Page - Options Page
@@ -97,8 +91,8 @@ class Custom_Theme_Options {
 		<div class="wrap">
 			<h2>Theme Options</h2>
 			<form action="options.php" method="POST">
-				<?php 
-					settings_fields( 'custom_theme_setting' ); // register_setting() 1st arg Group Name. 
+				<?php
+					settings_fields( 'custom_theme_setting' ); // register_setting() 1st arg Group Name.
 					do_settings_sections( 'theme-options' );
 					submit_button();
 				?>
@@ -108,25 +102,25 @@ class Custom_Theme_Options {
 	}
 
 	public function register_settings_fields() {
-		
+
 		register_setting( // 1 & 2. Codex says use same name, 3. Optional - Used for sanitizing / validating
 			'custom_theme_setting', // Group
 			'custom_theme_setting',	// Name - Used with get_option() / update_option()
 			array( $this, 'custom_validation' )
 		); // https://codex.wordpress.org/Function_Reference/register_setting
-		
+
 		add_settings_section( // 1. ID, 2. Title displayed within <h3>, 3. Callback, 4. Page - Needs to match the slug url
 			'rich_main_section',
 			'Theme Settings',
 			array( $this, 'rich_main_section_cb' ),
 			'theme-options'
-		); 
+		);
 
 		add_settings_field( // 1. Name heading or title also ID, 3. Callback, 4. Page, 5. Section - add_settings_section 1st arg.
 			'theme_email_heading',
 			'Contact Form Email: ',
-			array( $this, 'theme_email_field_cb' ), 
-			'theme-options', 
+			array( $this, 'theme_email_field_cb' ),
+			'theme-options',
 			'rich_main_section'
 		);
 
@@ -158,13 +152,13 @@ class Custom_Theme_Options {
 	public function theme_email_field_cb() {
 		echo "<input class='regular-text' name='custom_theme_setting[theme_email_heading]' type='text' value='{$this->options['theme_email_heading']}' >";
 	}
-	
+
 }
 
 add_action( 'admin_menu', function() {
 	Custom_Theme_Options::add_menu_page(); // The double colon :: calls a function without instantiating the entire class
 });
 
-add_action( 'admin_init', function() { 
+add_action( 'admin_init', function() {
 	new Custom_Theme_Options(); // This will automatically call the __construct() function.
 });

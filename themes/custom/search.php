@@ -1,10 +1,9 @@
 <?php
-/* 
-====================
-	SEARCH
-====================
-*/
-get_header(); ?>
+//--------------------------------------------------------------
+// Search
+//--------------------------------------------------------------
+get_header();
+?>
 <div class="row">
 	<div class="medium-12 columns">
 		<h1 class="page-title"><?php printf( 'Search Results for: %s', get_search_query() ); ?></h1>
@@ -29,7 +28,7 @@ get_header(); ?>
 						<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
 					</footer>
 				</article>
-			<?php 
+			<?php
 			} blade_pagination();
 		} ?>
 	</div>

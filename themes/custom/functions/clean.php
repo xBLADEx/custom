@@ -1,9 +1,7 @@
 <?php
-/* 
-====================
-	FUNCTIONS - CLEAN
-====================
-*/
+//--------------------------------------------------------------
+// Clean
+//--------------------------------------------------------------
 
 remove_action( 'wp_head', 'feed_links_extra', 3 ); // Removes the type="application/rss+xml" /feed link
 remove_action( 'wp_head', 'wp_generator' ); // This removes the WordPress version
@@ -22,11 +20,10 @@ add_filter( 'get_image_tag_class', 'reverie_image_tag_class', 0, 4 );
 add_filter( 'get_image_tag', 'reverie_image_editor', 0, 4 );
 // add_filter( 'the_content', 'reverie_img_unautop', 30 );
 add_filter( 'image_send_to_editor', 're_image_to_relative', 5, 8 );
-/* 
-====================
-	HEADER OTHER
-====================
-*/
+
+//--------------------------------------------------------------
+// Header Other
+//--------------------------------------------------------------
 if ( ! function_exists( 'remove_wp_open_sans' ) ) {
 	function remove_wp_open_sans() {
 		wp_deregister_style( 'open-sans' );
@@ -34,11 +31,10 @@ if ( ! function_exists( 'remove_wp_open_sans' ) ) {
 	}
 	add_action( 'wp_enqueue_scripts', 'remove_wp_open_sans' );
 }
-/* 
-====================
-	REMOVE CSS / JS VERSION
-====================
-*/
+
+//--------------------------------------------------------------
+// Remove CSS / JS Version
+//--------------------------------------------------------------
 if ( ! function_exists( 'remove_cssjs_ver' ) ) {
 	function remove_cssjs_ver( $src ) { // Remove version number after Scripts and Styles
 	    if ( strpos( $src, '?ver=' ) ) {
@@ -52,16 +48,15 @@ if ( ! function_exists( 'remove_cssjs_ver' ) ) {
 
 if ( ! function_exists( 'remove_recent_comments_style' ) ) {
 	function remove_recent_comments_style() { // Remove recent comments style tag
-		global $wp_widget_factory;  
-		remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );  
+		global $wp_widget_factory;
+		remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 	}
 	add_action( 'widgets_init', 'remove_recent_comments_style' );
 }
-/* 
-====================
-	TITLE TAG
-====================
-*/
+
+//--------------------------------------------------------------
+// Title Tag
+//--------------------------------------------------------------
 if ( ! function_exists( 'custom_title' ) ) {
 	function custom_title( $title, $sep ) {
 		if ( is_feed() ) { return $title; }
@@ -81,12 +76,12 @@ if ( ! function_exists( 'custom_title' ) ) {
 	}
 	add_filter( 'wp_title', 'custom_title', 10, 2 );
 }
-/* 
-====================
-	POST RELATED
-====================
-*/
-// Customized the output of caption, you can remove the filter to restore back to the WP default output. 
+
+//--------------------------------------------------------------
+// Post Related
+//--------------------------------------------------------------
+
+// Customized the output of caption, you can remove the filter to restore back to the WP default output.
 // Courtesy of DevPress. http://devpress.com/blog/captions-in-wordpress/
 if ( ! function_exists( 'reverie_cleaner_caption' ) ) {
 	function reverie_cleaner_caption( $output, $attr, $content ) {
@@ -113,16 +108,16 @@ if ( ! function_exists( 'reverie_cleaner_caption' ) ) {
 		$output .= '<figcaption>' . $attr['caption'] . '</figcaption>';
 		// Close the caption </div>.
 		$output .= '</figure>';
-		// Return the formatted, clean caption. 
+		// Return the formatted, clean caption.
 		return $output;
 	}
 }
-/* 
-====================
-	CLEAN INSERTED IMAGES ATTRIBUTES
-====================
-*/
-// Clean the output of attributes of images in editor. 
+
+//--------------------------------------------------------------
+// Clean Inserted Image Attributes
+//--------------------------------------------------------------
+
+// Clean the output of attributes of images in editor.
 // Courtesy of SitePoint. http://www.sitepoint.com/wordpress-change-img-tag-html/
 if ( ! function_exists( 'reverie_image_tag_class' ) ) {
 	function reverie_image_tag_class( $class, $id, $align, $size ) {
@@ -150,7 +145,7 @@ if ( ! function_exists( 'reverie_image_editor' ) ) {
 	}
 }
 
-// Wrap images with figure tag. 
+// Wrap images with figure tag.
 // http://interconnectit.com/2175/how-to-remove-p-tags-from-images-in-wordpress/
 /*if ( ! function_exists( 'reverie_img_unautop' ) ) {
 	function reverie_img_unautop( $pee ) {
@@ -163,14 +158,14 @@ if ( ! function_exists( 'reverie_image_editor' ) ) {
 function re_image_to_relative( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
 	$sp = strpos($html, "src=") + 5;
 	$ep = strpos($html, "\"", $sp);
-	
+
 	$imageurl = substr($html, $sp, $ep-$sp);
-	
+
 	$relativeurl = str_replace("http://", "", $imageurl);
 	$sp = strpos($relativeurl, "/");
 	$relativeurl = substr($relativeurl, $sp);
-	
+
 	$html = str_replace($imageurl, $relativeurl, $html);
-	
+
 	return $html;
 }

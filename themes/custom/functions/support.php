@@ -1,14 +1,12 @@
 <?php
-/* 
-====================
-	FUNCTIONS - SUPPORT
-====================
-*/
+//--------------------------------------------------------------
+// Support
+//--------------------------------------------------------------
 
 if ( ! function_exists( 'custom_support' ) ) {
 	function custom_support() {
 		// Featured Images
-		add_theme_support( 'post-thumbnails' ); 
+		add_theme_support( 'post-thumbnails' );
 		// Automatic Feed Links & Post Formats
 		// add_theme_support( 'automatic-feed-links' );
 		// Post Formats http://codex.wordpress.org/Post_Formats
@@ -17,9 +15,7 @@ if ( ! function_exists( 'custom_support' ) ) {
 	add_action( 'after_setup_theme', 'custom_support' );
 }
 
-/* 
-====================
-	IMAGE SIZE
-====================
-*/
-//add_image_size( 'name', 150, 80 );
+//--------------------------------------------------------------
+// Image Size
+//--------------------------------------------------------------
+// add_image_size( 'name', 150, 80 );

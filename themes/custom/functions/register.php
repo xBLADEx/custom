@@ -1,18 +1,15 @@
 <?php
-/* 
-====================
-	FUNCTIONS - REGISTER
-====================
-*/
-/* 
-====================
-    SIDEBARS
-====================
-*/
+//--------------------------------------------------------------
+// Register
+//--------------------------------------------------------------
+
+//--------------------------------------------------------------
+// Sidebars
+//--------------------------------------------------------------
 if ( ! function_exists( 'custom_widgets' ) ) {
 	function custom_widgets() {
 		// Sidebar Right
-		register_sidebar( 
+		register_sidebar(
             array(
     			'name' 			=> 'Sidebar Right',
     			'id' 			=> 'sidebar-right',
@@ -22,10 +19,10 @@ if ( ! function_exists( 'custom_widgets' ) ) {
     			'after_widget' 	=> '</div>',
     			'before_title' 	=> '<h5>',
     			'after_title' 	=> '</h5>'
-    		) 
+    		)
         );
 		// Sidebar Left
-		register_sidebar( 
+		register_sidebar(
             array(
     			'name' 			=> 'Sidebar Left',
     			'id' 			=> 'sidebar-left',
@@ -35,10 +32,10 @@ if ( ! function_exists( 'custom_widgets' ) ) {
     			'after_widget' 	=> '</div>',
     			'before_title' 	=> '<h5>',
     			'after_title' 	=> '</h5>'
-    		) 
+    		)
         );
 		// Sidebar Blog
-		register_sidebar( 
+		register_sidebar(
             array(
     			'name' 			=> 'Sidebar Blog',
     			'id' 			=> 'sidebar-blog',
@@ -48,27 +45,25 @@ if ( ! function_exists( 'custom_widgets' ) ) {
     			'after_widget' 	=> '</div>',
     			'before_title' 	=> '<h5>',
     			'after_title' 	=> '</h5>'
-    		) 
+    		)
         );
 	}
 	add_action( 'widgets_init', 'custom_widgets' );
 }
-/* 
-====================
-    NAVIGATION
-====================
-*/
-register_nav_menus( 
+
+//--------------------------------------------------------------
+// Navigation
+//--------------------------------------------------------------
+register_nav_menus(
 	array( // http://codex.wordpress.org/Function_Reference/register_nav_menus
 	    'main_nav' 		=> 'Main Navigation',
 	    'secondary_nav' => 'Secondary Navigation'
 	)
 );
-/* 
-====================
-    WALKER NAV MENU
-====================
-*/
+
+//--------------------------------------------------------------
+// Walker Nav Menu
+//--------------------------------------------------------------
 class Custom_Nav_Menu extends Walker_Nav_Menu {
 
     var $nav_bar = '';
@@ -92,7 +87,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-        
+
         $classes = empty( $item->classes ) ? array() : (array)$item->classes;
         $classes[] = 'menu-item-' . $item->ID;
 
@@ -159,7 +154,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
             $output .= $this->nav_bar['in_top_bar'] == true ? "\n$indent<ul class=\"dropdown\">\n" : "\n$indent<ul class=\"level-$depth\">\n";
         }
     }
-    
+
     function end_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
