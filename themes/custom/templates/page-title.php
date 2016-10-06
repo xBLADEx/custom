@@ -1,14 +1,12 @@
 <?php
-/* 
-====================
-	PAGE TITLE
-====================
-*/
+//--------------------------------------------------------------
+// Page Title
+//--------------------------------------------------------------
 ?>
 <div class="row">
 	<div class="medium-12 columns">
 		<h1 class="page-title">
-			<?php 
+			<?php
 			if ( is_archive() ) {
 				post_type_archive_title();
 			} else {

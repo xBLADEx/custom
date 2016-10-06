@@ -1,11 +1,9 @@
 <?php
-/* 
-====================
-	CONTACT FORM
-====================
-*/
+//--------------------------------------------------------------
+// Contact Form
+//--------------------------------------------------------------
 
-if ( isset( $_POST['submit'] ) ) { 
+if ( isset( $_POST['submit'] ) ) {
 
 	// Define emails, website, and domain.
 	define( 'EMAIL',	get_option( 'custom_theme_setting' )['theme_email_heading'] );

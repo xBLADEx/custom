@@ -1,16 +1,14 @@
 <?php
-/* 
-====================
-	ARCHIVE
-====================
-*/
-get_header(); 
+//--------------------------------------------------------------
+// Archive
+//--------------------------------------------------------------
+get_header();
 ?>
 <?php get_template_part( 'templates/page', 'title' ); ?>
 <div class="row page-content">
     <div class="medium-9 columns">
-		<?php 
-		if ( have_posts() ) { 
+		<?php
+		if ( have_posts() ) {
 			while ( have_posts() ) { the_post(); ?>
 			    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header>
@@ -19,15 +17,15 @@ get_header();
 						<p class="date">Date: <?php the_time( get_option( 'date_format' ) ); ?></p>
 						<p class="categories">Categories: <?php the_category( ', ' ); ?></p>
 					</header>
-					<div>	
+					<div>
 						<?php the_excerpt(); ?>
-					</div> 
+					</div>
 					<footer>
 						<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
-					</footer> 
+					</footer>
 			    </article>
-			<?php 
-			} 
+			<?php
+			}
 			blade_pagination();
 		} ?>
     </div>

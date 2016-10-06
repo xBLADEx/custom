@@ -1,13 +1,11 @@
 <?php
-/* 
-====================
-	FUNCTIONS - ENQUEUE
-====================
-*/
+//--------------------------------------------------------------
+// Enqueue
+//--------------------------------------------------------------
 
 if ( ! function_exists( 'custom_enqueue' ) ) {
-	function custom_enqueue() { 
-		if ( ! is_admin() ) { 
+	function custom_enqueue() {
+		if ( ! is_admin() ) {
 			// http://codex.wordpress.org/Function_Reference/wp_enqueue_style
 			// wp_enqueue_style( $handle, $src, $deps, $ver, $media );
 			// wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300,400', array(), '1.0' );
@@ -15,7 +13,7 @@ if ( ! function_exists( 'custom_enqueue' ) ) {
 			// wp_enqueue_style( 'jquery-ui-css', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css', array(), '1.11.4' );
 			wp_enqueue_style( 'custom', THEME_CSS . '/custom.css', array(), '1.0' );
 			//wp_enqueue_style( 'custom', get_stylesheet_uri(), array(), '5.5.1' );
-			
+
 			// http://codex.wordpress.org/Function_Reference/wp_enqueue_script
 			// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
 			wp_deregister_script( 'jquery' );

@@ -1,26 +1,24 @@
 <?php
-/* 
-====================
-	TEMPLATE NAME: Blog
-====================
-*/
-get_header(); 
+//--------------------------------------------------------------
+// Template Name: Blog
+//--------------------------------------------------------------
+get_header();
 ?>
 <?php get_template_part( 'templates/page', 'title' ); ?>
 <div class="row page-content">
     <div class="medium-9 columns">
     <?php
 	$args = array(
-		'post_type' 		=> 'post',
-		'post_status'		=> 'publish',
-		'posts_per_page'	=> '10',
-		'orderby'			=> 'date',
+		'post_type'      => 'post',
+		'post_status'    => 'publish',
+		'posts_per_page' => '10',
+		'orderby'        => 'date',
 	);
 
     // http://codex.wordpress.org/Class_Reference/WP_Query
     $custom_query = new WP_Query( $args );
-     
-    if ( $custom_query->have_posts() ) { 
+
+    if ( $custom_query->have_posts() ) {
     	while ( $custom_query->have_posts() ) { $custom_query->the_post(); ?>
 			<div class="post-container">
 			    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -34,14 +32,14 @@ get_header();
 					</header>
 					<div>
 						<?php the_excerpt(); ?>
-					</div> 
+					</div>
 					<footer>
 						<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
 					</footer>
 			    </article>
 		    </div>
-	    <?php 
-		} 
+	    <?php
+		}
 		blade_pagination();
 	    wp_reset_postdata();
     } ?>

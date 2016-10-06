@@ -1,10 +1,8 @@
 <?php
-/* 
-====================
-	TEMPLATE NAME: Home
-====================
-*/
-get_header(); 
+//--------------------------------------------------------------
+// Front Page
+//--------------------------------------------------------------
+get_header();
 ?>
 <?php // echo get_post_meta( $post->ID, 'key', true ); ?>
 <div class="home-slider">
@@ -26,11 +24,11 @@ get_header();
 
 <div class="row page-content">
     <div class="medium-12 columns">
-        <?php 
+        <?php
         if ( have_posts() ) {
-            while ( have_posts() ) { the_post(); 
+            while ( have_posts() ) { the_post();
                 the_content();
-            } 
+            }
         } ?>
     </div>
 </div>

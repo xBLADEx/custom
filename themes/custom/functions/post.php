@@ -1,15 +1,11 @@
 <?php
-/* 
-====================
-	FUNCTIONS - POST
-====================
-*/
+//--------------------------------------------------------------
+// Post
+//--------------------------------------------------------------
 
-/* 
-====================
-	POST EXCERPT
-====================
-*/
+//--------------------------------------------------------------
+// Post Excerpt
+//--------------------------------------------------------------
 if ( ! function_exists( 'custom_excerpt' ) ) {
 	function custom_excerpt( $text ) {
         global $post;
@@ -32,11 +28,10 @@ if ( ! function_exists( 'custom_excerpt' ) ) {
 	remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 	add_filter( 'get_the_excerpt', 'custom_excerpt' );
 }
-/* 
-====================
-	COMMENTS TEMPLATE
-====================
-*/
+
+//--------------------------------------------------------------
+// Comments Template
+//--------------------------------------------------------------
 if ( ! function_exists( 'foundation_comment' ) ) {
 	function foundation_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
@@ -85,11 +80,10 @@ if ( ! function_exists( 'foundation_comment' ) ) {
 		}
 	}
 }
-/* 
-====================
-	REMOVE CLASS STICKY POST
-====================
-*/
+
+//--------------------------------------------------------------
+// Remove Class Sticky Post
+//--------------------------------------------------------------
 if ( ! function_exists( 'custom_remove_sticky' ) ) {
 	function custom_remove_sticky( $classes ) {
 		$classes = array_diff( $classes, array( 'sticky' ) );
@@ -97,11 +91,10 @@ if ( ! function_exists( 'custom_remove_sticky' ) ) {
 	}
 	add_filter( 'post_class', 'custom_remove_sticky' );
 }
-/* 
-====================
-	PAGINATION
-====================
-*/
+
+//--------------------------------------------------------------
+// Pagination
+//--------------------------------------------------------------
 if ( ! function_exists( 'blade_pagination' ) ) {
 	function blade_pagination() {
 		global $custom_query;
@@ -123,6 +116,6 @@ if ( ! function_exists( 'blade_pagination' ) ) {
 			'before_page_number' 	=> '',
 			'after_page_number' 	=> ''
 		);
-		echo paginate_links( $pagArg ); 
+		echo paginate_links( $pagArg );
 	}
 }

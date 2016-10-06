@@ -1,9 +1,7 @@
 <?php
-/* 
-====================
-	INDEX
-====================
-*/
+//--------------------------------------------------------------
+// Index
+//--------------------------------------------------------------
 if ( function_exists( 'get_header' ) ) {
 	get_header();
 } else {
@@ -13,11 +11,11 @@ if ( function_exists( 'get_header' ) ) {
 ?>
 <div class="row page-content">
     <div class="medium-12 columns">
-		<?php 
+		<?php
 		if ( have_posts() ) {
-			while ( have_posts() ) { the_post(); 
+			while ( have_posts() ) { the_post();
 				the_content();
-			} 
+			}
 		} ?>
     </div>
 </div>
