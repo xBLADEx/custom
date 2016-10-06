@@ -1,0 +1,48 @@
+# //--------------------------------------------------------------
+# // Target All
+# //--------------------------------------------------------------
+*.bak
+*.log
+*.map
+*.rar
+*.sass-cache*
+*.tar
+*.tgz
+*.zip
+*~
+
+# //--------------------------------------------------------------
+# // Misc Files
+# //--------------------------------------------------------------
+._*
+.DS_Store
+.htaccess
+
+# //--------------------------------------------------------------
+# // Root Files
+# //--------------------------------------------------------------
+robots.txt
+sitemap.xml
+sitemap.xml.gz
+
+# //--------------------------------------------------------------
+# // WordPress
+# //--------------------------------------------------------------
+/license.txt
+/readme.html
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/object-cache.php
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+
+# //--------------------------------------------------------------
+# // NPM, Gulp, Grunt, Bower
+# //--------------------------------------------------------------
+bower_components/
+node_modules/

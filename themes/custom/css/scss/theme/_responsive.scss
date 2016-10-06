@@ -1,0 +1,62 @@
+/* 
+================================================================================
+  RESPONSIVE
+================================================================================
+*/
+// Small screens
+/* Define mobile styles */
+@media only screen { 
+
+} 
+
+/* max-width 640px, mobile-only styles, use when QAing mobile issues */
+@media only screen and (max-width: 40em) { 
+	html { font-size: 80%; }
+	.menu-icon { 
+		display: block; 
+	}
+	.main-nav { 
+		display: none;
+		.navbar > li { 
+			float: none; 
+			border-top: 1px solid $black; 
+			position: relative; 
+		} 
+	}
+} 
+
+// Medium screens
+/* min-width 641px, medium screens */
+@media only screen and (min-width: 40.063em) { 
+	html { font-size: 80%; }
+} 
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+
+} 
+
+// Large screens
+/* min-width 1025px, large screens */
+@media only screen and (min-width: 64.063em) { 
+	html { font-size: 90%; }
+} 
+/* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { 
+
+} 
+
+// XLarge screens
+/* min-width 1441px, xlarge screens */
+@media only screen and (min-width: 90.063em) { 
+	html { font-size: 100%; }
+} 
+/* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { 
+
+} 
+
+// XXLarge screens
+/* min-width 1921px, xxlarge screens */
+@media only screen and (min-width: 120.063em) { 
+
+} 
