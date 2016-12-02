@@ -1,148 +1,193 @@
-/* 
-================================================================================
-	HEADER
-================================================================================
-*/
-.header-background { 
-	width: 100%; 
-	background: $white; 
-	position: relative; 
-	z-index: 100; 
-}
-.logo img { 
-	display: block;	
-}
-/* 
-================================================================================
-	NAVIGATION
-================================================================================
-*/
-.main-nav { 
-	position: relative; 
-	z-index: 99; 
-}
-.navbar { 
-	margin: 0; 
+//--------------------------------------------------------------
+// HEADER
+//--------------------------------------------------------------
+
+.header-background {
+	background: $white;
+	position: relative;
+	width: 100%;
+	z-index: 100;
+} // .header-background
+
+.logo {
+	img {
+		display: block;
+	} // img
+} // .logo
+
+
+//-----------------------------------------
+// Navigation
+//-----------------------------------------
+.main-nav {
+	position: relative;
+	z-index: 99;
+} // .main-nav
+
+.navbar {
+	margin: 0;
 	padding: 0;
-	li { 
-		margin: 0; 
-		padding: 0; 
-		list-style: none; 
-	}
-	/* Main Nav Parent Link */ 
-	> li { 
-		position: relative; 
+
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	} // li
+
+	// Main nav parent link.
+	> li {
 		float: left;
-		> a { 
-			display: block; 
-			padding: rem-calc(20 25);
+		position: relative;
+
+		> a {
+			color: $primary;
+			display: block;
 			font-size: rem-calc(16);
-			color: $primary; 
-		}
-		&:hover a { 
-			background: $primary;
-			color: $white; 
-		} 
-	}
-	/* Parent Link for Dropdown */
-	> .has-flyout {
-		> a { 
-			padding-right: rem-calc(40);
-			position: relative; 
-			&:after { 
-				content: ""; 
-				display: block; 
-				width: 0; 
-				height: 0; 
-				border: 4px solid; 
-				border-color: $primary transparent transparent transparent; 
-				position: absolute; 
-				top: rem-calc(30);
-				right: rem-calc(10); 
-			} 
-		}
+			padding: rem-calc(20 25);
+		} // > a
+
 		&:hover {
-			> a:after { 
-				border-color: $white transparent transparent transparent; 
-			}
+
+			a {
+				background: $primary;
+				color: $white;
+			} // a
+
+		} // &:hover
+
+	} // > li
+
+	// Parent link for dropdown.
+	> .has-flyout {
+
+		> a {
+			padding-right: rem-calc(40);
+			position: relative;
+
+			&::after {
+				border: 4px solid;
+				border-color: $primary transparent transparent;
+				content: '';
+				display: block;
+				height: 0;
+				position: absolute;
+				right: rem-calc(10);
+				top: rem-calc(30);
+				width: 0;
+			} // &::after
+
+		} // > a
+
+		&:hover {
+
+			a {
+				&::after {
+					border-color: $white transparent transparent;
+				} // &::after
+			} // a
+
 			.flyout {
 				display: block;
-			}
-		}
-		/* Sub Nav */
-		.flyout { 
+			} // .flyout
+
+		} // &:hover
+
+		// Sub Nav.
+		.flyout {
 			display: none;
+			left: 0;
+			margin: 0;
 			padding: 0;
-			margin: 0; 
-			/* width: 100%; */ 
-			position: absolute; 
-			left: 0; 
+			position: absolute;
 			z-index: 98;
+
 			li {
-				a { 
-					display: block; 
-					padding: rem-calc(15 20);
+
+				a {
 					background: $primary;
-					white-space: nowrap; 
-					font-size: rem-calc(12); 
-					color: $white;  
-					&:hover { 
+					color: $white;
+					display: block;
+					font-size: rem-calc(12);
+					padding: rem-calc(15 20);
+					white-space: nowrap;
+
+					&:hover {
 						background: $white;
-						color: $primary; 
-					}
-				}
-			} 
-		}
-	}
-	/* Current Page Link */ 
-	> .current-menu-item { 
+						color: $primary;
+					} // &:hover
+
+				} // a
+
+			} // li
+
+		} // .flyout
+
+	} // > .has-flyout
+
+	// Current page link.
+	> .current-menu-item {
 		background: $primary;
-		a { 
-			color: $white; 
-		} 
-	}
-	.menu-item .desc {
-		display: block;
-		padding-left: rem-calc(5);
-		font-size: rem-calc(9);
-	}
-}
-/* 
-================================================================================
-	MOBILE
-================================================================================
-*/
-.menu-icon { 
-	display: none; 
-	width: rem-calc(40); 
+
+		a {
+			color: $white;
+		} // a
+
+	} // > .current-menu-item
+
+	.menu-item {
+
+		.desc {
+			display: block;
+			font-size: rem-calc(9);
+			padding-left: rem-calc(5);
+		} // .desc
+
+	} // .menu-item
+
+} // .navbar
+
+
+//-----------------------------------------
+// Mobile
+//-----------------------------------------
+.menu-icon {
+	cursor: pointer;
+	display: none;
 	height: rem-calc(50);
-	cursor: pointer; 
-	position: absolute; 
-	top: rem-calc(20); 
-	left: rem-calc(20); 
-	z-index: 999; 
-	span { 
-		display: block; 
-		width: 100%; 
-		height: 8%; 
-		background-color: $black; 
-		position: absolute; 
-		top: 50%; 
-		left: 0; 
+	left: rem-calc(20);
+	position: absolute;
+	top: rem-calc(20);
+	width: rem-calc(40);
+	z-index: 999;
+
+	span {
+		background-color: $black;
+		display: block;
 		font-size: 0;
-		&:before, &:after { 
-			content: ""; 
-			width: 100%; 
-			height: 100%; 
-			background: $black; 
-			position: absolute; 
-			left: 0; 
-		}
-		&:before { 
-			transform: translateY(-250%); 
-		}
-		&:after { 
-			transform: translateY(250%); 
-		} 
-	}
-}
+		height: 8%;
+		left: 0;
+		position: absolute;
+		top: 50%;
+		width: 100%;
+
+		&::before,
+		&::after {
+			background: $black;
+			content: '';
+			height: 100%;
+			left: 0;
+			position: absolute;
+			width: 100%;
+		} // &::before, &::after
+
+		&::before {
+			transform: translateY(-250%);
+		} // &::before
+
+		&::after {
+			transform: translateY(250%);
+		} // &::after
+
+	} // span
+
+} // .menu-icon
