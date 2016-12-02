@@ -17,6 +17,7 @@
 ._*
 .DS_Store
 .htaccess
+error_log
 
 # //--------------------------------------------------------------
 # // Root Files
@@ -30,16 +31,19 @@ sitemap.xml.gz
 # //--------------------------------------------------------------
 /license.txt
 /readme.html
+/advanced-cache.php
+/backup-db/
+/backups/
+/blogs.dir/
+/cache/
+/gallery/
+/ngg/
+/ngg_styles/
+/object-cache.php
+/upgrade/
+/uploads/
+/wp-cache-config.php
 wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/object-cache.php
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/wp-cache-config.php
 
 # //--------------------------------------------------------------
 # // NPM, Gulp, Grunt, Bower
