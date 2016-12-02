@@ -1,21 +1,34 @@
 module.exports = function (grunt) {
 
-	// Configure
-	// initConfig takes an object
+	require('load-grunt-tasks')(grunt);
+
+	// Configure, initConfig takes an object.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+
+		babel: {
+			options: {
+				sourceMap: true,
+				presets: ['es2015']
+			},
+			dist: {
+				files: {
+					'assets/js/custom.js': 'assets/js/custom.js' // Destination : Source.
+				}
+			}
+		},
 
 		browserSync: {
 			dev: {
                 bsFiles: {
                     src : [
-                        'css/*.css',
+                        'assets/scss/*.css',
                         '**/*.php'
                     ]
                 },
                 options: {
                     watchTask: true,
-	                proxy: 'www.development.com'
+	                proxy: 'custom.dev'
                 },
             }
 		},
@@ -27,15 +40,12 @@ module.exports = function (grunt) {
 			},
 			target: {
 				src: [ // We could do 'js/*.js' but the array allows us to select what we want
-					// All Combined
-					//'bower_components/foundation-sites/dist/foundation.js',
-
-					// Foundation JS
+					// Foundation
 					'bower_components/foundation-sites/js/foundation.core.js',
 					// 'bower_components/foundation-sites/js/foundation.abide.js',
 					'bower_components/foundation-sites/js/foundation.accordion.js',
 					// 'bower_components/foundation-sites/js/foundation.accordionMenu.js',
-					// 'bower_components/foundation-sites/js/foundation.core.js', // Included First
+					// 'bower_components/foundation-sites/js/foundation.core.js',
 					// 'bower_components/foundation-sites/js/foundation.drilldown.js',
 					// 'bower_components/foundation-sites/js/foundation.dropdown.js',
 					// 'bower_components/foundation-sites/js/foundation.dropdownMenu.js',
@@ -60,59 +70,59 @@ module.exports = function (grunt) {
 					'bower_components/foundation-sites/js/foundation.util.timerAndImageLoader.js',
 					'bower_components/foundation-sites/js/foundation.util.touch.js',
 					'bower_components/foundation-sites/js/foundation.util.triggers.js',
-
 					// Slick
 					'bower_components/slick-carousel/slick/slick.min.js',
-					'js/custom.js'
+					// Custom
+					'assets/js/scripts/*.js'
 				],
-				dest: 'js/custom.min.js'
+				dest: 'assets/js/custom.js'
 			}
 		},
 
+		// http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 		copy: {
-			// http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
 			fa: {
 				files: [
-					{ 
+					{
 						expand: true,
 						cwd: 'bower_components/font-awesome/fonts/',
 						src: ['*'],
-						dest: 'fonts/'
+						dest: 'assets/fonts/'
 					},
-					{ 
+					{
 						expand: true,
 						cwd: 'bower_components/font-awesome/scss/',
 						src: ['*', '!font-awesome.scss'],
-						dest: 'css/scss/fa/'
+						dest: 'assets/scss/fa/'
 					}
 				]
 			},
-			foundation: { 
+			foundation: {
 				files: [
-					{ 
+					{
 						expand: true,
 						cwd: 'bower_components/foundation-sites/scss/',
-						src: ['**', '!foundation.scss'],
-						dest: 'css/scss/'
+						src: ['_global.scss', 'foundation.scss'],
+						dest: 'assets/scss/foundation-sites'
 					}
 				]
 			},
 			slick: {
 				files: [
-					{ 
+					{
 						expand: true,
 						cwd: 'bower_components/slick-carousel/slick/fonts/',
 						src: ['*'],
-						dest: 'fonts/'
+						dest: 'assets/fonts/'
 					},
-					{ 
+					{
 						expand: true,
 						cwd: 'bower_components/slick-carousel/slick/',
 						src: ['slick-theme.scss', 'slick.scss'],
-						dest: 'css/scss/',
-						rename: function(dest, src) { 
+						dest: 'assets/scss/',
+						rename: function(dest, src) {
 							for ( var i = 0; i < src.length; i++ ) {
-								return dest + src.replace(src[i], '_' + src[i]); 
+								return dest + src.replace(src[i], '_' + src[i]);
 							}
 						}
 					}
@@ -126,8 +136,9 @@ module.exports = function (grunt) {
 					style: 'compressed',
 					sourcemap: 'file'
 				},
+
 				files: {
-					'css/custom.css': 'css/scss/custom.scss' // 'Destination': 'Source'
+					'assets/scss/custom.css': 'assets/scss/custom.scss' // 'Destination': 'Source'
 				}
 			}
 		},
@@ -140,19 +151,19 @@ module.exports = function (grunt) {
 				banner: '/* <%= pkg.author %> | <%= pkg.license %> | <%= grunt.template.today("mm-dd-yyyy") %> */\n'
 			},
 			target: { // We can name this whatever we like, example distribution or dist
-				src: 'js/custom.min.js', // Uncompressed
-				dest: 'js/custom.min.js' // Where to compress and output
+				src: 'assets/js/custom.js', // Uncompressed
+				dest: 'assets/js/custom.js' // Where to compress and output
 			}
 		},
 
 		watch: {
 			scripts: {
-				files: ['js/*.js'],
-				tasks: ['concat', 'uglify']
+				files: ['assets/js/scripts/*.js'],
+				tasks: ['concat', 'babel', 'uglify']
 			},
 
 			styles: {
-				files: ['css/scss/**/*.scss'],
+				files: ['assets/scss/**/*.scss'],
 				tasks: ['sass', 'postcss']
 			}
 		},
@@ -161,12 +172,12 @@ module.exports = function (grunt) {
 			options: {
 				map: true,
 				processors: [
-					require('autoprefixer')({browsers: 'last 2 versions'}) // add vendor prefixes 
+					require('autoprefixer')({browsers: 'last 2 versions'})
 				]
 			},
 
 			dist: {
-				src: 'css/*.css'
+				src: 'assets/scss/*.css'
 			}
 		}
 
