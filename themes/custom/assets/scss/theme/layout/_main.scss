@@ -1,0 +1,13 @@
+//--------------------------------------------------------------
+// MAIN HTML
+//--------------------------------------------------------------
+
+.body-site {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+} // .body-site
+
+.website-container {
+	flex: 1;
+} // .website-container

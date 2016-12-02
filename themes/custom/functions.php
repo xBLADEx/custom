@@ -4,9 +4,9 @@
 //--------------------------------------------------------------
 
 define( 'THEME_URI', get_template_directory_uri() );
-define( 'THEME_IMAGES', THEME_URI . '/images' );
-define( 'THEME_CSS', THEME_URI . '/css' );
-define( 'THEME_JS', THEME_URI . '/js' );
+define( 'THEME_IMAGES', THEME_URI . '/assets/images' );
+define( 'THEME_CSS', THEME_URI . '/assets/scss' );
+define( 'THEME_JS', THEME_URI . '/assets/js' );
 
 require_once( 'functions/enqueue.php' );
 require_once( 'functions/support.php' );

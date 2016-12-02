@@ -1,0 +1,77 @@
+//--------------------------------------------------------------
+// BLOG
+//--------------------------------------------------------------
+
+.sidebar-widget {
+
+	input[type='submit'] {
+		background: $black;
+		border: 0;
+		color: $white;
+		padding: rem-calc(10 20);
+		text-align: center;
+
+		&:hover {
+			background: $white;
+			color: $black;
+		} // &:hover
+
+	} // input[type='submit']
+
+} // .sidebar-widget
+
+h2 {
+
+	a {
+		font-size: inherit;
+	} // a
+
+} // h2
+
+// .post-container {  } //.post-container
+// .date {  } // .date
+// .categories {  } // .categories
+// .tags {  } // .tags
+// .tags span {  } // .tags span
+
+
+//-----------------------------------------
+// Pagination
+//-----------------------------------------
+.page-numbers {
+	margin: rem-calc(0 0 20 0);
+
+	li {
+		display: inline-block;
+
+		.page-numbers {
+			background: $primary;
+			padding: rem-calc(10);
+
+			&:hover {
+				background: $secondary;
+				color: $primary;
+			} // &:hover
+
+		} // .page-numbers
+
+		.current {
+			background: $secondary;
+			color: $primary;
+			padding: rem-calc(10);
+		} // .current
+
+	} // li
+
+} // .page-numbers
+
+
+//-----------------------------------------
+// Comments
+//-----------------------------------------
+// .comment-title { } // .comment-title
+// .comment-list { } // .comment-list
+// .comment { } // .comment
+// .comment-gravatar { } // .comment-gravatar
+// .comment-form { } // .comment-form
+// .reply {  } // .reply

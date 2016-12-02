@@ -1,0 +1,93 @@
+//--------------------------------------------------------------
+// ELEMENTS
+//--------------------------------------------------------------
+
+html {
+	font-size: 100%;
+} // html
+
+body {
+	background: $background;
+} // body
+
+body,
+div,
+ul,
+ol,
+li,
+p,
+span,
+a {
+	color: $text;
+	font-family: $font-text;
+	font-size: rem-calc(20);
+} // body, div, ul, ol, li, p, span, a
+
+p {
+	margin: rem-calc(0 0 5 0);
+} // p
+
+ul {
+	margin: rem-calc(0 0 30 30);
+	padding: 0;
+} // ul
+
+
+//-----------------------------------------
+// Headings
+//-----------------------------------------
+h1 {
+	color: $color-black;
+	font: $h1-font;
+	margin: rem-calc(0 0 10 0);
+} // h1
+
+h2 {
+	color: $color-black;
+	font: $h2-font;
+	margin: rem-calc(0 0 10 0);
+	text-transform: uppercase;
+} // h2
+
+h3 {
+	color: $color-black;
+	font: $h3-font;
+	margin: rem-calc(0 0 10 0);
+} // h3
+
+h4 {
+	font: $h4-font;
+	margin: rem-calc(0 0 10 0);
+} // h4
+
+h5 {
+	font: $h5-font;
+	margin: rem-calc(0 0 10 0);
+} // h5
+
+h6 {
+	font: $h6-font;
+	margin: rem-calc(0 0 10 0);
+} // h6
+
+
+//-----------------------------------------
+// Links
+//-----------------------------------------
+a,
+a:link {
+	color: $link;
+	text-decoration: none;
+} // a, a:link
+
+// a:visited { } // a:visited
+
+a:hover {
+	color: $link-hover;
+} // a:hover
+
+a:focus {
+	outline: 1px solid rgba($color-black, 0.4);
+} // a:focus
+
+// a:active { } // a:active
