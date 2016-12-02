@@ -1,0 +1,34 @@
+//--------------------------------------------------------------
+// BUTTONS
+//--------------------------------------------------------------
+
+button,
+.button,
+a.button {
+	-webkit-appearance: none;
+	background: $black;
+	border: 0;
+	color: $white;
+	cursor: pointer;
+	display: inline-block;
+	font-family: inherit;
+	font-size: rem-calc(16);
+	line-height: 1.5;
+	margin: 0;
+	padding: rem-calc(10 15);
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+
+	&:hover {
+		background: $white;
+		color: $black;
+	} // &:hover
+
+	&:focus {
+		background: $white;
+		color: $black;
+		outline: 1px solid rgba($black, 0.4);
+	} // &:focus
+
+} // button, .button, a.button
