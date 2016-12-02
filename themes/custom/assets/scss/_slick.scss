@@ -3,7 +3,6 @@
 .slick-slider {
     position: relative;
     display: block;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -69,8 +68,6 @@
     }
     img {
         display: block;
-        width: 100%;
-        background-size: cover;
     }
     &.slick-loading img {
         display: none;
