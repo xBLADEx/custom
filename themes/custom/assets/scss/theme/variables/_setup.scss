@@ -1,42 +1,4 @@
-/*
-================================================================================
-	COLORS / VARIABLES
-================================================================================
-*/
-// Colors
-$white: #ffffff;
-$black:	#000000;
-$grey: #eaeaea;
 
-$theme-white: #fafafa;
-$theme-black: #2b2925;
-$theme-grey: $grey;
-$blue: #5c8fb2;
-$dark-blue: #648591;
-$red: #c95555;
-
-$background: #fafafa;
-$text: #222;
-$link: $blue;
-$link-hover: $red;
-
-$primary: #222;
-$secondary: #efefef;
-
-// Variables
-$font-heading: 'Lato', serif;
-$font-text: 'Halant', serif;
-$h1-font: 900 rem-calc(45) 'Lato', sans-serif;
-$h2-font: 700 rem-calc(32) 'Lato', sans-serif;
-$h3-font: 600 rem-calc(26) 'Halant', sans-serif;
-$h4-font: 400 rem-calc(22) 'Lato', sans-serif;	
-$h5-font: 600 rem-calc(18) 'Halant', sans-serif;
-$h6-font: 600 rem-calc(16) 'Halant', sans-serif;
-/*
-================================================================================
-	TYPOGRAPHY
-================================================================================
-*/
 @font-face { 
 	font-family: 'icomoon'; 
 	src: url('../fonts/icomoon.eot?-xort90'); 
@@ -79,18 +41,18 @@ ul {
 h1 { 
 	margin: rem-calc(0 0 10 0);
 	font: $h1-font;
-	color: $red; 
+	color: $color-black; 
 }
 h2 { 
 	margin: rem-calc(0 0 10 0); 
 	font: $h2-font;
 	text-transform: uppercase;
-	color: $dark-blue;
+	color: $color-black;
 }
 h3 { 
 	margin: rem-calc(0 0 10 0);
 	font: $h3-font;
-	color: $theme-black; 
+	color: $color-black; 
 }
 h4 { 
 	margin: rem-calc(0 0 10 0);
