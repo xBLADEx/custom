@@ -1,1 +1,49 @@
+//--------------------------------------------------------------
 // WORDPRESS
+//--------------------------------------------------------------
+
+.alignleft {
+	float: left;
+	margin: rem-calc(0 20 20 0);
+} // .alignleft
+
+.alignright {
+	float: right;
+	margin: rem-calc(0 0 20 20);
+} // .alignright
+
+.aligncenter {
+	display: block;
+	margin: rem-calc(20) auto;
+	text-align: center;
+} // .aligncenter
+
+
+//-----------------------------------------
+// Search
+//-----------------------------------------
+.form-search {
+	float: right;
+	margin: rem-calc(20 0);
+	width: rem-calc(260);
+} // .form-search
+
+.form-search-box {
+	float: right;
+	margin: 0;
+	width: auto;
+} // .form-search-box
+
+.form-search-button {
+	background: $black;
+	border: 0;
+	color: $white;
+	float: right;
+	padding: rem-calc(9 20);
+
+	&:hover {
+		background: $white;
+		color: $black;
+	} // &:hover
+
+} // .form-search-button

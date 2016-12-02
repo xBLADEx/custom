@@ -1,9 +1,9 @@
 //--------------------------------------------------------------
-// PAGE
+// CONTACT
 //--------------------------------------------------------------
 
-.page-content {
-	min-height: rem-calc(500);
-} // .page-content
-
-// .page-title { } // .page-title
+// Textarea.
+.form-comment {
+	max-height: rem-calc(160);
+	min-height: rem-calc(100);
+} // .form-comment
