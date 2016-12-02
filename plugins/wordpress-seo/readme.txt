@@ -4,9 +4,9 @@ Donate link: https://yoast.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: SEO, Google, xml sitemap, google search console, google webmaster tools, canonical, meta description, meta title, noindex, snippet preview, redirects, focus keyword, seo copywriting, content marketing
-Requires at least: 4.3
-Tested up to: 4.6
-Stable tag: 3.6.1
+Requires at least: 4.4
+Tested up to: 4.7
+Stable tag: 3.9
 
 Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using Yoast SEO plugin.
 
@@ -107,89 +107,43 @@ You'll find the [FAQ on Yoast.com](https://yoast.com/wordpress/plugins/seo/faq/)
 == Screenshots ==
 
 1. The Yoast SEO plugin general meta box. You'll see this on edit post pages, for posts, pages and custom post types.
-2. Some of the sites using this Yoast SEO plugin.
-3. The Yoast SEO settings for a taxonomy.
-4. The fully configurable XML sitemap for Yoast SEO.
-5. Easily import SEO data from All In One SEO pack and HeadSpace2 SEO.
-6. Example of the Page Analysis functionality.
-7. The advanced section of the Yoast SEO meta box.
+2. The fully configurable XML sitemap for Yoast SEO.
+3. Easily import SEO data from All In One SEO pack and HeadSpace2 SEO.
+4. Example of the SEO analysis functionality.
+5. Example of the readability analysis functionality.
+6. The advanced section of the Yoast SEO meta box.
 
 == Changelog ==
 
-= 3.6.1 =
+= 3.9.0 =
 
-Release Date: Oktober 3rd, 2016
-
-* Bugfixes:
-	* Fixes a bug where the admin bar would still show advanced settings when the advanced settings were disabled.
-
-= 3.6.0 =
-
-Release Date: September 27th, 2016
+Release Date: November 29nd, 2016
 
 * Enhancements:
-    * Introduces the installation wizard that enables an easy way of setting up Yoast SEO. The installation wizard enables you to:
-        - Newsletter signup.
-        - Specify the environment in which a site is running.
-        - Specify the type of a site.
-        - Specify a company or person for the metadata used in Google's Knowledge Graph.
-        - Specify social profiles.
-        - Specify post type visibility.
-        - Specify if you have multiple authors.
-        - Setup Google Search Console.
-        - Setup the title settings.
-    * The installation wizard replaces the tour.
-    * Adds a notification to the Yoast notification center to start the onboarding wizard.
-    * Adds a button on the general settings page to start the onboarding wizard.
-    * Adds a premium tab to the metabox.
-	* Introduces a feature toggles tab on the Yoast SEO dashboard where users can enable/disable certain features.
-		* New: Enable/disable the advanced settings pages.
-		* New: Enable/disable the Yoast SEO admin bar menu. Added after receiving feedback from multiple users who wanted this option.
-		* Moved: Enable/disable The OnPage.org integration.
-	* Removes the tour. With the help center available on every Yoast SEO page or section and the new installation wizard, there was no real usecase for the tour anymore.
+    * Updates the banners on the admin pages.
+    * Improves accessibility by moving the Google Search Console reload button from the header.
+    * Allow for other plugins and themes to more easily add html namespaces through the new wpseo_html_namespaces filter.
+    * Prevent conflicts with other plugins/themes which also add html namespaces.
 
 * Bugfixes:
-    * Fixes sorting the table in sitemaps.
-    * Fixes a bug where keywords with a $ where not recognized.
+    * Adds a check to prevent a "Cannot read property 'body' of undefined" error with tinyMCE that occurred with Visual Composer and some themes.
+    * Fixes a bug that prevented bulk actions to work in the Google Search Console.
+    * Fixed incorrect timezone for zero offset case (Atlantic/Azores instead of UTC).
 
-= 3.5.0 =
+= 3.8.0 =
 
-Release Date: September 7th, 2016
+Release Date: November 8th, 2016
 
 * Enhancements:
-    * Adds Flesch Reading tests for Dutch and German.
-    * Added info about author links in theme to disable setting on archives settings page.
-    * Explicitly checks for public post type status when creating sitemap.
-    * Removes frequency and priority from sitemap, see release post for clarification.
-    * Improves sitemap "blocking files" notification.
-    * Improves sitemap generation for posts when dealing with a large number of posts.
-    * Improves reliability in some PHP configurations.
-    * Improves styling for notices below tabs.
-    * Adds @id fields to JSON LD output.
-    * Adds table headings and labels to the bulk editor.
-    * Improves the accessibility of the bulk editor.
-    * Prevented loading the network admin when not network active.
-    * Don't show keyword filter in post list when keyword analysis is disabled.
-    * Improves message for settings import.
-    * Adds translations for notification counts.
-    * Makes upload image buttons translatable.
-    * Improves alignment of form fields.
-    * Adds descriptions for breadcrumb and canonicals on category pages.
-    * Improves accessibility on plugin conflict notification links.
+	* Makes tooltips on tabs icons accessible.
+	* Adds check to prevent sitemap from having empty image entries.
+	* Improves screenreader text for the readability tab.
+	* Adds a toggle for author and date archives.
+	* Adds several improvements for readability and consistent styling.
 
 * Bugfixes:
-    * Fixes a bug where a new post with focus keyword would show up as a post without a keyword on the dashboard.
-    * Fixes a bug that would break rich term descriptions with large images.
-    * Fixes cache check in dashboard widget, which could cause unnecessary queries.
-    * No longer load toolbar styles when toolbar is disabled.
-    * Fixes a bug to prevent "cannot modify headers" notice on export.
-    * Fixes a bug to improve passive voice recognition.
-    * Fixes a bug to improve sentence detection.
-    * Fixes a bug that prevented the markings from working correctly.
-    * Fixes a bug where select2 would generate a 404 on a non-supported language.
-    * Fixes a bug where HTML attributes could be translated.
-    * Fixes a bug where the <code>og:image</code> tag would be omitted.
-    * Fixes a bug for canonicals for search pages with empty search queries.
+	* Fixes a bug where the category picker would become slow with 1000+ categories, props [Ron Willemse](https://github.com/RonWillemse)
+	* Fixes a bug with VoiceOver on the readability and keyword tabs.
 
 
 
