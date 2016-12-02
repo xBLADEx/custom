@@ -7,6 +7,10 @@
 	position: relative;
 	width: 100%;
 	z-index: 100;
+
+	@include for-desktop-only {
+		background: $color-black;
+	}
 } // .header-background
 
 .logo {

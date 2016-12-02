@@ -1,0 +1,32 @@
+//--------------------------------------------------------------
+// RESPONSIVE
+//--------------------------------------------------------------
+
+// See: https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.gs350ly1b
+@mixin tablet-portrait-up {
+	@media (min-width: rem-calc(600)) { @content; }
+}
+
+@mixin tablet-portait-only {
+	@media (min-width: rem-calc(600)) and (max-width: rem-calc(899)) { @content; }
+}
+
+@mixin for-tablet-landscape-up {
+	@media (min-width: rem-calc(900)) { @content; }
+}
+
+@mixin for-tablet-landscape-only {
+	@media (min-width: rem-calc(900)) and (max-width: rem-calc(1199)) { @content; }
+}
+
+@mixin for-desktop-up {
+	@media (min-width: rem-calc(1200)) { @content; }
+}
+
+@mixin for-desktop-only {
+	@media (min-width: rem-calc(1200)) and (max-width: rem-calc(1799)) { @content; }
+}
+
+@mixin for-big-desktop-up {
+	@media (min-width: rem-calc(1800)) { @content; }
+}
