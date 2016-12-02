@@ -1,16 +1,15 @@
-/* 
-================================================================================
-	FOOTER
-================================================================================
-*/
-.footer { 
+//--------------------------------------------------------------
+// FOOTER
+//--------------------------------------------------------------
+.footer {
+	background: $primary;
+	position: relative;
 	width: 100%;
-	position: relative;  
-	background: $primary; 
-	p { 
-		margin: 0;
-		text-align: center;  
-		font-size: rem-calc(14);
+
+	p {
 		color: $theme-white;
+		font-size: rem-calc(14);
+		margin: 0;
+		text-align: center;
 	}
 }
