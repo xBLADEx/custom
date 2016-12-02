@@ -1,12 +1,14 @@
-// INDEX FOUNDATION SITES
+//--------------------------------------------------------------
+// FOUNDATION SITES
+//--------------------------------------------------------------
 
-// Sass utilities
+// Sass utilities.
 @import '../../../bower_components/foundation-sites/scss/util/util';
 
-// Global variables and styles
+// Global variables and styles.
 @import 'global';
 
-// Components
+// Components.
 @import '../../../bower_components/foundation-sites/scss/grid/grid';
 @import '../../../bower_components/foundation-sites/scss/typography/typography';
 @import '../../../bower_components/foundation-sites/scss/forms/forms';
@@ -95,8 +97,8 @@
 	}
 }
 
-// INCLUDE FOUNDATION
+// Include foundation.
 @include foundation-everything;
 
-// CHANGE TO FLEXBOX
+// Flexbox grid.
 // @include foundation-everything($flex: true);
