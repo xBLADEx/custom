@@ -2,19 +2,22 @@
 // Custom jQuery
 //--------------------------------------------------------------
 
-(function($) {
+( function( $ ) {
 
 	'use strict';
 
-	$(function() { // Shorthand Document Ready
-		// Mobile Menu
-		var mainNav = $('.main-nav');
-		$('.menu-icon').on('click', function(e) {
+	// Shorthand Document Ready.
+	$( function() {
+
+		// Mobile Menu.
+		var mainNav = $( '.main-nav' );
+		$('.menu-icon').on( 'click', function( e ) {
 			e.preventDefault();
 			mainNav.slideToggle();
-		});
-		// Slick Slider
-		$('.home-slider').slick({
+		} );
+
+		// Slick Slider.
+		$( '.home-slider' ).slick( {
 	        dots: true,
 	        infinite: true,
 	        autoplay: false,
@@ -24,9 +27,10 @@
 	        slidesToScroll: 1,
 	        pauseOnHover: false,
 	        fade: false
-	    });
-		// Initialize Foundation
-		$(document).foundation();
-	});
+	    } );
 
-}(jQuery));
+		// Initialize Foundation.
+		$( document ).foundation();
+	} );
+
+}( jQuery ) );
