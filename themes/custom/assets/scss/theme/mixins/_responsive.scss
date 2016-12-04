@@ -11,22 +11,22 @@
 	@media (min-width: rem-calc(600)) and (max-width: rem-calc(899)) { @content; }
 }
 
-@mixin for-tablet-landscape-up {
+@mixin tablet-landscape-up {
 	@media (min-width: rem-calc(900)) { @content; }
 }
 
-@mixin for-tablet-landscape-only {
+@mixin tablet-landscape-only {
 	@media (min-width: rem-calc(900)) and (max-width: rem-calc(1199)) { @content; }
 }
 
-@mixin for-desktop-up {
+@mixin desktop-up {
 	@media (min-width: rem-calc(1200)) { @content; }
 }
 
-@mixin for-desktop-only {
+@mixin desktop-only {
 	@media (min-width: rem-calc(1200)) and (max-width: rem-calc(1799)) { @content; }
 }
 
-@mixin for-big-desktop-up {
+@mixin desktop-large-up {
 	@media (min-width: rem-calc(1800)) { @content; }
 }
