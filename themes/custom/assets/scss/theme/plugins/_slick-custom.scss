@@ -2,6 +2,27 @@
 // SLICK
 //--------------------------------------------------------------
 
+//-----------------------------------------
+// Slick Theme
+//-----------------------------------------
+.slick-prev,
+.slick-next {
+	z-index: 99;
+} // .slick-prev, .slick-next
+
+.slick-prev {
+	left: 0;
+} // .slick-prev
+
+.slick-next {
+	right: 0;
+} // .slick-next
+
+.slick-dots {
+	bottom: 15px;
+	margin: 0;
+} // .slick-dots
+
 
 //-----------------------------------------
 // Slick
@@ -15,4 +36,3 @@
 	} // img
 
 } // .slick-slide
-
