@@ -4,29 +4,29 @@
 
 // See: https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.gs350ly1b
 @mixin tablet-up {
-	@media (min-width: rem-calc(600)) { @content; }
+	@media (min-width: rem(600)) { @content; }
 }
 
 @mixin tablet-only {
-	@media (min-width: rem-calc(600)) and (max-width: rem-calc(899)) { @content; }
+	@media (min-width: rem(600)) and (max-width: rem(899)) { @content; }
 }
 
 @mixin laptop-up {
-	@media (min-width: rem-calc(900)) { @content; }
+	@media (min-width: rem(900)) { @content; }
 }
 
 @mixin laptop-only {
-	@media (min-width: rem-calc(900)) and (max-width: rem-calc(1199)) { @content; }
+	@media (min-width: rem(900)) and (max-width: rem(1199)) { @content; }
 }
 
 @mixin desktop-up {
-	@media (min-width: rem-calc(1200)) { @content; }
+	@media (min-width: rem(1200)) { @content; }
 }
 
 @mixin desktop-only {
-	@media (min-width: rem-calc(1200)) and (max-width: rem-calc(1799)) { @content; }
+	@media (min-width: rem(1200)) and (max-width: rem(1799)) { @content; }
 }
 
 @mixin desktop-large-up {
-	@media (min-width: rem-calc(1800)) { @content; }
+	@media (min-width: rem(1800)) { @content; }
 }

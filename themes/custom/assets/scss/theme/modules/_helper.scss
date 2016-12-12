@@ -15,7 +15,7 @@
 } // .italic
 
 .small {
-	font-size: rem-calc(10);
+	font-size: rem(10);
 } // .small
 
 .clear {
@@ -45,6 +45,6 @@
 
 .iframe {
 	border: 0;
-	min-height: rem-calc(600);
+	min-height: rem(600);
 	width: 100%;
 } // .iframe

@@ -53,7 +53,7 @@
 		> a {
 			color: $primary;
 			display: block;
-			font-size: rem-calc(16);
+			font-size: rem(16);
 			padding: rem(20) rem(25);
 		} // > a
 
@@ -72,7 +72,7 @@
 	> .has-flyout {
 
 		> a {
-			padding-right: rem-calc(40);
+			padding-right: rem(40);
 			position: relative;
 
 			&::after {
@@ -82,8 +82,8 @@
 				display: block;
 				height: 0;
 				position: absolute;
-				right: rem-calc(10);
-				top: rem-calc(30);
+				right: rem(10);
+				top: rem(30);
 				width: 0;
 			} // &::after
 
@@ -118,8 +118,8 @@
 					background: $primary;
 					color: $white;
 					display: block;
-					font-size: rem-calc(12);
-					padding: rem-calc(15 20);
+					font-size: rem(12);
+					padding: rem(15 20);
 					white-space: nowrap;
 
 					&:hover {
@@ -149,8 +149,8 @@
 
 		.desc {
 			display: block;
-			font-size: rem-calc(9);
-			padding-left: rem-calc(5);
+			font-size: rem(9);
+			padding-left: rem(5);
 		} // .desc
 
 	} // .menu-item
@@ -164,11 +164,11 @@
 .mobile-menu-icon {
 	cursor: pointer;
 	display: block;
-	height: rem-calc(50);
-	left: rem-calc(20);
+	height: rem(50);
+	left: rem(20);
 	position: absolute;
-	top: rem-calc(20);
-	width: rem-calc(40);
+	top: rem(20);
+	width: rem(40);
 	z-index: 999;
 
 	@include tablet-up {
