@@ -30,7 +30,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class( 'body-site' ); ?>>
-	<a href="#" class="menu-icon"><span>Menu</span></a>
+	<a href="#" class="mobile-menu-icon"><span>Menu</span></a>
 	<header class="header-background">
 		<div class="row">
 			<div class="small-12 medium-3 columns">

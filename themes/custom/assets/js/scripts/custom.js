@@ -11,7 +11,7 @@
 
 		// Mobile Menu.
 		var mainNav = $( '.main-nav' );
-		$('.menu-icon').on( 'click', function( e ) {
+		$( '.mobile-menu-icon' ).on( 'click', function( e ) {
 			e.preventDefault();
 			mainNav.slideToggle();
 		} );
