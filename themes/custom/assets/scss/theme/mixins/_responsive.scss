@@ -3,19 +3,19 @@
 //--------------------------------------------------------------
 
 // See: https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.gs350ly1b
-@mixin tablet-portrait-up {
+@mixin tablet-up {
 	@media (min-width: rem-calc(600)) { @content; }
 }
 
-@mixin tablet-portait-only {
+@mixin tablet-only {
 	@media (min-width: rem-calc(600)) and (max-width: rem-calc(899)) { @content; }
 }
 
-@mixin tablet-landscape-up {
+@mixin laptop-up {
 	@media (min-width: rem-calc(900)) { @content; }
 }
 
-@mixin tablet-landscape-only {
+@mixin laptop-only {
 	@media (min-width: rem-calc(900)) and (max-width: rem-calc(1199)) { @content; }
 }
 
