@@ -106,27 +106,6 @@ module.exports = function (grunt) {
 						dest: 'assets/scss/foundation-sites'
 					}
 				]
-			},
-			slick: {
-				files: [
-					{
-						expand: true,
-						cwd: 'bower_components/slick-carousel/slick/fonts/',
-						src: ['*'],
-						dest: 'assets/fonts/'
-					},
-					{
-						expand: true,
-						cwd: 'bower_components/slick-carousel/slick/',
-						src: ['slick-theme.scss', 'slick.scss'],
-						dest: 'assets/scss/',
-						rename: function(dest, src) {
-							for ( var i = 0; i < src.length; i++ ) {
-								return dest + src.replace(src[i], '_' + src[i]);
-							}
-						}
-					}
-				]
 			}
 		},
 
