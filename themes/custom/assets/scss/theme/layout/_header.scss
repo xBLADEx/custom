@@ -7,10 +7,6 @@
 	position: relative;
 	width: 100%;
 	z-index: 100;
-
-	@include desktop-up {
-		background: $color-black;
-	}
 } // .header-background
 
 .logo {
@@ -24,8 +20,13 @@
 // Navigation
 //-----------------------------------------
 .main-nav {
+	display: none;
 	position: relative;
 	z-index: 99;
+
+	@include tablet-up {
+		display: block;
+	}
 } // .main-nav
 
 .navbar {
@@ -40,14 +41,20 @@
 
 	// Main nav parent link.
 	> li {
-		float: left;
+		border-top: 1px solid $black;
+		float: none;
 		position: relative;
+
+		@include tablet-up {
+			border: 0;
+			float: left;
+		}
 
 		> a {
 			color: $primary;
 			display: block;
 			font-size: rem-calc(16);
-			padding: rem-calc(20 25);
+			padding: rem(20) rem(25);
 		} // > a
 
 		&:hover {
@@ -156,13 +163,17 @@
 //-----------------------------------------
 .menu-icon {
 	cursor: pointer;
-	display: none;
+	display: block;
 	height: rem-calc(50);
 	left: rem-calc(20);
 	position: absolute;
 	top: rem-calc(20);
 	width: rem-calc(40);
 	z-index: 999;
+
+	@include tablet-up {
+		display: none;
+	}
 
 	span {
 		background-color: $black;
