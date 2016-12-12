@@ -20,17 +20,17 @@ module.exports = function (grunt) {
 
 		browserSync: {
 			dev: {
-                bsFiles: {
-                    src : [
-                        'assets/scss/*.css',
-                        '**/*.php'
-                    ]
-                },
-                options: {
-                    watchTask: true,
-	                proxy: 'custom.dev'
-                },
-            }
+				bsFiles: {
+					src : [
+						'assets/scss/*.css',
+						'**/*.php'
+					]
+				},
+				options: {
+					watchTask: true,
+					proxy: 'custom.dev'
+				},
+			}
 		},
 
 		concat: {
@@ -104,6 +104,33 @@ module.exports = function (grunt) {
 						cwd: 'bower_components/foundation-sites/scss/',
 						src: ['_global.scss', 'foundation.scss'],
 						dest: 'assets/scss/foundation-sites'
+					}
+				]
+			},
+			slick: {
+				files: [
+					{
+						expand: true,
+						cwd: 'bower_components/slick-carousel/slick/fonts/',
+						src: ['*'],
+						dest: 'assets/fonts/'
+					},
+					{
+						expand: true,
+						cwd: 'bower_components/slick-carousel/slick/',
+						src: ['ajax-loader.gif'],
+						dest: 'assets/images/slides/'
+					},
+					{
+						expand: true,
+						cwd: 'bower_components/slick-carousel/slick/',
+						src: ['slick-theme.scss', 'slick.scss'],
+						dest: 'assets/scss/theme/plugins/',
+						rename: function(dest, src) {
+							for ( var i = 0; i < src.length; i++ ) {
+								return dest + src.replace(src[i], '_' + src[i]);
+							}
+						}
 					}
 				]
 			}
