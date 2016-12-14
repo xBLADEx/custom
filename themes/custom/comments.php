@@ -1,8 +1,11 @@
 <?php
-//--------------------------------------------------------------
-// Comments
-//--------------------------------------------------------------
-// Comments template in functions/post.php
+/**
+ * Comments
+ *
+ * @package Custom
+ */
+
+// Comments template in functions/post.php.
 if ( post_password_required() ) { return; }
 ?>
 <?php
@@ -12,11 +15,11 @@ if ( have_comments() ) { ?>
 	</h4>
 	<ol class="comment-list">
 		<?php
-		// http://codex.wordpress.org/Function_Reference/wp_list_comments
+		// See: http://codex.wordpress.org/Function_Reference/wp_list_comments.
 		wp_list_comments(
 			array(
 				'callback' => 'foundation_comment',
-				'style'    => 'ol'
+				'style'    => 'ol',
 			)
 		); ?>
 	</ol>
@@ -34,11 +37,11 @@ if ( have_comments() ) { ?>
 		<p>Comments are closed.</p>
 	<?php
 	}
-} // have_comments()
+} // End have_comments().
 
 if ( comments_open() ) { ?>
 	<div class="panel comment-form">
-		<?php comment_form(); // http://codex.wordpress.org/Function_Reference/comment_form ?>
+		<?php comment_form(); // See: http://codex.wordpress.org/Function_Reference/comment_form. ?>
 	</div>
 <?php
 } ?>

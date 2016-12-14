@@ -1,7 +1,9 @@
 <?php
-//--------------------------------------------------------------
-// Functions
-//--------------------------------------------------------------
+/**
+ * Functions
+ *
+ * @package Custom
+ */
 
 define( 'THEME_URI', get_template_directory_uri() );
 define( 'THEME_IMAGES', THEME_URI . '/assets/images' );
