@@ -5,15 +5,15 @@
 .sidebar-widget {
 
 	input[type='submit'] {
-		background: $black;
+		background: $color-black;
 		border: 0;
-		color: $white;
+		color: $color-white;
 		padding: rem(10 20);
 		text-align: center;
 
 		&:hover {
-			background: $white;
-			color: $black;
+			background: $color-white;
+			color: $color-black;
 		} // &:hover
 
 	} // input[type='submit']
@@ -45,19 +45,19 @@ h2 {
 		display: inline-block;
 
 		.page-numbers {
-			background: $primary;
+			background: $color-mine-shaft;
 			padding: rem(10);
 
 			&:hover {
-				background: $secondary;
-				color: $primary;
+				background: $color-gallery;
+				color: $color-mine-shaft;
 			} // &:hover
 
 		} // .page-numbers
 
 		.current {
-			background: $secondary;
-			color: $primary;
+			background: $color-gallery;
+			color: $color-mine-shaft;
 			padding: rem(10);
 		} // .current
 

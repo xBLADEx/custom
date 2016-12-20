@@ -35,15 +35,15 @@
 } // .form-search-box
 
 .form-search-button {
-	background: $black;
+	background: $color-black;
 	border: 0;
-	color: $white;
+	color: $color-white;
 	float: right;
 	padding: rem(9 20);
 
 	&:hover {
-		background: $white;
-		color: $black;
+		background: $color-white;
+		color: $color-black;
 	} // &:hover
 
 } // .form-search-button

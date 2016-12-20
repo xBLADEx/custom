@@ -7,7 +7,7 @@ html {
 } // html
 
 body {
-	background: $background;
+	background: $color-alabaster;
 } // body
 
 body,
@@ -18,7 +18,7 @@ li,
 p,
 span,
 a {
-	color: $text;
+	color: $color-mine-shaft;
 	font-family: $font-text;
 	font-size: rem(20);
 } // body, div, ul, ol, li, p, span, a
@@ -76,14 +76,14 @@ h6 {
 //-----------------------------------------
 a,
 a:link {
-	color: $link;
+	color: $color-hippie-blue;
 	text-decoration: none;
 } // a, a:link
 
 // a:visited { } // a:visited
 
 a:hover {
-	color: $link-hover;
+	color: $color-chestnut-rose;
 } // a:hover
 
 a:focus {

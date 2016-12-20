@@ -6,9 +6,9 @@ button,
 .button,
 a.button {
 	appearance: none;
-	background: $black;
+	background: $color-black;
 	border: 0;
-	color: $white;
+	color: $color-white;
 	cursor: pointer;
 	display: inline-block;
 	font-family: inherit;
@@ -21,14 +21,14 @@ a.button {
 	text-decoration: none;
 
 	&:hover {
-		background: $white;
-		color: $black;
+		background: $color-white;
+		color: $color-black;
 	} // &:hover
 
 	&:focus {
-		background: $white;
-		color: $black;
-		outline: 1px solid rgba($black, 0.4);
+		background: $color-white;
+		color: $color-black;
+		outline: 1px solid rgba($color-black, 0.4);
 	} // &:focus
 
 } // button, .button, a.button
