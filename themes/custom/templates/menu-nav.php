@@ -1,8 +1,11 @@
 <?php
-//--------------------------------------------------------------
-// Navigation
-//--------------------------------------------------------------
-// http://codex.wordpress.org/Function_Reference/wp_nav_menu
+/**
+ * Navigation
+ * See: http://codex.wordpress.org/Function_Reference/wp_nav_menu.
+ *
+ * @package Custom
+ */
+
 wp_nav_menu(
 	array(
 		'theme_location'  => 'main_nav',
@@ -20,6 +23,6 @@ wp_nav_menu(
 		'link_after'      => '',
 		'items_wrap'      => '<ul class="navbar">%3$s</ul>',
 		'depth'           => 2,
-		'walker'          => new Custom_Nav_Menu()
+		'walker'          => new Custom_Nav_Menu(),
 	)
 );

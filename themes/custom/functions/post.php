@@ -1,40 +1,55 @@
 <?php
-//--------------------------------------------------------------
-// Post
-//--------------------------------------------------------------
+/**
+ * Post
+ *
+ * @package Custom
+ */
 
-//--------------------------------------------------------------
-// Post Excerpt
-//--------------------------------------------------------------
 if ( ! function_exists( 'custom_excerpt' ) ) {
+
+	/**
+	 * Post Excerpt
+	 *
+	 * @param  string $text Text.
+	 * @return string       Modified excerpt.
+	 */
 	function custom_excerpt( $text ) {
-        global $post;
-        if ( '' == $text ) {
-            $text = get_the_content( '' );
-            $text = apply_filters( 'the_content', $text );
-            $text = str_replace( '\]\]\>', ']]&gt;', $text );
-            $text = preg_replace( '@<script[^>]*?>.*?</script>@si', '', $text );
-            $text = strip_tags( $text, '<p>' );
-            $excerpt_length = 80;
-            $words = explode( ' ', $text, $excerpt_length + 1 );
-            if ( count( $words ) > $excerpt_length ) {
-                array_pop( $words );
-                array_push( $words, '... <br><br><a href="' . get_permalink( $post->ID ) . '" class="button">Read More</a>' );
-                $text = implode( ' ', $words );
-            }
-        }
-        return $text;
+		global $post;
+		if ( '' === $text ) {
+			$text = get_the_content( '' );
+			$text = apply_filters( 'the_content', $text );
+			$text = str_replace( '\]\]\>', ']]&gt;', $text );
+			$text = preg_replace( '@<script[^>]*?>.*?</script>@si', '', $text );
+			$text = strip_tags( $text, '<p>' );
+			$excerpt_length = 80;
+			$words = explode( ' ', $text, $excerpt_length + 1 );
+			if ( count( $words ) > $excerpt_length ) {
+				array_pop( $words );
+				array_push( $words, '... <br><br><a href="' . get_permalink( $post->ID ) . '" class="button">Read More</a>' );
+				$text = implode( ' ', $words );
+			}
+		}
+		return $text;
 	}
+
 	remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 	add_filter( 'get_the_excerpt', 'custom_excerpt' );
+
 }
 
-//--------------------------------------------------------------
-// Comments Template
-//--------------------------------------------------------------
 if ( ! function_exists( 'foundation_comment' ) ) {
+
+	/**
+	 * Comments Template
+	 *
+	 * @param  string  $comment Comment.
+	 * @param  array   $args    Arguments.
+	 * @param  integer $depth   Depth.
+	 */
 	function foundation_comment( $comment, $args, $depth ) {
+
 		$GLOBALS['comment'] = $comment;
+
 		switch ( $comment->comment_type ) {
 			case 'pingback' :
 			case 'trackback' :
@@ -81,41 +96,50 @@ if ( ! function_exists( 'foundation_comment' ) ) {
 	}
 }
 
-//--------------------------------------------------------------
-// Remove Class Sticky Post
-//--------------------------------------------------------------
 if ( ! function_exists( 'custom_remove_sticky' ) ) {
+
+	/**
+	 * Remove Sticky Post
+	 *
+	 * @param  string $classes Classes.
+	 * @return string          Classes.
+	 */
 	function custom_remove_sticky( $classes ) {
 		$classes = array_diff( $classes, array( 'sticky' ) );
 		return $classes;
 	}
+
 	add_filter( 'post_class', 'custom_remove_sticky' );
+
 }
 
-//--------------------------------------------------------------
-// Pagination
-//--------------------------------------------------------------
 if ( ! function_exists( 'blade_pagination' ) ) {
+
+	/**
+	 * Custom Pagination
+	 * See: http://codex.wordpress.org/Function_Reference/paginate_links.
+	 */
 	function blade_pagination() {
 		global $custom_query;
 		$big = 999999999;
-		$pagArg = array( // http://codex.wordpress.org/Function_Reference/paginate_links
+		$args = array(
 			'base'         			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format'       			=> '?page=%#%',
 			'total'        			=> $custom_query->max_num_pages,
-			'current'      			=> max( 1, get_query_var('paged') ),
-			'show_all'     			=> False,
+			'current'      			=> max( 1, get_query_var( 'paged' ) ),
+			'show_all'     			=> false,
 			'end_size'     			=> 1,
 			'mid_size'     			=> 2,
-			'prev_next'    			=> True,
+			'prev_next'    			=> true,
 			'prev_text'    			=> '&laquo; Previous',
 			'next_text'    			=> 'Next &raquo;',
 			'type'         			=> 'list',
-			'add_args'     			=> False,
+			'add_args'     			=> false,
 			'add_fragment' 			=> '',
 			'before_page_number' 	=> '',
-			'after_page_number' 	=> ''
+			'after_page_number' 	=> '',
 		);
-		echo paginate_links( $pagArg );
+
+		echo paginate_links( $args );
 	}
 }

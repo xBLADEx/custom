@@ -1,11 +1,14 @@
 <?php
-//--------------------------------------------------------------
-// Template Name: Sidebar Right
-//--------------------------------------------------------------
+/**
+ * Template Name: Sidebar Right
+ *
+ * @package Custom
+ */
+
 get_header();
 ?>
 <div class="row page-content">
-    <div class="medium-9 columns">
+	<div class="medium-9 columns">
 		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) { the_post(); ?>
@@ -17,8 +20,8 @@ get_header();
 			<?php
 			}
 		} ?>
-    </div>
-    <aside class="medium-3 columns">
+	</div>
+	<aside class="medium-3 columns">
 		<?php dynamic_sidebar( 'Sidebar Right' ); ?>
 	</aside>
 </div>

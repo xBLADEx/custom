@@ -1,27 +1,40 @@
 <?php
-//--------------------------------------------------------------
-// Admin
-//--------------------------------------------------------------
+/**
+ * Admin
+ *
+ * @package Custom
+ */
+
+// Do not allow file edit.
 define( 'DISALLOW_FILE_EDIT', true );
+
 update_option( 'image_default_link_type', 'none' );
 
-//--------------------------------------------------------------
-// Remove Quicktags
-//--------------------------------------------------------------
 if ( ! function_exists( 'custom_remove_quicktags' ) ) {
+
+	/**
+	 * Remove Quicktags
+	 *
+	 *  @param  array $qt_init Element.
+	 * @return array           Editor tags.
+	 */
 	function custom_remove_quicktags( $qt_init ) {
-		// Whatever is in the below string displays in the editor. !Important! No spaces after the comma.
+		// Whatever is in the below string displays in the editor. Important: No spaces after the comma.
 		$qt_init['buttons'] = 'link';
 		return $qt_init;
 	}
+
 	add_filter( 'quicktags_settings', 'custom_remove_quicktags' );
+
 }
 
-//--------------------------------------------------------------
-// Add Quicktags
-//--------------------------------------------------------------
 if ( ! function_exists( 'custom_add_quicktags' ) ) {
-	function custom_add_quicktags() { ?>
+
+	/**
+	 * Add Custom Quicktags
+	 */
+	function custom_add_quicktags() {
+		?>
 		<script>
 			if ( typeof( QTags ) == 'function' ) {
 				QTags.addButton( 'eg_div6', 'div 6', '<div class="medium-6 columns">\n', '\n</div>', 'd', 'Div 6', 1 );
@@ -40,52 +53,73 @@ if ( ! function_exists( 'custom_add_quicktags' ) ) {
 				QTags.addButton( 'eg_listitem', 'li', '<li>', '</li>', 'l', 'List Item', 20 );
 			}
 		</script>
-	<?php
+		<?php
 	}
+
 	add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
+
 }
 
-//--------------------------------------------------------------
-// Login Logo
-//--------------------------------------------------------------
 if ( ! function_exists( 'custom_login_logo' ) ) {
-	function custom_login_logo() { // http://codex.wordpress.org/Customizing_the_Login_Form
-	?>
+
+	/**
+	 * Login Logo
+	 * See: http://codex.wordpress.org/Customizing_the_Login_Form.
+	 */
+	function custom_login_logo() {
+		?>
 	    <style>
 	        body.login div#login h1 a {
-	            background-image: url('<?php echo THEME_IMAGES; ?>/logo-login.jpg');
+	            background-image: url('<?php echo esc_attr( THEME_IMAGES ); ?>/logo-login.jpg');
 	            padding-bottom: 30px;
 	        }
 	    </style>
-	<?php
+		<?php
 	}
+
 	add_action( 'login_enqueue_scripts', 'custom_login_logo' );
+
 }
 
-//--------------------------------------------------------------
-// Theme Options
-//--------------------------------------------------------------
+/**
+ * Theme Options
+ */
 class Custom_Theme_Options {
 
+	/**
+	 * Options
+	 *
+	 * @var string
+	 */
 	public $options;
 
+	/**
+	 * Construct
+	 */
 	public function __construct() {
-		//$this->options = delete_option( 'custom_theme_setting' );
+		// Delete Option: $this->options = delete_option( 'custom_theme_setting' );.
 		$this->options = get_option( 'custom_theme_setting' );
 		$this->register_settings_fields();
 	}
 
+	/**
+	 * Add Menu
+	 * See: https://codex.wordpress.org/Function_Reference/add_menu_page.
+	 */
 	public function add_menu_page() {
-		add_options_page( // https://codex.wordpress.org/Function_Reference/add_menu_page
-			'Theme Options', 	// Page Title
-			'Theme Options', 	// Menu Title
-			'manage_options',	// Capability
-			'theme-options',	// Slug
-			array( 'Custom_Theme_Options', 'display_options_page' ) // Function
+		add_options_page(
+			'Theme Options', 	// Page Title.
+			'Theme Options', 	// Menu Title.
+			'manage_options',	// Capability.
+			'theme-options',	// Slug.
+			array( 'Custom_Theme_Options', 'display_options_page' ) // Function.
 		);
 	}
 
-	// Add Menu Page - Options Page
+	/**
+	 * Options Page
+	 * Add menu page.
+	 */
 	public function display_options_page() {
 		?>
 		<div class="wrap">
@@ -101,54 +135,64 @@ class Custom_Theme_Options {
 		<?php
 	}
 
+	/**
+	 * Register Settings Fields
+	 */
 	public function register_settings_fields() {
 
-		register_setting( // 1 & 2. Codex says use same name, 3. Optional - Used for sanitizing / validating
-			'custom_theme_setting', // Group
-			'custom_theme_setting',	// Name - Used with get_option() / update_option()
+		register_setting( // 1 & 2. Codex says use same name, 3. Optional - Used for sanitizing / validating.
+			'custom_theme_setting', // Group.
+			'custom_theme_setting',	// Name - Used with get_option() / update_option().
 			array( $this, 'custom_validation' )
-		); // https://codex.wordpress.org/Function_Reference/register_setting
+		); // See: https://codex.wordpress.org/Function_Reference/register_setting.
 
-		add_settings_section( // 1. ID, 2. Title displayed within <h3>, 3. Callback, 4. Page - Needs to match the slug url
-			'rich_main_section',
-			'Theme Settings',
-			array( $this, 'rich_main_section_cb' ),
-			'theme-options'
+		add_settings_section(
+			'rich_main_section', // ID.
+			'Theme Settings', // Title displayed within <h3>.
+			array( $this, 'rich_main_section_cb' ), // Callback.
+			'theme-options' // Page - Needs to match the slug url.
 		);
 
-		add_settings_field( // 1. Name heading or title also ID, 3. Callback, 4. Page, 5. Section - add_settings_section 1st arg.
-			'theme_email_heading',
+		add_settings_field(
+			'theme_email_heading', // Name heading or title also ID.
 			'Contact Form Email: ',
-			array( $this, 'theme_email_field_cb' ),
-			'theme-options',
-			'rich_main_section'
+			array( $this, 'theme_email_field_cb' ), // Callback.
+			'theme-options', // Page.
+			'rich_main_section' // Section - add_settings_section 1st arg.
 		);
 
 	}
 
-	// CALLBACKS
+	/**
+	 * Callback
+	 *
+	 * @param  string $input Field input.
+	 * @return string        Fields.
+	 */
 	public function custom_validation( $input ) {
-		//$input['custom_theme_setting'] = strip_tags( stripslashes( $input['custom_theme_setting'] ) );
-		//return $input;
-
-		// Create new array() to store options
+		// Create new array() to store options.
 		$output = array();
-		// Loop and check all options
+		// Loop and check all options.
 		foreach ( $input as $key => $value ) {
-			// If option has value, proceed
+			// If option has value, proceed.
 			if ( isset( $input[$key] ) ) {
-				// Clean HTML tags
+				// Clean HTML tags.
 				$output[$key] = strip_tags( stripslashes( $input[$key] ) );
 			}
 		}
 		return $output;
 	}
 
+	/**
+	 * Description
+	 */
 	public function rich_main_section_cb() {
 		echo 'Input your email for the contact form. For multiple emails use a comma to separate.';
 	}
 
-	// Email Field
+	/**
+	 * Email Field
+	 */
 	public function theme_email_field_cb() {
 		echo "<input class='regular-text' name='custom_theme_setting[theme_email_heading]' type='text' value='{$this->options['theme_email_heading']}' >";
 	}
@@ -156,7 +200,7 @@ class Custom_Theme_Options {
 }
 
 add_action( 'admin_menu', function() {
-	Custom_Theme_Options::add_menu_page(); // The double colon :: calls a function without instantiating the entire class
+	Custom_Theme_Options::add_menu_page(); // The double colon :: calls a function without instantiating the entire class.
 });
 
 add_action( 'admin_init', function() {

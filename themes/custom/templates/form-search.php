@@ -1,7 +1,10 @@
 <?php
-//--------------------------------------------------------------
-// Search Form
-//--------------------------------------------------------------
+/**
+ * Form Search
+ *
+ * @package Custom
+ */
+
 ?>
 <div class="clearfix">
 	<form action="/" class="form-search" method="GET">

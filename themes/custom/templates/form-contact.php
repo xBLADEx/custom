@@ -1,7 +1,9 @@
 <?php
-//--------------------------------------------------------------
-// Contact Form
-//--------------------------------------------------------------
+/**
+ * Contact Form
+ *
+ * @package Custom
+ */
 
 if ( isset( $_POST['submit'] ) ) {
 
@@ -11,46 +13,46 @@ if ( isset( $_POST['submit'] ) ) {
 	define( 'DOMAIN',	str_replace( 'www.', '', $_SERVER['HTTP_HOST'] ) );
 
 	// If trap value is set redirect to home page.
-	if ( $_POST['main_address'] != '' ) {
+	if ( '' !== $_POST['main_address'] ) {
 		echo '<html><head><meta http-equiv="refresh" content="0; url=/"></head><body></body></html>';
 		exit;
 	}
 
-	// Set required fields
+	// Set required fields.
 	$required_fields = array(
 		'full_name',
 		'email',
-		'phone'
+		'phone',
 	);
 
-	// Check if required fields are blank
+	// Check if required fields are blank.
 	$field_errors = true;
 	foreach ( $required_fields as &$field ) {
-		if ( $_POST[$field] == '' ) {
+		if ( '' === $_POST[$field] ) {
 			$field_errors = false;
 		}
 	}
 
-	// Grab form fields
+	// Grab form fields.
 	$full_name 	= $_POST['full_name'];
 	$email 		= $_POST['email'];
 	$phone 		= $_POST['phone'];
 	$comment 	= $_POST['comment'];
 
-	// Sanitize Information
-	if ( $full_name != '' ) {
+	// Sanitize Information.
+	if ( '' !== $full_name ) {
 		$full_name = filter_var( $full_name, FILTER_SANITIZE_STRING );
 	}
-	if ( $email != '' ) {
+	if ( '' !== $email ) {
 		$email = filter_var( $email, FILTER_SANITIZE_EMAIL );
 	}
-	if ( $phone != '' ) {
+	if ( '' !== $phone ) {
 		$regex = '/([0-9]{3})\.?([0-9]{3})\.?([0-9]{4})/';
 		$phone = preg_replace( $regex, '$1-$2-$3', $phone );
 	}
 
-	// Check if theme options email field is set
-	if ( EMAIL == '' ) {
+	// Check if theme options email field is set.
+	if ( '' === EMAIL ) {
 		$to 	= 'rich@sorensonadvertising.com';
 	} else {
 		$to 	= EMAIL;
@@ -72,7 +74,7 @@ if ( isset( $_POST['submit'] ) ) {
 	$message 	.= '</table>';
 	$message 	.= '</body></html>';
 
-	// PHP Rule: Message lines should not exceed 70 characters, so wrap it
+	// PHP Rule: Message lines should not exceed 70 characters, so wrap it.
 	$message 	= wordwrap( $message, 70 );
 
 	// If no errors - send. Else - alert.
@@ -82,7 +84,6 @@ if ( isset( $_POST['submit'] ) ) {
 	} else {
 		echo '<p class="alert-box alert">Please fill out the required fields.</p>';
 	}
-
 } else { ?>
 	<form method="POST">
 		<label>

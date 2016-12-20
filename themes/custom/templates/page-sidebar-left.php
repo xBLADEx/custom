@@ -1,14 +1,17 @@
 <?php
-//--------------------------------------------------------------
-// Template Name: Sidebar Left
-//--------------------------------------------------------------
+/**
+ * Template Name: Sidebar Left
+ *
+ * @package Custom
+ */
+
 get_header();
 ?>
 <div class="row page-content">
-    <aside class="medium-3 columns">
+	<aside class="medium-3 columns">
 		<?php dynamic_sidebar( 'Sidebar Left' ); ?>
 	</aside>
-    <div class="medium-9 columns">
+	<div class="medium-9 columns">
 		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) { the_post(); ?>
@@ -20,6 +23,6 @@ get_header();
 			<?php
 			}
 		} ?>
-    </div>
+	</div>
 </div>
 <?php get_footer(); ?>
