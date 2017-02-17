@@ -39,50 +39,47 @@ remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 
 add_filter( 'get_the_excerpt', 'custom_excerpt' );
 
-if ( ! function_exists( 'custom_remove_sticky' ) ) {
+/**
+ * Remove Sticky Post
+ *
+ * @param  string $classes Classes.
+ * @return string          Classes.
+ */
+function custom_remove_sticky( $classes ) {
+	$classes = array_diff( $classes, array( 'sticky' ) );
 
-	/**
-	 * Remove Sticky Post
-	 *
-	 * @param  string $classes Classes.
-	 * @return string          Classes.
-	 */
-	function custom_remove_sticky( $classes ) {
-		$classes = array_diff( $classes, array( 'sticky' ) );
-		return $classes;
-	}
-
-	add_filter( 'post_class', 'custom_remove_sticky' );
-
+	return $classes;
 }
 
-if ( ! function_exists( 'blade_pagination' ) ) {
+add_filter( 'post_class', 'custom_remove_sticky' );
 
-	/**
-	 * Custom Pagination
-	 * See: http://codex.wordpress.org/Function_Reference/paginate_links.
-	 */
-	function blade_pagination() {
-		global $custom_query;
-		$big = 999999999;
-		$args = array(
-			'base'         			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format'       			=> '?page=%#%',
-			'total'        			=> $custom_query->max_num_pages,
-			'current'      			=> max( 1, get_query_var( 'paged' ) ),
-			'show_all'     			=> false,
-			'end_size'     			=> 1,
-			'mid_size'     			=> 2,
-			'prev_next'    			=> true,
-			'prev_text'    			=> '&laquo; Previous',
-			'next_text'    			=> 'Next &raquo;',
-			'type'         			=> 'list',
-			'add_args'     			=> false,
-			'add_fragment' 			=> '',
-			'before_page_number' 	=> '',
-			'after_page_number' 	=> '',
-		);
+/**
+ * Custom Pagination
+ *
+ * @see http://codex.wordpress.org/Function_Reference/paginate_links.
+ */
+function custom_pagination() {
+	global $custom_query;
 
-		echo paginate_links( $args );
-	}
+	$big = 999999999;
+
+	$args = array(
+		'base'               => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format'             => '?page=%#%',
+		'total'              => $custom_query->max_num_pages,
+		'current'            => max( 1, get_query_var( 'paged' ) ),
+		'show_all'           => false,
+		'end_size'           => 1,
+		'mid_size'           => 2,
+		'prev_next'          => true,
+		'prev_text'          => '&laquo; Previous',
+		'next_text'          => 'Next &raquo;',
+		'type'               => 'list',
+		'add_args'           => false,
+		'add_fragment'       => '',
+		'before_page_number' => '',
+		'after_page_number'  => '',
+	);
+
+	echo paginate_links( $args );
 }
