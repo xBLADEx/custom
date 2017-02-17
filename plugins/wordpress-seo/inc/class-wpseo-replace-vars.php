@@ -115,7 +115,7 @@ class WPSEO_Replace_Vars {
 					$success = true;
 				}
 				else {
-					trigger_error( __( 'A replacement variable with the same name has already been registered. Try making your variable name more unique.', 'wordpress-seo' ), E_USER_WARNING );
+					trigger_error( __( 'A replacement variable with the same name has already been registered. Try making your variable name unique.', 'wordpress-seo' ), E_USER_WARNING );
 				}
 			}
 			else {
@@ -603,6 +603,9 @@ class WPSEO_Replace_Vars {
 
 		if ( isset( $wp_query->query_vars['post_type'] ) && ( ( is_string( $wp_query->query_vars['post_type'] ) && $wp_query->query_vars['post_type'] !== '' ) || ( is_array( $wp_query->query_vars['post_type'] ) && $wp_query->query_vars['post_type'] !== array() ) ) ) {
 			$post_type = $wp_query->query_vars['post_type'];
+		}
+		elseif ( isset( $this->args->post_type ) && ( is_string( $this->args->post_type ) && $this->args->post_type !== '' ) ) {
+			$post_type = $this->args->post_type;
 		}
 		else {
 			// Make it work in preview mode.

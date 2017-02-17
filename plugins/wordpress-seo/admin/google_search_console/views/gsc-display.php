@@ -28,7 +28,7 @@ else {
 	$video_url = 'https://yoa.st/screencast-connect-search-console';
 }
 
-$tab = new WPSEO_Option_Tab( 'GSC', __( 'Google Search Console' ), array( 'video_url' => $video_url ) );
+$tab = new WPSEO_Option_Tab( 'GSC', __( 'Google Search Console', 'wordpress-seo' ), array( 'video_url' => $video_url ) );
 $GSCHelpCenter = new WPSEO_Help_Center( 'google-search-console', $tab );
 $GSCHelpCenter->output_help_center();
 
@@ -38,7 +38,7 @@ switch ( $platform_tabs->current_tab() ) {
 		if ( null === $this->service->get_client()->getAccessToken() ) {
 			// Print auth screen.
 			echo '<p>';
-			/* Translators: %1$s: expands to 'Yoast SEO', %2$s expands to Google Search Console. */
+			/* Translators: %1$s: expands to Yoast SEO, %2$s expands to Google Search Console. */
 			echo sprintf( __( 'To allow %1$s to fetch your %2$s information, please enter your Google Authorization Code. Clicking the button below will open a new window.', 'wordpress-seo' ), 'Yoast SEO', 'Google Search Console' );
 			echo "</p>\n";
 			echo '<input type="hidden" id="gsc_auth_url" value="', $this->service->get_client()->createAuthUrl() , '" />';
@@ -117,6 +117,17 @@ switch ( $platform_tabs->current_tab() ) {
 		break;
 }
 ?>
+<?php
+	// Add link to Knowledge Base article about crawl issues.
+	echo '<p>';
+
+	printf(
+	/* translators: %1$s expands anchor to knowledge base article, %2$s expands to </a> */
+	__( 'Please refer to %1$sour article about how to connect your website to Google Search Console%2$s if you need assistance.', 'wordpress-seo' ), '<a href="https://kb.yoast.com/kb/how-to-connect-and-retrieve-crawl-issues/" target="_blank">', '</a>' );
+
+	echo '</p>';
+?>
+
 	<br class="clear" />
 <?php
 
