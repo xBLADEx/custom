@@ -50,33 +50,28 @@ function custom_add_quicktags() {
 
 add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
 
-
-if ( ! function_exists( 'custom_login_logo' ) ) {
-
-	/**
-	 * Login Logo
-	 * See: http://codex.wordpress.org/Customizing_the_Login_Form.
-	 */
-	function custom_login_logo() {
-		?>
-		<style>
-			body.login div#login h1 a {
-				background-image: url('<?php echo esc_attr( THEME_IMAGES ); ?>/logo-login.jpg');
-				padding-bottom: 30px;
-			}
-		</style>
-		<?php
+/**
+ * Login Logo
+ *
+ * @see http://codex.wordpress.org/Customizing_the_Login_Form.
+ */
+function custom_login_logo() {
+	?>
+	<style>
+	body.login div#login h1 a {
+		background-image: url('<?php echo esc_attr( THEME_IMAGES ); ?>/logo-login.jpg');
+		padding-bottom: 30px;
 	}
-
-	add_action( 'login_enqueue_scripts', 'custom_login_logo' );
-
+	</style>
+	<?php
 }
+
+add_action( 'login_enqueue_scripts', 'custom_login_logo' );
 
 /**
  * Theme Options
  */
 class Custom_Theme_Options {
-
 	/**
 	 * Options
 	 *
@@ -95,7 +90,8 @@ class Custom_Theme_Options {
 
 	/**
 	 * Add Menu
-	 * See: https://codex.wordpress.org/Function_Reference/add_menu_page.
+	 *
+	 * @see https://codex.wordpress.org/Function_Reference/add_menu_page.
 	 */
 	public function add_menu_page() {
 		add_options_page(
@@ -130,7 +126,6 @@ class Custom_Theme_Options {
 	 * Register Settings Fields
 	 */
 	public function register_settings_fields() {
-
 		register_setting( // 1 & 2. Codex says use same name, 3. Optional - Used for sanitizing / validating.
 			'custom_theme_setting', // Group.
 			'custom_theme_setting',	// Name - Used with get_option() / update_option().
@@ -151,7 +146,6 @@ class Custom_Theme_Options {
 			'theme-options', // Page.
 			'rich_main_section' // Section - add_settings_section 1st arg.
 		);
-
 	}
 
 	/**
@@ -163,6 +157,7 @@ class Custom_Theme_Options {
 	public function custom_validation( $input ) {
 		// Create new array() to store options.
 		$output = array();
+
 		// Loop and check all options.
 		foreach ( $input as $key => $value ) {
 			// If option has value, proceed.
@@ -171,6 +166,7 @@ class Custom_Theme_Options {
 				$output[$key] = strip_tags( stripslashes( $input[$key] ) );
 			}
 		}
+
 		return $output;
 	}
 
@@ -187,7 +183,6 @@ class Custom_Theme_Options {
 	public function theme_email_field_cb() {
 		echo "<input class='regular-text' name='custom_theme_setting[theme_email_heading]' type='text' value='{$this->options['theme_email_heading']}' >";
 	}
-
 }
 
 add_action( 'admin_menu', function() {
