@@ -55,13 +55,15 @@ function custom_widgets() {
 add_action( 'widgets_init', 'custom_widgets' );
 
 
-//--------------------------------------------------------------
-// Navigation
-//--------------------------------------------------------------
+/**
+ * Navigation
+ *
+ * @see http://codex.wordpress.org/Function_Reference/register_nav_menus.
+ */
 register_nav_menus(
-	array( // http://codex.wordpress.org/Function_Reference/register_nav_menus
-		'main_nav' 		=> 'Main Navigation',
-		'secondary_nav' => 'Secondary Navigation'
+	array(
+		'main_nav'      => __( 'Main Navigation', 'custom' ),
+		'secondary_nav' => __( 'Secondary Navigation', 'custom' ),
 	)
 );
 
