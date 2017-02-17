@@ -14,7 +14,8 @@
 				post_type_archive_title();
 			} else {
 				the_title();
-			} ?>
+			}
+			?>
 		</h1>
 	</div>
 </div>
