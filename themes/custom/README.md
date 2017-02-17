@@ -1,7 +1,4 @@
 SETUP
-wp-config.php
-	define( 'WP_AUTO_UPDATE_CORE', false );
-
 .gitignore
 	gruntfile.js, bower.json, package.json
 
