@@ -27,9 +27,9 @@ get_header();
 
 						<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 
-						<p class="date">Date: <time datetime="<?php echo get_the_time( 'c' ); ?>"><?php the_time( 'm/d/Y' ); ?></time></p>
+						<p class="date"><?php esc_html_e( 'Date:', 'custom' ); ?> <time><?php the_time( get_option( 'date_format' ) ); ?></time></p>
 
-						<p class="categories">In: <?php the_category( ', ' ); ?></p>
+						<p class="categories"><?php esc_html_e( 'In:', 'custom' ); ?> <?php the_category( ', ' ); ?></p>
 					</header>
 
 					<div>
