@@ -6,6 +6,7 @@
  */
 
 ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -16,28 +17,19 @@
 </head>
 <body <?php body_class( 'body-site' ); ?>>
 	<a href="#" class="mobile-menu-icon"><span>Menu</span></a>
+
 	<header class="header-background">
 		<div class="row">
 			<div class="small-12 medium-3 columns">
 				<a href="/" class="logo"><img src="<?php echo esc_url( THEME_IMAGES ); ?>/logo.png" alt=""></a>
 			</div>
+
 			<div class="medium-9 columns">
-				<?php // get_template_part('templates/form', 'search'); ?>
 				<nav class="main-nav">
 					<?php get_template_part( 'templates/menu', 'nav' ); ?>
 				</nav>
 			</div>
 		</div>
 	</header>
-	<?php
-	/*if ( ! is_front_page() ) {
-		switch ( $post->post_name ) {
-			case 'url':
-				get_template_part( 'templates/header', 'name' );
-				break;
-			default:
-				get_template_part( 'templates/header', 'default' );
-		}
-	}*/
-	?>
+
 	<main class="website-container">
