@@ -5,6 +5,9 @@
  * @package Custom
  */
 
+/**
+ * Clean Header
+ */
 remove_action( 'wp_head', 'feed_links_extra', 3 ); // Removes the type="application/rss+xml" /feed link.
 remove_action( 'wp_head', 'wp_generator' ); // This removes the WordPress version.
 remove_action( 'wp_head', 'rsd_link' ); // This removes Windows Live Writer (WLW).
@@ -16,49 +19,40 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
-// POST RELATED.
+// Post Related.
 add_filter( 'img_caption_shortcode', 'reverie_cleaner_caption', 10, 3 );
 add_filter( 'get_image_tag_class', 'reverie_image_tag_class', 0, 4 );
 add_filter( 'get_image_tag', 'reverie_image_editor', 0, 4 );
 add_filter( 'image_send_to_editor', 're_image_to_relative', 5, 8 );
 
-if ( ! function_exists( 'remove_wp_open_sans' ) ) {
-
-	/**
-	 * Remove Open Sans Font
-	 */
-	function remove_wp_open_sans() {
-		wp_deregister_style( 'open-sans' );
-		wp_register_style( 'open-sans', false );
-	}
-
-	add_action( 'wp_enqueue_scripts', 'remove_wp_open_sans' );
-
+/**
+ * Remove Open Sans Font
+ */
+function custom_remove_wp_open_sans() {
+	wp_deregister_style( 'open-sans' );
+	wp_register_style( 'open-sans', false );
 }
 
-//--------------------------------------------------------------
-// Remove CSS / JS Version
-//--------------------------------------------------------------
-if ( ! function_exists( 'remove_cssjs_ver' ) ) {
+add_action( 'wp_enqueue_scripts', 'custom_remove_wp_open_sans' );
 
-	/**
-	 * Remove Version Number
-	 * Remove version number after Scripts and Styles.
-	 *
-	 * @param  string $src Number.
-	 * @return string      Stripped version.
-	 */
-	function remove_cssjs_ver( $src ) {
-	    if ( strpos( $src, '?ver=' ) ) {
-	        $src = remove_query_arg( 'ver', $src );
-	    }
-	    return $src;
+/**
+ * Remove CSS / JS Version Number
+ * Remove version number after Scripts and Styles.
+ *
+ * @param  string $src Number.
+ * @return string      Stripped version.
+ */
+function custom_remove_cssjs_ver( $src ) {
+	if ( strpos( $src, '?ver=' ) ) {
+		$src = remove_query_arg( 'ver', $src );
 	}
 
-	add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
-	add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
-
+	return $src;
 }
+
+add_filter( 'style_loader_src', 'custom_remove_cssjs_ver', 10, 2 );
+add_filter( 'script_loader_src', 'custom_remove_cssjs_ver', 10, 2 );
+
 
 if ( ! function_exists( 'remove_recent_comments_style' ) ) {
 
