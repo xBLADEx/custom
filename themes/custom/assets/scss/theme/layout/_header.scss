@@ -10,9 +10,12 @@
 } // .header-background
 
 .logo {
-	img {
+	svg {
 		display: block;
-	} // img
+		height: auto;
+		margin: rem(8) 0;
+		width: 100%;
+	} // svg
 } // .logo
 
 
