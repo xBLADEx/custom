@@ -21,7 +21,7 @@
 	<header class="header-background">
 		<div class="row">
 			<div class="small-12 medium-3 columns">
-				<a href="/" class="logo"><img src="<?php echo esc_url( THEME_IMAGES ); ?>/logo.png" alt=""></a>
+				<a href="/" class="logo"><?php include_once( 'assets/images/logo.svg' ); ?></a>
 			</div>
 
 			<div class="medium-9 columns">
