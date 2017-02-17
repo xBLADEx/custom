@@ -5,38 +5,36 @@
  * @package Custom
  */
 
-if ( ! function_exists( 'blank_search' ) ) {
-
-	/**
-	 * Blank Search
-	 *
-	 * @param  string $query Query.
-	 * @return string        Query.
-	 */
-	function blank_search( $query ) {
-	    // If "s" request variable is set but empty.
-	    if ( isset( $_GET['s'] ) && empty( $_GET['s'] ) && $query->is_main_query() ) {
-	        $query->is_search = true;
-	        $query->is_home = false;
-	    }
-	    return $query;
+/**
+ * Blank Search
+ *
+ * @param  string $query Query.
+ * @return string        Query.
+ */
+function blank_search( $query ) {
+	// If "s" request variable is set but empty.
+	if ( isset( $_GET['s'] ) && empty( $_GET['s'] ) && $query->is_main_query() ) {
+		$query->is_search = true;
+		$query->is_home = false;
 	}
 
-	add_filter( 'pre_get_posts', 'blank_search' );
-
+	return $query;
 }
 
-// Shortcodes.
-add_shortcode( 'name', 'function_name' ); // Use Shortcode: [name].
+add_filter( 'pre_get_posts', 'custom_blank_search' );
+
 /**
- * Shortcode
+ * Shortcode Example
  *
+ * @example [name].
  * @return string HTML.
  */
-function function_name() {
+function custom_shortcode_name() {
 	ob_start();
 	?>
 
 	<?php
 	return ob_get_clean();
 }
+
+add_shortcode( 'name', 'custom_shortcode_name' );
