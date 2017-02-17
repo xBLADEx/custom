@@ -59,10 +59,7 @@ rules:
   no-url-protocols: 1
   no-vendor-prefixes: 1
   no-warn: 1
-  property-units:
-    - 1
-    -
-      per-property: { width: ['rem', 'vw'], height: ['rem', 'vh'], margin: ['rem'], padding: ['rem'] }
+  property-units: 0
 
   # Nesting
   force-attribute-nesting: 0
