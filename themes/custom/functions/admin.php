@@ -206,3 +206,8 @@ add_action( 'admin_menu', function() {
 add_action( 'admin_init', function() {
 	new Custom_Theme_Options(); // This will automatically call the __construct() function.
 });
+
+// ACF Options Page.
+if ( function_exists( 'acf_add_options_page' ) ) {
+	acf_add_options_page();
+}
