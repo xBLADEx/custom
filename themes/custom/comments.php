@@ -22,7 +22,6 @@ if ( have_comments() ) :
 		// @see http://codex.wordpress.org/Function_Reference/wp_list_comments.
 		wp_list_comments(
 			array(
-				'callback' => 'foundation_comment',
 				'style'    => 'ol',
 			)
 		);
