@@ -10,15 +10,20 @@ if ( function_exists( 'get_header' ) ) {
 } else {
 	header( 'Location: http://' . $_SERVER['HTTP_HOST'] . '' );
 	exit;
-} ?>
+}
+?>
+
 <div class="row page-content">
 	<div class="medium-12 columns">
 		<?php
 		if ( have_posts() ) {
-			while ( have_posts() ) { the_post();
+			while ( have_posts() ) {
+				the_post();
 				the_content();
 			}
-		} ?>
+		}
+		?>
 	</div>
 </div>
+
 <?php get_footer(); ?>
