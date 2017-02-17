@@ -51,65 +51,58 @@ function custom_remove_cssjs_ver( $src ) {
 }
 
 add_filter( 'style_loader_src', 'custom_remove_cssjs_ver', 10, 2 );
+
 add_filter( 'script_loader_src', 'custom_remove_cssjs_ver', 10, 2 );
 
+/**
+ * Recent Comments
+ * Remove recent comments style tag.
+ */
+function custom_remove_recent_comments_style() {
+	global $wp_widget_factory;
 
-if ( ! function_exists( 'remove_recent_comments_style' ) ) {
-
-	/**
-	 * Recent Comments
-	 * Remove recent comments style tag.
-	 */
-	function remove_recent_comments_style() {
-		global $wp_widget_factory;
-		remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
-	}
-
-	add_action( 'widgets_init', 'remove_recent_comments_style' );
-
+	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
 
-if ( ! function_exists( 'custom_title' ) ) {
+add_action( 'widgets_init', 'custom_remove_recent_comments_style' );
 
-	/**
-	 * Title Tag
-	 *
-	 * @param  string $title Title.
-	 * @param  string $sep   Separator.
-	 * @return string        New title.
-	 */
-	function custom_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-
-		global $page, $paged;
-
-		// Add the blog name.
-		$title .= ' ' . get_bloginfo( 'name', 'display' );
-
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-
-		// Add a page number if necessary.
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
-		}
-
+/**
+ * Title Tag
+ *
+ * @param  string $title Title.
+ * @param  string $sep   Separator.
+ * @return string        New title.
+ */
+function custom_title( $title, $sep ) {
+	if ( is_feed() ) {
 		return $title;
 	}
 
-	add_filter( 'wp_title', 'custom_title', 10, 2 );
+	global $page, $paged;
 
+	// Add the blog name.
+	$title .= ' ' . get_bloginfo( 'name', 'display' );
+
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
+		$title .= " $sep $site_description";
+	}
+
+	// Add a page number if necessary.
+	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+		$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+	}
+
+	return $title;
 }
+
+add_filter( 'wp_title', 'custom_title', 10, 2 );
+
 
 // Post Related.
 if ( ! function_exists( 'reverie_cleaner_caption' ) ) {
-
 	/**
 	 * Clean Caption
 	 * Customized the output of caption, you can remove the filter to restore back to the WP default output.
@@ -121,7 +114,6 @@ if ( ! function_exists( 'reverie_cleaner_caption' ) ) {
 	 * @return string          New ouput.
 	 */
 	function reverie_cleaner_caption( $output, $attr, $content ) {
-
 		// We're not worried abut captions in feeds, so just return the output here.
 		if ( is_feed() ) {
 			return $output;
@@ -165,7 +157,6 @@ if ( ! function_exists( 'reverie_cleaner_caption' ) ) {
 
 // Clean Inserted Image Attributes.
 if ( ! function_exists( 'reverie_image_tag_class' ) ) {
-
 	/**
 	 * Image Tag Class
 	 * Clean the output of attributes of images in editor.
@@ -179,12 +170,12 @@ if ( ! function_exists( 'reverie_image_tag_class' ) ) {
 	 */
 	function reverie_image_tag_class( $class, $id, $align, $size ) {
 		$align = 'align' . esc_attr( $align );
+
 		return $align;
 	}
 }
 
 if ( ! function_exists( 'reverie_image_editor' ) ) {
-
 	/**
 	 * Image Editor
 	 * Remove width and height in editor, for a better responsive world.
