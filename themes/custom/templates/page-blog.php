@@ -51,7 +51,7 @@ get_header();
 				<?php
 			endwhile;
 
-			blade_pagination();
+			custom_pagination();
 
 			wp_reset_postdata();
 		endif;

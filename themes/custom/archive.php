@@ -39,7 +39,7 @@ get_header();
 				<?php
 			endwhile;
 
-			blade_pagination();
+			custom_pagination();
 		endif;
 		?>
 	</div>
