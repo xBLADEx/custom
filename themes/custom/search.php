@@ -29,7 +29,7 @@ get_header();
 
 						<p class="date"><?php esc_html_e( 'Date:', 'custom' ); ?> <time><?php the_time( get_option( 'date_format' ) ); ?></time></p>
 
-						<p class="categories"><?php esc_html_e( 'In:', 'custom' ); ?> <?php the_category( ', ' ); ?></p>
+						<p class="categories"><?php esc_html_e( 'Categories:', 'custom' ); ?> <?php the_category( ', ' ); ?></p>
 					</header>
 
 					<div>
