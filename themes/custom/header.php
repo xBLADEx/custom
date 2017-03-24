@@ -16,7 +16,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class( 'body-site' ); ?>>
-	<a href="#" class="mobile-menu-icon"><span>Menu</span></a>
+	<button class="mobile-menu-icon"><span><?php esc_html_e( 'Menu', 'custom' ); ?></span></button>
 
 	<header class="header-background">
 		<div class="row">
