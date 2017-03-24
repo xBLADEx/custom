@@ -71,6 +71,7 @@ module.exports = function (grunt) {
 					'bower_components/foundation-sites/js/foundation.util.timerAndImageLoader.js',
 					'bower_components/foundation-sites/js/foundation.util.touch.js',
 					'bower_components/foundation-sites/js/foundation.util.triggers.js',
+					// 'bower_components/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js',
 					// Slick
 					'bower_components/slick-carousel/slick/slick.min.js',
 					// Custom
