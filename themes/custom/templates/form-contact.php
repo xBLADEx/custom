@@ -93,22 +93,22 @@ else :
 	?>
 	<form method="POST">
 		<label>
-			Full Name
-			<input type="text" name="full_name" placeholder="John Doe" required>
+			<?php esc_html_e( 'Full Name', 'custom' ); ?>
+			<input type="text" name="full_name" placeholder="<?php esc_attr_e( 'John Doe', 'custom' ); ?>" required>
 		</label>
 		<label>
-			Email
-			<input type="email" name="email" placeholder="john@example.com" required>
+			<?php esc_html_e( 'Email', 'custom' ); ?>
+			<input type="email" name="email" placeholder="<?php esc_attr_e( 'john@example.com', 'custom' ); ?>" required>
 		</label>
 		<label>
-			Phone
-			<input type="tel" maxlength="12" name="phone" pattern="\d{3}[\-]?\d{3}[\-]?\d{4}" placeholder="555-555-5555" required>
+			<?php esc_html_e( 'Phone', 'custom' ); ?>
+			<input type="tel" maxlength="12" name="phone" pattern="\d{3}[\-]?\d{3}[\-]?\d{4}" placeholder="<?php esc_attr_e( '555-555-5555', 'custom' ); ?>" required>
 		</label>
 		<label>
-			Questions or Comments
-			<textarea class="form-comment" name="comment" placeholder="What's on your mind?"></textarea>
+			<?php esc_html_e( 'Questions or Comments', 'custom' ); ?>
+			<textarea class="form-comment" name="comment" placeholder="<?php esc_attr_e( 'What\'s on your mind?', 'custom' ); ?>"></textarea>
 		</label>
-		<input type="text" name="main_address" value="" class="hidden">
+		<input type="text" name="main_address" value="" class="hide">
 		<input type="submit" name="submit" value="Submit" class="button">
 	</form>
 	<?php
