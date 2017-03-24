@@ -187,6 +187,37 @@ module.exports = function (grunt) {
 			dist: {
 				src: 'assets/scss/*.css'
 			}
+		},
+
+		pot: {
+			// @see https://codex.wordpress.org/I18n_for_WordPress_Developers.
+			// @see http://stephenharris.info/grunt-wordpress-development-iii-tasks-for-internationalisation/.
+			// @see https://github.com/stephenharris/grunt-pot.
+			options: {
+				text_domain: 'custom', // Text domain. Produces my-text-domain.pot.
+				dest: 'languages/', // Directory for .pot file.
+				keywords: [ // WordPress localisation functions.
+					'__:1',
+					'_e:1',
+					'_x:1,2c',
+					'esc_html__:1',
+					'esc_html_e:1',
+					'esc_html_x:1,2c',
+					'esc_attr__:1',
+					'esc_attr_e:1',
+					'esc_attr_x:1,2c',
+					'_ex:1,2c',
+					'_n:1,2',
+					'_nx:1,2,4c',
+					'_n_noop:1,2',
+					'_nx_noop:1,2,3c'
+				]
+			},
+
+			files: {
+				src: ['**/*.php'], // Parse all PHP files.
+				expand: true
+			},
 		}
 
 	});
@@ -199,6 +230,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-postcss');
+	grunt.loadNpmTasks('grunt-pot');
 
 	// Default runs when we call grunt on the command line
 	// We can use any name we want to run specific tasks
