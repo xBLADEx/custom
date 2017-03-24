@@ -4,6 +4,7 @@
 *.bak
 *.log
 *.map
+*.pot
 *.rar
 *.sass-cache*
 *.tar

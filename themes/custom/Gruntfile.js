@@ -189,10 +189,12 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// @see https://codex.wordpress.org/I18n_for_WordPress_Developers.
+		// @see http://stephenharris.info/grunt-wordpress-development-iii-tasks-for-internationalisation/.
+		// @see https://github.com/stephenharris/grunt-pot.
+		// @see https://poedit.net/.
+		// @see https://eichefam.net/2015/04/27/translation-fun/.
 		pot: {
-			// @see https://codex.wordpress.org/I18n_for_WordPress_Developers.
-			// @see http://stephenharris.info/grunt-wordpress-development-iii-tasks-for-internationalisation/.
-			// @see https://github.com/stephenharris/grunt-pot.
 			options: {
 				text_domain: 'custom', // Text domain. Produces my-text-domain.pot.
 				dest: 'languages/', // Directory for .pot file.
@@ -215,7 +217,7 @@ module.exports = function (grunt) {
 			},
 
 			files: {
-				src: ['**/*.php'], // Parse all PHP files.
+				src: ['**/*.php', '!node_modules/**'], // Parse all PHP files.
 				expand: true
 			},
 		}
