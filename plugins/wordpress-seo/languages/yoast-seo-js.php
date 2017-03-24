@@ -46,27 +46,27 @@ $generated_i18n_strings = array(
 	// Reference: node_modules/yoastseo/js/assessments/keyphraseLengthAssessment.js:22
 	__( 'The keyphrase is over 10 words, a keyphrase should be shorter.', 'wordpress-seo' ),
 
-	// Reference: node_modules/yoastseo/js/assessments/keywordDensityAssessment.js:29
+	// Reference: node_modules/yoastseo/js/assessments/keywordDensityAssessment.js:30
 	/* Translators: %1$s expands to the keyword density percentage, %2$d expands to the keyword count,
 	   %3$s expands to the maximum keyword density percentage. */
 	__( 'The keyword density is %1$s, which is way over the advised %3$s maximum; the focus keyword was found %2$d times.', 'wordpress-seo' ),
 
-	// Reference: node_modules/yoastseo/js/assessments/keywordDensityAssessment.js:43
+	// Reference: node_modules/yoastseo/js/assessments/keywordDensityAssessment.js:44
 	/* Translators: %1$s expands to the keyword density percentage, %2$d expands to the keyword count,
 	   %3$s expands to the maximum keyword density percentage. */
 	__( 'The keyword density is %1$s, which is over the advised %3$s maximum; the focus keyword was found %2$d times.', 'wordpress-seo' ),
 
-	// Reference: node_modules/yoastseo/js/assessments/keywordDensityAssessment.js:56
+	// Reference: node_modules/yoastseo/js/assessments/keywordDensityAssessment.js:57
 	/* Translators: %1$s expands to the keyword density percentage, %2$d expands to the keyword count. */
 	__( 'The keyword density is %1$s, which is great; the focus keyword was found %2$d times.', 'wordpress-seo' ),
 
-	// Reference: node_modules/yoastseo/js/assessments/keywordDensityAssessment.js:66
+	// Reference: node_modules/yoastseo/js/assessments/keywordDensityAssessment.js:67
 	/* Translators: %1$s expands to the keyword density percentage, %2$d expands to the keyword count. */
 	__( 'The keyword density is %1$s, which is too low; the focus keyword was found %2$d times.', 'wordpress-seo' ),
 
 	// Reference: node_modules/yoastseo/js/assessments/keywordStopWordsAssessment.js:20
 	/* Translators: %1$s opens a link to a Yoast article about stop words, %2$s closes the link */
-	_n_noop( 'The focus keyword contains a stop word. This may or may not be wise depending on the circumstances. Read %1$sthis article%2$s for more info.', 'The focus keyword contains %3$d stop words. This may or may not be wise depending on the circumstances. Read %1$sthis article%2$s for more info.', 'wordpress-seo' ),
+	_n_noop( 'The focus keyword contains a stop word. This may or may not be wise depending on the circumstances. %1$sLearn more about the stop words%2$s.', 'The focus keyword contains %3$d stop words. This may or may not be wise depending on the circumstances. %1$sLearn more about the stop words%2$s.', 'wordpress-seo' ),
 
 	// Reference: node_modules/yoastseo/js/assessments/metaDescriptionKeywordAssessment.js:13
 	__( 'The meta description contains the focus keyword.', 'wordpress-seo' ),
