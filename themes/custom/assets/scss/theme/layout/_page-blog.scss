@@ -3,7 +3,6 @@
 //--------------------------------------------------------------
 
 .sidebar-widget {
-
 	input[type='submit'] {
 		background: $color-black;
 		border: 0;
@@ -15,17 +14,13 @@
 			background: $color-white;
 			color: $color-black;
 		} // &:hover
-
 	} // input[type='submit']
-
 } // .sidebar-widget
 
 h2 {
-
 	a {
 		font-size: inherit;
 	} // a
-
 } // h2
 
 // .post-container {  } //.post-container
@@ -52,7 +47,6 @@ h2 {
 				background: $color-white;
 				color: $color-black;
 			} // &:hover
-
 		} // .page-numbers
 
 		.current {
@@ -60,7 +54,5 @@ h2 {
 			color: $color-black;
 			padding: rem(10);
 		} // .current
-
 	} // li
-
 } // .page-numbers
