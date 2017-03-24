@@ -45,7 +45,6 @@
 	// Main nav parent link.
 	> li {
 		border-top: 1px solid $color-black;
-		float: none;
 		position: relative;
 
 		@include tablet-up {
@@ -61,19 +60,15 @@
 		} // > a
 
 		&:hover {
-
 			a {
 				background: $color-black;
 				color: $color-white;
 			} // a
-
 		} // &:hover
-
 	} // > li
 
 	// Parent link for dropdown.
 	> .has-flyout {
-
 		> a {
 			padding-right: rem(40);
 			position: relative;
@@ -89,11 +84,9 @@
 				top: rem(30);
 				width: 0;
 			} // &::after
-
 		} // > a
 
 		&:hover {
-
 			a {
 				&::after {
 					border-color: $color-white transparent transparent;
@@ -103,7 +96,6 @@
 			.flyout {
 				display: block;
 			} // .flyout
-
 		} // &:hover
 
 		// Sub Nav.
@@ -116,7 +108,6 @@
 			z-index: 98;
 
 			li {
-
 				a {
 					background: $color-black;
 					color: $color-white;
@@ -129,13 +120,9 @@
 						background: $color-white;
 						color: $color-black;
 					} // &:hover
-
 				} // a
-
 			} // li
-
 		} // .flyout
-
 	} // > .has-flyout
 
 	// Current page link.
@@ -145,19 +132,15 @@
 		a {
 			color: $color-white;
 		} // a
-
 	} // > .current-menu-item
 
 	.menu-item {
-
 		.desc {
 			display: block;
 			font-size: rem(9);
 			padding-left: rem(5);
 		} // .desc
-
 	} // .menu-item
-
 } // .navbar
 
 
@@ -205,7 +188,5 @@
 		&::after {
 			transform: translateY(250%);
 		} // &::after
-
 	} // span
-
 } // .mobile-menu-icon
