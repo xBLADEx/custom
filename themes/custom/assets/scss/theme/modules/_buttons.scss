@@ -2,9 +2,7 @@
 // BUTTONS
 //--------------------------------------------------------------
 
-button,
-.button,
-a.button {
+.button {
 	appearance: none;
 	background: $color-black;
 	border: 0;
@@ -20,15 +18,9 @@ a.button {
 	text-align: center;
 	text-decoration: none;
 
-	&:hover {
-		background: $color-white;
-		color: $color-black;
-	} // &:hover
-
+	&:hover,
 	&:focus {
 		background: $color-white;
 		color: $color-black;
-		outline: 1px solid rgba($color-black, 0.4);
-	} // &:focus
-
-} // button, .button, a.button
+	} // &:hover, &:focus
+} // .button
