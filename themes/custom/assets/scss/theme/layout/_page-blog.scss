@@ -45,19 +45,19 @@ h2 {
 		display: inline-block;
 
 		.page-numbers {
-			background: $color-mine-shaft;
+			background: $color-black;
 			padding: rem(10);
 
 			&:hover {
-				background: $color-gallery;
-				color: $color-mine-shaft;
+				background: $color-white;
+				color: $color-black;
 			} // &:hover
 
 		} // .page-numbers
 
 		.current {
-			background: $color-gallery;
-			color: $color-mine-shaft;
+			background: $color-white;
+			color: $color-black;
 			padding: rem(10);
 		} // .current
 

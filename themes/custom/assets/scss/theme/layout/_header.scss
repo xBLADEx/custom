@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 
 .header-background {
-	background: $color-alabaster;
+	background: $color-white;
 	position: relative;
 	width: 100%;
 	z-index: 100;
@@ -54,7 +54,7 @@
 		}
 
 		> a {
-			color: $color-mine-shaft;
+			color: $color-black;
 			display: block;
 			font-size: rem(16);
 			padding: rem(20) rem(25);
@@ -63,7 +63,7 @@
 		&:hover {
 
 			a {
-				background: $color-mine-shaft;
+				background: $color-black;
 				color: $color-white;
 			} // a
 
@@ -80,7 +80,7 @@
 
 			&::after {
 				border: 4px solid;
-				border-color: $color-mine-shaft transparent transparent;
+				border-color: $color-black transparent transparent;
 				content: '';
 				display: block;
 				height: 0;
@@ -118,7 +118,7 @@
 			li {
 
 				a {
-					background: $color-mine-shaft;
+					background: $color-black;
 					color: $color-white;
 					display: block;
 					font-size: rem(12);
@@ -127,7 +127,7 @@
 
 					&:hover {
 						background: $color-white;
-						color: $color-mine-shaft;
+						color: $color-black;
 					} // &:hover
 
 				} // a
@@ -140,7 +140,7 @@
 
 	// Current page link.
 	> .current-menu-item {
-		background: $color-mine-shaft;
+		background: $color-black;
 
 		a {
 			color: $color-white;

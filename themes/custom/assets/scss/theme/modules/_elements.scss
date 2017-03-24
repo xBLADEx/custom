@@ -7,7 +7,7 @@ html {
 } // html
 
 body {
-	background: $color-alabaster;
+	background: $color-white;
 } // body
 
 body,
@@ -18,7 +18,7 @@ li,
 p,
 span,
 a {
-	color: $color-mine-shaft;
+	color: $color-black;
 	font-family: $font-text;
 	font-size: rem(20);
 } // body, div, ul, ol, li, p, span, a
@@ -74,13 +74,9 @@ h6 {
 //-----------------------------------------
 // Links
 //-----------------------------------------
-a,
-a:link {
+a {
 	color: $color-hippie-blue;
-	text-decoration: none;
-} // a, a:link
-
-// a:visited { } // a:visited
+} // a
 
 a:hover {
 	color: $color-chestnut-rose;
@@ -89,5 +85,3 @@ a:hover {
 a:focus {
 	outline: 1px solid rgba($color-black, 0.4);
 } // a:focus
-
-// a:active { } // a:active
