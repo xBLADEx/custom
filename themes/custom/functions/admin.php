@@ -77,22 +77,23 @@ class Custom_Theme_Options {
 	 */
 	public function add_menu_page() {
 		add_options_page(
-			'Theme Options', 	// Page Title.
-			'Theme Options', 	// Menu Title.
-			'manage_options',	// Capability.
-			'theme-options',	// Slug.
+			__( 'Theme Options', 'custom' ), // Page Title.
+			__( 'Theme Options', 'custom' ), // Menu Title.
+			'manage_options', // Capability.
+			'theme-options', // Slug.
 			array( 'Custom_Theme_Options', 'display_options_page' ) // Function.
 		);
 	}
 
 	/**
 	 * Options Page
+	 *
 	 * Add menu page.
 	 */
 	public function display_options_page() {
 		?>
 		<div class="wrap">
-			<h2>Theme Options</h2>
+			<h2><?php esc_html_e( 'Theme Options', 'custom' ); ?></h2>
 			<form action="options.php" method="POST">
 				<?php
 					settings_fields( 'custom_theme_setting' ); // register_setting() 1st arg Group Name.
@@ -116,14 +117,14 @@ class Custom_Theme_Options {
 
 		add_settings_section(
 			'rich_main_section', // ID.
-			'Theme Settings', // Title displayed within <h3>.
+			__( 'Theme Settings', 'custom' ), // Title displayed within <h3>.
 			array( $this, 'rich_main_section_cb' ), // Callback.
 			'theme-options' // Page - Needs to match the slug url.
 		);
 
 		add_settings_field(
 			'theme_email_heading', // Name heading or title also ID.
-			'Contact Form Email: ',
+			__( 'Contact Form Email: ', 'custom' ),
 			array( $this, 'theme_email_field_cb' ), // Callback.
 			'theme-options', // Page.
 			'rich_main_section' // Section - add_settings_section 1st arg.
@@ -156,7 +157,7 @@ class Custom_Theme_Options {
 	 * Description
 	 */
 	public function rich_main_section_cb() {
-		echo 'Input your email for the contact form. For multiple emails use a comma to separate.';
+		esc_html_e( 'Input your email for the contact form. For multiple emails use a comma to separate.', 'custom' );
 	}
 
 	/**
