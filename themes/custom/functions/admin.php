@@ -51,24 +51,6 @@ function custom_add_quicktags() {
 add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
 
 /**
- * Login Logo
- *
- * @see http://codex.wordpress.org/Customizing_the_Login_Form.
- */
-function custom_login_logo() {
-	?>
-	<style>
-	body.login div#login h1 a {
-		background-image: url('<?php echo esc_attr( THEME_IMAGES ); ?>/logo-login.jpg');
-		padding-bottom: 30px;
-	}
-	</style>
-	<?php
-}
-
-add_action( 'login_enqueue_scripts', 'custom_login_logo' );
-
-/**
  * Theme Options
  */
 class Custom_Theme_Options {
