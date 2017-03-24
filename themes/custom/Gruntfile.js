@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: {
-					'assets/js/custom.js': 'assets/js/custom.js' // Destination : Source.
+					'assets/js/custom.js': 'assets/js/custom-concat.js' // Destination : Source.
 				}
 			}
 		},
@@ -23,6 +23,7 @@ module.exports = function (grunt) {
 				bsFiles: {
 					src : [
 						'assets/scss/*.css',
+						'assets/js/custom.js',
 						'**/*.php'
 					]
 				},
@@ -75,7 +76,7 @@ module.exports = function (grunt) {
 					// Custom
 					'assets/js/scripts/*.js'
 				],
-				dest: 'assets/js/custom.js'
+				dest: 'assets/js/custom-concat.js'
 			}
 		},
 

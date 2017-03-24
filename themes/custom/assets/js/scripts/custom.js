@@ -3,7 +3,6 @@
 //--------------------------------------------------------------
 
 ( function( $ ) {
-
 	'use strict';
 
 	// Shorthand Document Ready.
@@ -32,5 +31,4 @@
 		// Initialize Foundation.
 		$( document ).foundation();
 	} );
-
 }( jQuery ) );
