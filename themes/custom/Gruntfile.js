@@ -188,19 +188,19 @@ module.exports = function (grunt) {
 					],
 					dimensions: [ // Output will be minified using this.
 						{
-							width: 320,
+							width: 300,
 							height: 200
 						},
 						{
-							width: 768,
+							width: 600,
+							height: 200
+						},
+						{
+							width: 900,
 							height: 500
 						},
 						{
-							width: 1024,
-							height: 500
-						},
-						{
-							width: 1440,
+							width: 1200,
 							height: 500
 						}
 					]
