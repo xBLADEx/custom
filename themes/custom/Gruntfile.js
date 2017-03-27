@@ -176,6 +176,40 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// @see https://www.npmjs.com/package/grunt-critical.
+		// @see https://github.com/bezoerb/grunt-critical.
+		// @see https://github.com/addyosmani/critical#options.
+		critical: {
+			home: { // We can name this anything, the page makes sense.
+				options: {
+					base: './',
+					css: [
+						'assets/scss/custom.css'
+					],
+					dimensions: [ // Output will be minified using this.
+						{
+							width: 320,
+							height: 200
+						},
+						{
+							width: 768,
+							height: 500
+						},
+						{
+							width: 1024,
+							height: 500
+						},
+						{
+							width: 1440,
+							height: 500
+						}
+					]
+				},
+				src: 'http://custom.dev',
+				dest: 'assets/scss/critical.css'
+			}
+		},
+
 		postcss: {
 			options: {
 				map: true,
@@ -231,6 +265,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-critical');
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-pot');
 

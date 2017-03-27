@@ -20,6 +20,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^2.2.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-critical": "^0.2.2",
     "grunt-postcss": "^0.8.0",
     "grunt-pot": "^0.3.0",
     "load-grunt-tasks": "^3.5.2"
