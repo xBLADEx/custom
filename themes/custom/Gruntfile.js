@@ -138,44 +138,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		sass: {
-			target: {
-				options: {
-					style: 'compressed',
-					sourcemap: 'file'
-				},
-
-				files: {
-					'assets/scss/custom.css': 'assets/scss/custom.scss' // 'Destination': 'Source'
-				}
-			}
-		},
-
-		uglify: {
-			options: {
-				//mangle: true, // Shorten variable names
-				compress: true,
-				sourceMap: true,
-				banner: '/* <%= pkg.author %> | <%= pkg.license %> | <%= grunt.template.today("mm-dd-yyyy") %> */\n'
-			},
-			target: { // We can name this whatever we like, example distribution or dist
-				src: 'assets/js/custom.js', // Uncompressed
-				dest: 'assets/js/custom.js' // Where to compress and output
-			}
-		},
-
-		watch: {
-			scripts: {
-				files: ['assets/js/scripts/*.js'],
-				tasks: ['concat', 'babel', 'uglify']
-			},
-
-			styles: {
-				files: ['assets/scss/**/*.scss'],
-				tasks: ['sass', 'postcss']
-			}
-		},
-
 		// @see https://www.npmjs.com/package/grunt-critical.
 		// @see https://github.com/bezoerb/grunt-critical.
 		// @see https://github.com/addyosmani/critical#options.
@@ -254,6 +216,44 @@ module.exports = function (grunt) {
 				src: ['**/*.php', '!node_modules/**'], // Parse all PHP files.
 				expand: true
 			},
+		},
+
+		sass: {
+			target: {
+				options: {
+					style: 'compressed',
+					sourcemap: 'file'
+				},
+
+				files: {
+					'assets/scss/custom.css': 'assets/scss/custom.scss' // 'Destination': 'Source'
+				}
+			}
+		},
+
+		uglify: {
+			options: {
+				//mangle: true, // Shorten variable names
+				compress: true,
+				sourceMap: true,
+				banner: '/* <%= pkg.author %> | <%= pkg.license %> | <%= grunt.template.today("mm-dd-yyyy") %> */\n'
+			},
+			target: { // We can name this whatever we like, example distribution or dist
+				src: 'assets/js/custom.js', // Uncompressed
+				dest: 'assets/js/custom.js' // Where to compress and output
+			}
+		},
+
+		watch: {
+			scripts: {
+				files: ['assets/js/scripts/*.js'],
+				tasks: ['concat', 'babel', 'uglify']
+			},
+
+			styles: {
+				files: ['assets/scss/**/*.scss'],
+				tasks: ['sass', 'postcss']
+			}
 		}
 
 	});
