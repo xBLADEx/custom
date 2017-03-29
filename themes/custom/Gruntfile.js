@@ -41,7 +41,7 @@ module.exports = function (grunt) {
 			},
 			target: {
 				src: [ // We could do 'js/*.js' but the array allows us to select what we want
-					// Foundation
+					// Foundation.
 					'bower_components/foundation-sites/js/foundation.core.js',
 					// 'bower_components/foundation-sites/js/foundation.abide.js',
 					'bower_components/foundation-sites/js/foundation.accordion.js',
@@ -72,9 +72,9 @@ module.exports = function (grunt) {
 					'bower_components/foundation-sites/js/foundation.util.touch.js',
 					'bower_components/foundation-sites/js/foundation.util.triggers.js',
 					// 'bower_components/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js',
-					// Slick
+					// Slick.
 					'bower_components/slick-carousel/slick/slick.min.js',
-					// Custom
+					// Custom.
 					'assets/js/scripts/*.js'
 				],
 				dest: 'assets/js/custom-concat.js'
@@ -99,6 +99,7 @@ module.exports = function (grunt) {
 					}
 				]
 			},
+
 			foundation: {
 				files: [
 					{
@@ -109,6 +110,18 @@ module.exports = function (grunt) {
 					}
 				]
 			},
+
+			loadCSS: {
+				files: [
+					{
+						expand: true,
+						cwd: 'bower_components/loadcss/src/',
+						src: ['loadCSS.js', 'cssrelpreload.js'],
+						dest: 'assets/js/load-css'
+					}
+				]
+			},
+
 			slick: {
 				files: [
 					{
