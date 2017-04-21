@@ -31,20 +31,22 @@ add_filter( 'quicktags_settings', 'custom_remove_quicktags' );
  */
 function custom_add_quicktags() {
 	?>
-	<script>
-	if ( typeof( QTags ) == 'function' ) {
-		QTags.addButton( 'eg_div', 'div', '<div class="">\n', '\n</div>', 'd', 'Division', 1 );
-		QTags.addButton( 'eg_h2', 'h2', '<h2>', '</h2>', '2', 'Heading 2', 1 );
-		QTags.addButton( 'eg_h3', 'h3', '<h3>', '</h3>', '3', 'Heading 3', 1 );
-		QTags.addButton( 'eg_h4', 'h4', '<h4>', '</h4>', '4', 'Heading 4', 1 );
-		QTags.addButton( 'eg_paragraph', 'p', '<p>', '</p>', 'p', 'Paragraph', 1 );
-		QTags.addButton( 'eg_span', 'span', '<span>', '</span>', 'span', 'Span', 1 );
-		QTags.addButton( 'eg_bold', 'bold', '<span class="bold">', '</span>', 'bold', 'Bold', 1 );
-		QTags.addButton( 'eg_italic', 'italic', '<span class="italic">', '</span>', 'italic', 'Italic', 1 );
-		QTags.addButton( 'eg_break', 'br', '<br>', '', 'b', 'Line Break', 20 );
-		QTags.addButton( 'eg_hrule', 'hr', '<hr>\n', '', 'h', 'Horizontal Rule', 20 );
-	}
-	</script>
+<script>
+var QTags;
+
+if ( 'function' === typeof( QTags ) ) {
+	QTags.addButton( 'eg_div', 'div', '<div class="">\n', '\n</div>', 'd', 'Division', 1 );
+	QTags.addButton( 'eg_h2', 'h2', '<h2>', '</h2>', '2', 'Heading 2', 1 );
+	QTags.addButton( 'eg_h3', 'h3', '<h3>', '</h3>', '3', 'Heading 3', 1 );
+	QTags.addButton( 'eg_h4', 'h4', '<h4>', '</h4>', '4', 'Heading 4', 1 );
+	QTags.addButton( 'eg_paragraph', 'p', '<p>', '</p>', 'p', 'Paragraph', 1 );
+	QTags.addButton( 'eg_span', 'span', '<span>', '</span>', 'span', 'Span', 1 );
+	QTags.addButton( 'eg_bold', 'bold', '<span class="bold">', '</span>', 'bold', 'Bold', 1 );
+	QTags.addButton( 'eg_italic', 'italic', '<span class="italic">', '</span>', 'italic', 'Italic', 1 );
+	QTags.addButton( 'eg_break', 'br', '<br>', '', 'b', 'Line Break', 20 );
+	QTags.addButton( 'eg_hrule', 'hr', '<hr>\n', '', 'h', 'Horizontal Rule', 20 );
+}
+</script>
 	<?php
 }
 
