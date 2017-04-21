@@ -1,8 +1,8 @@
 <?php
 /**
- * Navigation
- * See: http://codex.wordpress.org/Function_Reference/wp_nav_menu.
+ * Menu Nav
  *
+ * @see http://codex.wordpress.org/Function_Reference/wp_nav_menu.
  * @package Custom
  */
 
