@@ -9,7 +9,6 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		$defaults = array(
 			'item_type'     => 'li',
 			'in_top_bar'    => false,
-			'menu_type'     => 'main-menu', // Enable menu differenciation, used in preg_replace classes[] below.
 		);
 
 		$this->nav_bar = apply_filters( 'req_nav_args', wp_parse_args( $nav_args, $defaults ) );
@@ -19,7 +18,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		$id_field = $this->db_fields['id'];
 
 		if ( is_object( $args[0] ) ) {
-			$args[0]->has_children = ! empty( $children_elements[$element->$id_field] );
+			$args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
 		}
 
 		return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
@@ -27,30 +26,20 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+		$slug   = sanitize_title( $item->title );
 
-		$classes = empty( $item->classes ) ? array() : (array)$item->classes;
+		$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
-
-		$slug = sanitize_title($item->title);
-		// $classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', '', $classes);
-		$classes = preg_replace('/(current([-_]page[-_])(item|parent|ancestor))/', '', $classes);
-		$classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
-		$menu_type = $this->nav_bar['menu_type'];
-		// $classes[] = 'menu-item menu-item-' . $menu_type . ' menu-item-' . $slug;
+		$classes   = preg_replace( '/(current([-_]page[-_])(item|parent|ancestor))/', '', $classes );
+		$classes   = preg_replace( '/^((menu|page)[-_\w+]+)+/', '', $classes );
 		$classes[] = 'menu-item menu-item-' . $slug;
-		$classes = array_unique($classes);
+		$classes   = array_unique( $classes );
 
-		// Check for flyout.
-		$flyout_toggle = '';
-
-		if ( $args->has_children && $this->nav_bar['item_type'] == 'li' ) {
-			if ( $depth == 0 && $this->nav_bar['in_top_bar'] == false ) {
+		if ( $args->has_children && 'li' === $this->nav_bar['item_type'] ) {
+			if ( 0 === $depth && false === $this->nav_bar['in_top_bar'] ) {
 				$classes[] = 'has-flyout';
-				// $flyout_toggle = '<a href="#" class="flyout-toggle"><span></span></a>';
-			} else if ( $this->nav_bar['in_top_bar'] == true ) {
+			} elseif ( true === $this->nav_bar['in_top_bar'] ) {
 				$classes[] = 'has-dropdown';
-
-				$flyout_toggle = '';
 			}
 		}
 
@@ -73,7 +62,6 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= $item->description ? '<span class="desc">' . $item->description . '</span>' : '';
 		$item_output .= '</a>';
-		$item_output .= $flyout_toggle;
 		$item_output .= $args->after;
 
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
