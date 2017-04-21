@@ -154,7 +154,7 @@ if ( ! function_exists( 'reverie_cleaner_caption' ) ) {
 		// Return the formatted, clean caption.
 		return $output;
 	}
-}
+} // End if().
 
 // Clean Inserted Image Attributes.
 if ( ! function_exists( 'reverie_image_tag_class' ) ) {
@@ -222,7 +222,7 @@ function re_image_to_relative( $html, $id, $caption, $title, $align, $url, $size
 	$sp = strpos( $html, 'src=' ) + 5;
 	$ep = strpos( $html, '\"', $sp );
 
-	$imageurl = substr( $html, $sp, $ep-$sp );
+	$imageurl = substr( $html, $sp, $ep - $sp );
 
 	$relativeurl = str_replace( 'http://', '', $imageurl );
 	$sp = strpos( $relativeurl, '/' );
