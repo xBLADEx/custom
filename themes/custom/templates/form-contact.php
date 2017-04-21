@@ -7,7 +7,7 @@
 
 if ( isset( $_POST['submit'] ) ) :
 	// Define emails, website, and domain.
-	define( 'EMAIL',   get_option( 'custom_theme_setting' )['theme_email_heading'] );
+	define( 'EMAIL',   'javablood@hotmail.com' );
 	define( 'WEBSITE', get_bloginfo( 'name' ) );
 	define( 'DOMAIN',  str_replace( 'www.', '', $_SERVER['HTTP_HOST'] ) );
 
@@ -29,7 +29,7 @@ if ( isset( $_POST['submit'] ) ) :
 	$field_errors = true;
 
 	foreach ( $required_fields as &$field ) {
-		if ( '' === $_POST[$field] ) {
+		if ( '' === $_POST[ $field ] ) {
 			$field_errors = false;
 		}
 	}
