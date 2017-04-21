@@ -45,20 +45,20 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-		$value = '';
+
 		if ( $depth > 0 ) {
-			$output .= $indent . '<li id="menu-item-' . $item->ID . '"' . $value . $class_names . '>';
+			$output .= $indent . '<li id="menu-item-' . $item->ID . '"' . $class_names . '>';
 		} else {
-			$output .= $indent . ( $this->nav_bar['in_top_bar'] == true ? '<li class="divider"></li>' : '' ) . '<' . $this->nav_bar['item_type'] . ' id="menu-item-' . $item->ID . '"' . $value . $class_names . '>';
+			$output .= $indent . ( true === $this->nav_bar['in_top_bar'] ? '<li class="divider"></li>' : '' ) . '<' . $this->nav_bar['item_type'] . ' id="menu-item-' . $item->ID . '"' . $class_names . '>';
 		}
 
-		$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) .'"' : '';
-		$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
-		$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
-		$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
+		$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
+		$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
+		$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) . '"' : '';
+		$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
 
 		$item_output = $args->before;
-		$item_output .= '<a '. $attributes .'>';
+		$item_output .= '<a ' . $attributes . '>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= $item->description ? '<span class="desc">' . $item->description . '</span>' : '';
 		$item_output .= '</a>';
@@ -71,22 +71,22 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		if ( $depth > 0 ) {
 			$output .= "</li>\n";
 		} else {
-			$output .= "</" . $this->nav_bar['item_type'] . ">\n";
+			$output .= '</' . $this->nav_bar['item_type'] . ">\n";
 		}
 	}
 
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		if ( $depth == 0 && $this->nav_bar['item_type'] == 'li' ) {
-			$indent = str_repeat("\t", 1);
-			$output .= $this->nav_bar['in_top_bar'] == true ? "\n$indent<ul class=\"dropdown\">\n" : "\n$indent<ul class=\"flyout\">\n";
+		if ( 0 === $depth && 'li' === $this->nav_bar['item_type'] ) {
+			$indent = str_repeat( "\t", 1 );
+			$output .= true === $this->nav_bar['in_top_bar'] ? "\n$indent<ul class=\"dropdown\">\n" : "\n$indent<ul class=\"flyout\">\n";
 		} else {
-			$indent = str_repeat("\t", $depth);
-			$output .= $this->nav_bar['in_top_bar'] == true ? "\n$indent<ul class=\"dropdown\">\n" : "\n$indent<ul class=\"level-$depth\">\n";
+			$indent = str_repeat( "\t", $depth );
+			$output .= true === $this->nav_bar['in_top_bar'] ? "\n$indent<ul class=\"dropdown\">\n" : "\n$indent<ul class=\"level-$depth\">\n";
 		}
 	}
 
 	function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat("\t", $depth);
+		$indent = str_repeat( "\t", $depth );
 		$output .= "$indent</ul>\n";
 	}
 }
