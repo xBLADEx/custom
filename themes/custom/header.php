@@ -17,8 +17,8 @@
 		<?php include( 'assets/scss/critical.css' ); ?>
 	</style>
 
-	<link rel="preload" id="google-fonts-css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Halant:400,600" media="all" as="style" onload="this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Halant:400,600" media="all"></noscript>
+	<link rel="preload" id="google-fonts-css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900%7CHalant:400,600" media="all" as="style" onload="this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900%7CHalant:400,600" media="all"></noscript>
 
 	<link rel="preload" id="custom-css" href="/wp-content/themes/custom/assets/scss/custom.css" media="all" as="style" onload="this.rel='stylesheet'">
 	<noscript><link rel="stylesheet" href="/wp-content/themes/custom/assets/scss/custom.css" media="all"></noscript>
