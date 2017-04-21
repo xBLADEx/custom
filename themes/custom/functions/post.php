@@ -59,6 +59,13 @@ add_filter( 'post_class', 'custom_remove_sticky' );
  * @see http://codex.wordpress.org/Function_Reference/paginate_links.
  */
 function custom_pagination( $query = '' ) {
+	global $wp_query;
+
+	// If query is left blank, set to global default wp query.
+	if ( '' === $query ) {
+		$query = $wp_query;
+	}
+
 	$big = 999999999;
 
 	$args = array(
