@@ -11,7 +11,7 @@
  * @param  string $query Query.
  * @return string        Query.
  */
-function blank_search( $query ) {
+function custom_blank_search( $query ) {
 	// If "s" request variable is set but empty.
 	if ( isset( $_GET['s'] ) && empty( $_GET['s'] ) && $query->is_main_query() ) {
 		$query->is_search = true;
