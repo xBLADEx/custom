@@ -10,7 +10,7 @@ get_header();
 
 <div class="row page-content">
 	<div class="medium-12 columns">
-		<?php get_template_part( 'templates/page', 'title' ); ?>
+		<?php get_template_part( 'templates/content', 'title' ); ?>
 
 		<div class="row">
 			<div class="medium-6 columns">

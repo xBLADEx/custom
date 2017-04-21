@@ -1,6 +1,6 @@
 <?php
 /**
- * Page Title
+ * Content Title
  *
  * @package Custom
  */

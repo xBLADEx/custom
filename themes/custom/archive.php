@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<?php get_template_part( 'templates/page', 'title' ); ?>
+<?php get_template_part( 'templates/content', 'title' ); ?>
 
 <div class="row page-content">
 	<div class="medium-9 columns">

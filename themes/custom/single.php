@@ -17,7 +17,7 @@ get_header();
 				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header>
-						<?php get_template_part( 'templates/page', 'title' ); ?>
+						<?php get_template_part( 'templates/content', 'title' ); ?>
 
 						<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 
