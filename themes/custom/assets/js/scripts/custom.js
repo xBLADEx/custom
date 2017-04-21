@@ -17,16 +17,16 @@
 
 		// Slick Slider.
 		$( '.home-slider' ).slick( {
-	        dots: true,
-	        infinite: true,
-	        autoplay: false,
-	        speed: 2000,
-	        autoplaySpeed: 1000,
-	        slidesToShow: 1,
-	        slidesToScroll: 1,
-	        pauseOnHover: false,
-	        fade: false
-	    } );
+			dots: true,
+			infinite: true,
+			autoplay: false,
+			speed: 2000,
+			autoplaySpeed: 1000,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			pauseOnHover: false,
+			fade: false
+		} );
 
 		// Initialize Foundation.
 		$( document ).foundation();
