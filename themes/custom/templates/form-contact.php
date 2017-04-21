@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact Form
+ * Form Contact
  *
  * @package Custom
  */
