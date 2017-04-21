@@ -1,4 +1,17 @@
 # SASS LINT
+
+# Sample Configs
+#  - @see https://github.com/sasstools/sass-lint/blob/develop/docs/sass-lint.yml
+#  - @see https://github.com/sasstools/gulp-sass-lint/blob/master/tests/.sass-lint.yml
+
+# Sass Lint Rules
+#  - @see https://github.com/sasstools/sass-lint/tree/develop/docs/rules
+
+# Severity
+#  - 0: Set to off
+#  - 1: Set to warning
+#  - 2: Set to error
+
 options:
   formatter: stylish
 files:
@@ -45,7 +58,11 @@ rules:
   no-important: 1
   no-invalid-hex: 1
   no-mergeable-selectors: 1
-  no-misspelled-properties: 1
+  no-misspelled-properties:
+    - 1
+    -
+      'extra-properties':
+        - '-webkit-overflow-scrolling'
   no-qualifying-elements:
     - 1
     -
