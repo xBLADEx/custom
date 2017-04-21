@@ -18,10 +18,10 @@
 	</style>
 
 	<link rel="preload" id="google-fonts-css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Halant:400,600" media="all" as="style" onload="this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" id="google-fonts-css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Halant:400,600" media="all"></noscript>
+	<noscript><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Halant:400,600" media="all"></noscript>
 
 	<link rel="preload" id="custom-css" href="/wp-content/themes/custom/assets/scss/custom.css" media="all" as="style" onload="this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" id="custom-css" href="/wp-content/themes/custom/assets/scss/custom.css" media="all"></noscript>
+	<noscript><link rel="stylesheet" href="/wp-content/themes/custom/assets/scss/custom.css" media="all"></noscript>
 
 	<script>
 		<?php include( 'assets/js/load-css/custom-load-css.js' ); ?>
