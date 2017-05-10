@@ -84,17 +84,6 @@ module.exports = function( grunt ) {
 
 		// @see http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically.
 		copy: {
-			foundation: {
-				files: [
-					{
-						expand: true,
-						cwd: 'assets/bower/foundation-sites/scss/',
-						src: [ '_global.scss', 'foundation.scss' ],
-						dest: 'assets/scss/foundation-sites'
-					}
-				]
-			},
-
 			loadCSS: {
 				files: [
 					{
