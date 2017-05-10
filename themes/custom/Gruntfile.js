@@ -41,39 +41,39 @@ module.exports = function( grunt ) {
 			target: {
 				src: [ // We could do 'js/*.js' but the array allows us to select what we want.
 					// Foundation.
-					'bower_components/foundation-sites/js/foundation.core.js',
-					// 'bower_components/foundation-sites/js/foundation.abide.js',
-					'bower_components/foundation-sites/js/foundation.accordion.js',
-					// 'bower_components/foundation-sites/js/foundation.accordionMenu.js',
-					// 'bower_components/foundation-sites/js/foundation.core.js',
-					// 'bower_components/foundation-sites/js/foundation.drilldown.js',
-					// 'bower_components/foundation-sites/js/foundation.dropdown.js',
-					// 'bower_components/foundation-sites/js/foundation.dropdownMenu.js',
-					'bower_components/foundation-sites/js/foundation.equalizer.js',
-					// 'bower_components/foundation-sites/js/foundation.interchange.js',
-					// 'bower_components/foundation-sites/js/foundation.magellan.js',
-					// 'bower_components/foundation-sites/js/foundation.offcanvas.js',
-					// 'bower_components/foundation-sites/js/foundation.orbit.js',
-					// 'bower_components/foundation-sites/js/foundation.responsiveMenu.js',
-					// 'bower_components/foundation-sites/js/foundation.responsiveToggle.js',
-					// 'bower_components/foundation-sites/js/foundation.reveal.js',
-					// 'bower_components/foundation-sites/js/foundation.slider.js',
-					// 'bower_components/foundation-sites/js/foundation.sticky.js',
-					'bower_components/foundation-sites/js/foundation.tabs.js',
-					// 'bower_components/foundation-sites/js/foundation.toggler.js',
-					// 'bower_components/foundation-sites/js/foundation.tooltip.js',
-					'bower_components/foundation-sites/js/foundation.util.box.js',
-					'bower_components/foundation-sites/js/foundation.util.keyboard.js',
-					'bower_components/foundation-sites/js/foundation.util.mediaQuery.js',
-					'bower_components/foundation-sites/js/foundation.util.motion.js',
-					'bower_components/foundation-sites/js/foundation.util.nest.js',
-					'bower_components/foundation-sites/js/foundation.util.timerAndImageLoader.js',
-					'bower_components/foundation-sites/js/foundation.util.touch.js',
-					'bower_components/foundation-sites/js/foundation.util.triggers.js',
-					// 'bower_components/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js',
+					'assets/bower/foundation-sites/js/foundation.core.js',
+					// 'assets/bower/foundation-sites/js/foundation.abide.js',
+					'assets/bower/foundation-sites/js/foundation.accordion.js',
+					// 'assets/bower/foundation-sites/js/foundation.accordionMenu.js',
+					// 'assets/bower/foundation-sites/js/foundation.core.js',
+					// 'assets/bower/foundation-sites/js/foundation.drilldown.js',
+					// 'assets/bower/foundation-sites/js/foundation.dropdown.js',
+					// 'assets/bower/foundation-sites/js/foundation.dropdownMenu.js',
+					'assets/bower/foundation-sites/js/foundation.equalizer.js',
+					// 'assets/bower/foundation-sites/js/foundation.interchange.js',
+					// 'assets/bower/foundation-sites/js/foundation.magellan.js',
+					// 'assets/bower/foundation-sites/js/foundation.offcanvas.js',
+					// 'assets/bower/foundation-sites/js/foundation.orbit.js',
+					// 'assets/bower/foundation-sites/js/foundation.responsiveMenu.js',
+					// 'assets/bower/foundation-sites/js/foundation.responsiveToggle.js',
+					// 'assets/bower/foundation-sites/js/foundation.reveal.js',
+					// 'assets/bower/foundation-sites/js/foundation.slider.js',
+					// 'assets/bower/foundation-sites/js/foundation.sticky.js',
+					'assets/bower/foundation-sites/js/foundation.tabs.js',
+					// 'assets/bower/foundation-sites/js/foundation.toggler.js',
+					// 'assets/bower/foundation-sites/js/foundation.tooltip.js',
+					'assets/bower/foundation-sites/js/foundation.util.box.js',
+					'assets/bower/foundation-sites/js/foundation.util.keyboard.js',
+					'assets/bower/foundation-sites/js/foundation.util.mediaQuery.js',
+					'assets/bower/foundation-sites/js/foundation.util.motion.js',
+					'assets/bower/foundation-sites/js/foundation.util.nest.js',
+					'assets/bower/foundation-sites/js/foundation.util.timerAndImageLoader.js',
+					'assets/bower/foundation-sites/js/foundation.util.touch.js',
+					'assets/bower/foundation-sites/js/foundation.util.triggers.js',
+					// 'assets/bower/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js',
 
 					// Slick.
-					'bower_components/slick-carousel/slick/slick.min.js',
+					'assets/bower/slick-carousel/slick/slick.min.js',
 
 					// Custom.
 					'assets/js/scripts/*.js'
@@ -88,13 +88,13 @@ module.exports = function( grunt ) {
 				files: [
 					{
 						expand: true,
-						cwd: 'bower_components/font-awesome/fonts/',
+						cwd: 'assets/bower/font-awesome/fonts/',
 						src: [ '*' ],
 						dest: 'assets/fonts/'
 					},
 					{
 						expand: true,
-						cwd: 'bower_components/font-awesome/scss/',
+						cwd: 'assets/bower/font-awesome/scss/',
 						src: [ '*', '!font-awesome.scss' ],
 						dest: 'assets/scss/fa/'
 					}
@@ -105,7 +105,7 @@ module.exports = function( grunt ) {
 				files: [
 					{
 						expand: true,
-						cwd: 'bower_components/foundation-sites/scss/',
+						cwd: 'assets/bower/foundation-sites/scss/',
 						src: [ '_global.scss', 'foundation.scss' ],
 						dest: 'assets/scss/foundation-sites'
 					}
@@ -116,7 +116,7 @@ module.exports = function( grunt ) {
 				files: [
 					{
 						expand: true,
-						cwd: 'bower_components/loadcss/src/',
+						cwd: 'assets/bower/loadcss/src/',
 						src: [ 'loadCSS.js', 'cssrelpreload.js' ],
 						dest: 'assets/js/load-css'
 					}
@@ -127,19 +127,19 @@ module.exports = function( grunt ) {
 				files: [
 					{
 						expand: true,
-						cwd: 'bower_components/slick-carousel/slick/fonts/',
+						cwd: 'assets/bower/slick-carousel/slick/fonts/',
 						src: [ '*' ],
 						dest: 'assets/fonts/'
 					},
 					{
 						expand: true,
-						cwd: 'bower_components/slick-carousel/slick/',
+						cwd: 'assets/bower/slick-carousel/slick/',
 						src: [ 'ajax-loader.gif' ],
 						dest: 'assets/images/slides/'
 					},
 					{
 						expand: true,
-						cwd: 'bower_components/slick-carousel/slick/',
+						cwd: 'assets/bower/slick-carousel/slick/',
 						src: [ 'slick-theme.scss', 'slick.scss' ],
 						dest: 'assets/scss/theme/plugins/',
 						rename: function( dest, src ) {
