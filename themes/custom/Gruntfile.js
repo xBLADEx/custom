@@ -1,15 +1,15 @@
-module.exports = function (grunt) {
+module.exports = function( grunt ) {
 
-	require('load-grunt-tasks')(grunt);
+	require( 'load-grunt-tasks' )( grunt );
 
-	// Configure, initConfig takes an object.
+	// Configure, initConfig accepts objects.
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+		pkg: grunt.file.readJSON( 'package.json' ),
 
 		babel: {
 			options: {
 				sourceMap: true,
-				presets: ['es2015']
+				presets: [ 'es2015' ]
 			},
 			dist: {
 				files: {
@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 		browserSync: {
 			dev: {
 				bsFiles: {
-					src : [
+					src: [
 						'assets/scss/*.css',
 						'assets/js/custom.js',
 						'**/*.php'
@@ -30,17 +30,16 @@ module.exports = function (grunt) {
 				options: {
 					watchTask: true,
 					proxy: 'custom.dev'
-				},
+				}
 			}
 		},
 
 		concat: {
 			options: {
-				seperator: ';',
-				//banner: '/* Blade Custom Theme close comment */\n'
+				seperator: ';'
 			},
 			target: {
-				src: [ // We could do 'js/*.js' but the array allows us to select what we want
+				src: [ // We could do 'js/*.js' but the array allows us to select what we want.
 					// Foundation.
 					'bower_components/foundation-sites/js/foundation.core.js',
 					// 'bower_components/foundation-sites/js/foundation.abide.js',
@@ -72,8 +71,10 @@ module.exports = function (grunt) {
 					'bower_components/foundation-sites/js/foundation.util.touch.js',
 					'bower_components/foundation-sites/js/foundation.util.triggers.js',
 					// 'bower_components/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js',
+
 					// Slick.
 					'bower_components/slick-carousel/slick/slick.min.js',
+
 					// Custom.
 					'assets/js/scripts/*.js'
 				],
@@ -81,20 +82,20 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
+		// @see http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically.
 		copy: {
 			fa: {
 				files: [
 					{
 						expand: true,
 						cwd: 'bower_components/font-awesome/fonts/',
-						src: ['*'],
+						src: [ '*' ],
 						dest: 'assets/fonts/'
 					},
 					{
 						expand: true,
 						cwd: 'bower_components/font-awesome/scss/',
-						src: ['*', '!font-awesome.scss'],
+						src: [ '*', '!font-awesome.scss' ],
 						dest: 'assets/scss/fa/'
 					}
 				]
@@ -105,7 +106,7 @@ module.exports = function (grunt) {
 					{
 						expand: true,
 						cwd: 'bower_components/foundation-sites/scss/',
-						src: ['_global.scss', 'foundation.scss'],
+						src: [ '_global.scss', 'foundation.scss' ],
 						dest: 'assets/scss/foundation-sites'
 					}
 				]
@@ -116,7 +117,7 @@ module.exports = function (grunt) {
 					{
 						expand: true,
 						cwd: 'bower_components/loadcss/src/',
-						src: ['loadCSS.js', 'cssrelpreload.js'],
+						src: [ 'loadCSS.js', 'cssrelpreload.js' ],
 						dest: 'assets/js/load-css'
 					}
 				]
@@ -127,23 +128,23 @@ module.exports = function (grunt) {
 					{
 						expand: true,
 						cwd: 'bower_components/slick-carousel/slick/fonts/',
-						src: ['*'],
+						src: [ '*' ],
 						dest: 'assets/fonts/'
 					},
 					{
 						expand: true,
 						cwd: 'bower_components/slick-carousel/slick/',
-						src: ['ajax-loader.gif'],
+						src: [ 'ajax-loader.gif' ],
 						dest: 'assets/images/slides/'
 					},
 					{
 						expand: true,
 						cwd: 'bower_components/slick-carousel/slick/',
-						src: ['slick-theme.scss', 'slick.scss'],
+						src: [ 'slick-theme.scss', 'slick.scss' ],
 						dest: 'assets/scss/theme/plugins/',
-						rename: function(dest, src) {
-							for ( var i = 0; i < src.length; i++ ) {
-								return dest + src.replace(src[i], '_' + src[i]);
+						rename: function( dest, src ) {
+							for ( let i = 0; i < src.length; i++ ) {
+								return dest + src.replace( src[i], '_' + src[i]);
 							}
 						}
 					}
@@ -155,7 +156,7 @@ module.exports = function (grunt) {
 		// @see https://github.com/bezoerb/grunt-critical.
 		// @see https://github.com/addyosmani/critical#options.
 		critical: {
-			home: { // We can name this anything, the page makes sense.
+			home: { // We can name this anything, the page name makes sense.
 				options: {
 					base: './',
 					css: [
@@ -189,10 +190,9 @@ module.exports = function (grunt) {
 			options: {
 				map: true,
 				processors: [
-					require('autoprefixer')({browsers: 'last 2 versions'})
+					require( 'autoprefixer' )({browsers: 'last 2 versions'})
 				]
 			},
-
 			dist: {
 				src: 'assets/scss/*.css'
 			}
@@ -224,11 +224,10 @@ module.exports = function (grunt) {
 					'_nx_noop:1,2,3c'
 				]
 			},
-
 			files: {
-				src: ['**/*.php', '!node_modules/**'], // Parse all PHP files.
+				src: [ '**/*.php', '!node_modules/**' ], // Parse all PHP files.
 				expand: true
-			},
+			}
 		},
 
 		sass: {
@@ -237,55 +236,49 @@ module.exports = function (grunt) {
 					style: 'compressed',
 					sourcemap: 'file'
 				},
-
 				files: {
-					'assets/scss/custom.css': 'assets/scss/custom.scss' // 'Destination': 'Source'
+					'assets/scss/custom.css': 'assets/scss/custom.scss' // 'Destination': 'Source'.
 				}
 			}
 		},
 
 		uglify: {
 			options: {
-				//mangle: true, // Shorten variable names
 				compress: true,
 				sourceMap: true,
 				banner: '/* <%= pkg.author %> | <%= pkg.license %> | <%= grunt.template.today("mm-dd-yyyy") %> */\n'
 			},
-			target: { // We can name this whatever we like, example distribution or dist
-				src: 'assets/js/custom.js', // Uncompressed
-				dest: 'assets/js/custom.js' // Where to compress and output
+			target: { // We can name this whatever we like, example dist.
+				src: 'assets/js/custom.js', // Uncompressed.
+				dest: 'assets/js/custom.js' // Where to compress and output.
 			}
 		},
 
 		watch: {
 			scripts: {
-				files: ['assets/js/scripts/*.js'],
-				tasks: ['concat', 'babel', 'uglify']
+				files: [ 'assets/js/scripts/*.js' ],
+				tasks: [ 'concat', 'babel', 'uglify' ]
 			},
-
 			styles: {
-				files: ['assets/scss/**/*.scss'],
-				tasks: ['sass', 'postcss']
+				files: [ 'assets/scss/**/*.scss' ],
+				tasks: [ 'sass', 'postcss' ]
 			}
 		}
-
 	});
 
-	// Load the plugin
-	grunt.loadNpmTasks('grunt-browser-sync');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-critical');
-	grunt.loadNpmTasks('grunt-postcss');
-	grunt.loadNpmTasks('grunt-pot');
+	// Load the tasks.
+	grunt.loadNpmTasks( 'grunt-browser-sync' );
+	grunt.loadNpmTasks( 'grunt-contrib-concat' );
+	grunt.loadNpmTasks( 'grunt-contrib-copy' );
+	grunt.loadNpmTasks( 'grunt-contrib-sass' );
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-critical' );
+	grunt.loadNpmTasks( 'grunt-postcss' );
+	grunt.loadNpmTasks( 'grunt-pot' );
 
-	// Default runs when we call grunt on the command line
-	// We can use any name we want to run specific tasks
+	// Default runs when we call grunt on the command line.
+	// We can use any name we want to run specific tasks.
 	// The array is the order in which tasks are executed.
-	grunt.registerTask('default', ['browserSync', 'watch']);
-
-	//grunt.registerTask('default', ['jshint', 'concat', 'uglify']); // This runs when we type grunt on the command line. Then the array runs the tasks in order first to last
+	grunt.registerTask( 'default', [ 'browserSync', 'watch' ]);
 };
