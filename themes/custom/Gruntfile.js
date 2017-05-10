@@ -84,23 +84,6 @@ module.exports = function( grunt ) {
 
 		// @see http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically.
 		copy: {
-			fa: {
-				files: [
-					{
-						expand: true,
-						cwd: 'assets/bower/font-awesome/fonts/',
-						src: [ '*' ],
-						dest: 'assets/fonts/'
-					},
-					{
-						expand: true,
-						cwd: 'assets/bower/font-awesome/scss/',
-						src: [ '*', '!font-awesome.scss' ],
-						dest: 'assets/scss/fa/'
-					}
-				]
-			},
-
 			foundation: {
 				files: [
 					{
