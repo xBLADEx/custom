@@ -9,4 +9,9 @@
 @import '../bower/font-awesome/scss/font-awesome';
 
 // Theme.
-@import 'theme/index';
+@import 'functions/index';
+@import 'variables/index';
+@import 'mixins/index';
+@import 'plugins/index';
+@import 'modules/index';
+@import 'layout/index';
