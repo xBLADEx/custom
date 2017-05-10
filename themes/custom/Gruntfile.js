@@ -93,34 +93,6 @@ module.exports = function( grunt ) {
 						dest: 'assets/js/load-css'
 					}
 				]
-			},
-
-			slick: {
-				files: [
-					{
-						expand: true,
-						cwd: 'assets/bower/slick-carousel/slick/fonts/',
-						src: [ '*' ],
-						dest: 'assets/fonts/'
-					},
-					{
-						expand: true,
-						cwd: 'assets/bower/slick-carousel/slick/',
-						src: [ 'ajax-loader.gif' ],
-						dest: 'assets/images/slides/'
-					},
-					{
-						expand: true,
-						cwd: 'assets/bower/slick-carousel/slick/',
-						src: [ 'slick-theme.scss', 'slick.scss' ],
-						dest: 'assets/scss/theme/plugins/',
-						rename: function( dest, src ) {
-							for ( let i = 0; i < src.length; i++ ) {
-								return dest + src.replace( src[i], '_' + src[i]);
-							}
-						}
-					}
-				]
 			}
 		},
 
