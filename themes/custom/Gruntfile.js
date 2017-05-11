@@ -87,18 +87,18 @@ module.exports = function( grunt ) {
 		},
 
 		// @see http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically.
-		copy: {
-			loadCSS: {
-				files: [
-					{
-						expand: true,
-						cwd: 'assets/bower/loadcss/src/',
-						src: [ 'loadCSS.js', 'cssrelpreload.js' ],
-						dest: 'assets/js/load-css'
-					}
-				]
-			}
-		},
+		// copy: {
+		// 	taskname: {
+		// 		files: [
+		// 			{
+		// 				expand: true,
+		// 				cwd: 'assets/bower/path/',
+		// 				src: [ 'file.js', 'another-file.js' ],
+		// 				dest: 'assets/path'
+		// 			}
+		// 		]
+		// 	}
+		// },
 
 		// @see https://www.npmjs.com/package/grunt-critical.
 		// @see https://github.com/bezoerb/grunt-critical.
@@ -225,7 +225,7 @@ module.exports = function( grunt ) {
 	// Load the tasks.
 	grunt.loadNpmTasks( 'grunt-browser-sync' );
 	grunt.loadNpmTasks( 'grunt-contrib-concat' );
-	grunt.loadNpmTasks( 'grunt-contrib-copy' );
+	// grunt.loadNpmTasks( 'grunt-contrib-copy' );
 	grunt.loadNpmTasks( 'grunt-contrib-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
