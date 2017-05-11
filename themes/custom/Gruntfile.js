@@ -79,6 +79,10 @@ module.exports = function( grunt ) {
 					'assets/js/scripts/*.js'
 				],
 				dest: 'assets/js/custom-concat.js'
+			},
+			loadcss: {
+				src: [ 'assets/bower/loadcss/src/loadCSS.js', 'assets/bower/loadcss/src/cssrelpreload.js' ],
+				dest: 'assets/js/critical.js'
 			}
 		},
 
@@ -195,13 +199,21 @@ module.exports = function( grunt ) {
 			target: { // We can name this whatever we like, example dist.
 				src: 'assets/js/custom.js', // Uncompressed.
 				dest: 'assets/js/custom.js' // Where to compress and output.
+			},
+			loadcss: {
+				options: {
+					sourceMap: false,
+					banner: false
+				},
+				src: 'assets/js/critical.js', // Uncompressed.
+				dest: 'assets/js/critical.js' // Where to compress and output.
 			}
 		},
 
 		watch: {
 			scripts: {
 				files: [ 'assets/js/scripts/*.js' ],
-				tasks: [ 'concat', 'babel', 'uglify' ]
+				tasks: [ 'concat:target', 'babel', 'uglify:target' ]
 			},
 			styles: {
 				files: [ 'assets/scss/**/*.scss' ],
@@ -225,4 +237,7 @@ module.exports = function( grunt ) {
 	// We can use any name we want to run specific tasks.
 	// The array is the order in which tasks are executed.
 	grunt.registerTask( 'default', [ 'browserSync', 'watch' ]);
+
+	// LoadCSS.
+	grunt.registerTask( 'loadcss', [ 'concat:loadcss', 'uglify:loadcss' ]);
 };

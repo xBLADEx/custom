@@ -24,7 +24,7 @@
 	<noscript><link rel="stylesheet" href="/wp-content/themes/custom/assets/scss/custom.css" media="all"></noscript>
 
 	<script>
-		<?php include( 'assets/js/load-css/custom-load-css.js' ); ?>
+		<?php include( 'assets/js/critical.js' ); ?>
 	</script>
 
 	<?php wp_head(); ?>
