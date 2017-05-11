@@ -142,7 +142,7 @@ module.exports = function( grunt ) {
 				]
 			},
 			dist: {
-				src: 'assets/scss/*.css'
+				src: 'assets/scss/custom.css'
 			}
 		},
 
