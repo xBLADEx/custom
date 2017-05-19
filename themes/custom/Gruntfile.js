@@ -136,7 +136,7 @@ module.exports = function( grunt ) {
 
 		postcss: {
 			options: {
-				map: true,
+				map: false,
 				processors: [
 					require( 'autoprefixer' )({browsers: 'last 2 versions'})
 				]
@@ -179,16 +179,28 @@ module.exports = function( grunt ) {
 		},
 
 		sass: {
-			target: {
-				options: {
-					style: 'compressed',
-					sourcemap: 'file'
-				},
+			options: {
+				sourcemap: false,
+				style: 'compressed'
+			},
+			dist: {
 				files: {
 					'assets/scss/custom.css': 'assets/scss/custom.scss' // 'Destination': 'Source'.
 				}
 			}
 		},
+
+		// sass: {
+		// 	target: {
+		// 		options: {
+		// 			style: 'compressed',
+		// 			sourcemap: 'file'
+		// 		},
+		// 		files: {
+		// 			'assets/scss/custom.css': 'assets/scss/custom.scss' // 'Destination': 'Source'.
+		// 		}
+		// 	}
+		// },
 
 		uglify: {
 			options: {
@@ -226,7 +238,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-browser-sync' );
 	grunt.loadNpmTasks( 'grunt-contrib-concat' );
 	// grunt.loadNpmTasks( 'grunt-contrib-copy' );
-	grunt.loadNpmTasks( 'grunt-contrib-sass' );
+	// grunt.loadNpmTasks( 'grunt-contrib-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-critical' );
