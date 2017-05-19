@@ -238,6 +238,12 @@ module.exports = function( grunt ) {
 	// The array is the order in which tasks are executed.
 	grunt.registerTask( 'default', [ 'browserSync', 'watch' ]);
 
+	// Styles.
+	grunt.registerTask( 'styles', [ 'sass', 'postcss' ]);
+
+	// Scripts.
+	grunt.registerTask( 'scripts', [ 'concat:target', 'babel', 'uglify:target' ]);
+
 	// LoadCSS.
 	grunt.registerTask( 'loadcss', [ 'concat:loadcss', 'uglify:loadcss' ]);
 };
