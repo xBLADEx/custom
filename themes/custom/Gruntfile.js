@@ -22,7 +22,7 @@ module.exports = function( grunt ) {
 			dev: {
 				bsFiles: {
 					src: [
-						'assets/scss/*.css',
+						'assets/scss/custom.css',
 						'assets/js/custom.js',
 						'**/*.php'
 					]
