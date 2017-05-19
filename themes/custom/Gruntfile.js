@@ -178,6 +178,7 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		// @see https://github.com/sass/node-sass#options.
 		sass: {
 			options: {
 				sourcemap: false,
