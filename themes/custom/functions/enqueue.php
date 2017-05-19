@@ -42,6 +42,7 @@ add_action( 'wp_enqueue_scripts', 'custom_enqueue' );
  * Include critical CSS and set cookie.
  *
  * @see https://codex.wordpress.org/Function_Reference/locate_template.
+ * @see https://github.com/filamentgroup/loadCSS.
  */
 function custom_theme_critical() {
 	// If we don't have a cookie set, load our inline styles and set cookie.
