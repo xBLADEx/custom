@@ -1,6 +1,7 @@
 module.exports = function( grunt ) {
 	require( 'time-grunt' )( grunt );
-	require( 'load-grunt-tasks' )( grunt );
+	// require( 'load-grunt-tasks' )( grunt );
+	require( 'jit-grunt' )( grunt );
 
 	// Configure, initConfig accepts objects.
 	grunt.initConfig({
@@ -191,18 +192,6 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		// sass: {
-		// 	target: {
-		// 		options: {
-		// 			style: 'compressed',
-		// 			sourcemap: 'file'
-		// 		},
-		// 		files: {
-		// 			'assets/scss/custom.css': 'assets/scss/custom.scss' // 'Destination': 'Source'.
-		// 		}
-		// 	}
-		// },
-
 		uglify: {
 			options: {
 				compress: true,
@@ -236,15 +225,14 @@ module.exports = function( grunt ) {
 	});
 
 	// Load the tasks.
-	grunt.loadNpmTasks( 'grunt-browser-sync' );
-	grunt.loadNpmTasks( 'grunt-contrib-concat' );
-	// grunt.loadNpmTasks( 'grunt-contrib-copy' );
-	// grunt.loadNpmTasks( 'grunt-contrib-sass' );
-	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-	grunt.loadNpmTasks( 'grunt-contrib-watch' );
-	grunt.loadNpmTasks( 'grunt-critical' );
-	grunt.loadNpmTasks( 'grunt-postcss' );
-	grunt.loadNpmTasks( 'grunt-pot' );
+	// grunt.loadNpmTasks( 'grunt-browser-sync' );
+	// grunt.loadNpmTasks( 'grunt-contrib-concat' );
+	// // grunt.loadNpmTasks( 'grunt-contrib-copy' );
+	// grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	// grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	// grunt.loadNpmTasks( 'grunt-critical' );
+	// grunt.loadNpmTasks( 'grunt-postcss' );
+	// grunt.loadNpmTasks( 'grunt-pot' );
 
 	// Default runs when we call grunt on the command line.
 	// We can use any name we want to run specific tasks.
