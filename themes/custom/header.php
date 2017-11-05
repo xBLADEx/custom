@@ -28,6 +28,8 @@
 				<nav class="main-nav">
 					<?php get_template_part( 'templates/menu', 'nav' ); ?>
 				</nav>
+
+				<?php get_template_part( 'templates/form-search' ); ?>
 			</div>
 		</div>
 	</header>

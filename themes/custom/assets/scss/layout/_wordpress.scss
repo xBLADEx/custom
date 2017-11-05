@@ -23,26 +23,25 @@
 // Search
 //-----------------------------------------
 .form-search {
-	float: right;
-	margin: rem(20 0);
-	width: rem(260);
-} // .form-search
+	margin: 20px 0;
+	width: 260px;
+	display: flex;
 
-.form-search-box {
-	float: right;
-	margin: 0;
-	width: auto;
-} // .form-search-box
+	&__input {
+		margin: 0;
+		width: auto;
+	}
 
-.form-search-button {
-	background: $color-black;
-	border: 0;
-	color: $color-white;
-	float: right;
-	padding: rem(9 20);
+	&__button {
+		background: $color-black;
+		border: 0;
+		color: $color-white;
+		cursor: pointer;
+		padding: 0 20px;
 
-	&:hover {
-		background: $color-white;
-		color: $color-black;
-	} // &:hover
-} // .form-search-button
+		&:hover {
+			background: $color-white;
+			color: $color-black;
+		}
+	}
+}
