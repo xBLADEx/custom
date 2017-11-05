@@ -13,7 +13,7 @@
 	svg {
 		display: block;
 		height: auto;
-		margin: rem(8) 0;
+		margin: 8px 0;
 		width: 100%;
 	}
 }
@@ -56,7 +56,7 @@
 			color: $color-black;
 			display: block;
 			font-size: rem(16);
-			padding: rem(20) rem(25);
+			padding: 20px 25px;
 		}
 
 		&:hover {
@@ -70,7 +70,7 @@
 	// Parent link for dropdown.
 	> .has-flyout {
 		> a {
-			padding-right: rem(40);
+			padding-right: 40px;
 			position: relative;
 
 			&::after {
@@ -80,8 +80,8 @@
 				display: block;
 				height: 0;
 				position: absolute;
-				right: rem(10);
-				top: rem(30);
+				right: 10px;
+				top: 30px;
 				width: 0;
 			}
 		}
@@ -113,7 +113,7 @@
 					color: $color-white;
 					display: block;
 					font-size: rem(12);
-					padding: rem(15 20);
+					padding: 15px 20px;
 					white-space: nowrap;
 
 					&:hover {
@@ -138,7 +138,7 @@
 		.desc {
 			display: block;
 			font-size: rem(9);
-			padding-left: rem(5);
+			padding-left: 5px;
 		}
 	}
 }
@@ -150,11 +150,11 @@
 .mobile-menu-icon {
 	cursor: pointer;
 	display: block;
-	height: rem(50);
-	left: rem(20);
+	height: 50px;
+	left: 20px;
 	position: absolute;
-	top: rem(20);
-	width: rem(40);
+	top: 20px;
+	width: 40px;
 	z-index: 999;
 
 	@include mq($mq-medium) {

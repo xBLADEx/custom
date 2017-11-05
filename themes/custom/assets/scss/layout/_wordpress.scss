@@ -4,17 +4,17 @@
 
 .alignleft {
 	float: left;
-	margin: rem(0 20 20 0);
+	margin: 0 20px 20px 0;
 }
 
 .alignright {
 	float: right;
-	margin: rem(0 0 20 20);
+	margin: 0 0 20px 20px;
 }
 
 .aligncenter {
 	display: block;
-	margin: rem(20) auto;
+	margin: 20px auto;
 	text-align: center;
 }
 

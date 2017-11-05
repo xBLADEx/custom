@@ -7,7 +7,7 @@
 		background: $color-black;
 		border: 0;
 		color: $color-white;
-		padding: rem(10 20);
+		padding: 10px 20px;
 		text-align: center;
 
 		&:hover {
@@ -46,14 +46,14 @@ h2 {
 // Pagination
 //-----------------------------------------
 .page-numbers {
-	margin: rem(0 0 20 0);
+	margin: 0 0 20px 0;
 
 	li {
 		display: inline-block;
 
 		.page-numbers {
 			background: $color-black;
-			padding: rem(10);
+			padding: 10px;
 
 			&:hover {
 				background: $color-white;
@@ -64,7 +64,7 @@ h2 {
 		.current {
 			background: $color-white;
 			color: $color-black;
-			padding: rem(10);
+			padding: 10px;
 		}
 	}
 }
