@@ -112,12 +112,12 @@ h6,
 //-----------------------------------------
 a {
 	color: $color-hippie-blue;
-}
 
-a:hover {
-	color: $color-chestnut-rose;
-}
+	&:hover {
+		color: $color-chestnut-rose;
+	}
 
-a:focus {
-	outline: 1px solid rgba($color-black, 0.4);
+	&:focus {
+		outline: 1px solid rgba($color-black, 0.4);
+	}
 }
