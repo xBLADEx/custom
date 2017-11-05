@@ -39,18 +39,24 @@ ul {
 h1,
 .h1 {
 	color: $color-black;
-	font-family: $font-lato;
-	font-size: rem(45);
-	font-weight: 900;
+	font: {
+		family: $font-lato;
+		size: rem(45);
+		weight: 900;
+	}
+	line-height: 1.2;
 	margin: rem(0 0 10 0);
 } // h1, .h1
 
 h2,
 .h2 {
 	color: $color-black;
-	font-family: $font-lato;
-	font-size: rem(32);
-	font-weight: 700;
+	font: {
+		family: $font-lato;
+		size: rem(32);
+		weight: 700;
+	}
+	line-height: 1.2;
 	margin: rem(0 0 10 0);
 	text-transform: uppercase;
 } // h2, .h2
@@ -58,33 +64,45 @@ h2,
 h3,
 .h3 {
 	color: $color-black;
-	font-family: $font-halant;
-	font-size: rem(26);
-	font-weight: 600;
+	font: {
+		family: $font-halant;
+		size: rem(26);
+		weight: 600;
+	}
+	line-height: 1.2;
 	margin: rem(0 0 10 0);
 } // h3, .h3
 
 h4,
 .h4 {
-	font-family: $font-lato;
-	font-size: rem(22);
-	font-weight: 400;
+	font: {
+		family: $font-lato;
+		size: rem(22);
+		weight: 400;
+	}
+	line-height: 1.2;
 	margin: rem(0 0 10 0);
 } // h4, .h4
 
 h5,
 .h5 {
-	font-family: $font-halant;
-	font-size: rem(18);
-	font-weight: 600;
+	font: {
+		family: $font-halant;
+		size: rem(18);
+		weight: 600;
+	}
+	line-height: 1.2;
 	margin: rem(0 0 10 0);
 } // h5, .h5
 
 h6,
 .h6 {
-	font-family: $font-halant;
-	font-size: rem(16);
-	font-weight: 600;
+	font: {
+		family: $font-halant;
+		size: rem(16);
+		weight: 600;
+	}
+	line-height: 1.2;
 	margin: rem(0 0 10 0);
 } // h6, .h6
 
