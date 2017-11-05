@@ -4,11 +4,11 @@
 
 html {
 	font-size: 100%;
-} // html
+}
 
 body {
 	background: $color-white;
-} // body
+}
 
 body,
 div,
@@ -21,16 +21,16 @@ a {
 	color: $color-black;
 	font-family: $font-halant;
 	font-size: rem(20);
-} // body, div, ul, ol, li, p, span, a
+}
 
 p {
 	margin: rem(0 0 5 0);
-} // p
+}
 
 ul {
 	margin: rem(0 0 30 30);
 	padding: 0;
-} // ul
+}
 
 
 //-----------------------------------------
@@ -46,7 +46,7 @@ h1,
 	}
 	line-height: 1.2;
 	margin: rem(0 0 10 0);
-} // h1, .h1
+}
 
 h2,
 .h2 {
@@ -59,7 +59,7 @@ h2,
 	line-height: 1.2;
 	margin: rem(0 0 10 0);
 	text-transform: uppercase;
-} // h2, .h2
+}
 
 h3,
 .h3 {
@@ -71,7 +71,7 @@ h3,
 	}
 	line-height: 1.2;
 	margin: rem(0 0 10 0);
-} // h3, .h3
+}
 
 h4,
 .h4 {
@@ -82,7 +82,7 @@ h4,
 	}
 	line-height: 1.2;
 	margin: rem(0 0 10 0);
-} // h4, .h4
+}
 
 h5,
 .h5 {
@@ -93,7 +93,7 @@ h5,
 	}
 	line-height: 1.2;
 	margin: rem(0 0 10 0);
-} // h5, .h5
+}
 
 h6,
 .h6 {
@@ -104,7 +104,7 @@ h6,
 	}
 	line-height: 1.2;
 	margin: rem(0 0 10 0);
-} // h6, .h6
+}
 
 
 //-----------------------------------------
@@ -112,12 +112,12 @@ h6,
 //-----------------------------------------
 a {
 	color: $color-hippie-blue;
-} // a
+}
 
 a:hover {
 	color: $color-chestnut-rose;
-} // a:hover
+}
 
 a:focus {
 	outline: 1px solid rgba($color-black, 0.4);
-} // a:focus
+}

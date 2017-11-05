@@ -7,7 +7,7 @@
 	position: relative;
 	width: 100%;
 	z-index: 100;
-} // .header-background
+}
 
 .logo {
 	svg {
@@ -15,8 +15,8 @@
 		height: auto;
 		margin: rem(8) 0;
 		width: 100%;
-	} // svg
-} // .logo
+	}
+}
 
 
 //-----------------------------------------
@@ -30,7 +30,7 @@
 	@include mq($mq-medium) {
 		display: block;
 	}
-} // .main-nav
+}
 
 .navbar {
 	margin: 0;
@@ -40,7 +40,7 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
-	} // li
+	}
 
 	// Main nav parent link.
 	> li {
@@ -57,15 +57,15 @@
 			display: block;
 			font-size: rem(16);
 			padding: rem(20) rem(25);
-		} // > a
+		}
 
 		&:hover {
 			a {
 				background: $color-black;
 				color: $color-white;
-			} // a
-		} // &:hover
-	} // > li
+			}
+		}
+	}
 
 	// Parent link for dropdown.
 	> .has-flyout {
@@ -83,20 +83,20 @@
 				right: rem(10);
 				top: rem(30);
 				width: 0;
-			} // &::after
-		} // > a
+			}
+		}
 
 		&:hover {
 			a {
 				&::after {
 					border-color: $color-white transparent transparent;
-				} // &::after
-			} // a
+				}
+			}
 
 			.flyout {
 				display: block;
-			} // .flyout
-		} // &:hover
+			}
+		}
 
 		// Sub Nav.
 		.flyout {
@@ -119,11 +119,11 @@
 					&:hover {
 						background: $color-white;
 						color: $color-black;
-					} // &:hover
-				} // a
-			} // li
-		} // .flyout
-	} // > .has-flyout
+					}
+				}
+			}
+		}
+	}
 
 	// Current page link.
 	> .current-menu-item {
@@ -131,17 +131,17 @@
 
 		a {
 			color: $color-white;
-		} // a
-	} // > .current-menu-item
+		}
+	}
 
 	.menu-item {
 		.desc {
 			display: block;
 			font-size: rem(9);
 			padding-left: rem(5);
-		} // .desc
-	} // .menu-item
-} // .navbar
+		}
+	}
+}
 
 
 //-----------------------------------------
@@ -179,14 +179,14 @@
 			left: 0;
 			position: absolute;
 			width: 100%;
-		} // &::before, &::after
+		}
 
 		&::before {
 			transform: translateY(-250%);
-		} // &::before
+		}
 
 		&::after {
 			transform: translateY(250%);
-		} // &::after
-	} // span
-} // .mobile-menu-icon
+		}
+	}
+}

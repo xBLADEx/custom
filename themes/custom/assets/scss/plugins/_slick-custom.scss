@@ -8,20 +8,20 @@
 .slick-prev,
 .slick-next {
 	z-index: 99;
-} // .slick-prev, .slick-next
+}
 
 .slick-prev {
 	left: 0;
-} // .slick-prev
+}
 
 .slick-next {
 	right: 0;
-} // .slick-next
+}
 
 .slick-dots {
 	bottom: 15px;
 	margin: 0;
-} // .slick-dots
+}
 
 
 //-----------------------------------------
@@ -32,5 +32,5 @@
 		background-size: cover;
 		display: block;
 		width: 100%;
-	} // img
-} // .slick-slide
+	}
+}

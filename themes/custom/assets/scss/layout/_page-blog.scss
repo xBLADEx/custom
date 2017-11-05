@@ -13,21 +13,33 @@
 		&:hover {
 			background: $color-white;
 			color: $color-black;
-		} // &:hover
-	} // input[type='submit']
-} // .sidebar-widget
+		}
+	}
+}
 
 h2 {
 	a {
 		font-size: inherit;
-	} // a
-} // h2
+	}
+}
 
-// .post-container {  } //.post-container
-// .date {  } // .date
-// .categories {  } // .categories
-// .tags {  } // .tags
-// .tags span {  } // .tags span
+.post-container {
+
+}
+
+.date {
+
+}
+
+.categories {
+
+}
+
+.tags {
+	span {
+
+	}
+}
 
 
 //-----------------------------------------
@@ -46,13 +58,13 @@ h2 {
 			&:hover {
 				background: $color-white;
 				color: $color-black;
-			} // &:hover
-		} // .page-numbers
+			}
+		}
 
 		.current {
 			background: $color-white;
 			color: $color-black;
 			padding: rem(10);
-		} // .current
-	} // li
-} // .page-numbers
+		}
+	}
+}
