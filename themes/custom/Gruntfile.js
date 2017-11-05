@@ -30,7 +30,7 @@ module.exports = function( grunt ) {
 				},
 				options: {
 					watchTask: true,
-					proxy: 'custom.dev'
+					proxy: 'https://custom.dev'
 				}
 			}
 		},
