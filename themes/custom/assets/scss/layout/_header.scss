@@ -27,7 +27,7 @@
 	position: relative;
 	z-index: 99;
 
-	@include tablet-up {
+	@include mq($mq-medium) {
 		display: block;
 	}
 } // .main-nav
@@ -47,7 +47,7 @@
 		border-top: 1px solid $color-black;
 		position: relative;
 
-		@include tablet-up {
+		@include mq($mq-medium) {
 			border: 0;
 			float: left;
 		}
@@ -157,7 +157,7 @@
 	width: rem(40);
 	z-index: 999;
 
-	@include tablet-up {
+	@include mq($mq-medium) {
 		display: none;
 	}
 

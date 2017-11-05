@@ -15,25 +15,21 @@
 //--------------------------------------------------------------
 
 @mixin mq($point, $width: true, $min: true) {
-	@if $point == $mq-retina {
-		@media #{$mq-retina} { @content; }
-	} @else {
-		// Width
-		@if $width {
-			// min-width
-			@if $min {
-				@media (min-width: $point) { @content; }
-			} @else { // max-width
-				@media (max-width: $point) { @content; }
-			}
-		} @else { // Height
+	// Width
+	@if $width {
+		// min-width
+		@if $min {
+			@media (min-width: $point) { @content; }
+		} @else { // max-width
+			@media (max-width: $point) { @content; }
+		}
+	} @else { // Height
 
-			// min-height
-			@if $min {
-				@media (min-height: $point) { @content; }
-			} @else { // max-height
-				@media (max-height: $point) { @content; }
-			}
+		// min-height
+		@if $min {
+			@media (min-height: $point) { @content; }
+		} @else { // max-height
+			@media (max-height: $point) { @content; }
 		}
 	}
 }
