@@ -46,6 +46,7 @@ cache/
 gallery/
 local-config.php
 logs/
+mu-plugins/*
 ngg/
 ngg_styles/
 object-cache.php
