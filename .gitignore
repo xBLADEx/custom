@@ -1,53 +1,70 @@
 # //--------------------------------------------------------------
-# // Target All
+# // GITIGNORE
 # //--------------------------------------------------------------
+
+# //-----------------------------------------
+# // File Types
+# //-----------------------------------------
+*.7z
+*._*
 *.bak
+*.bz2
+*.cvs
+*.db
+*.dmg
+*.gz
+*.idea
+*.iso
+*.jar
 *.log
 *.map
 *.pot
 *.rar
 *.sass-cache*
+*.svn
+*.swp
 *.tar
 *.tgz
 *.zip
 *~
-
-# //--------------------------------------------------------------
-# // Misc Files
-# //--------------------------------------------------------------
-._*
 .DS_Store
+._*
 .htaccess
+.scssc
 error_log
 
-# //--------------------------------------------------------------
-# // Root Files
-# //--------------------------------------------------------------
-robots.txt
-sitemap.xml
-sitemap.xml.gz
 
-# //--------------------------------------------------------------
+# //-----------------------------------------
 # // WordPress
-# //--------------------------------------------------------------
-/license.txt
-/readme.html
-/advanced-cache.php
-/backup-db/
-/backups/
-/blogs.dir/
-/cache/
-/gallery/
-/ngg/
-/ngg_styles/
-/object-cache.php
-/upgrade/
-/uploads/
-/wp-cache-config.php
-wp-config.php
+# //-----------------------------------------
+advanced-cache.php
+backup-db/
+backups/
+blogs.dir/
+cache-config.php
+cache/
+gallery/
+local-config.php
+logs/
+ngg/
+ngg_styles/
+object-cache.php
+plugins/*
+tests/
+themes/twenty*/
+upgrade/
+uploads/
+wp-cache-config.php
 
-# //--------------------------------------------------------------
-# // NPM, Gulp, Grunt, Bower
-# //--------------------------------------------------------------
+
+# //-----------------------------------------
+# // Theme
+# //-----------------------------------------
+dist/
+
+
+# //-----------------------------------------
+# // NPM, Node, Gulp, Grunt, Bower, Configs
+# //-----------------------------------------
 node_modules/
 custom-concat.js
