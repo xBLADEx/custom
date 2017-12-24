@@ -20,7 +20,7 @@
 *.map
 *.pot
 *.rar
-*.sass-cache*
+*.sass-cache
 *.svn
 *.swp
 *.tar
@@ -65,7 +65,6 @@ dist/
 
 
 # //-----------------------------------------
-# // NPM, Node, Gulp, Grunt, Bower, Configs
+# // NPM, Node, Configs
 # //-----------------------------------------
 node_modules/
-custom-concat.js
