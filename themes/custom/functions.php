@@ -6,9 +6,9 @@
  */
 
 define( 'THEME_URI', get_template_directory_uri() );
-define( 'THEME_IMAGES', THEME_URI . '/assets/images' );
-define( 'THEME_CSS', THEME_URI . '/assets/scss' );
-define( 'THEME_JS', THEME_URI . '/assets/js' );
+define( 'THEME_IMAGES', THEME_URI . '/assets/dist/images' );
+define( 'THEME_CSS', THEME_URI . '/assets/dist/scss' );
+define( 'THEME_JS', THEME_URI . '/assets/dist/js' );
 
 require_once( 'functions/enqueue.php' );
 require_once( 'functions/support.php' );
