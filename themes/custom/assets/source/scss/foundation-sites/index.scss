@@ -57,16 +57,7 @@
 @import '../../bower/foundation-sites/scss/components/tooltip';
 
 @mixin foundation-everything($flex: false) {
-	@if $flex {
-		$global-flexbox: true !global;
-	}
-
 	@include foundation-global-styles;
-	@if not $flex {
-		@include foundation-grid;
-	} @else {
-		@include foundation-flex-grid;
-	}
 	@include foundation-typography;
 	@include foundation-forms;
 	@include foundation-button;
@@ -102,6 +93,14 @@
 	@include foundation-top-bar;
 	@include foundation-visibility-classes;
 	@include foundation-float-classes;
+	@if $flex {
+		$global-flexbox: true !global;
+	}
+	@if not $flex {
+		@include foundation-grid;
+	} @else {
+		@include foundation-flex-grid;
+	}
 
 	@if $flex {
 		@include foundation-flex-classes;

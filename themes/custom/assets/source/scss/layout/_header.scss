@@ -43,7 +43,7 @@
 	}
 
 	// Main nav parent link.
-	> li {
+	 > li {
 		border-top: 1px solid $color-black;
 		position: relative;
 
@@ -52,7 +52,7 @@
 			float: left;
 		}
 
-		> a {
+		 > a {
 			color: $color-black;
 			display: block;
 			font-size: rem(16);
@@ -68,8 +68,8 @@
 	}
 
 	// Parent link for dropdown.
-	> .has-flyout {
-		> a {
+	 > .has-flyout {
+		 > a {
 			padding-right: 40px;
 			position: relative;
 
@@ -126,7 +126,7 @@
 	}
 
 	// Current page link.
-	> .current-menu-item {
+	 > .current-menu-item {
 		background: $color-black;
 
 		a {

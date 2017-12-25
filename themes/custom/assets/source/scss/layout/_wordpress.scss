@@ -23,9 +23,9 @@
 // Search
 //-----------------------------------------
 .form-search {
+	display: flex;
 	margin: 20px 0;
 	width: 260px;
-	display: flex;
 
 	&__input {
 		margin: 0;

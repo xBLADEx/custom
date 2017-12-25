@@ -19,17 +19,28 @@
 	@if $width {
 		// min-width
 		@if $min {
-			@media (min-width: $point) { @content; }
-		} @else { // max-width
-			@media (max-width: $point) { @content; }
+			@media (min-width: $point) {
+				@content;
+			}
+		} @else {
+			// max-width
+			@media (max-width: $point) {
+				@content;
+			}
 		}
-	} @else { // Height
+	} @else {
+		// Height
 
 		// min-height
 		@if $min {
-			@media (min-height: $point) { @content; }
-		} @else { // max-height
-			@media (max-height: $point) { @content; }
+			@media (min-height: $point) {
+				@content;
+			}
+		} @else {
+			// max-height
+			@media (max-height: $point) {
+				@content;
+			}
 		}
 	}
 }
