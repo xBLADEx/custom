@@ -7,29 +7,14 @@ html {
 }
 
 body {
-	background: $color-white;
-}
-
-body,
-div,
-ul,
-ol,
-li,
-p,
-span,
-a {
+	background-color: $color-white;
 	color: $color-black;
-	font-family: $font-halant;
-	font-size: rem(20);
-}
-
-p {
-	margin: 0 0 5px 0;
-}
-
-ul {
-	margin: 0 0 30px 30px;
-	padding: 0;
+	font: {
+		family: $font-family-body;
+		size: $font-size-content;
+		weight: $font-weight-normal;
+	};
+	line-height: 1.5;
 }
 
 
@@ -41,7 +26,7 @@ h1,
 	color: $color-black;
 	font: {
 		family: $font-lato;
-		size: rem(45);
+		size: rem-calc(45);
 		weight: 900;
 	};
 	line-height: 1.2;
@@ -53,7 +38,7 @@ h2,
 	color: $color-black;
 	font: {
 		family: $font-lato;
-		size: rem(32);
+		size: rem-calc(32);
 		weight: 700;
 	};
 	line-height: 1.2;
@@ -66,7 +51,7 @@ h3,
 	color: $color-black;
 	font: {
 		family: $font-halant;
-		size: rem(26);
+		size: rem-calc(26);
 		weight: 600;
 	};
 	line-height: 1.2;
@@ -77,7 +62,7 @@ h4,
 .h4 {
 	font: {
 		family: $font-lato;
-		size: rem(22);
+		size: rem-calc(22);
 		weight: 400;
 	};
 	line-height: 1.2;
@@ -88,7 +73,7 @@ h5,
 .h5 {
 	font: {
 		family: $font-halant;
-		size: rem(18);
+		size: rem-calc(18);
 		weight: 600;
 	};
 	line-height: 1.2;
@@ -99,25 +84,276 @@ h6,
 .h6 {
 	font: {
 		family: $font-halant;
-		size: rem(16);
+		size: rem-calc(16);
 		weight: 600;
 	};
 	line-height: 1.2;
 	margin: 0 0 10px 0;
 }
 
+//-----------------------------------------
+// Paragraph
+//-----------------------------------------
+p {
+	font-size: $font-size-content;
+}
+
 
 //-----------------------------------------
-// Links
+// List
+//-----------------------------------------
+ul,
+ol,
+dl {
+	font-size: $font-size-content;
+}
+
+// Unordered List
+ul {
+}
+
+// Ordered List
+ol {
+}
+
+// Definition List
+dl {
+}
+
+
+//-----------------------------------------
+// List Item
+//-----------------------------------------
+li {
+}
+
+// Unordered List Item
+ul {
+	li {
+	}
+}
+
+// Ordered List Item
+ol {
+	li {
+	}
+}
+
+// Definition List
+dl {
+	// Definition Term
+	dt {
+	}
+
+	// Definition Name
+	dd {
+	}
+}
+
+
+//-----------------------------------------
+// Blockquote
+//-----------------------------------------
+blockquote {
+}
+
+
+//-----------------------------------------
+// Cite
+//-----------------------------------------
+cite {
+}
+
+
+//-----------------------------------------
+// Horizontal Rule
+//-----------------------------------------
+hr {
+	border-top: 1px solid $color-gray;
+}
+
+
+//-----------------------------------------
+// Table
+//-----------------------------------------
+table {
+	border-collapse: collapse;
+	margin-bottom: 25px;
+	width: 100%;
+
+	caption {
+		font-weight: $font-weight-bold;
+		padding: 10px;
+	}
+
+	thead {
+		background-color: $color-primary;
+		color: $color-white;
+
+		th {
+			font-weight: $font-weight-bold;
+			padding: 10px;
+			text-align: left;
+		}
+	}
+
+	tfoot {
+		background-color: $color-primary;
+		color: $color-white;
+
+		td {
+			font-weight: $font-weight-bold;
+			padding: 10px;
+			text-align: left;
+		}
+	}
+
+	tbody {
+		tr {
+			background-color: transparent;
+			border-bottom: 1px solid $color-gray;
+
+			&:nth-child(even) {
+				background-color: $color-gray;
+			}
+
+			&:nth-child(odd) {
+				background-color: $color-white;
+			}
+		}
+
+		td {
+			font-weight: $font-weight-bold;
+			padding: 10px;
+			text-align: left;
+		}
+	}
+
+	&--scroll {
+		display: block;
+		overflow-x: auto;
+		width: 100%;
+	}
+}
+
+
+//-----------------------------------------
+// Form
+//-----------------------------------------
+form {
+}
+
+
+//-----------------------------------------
+// Anchor
 //-----------------------------------------
 a {
-	color: $color-hippie-blue;
+	@include transition;
 
-	&:hover {
+	color: inherit;
+	cursor: pointer;
+	outline: 0;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
 		color: $color-chestnut-rose;
 	}
 
 	&:focus {
-		outline: 1px solid rgba($color-black, 0.4);
+		outline: 1px dotted;
 	}
+}
+
+
+//-----------------------------------------
+// Image
+//-----------------------------------------
+img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+//-----------------------------------------
+// Strong Importance
+// For SEO usage.
+//-----------------------------------------
+strong {
+	font-weight: $font-weight-bold;
+}
+
+
+//-----------------------------------------
+// Bold
+//-----------------------------------------
+b {
+	font-weight: $font-weight-bold;
+}
+
+
+//-----------------------------------------
+// Emphasis
+// For SEO usage.
+//-----------------------------------------
+em {
+	font-style: italic;
+}
+
+
+//-----------------------------------------
+// Italic
+//-----------------------------------------
+i {
+	font-style: italic;
+}
+
+
+//-----------------------------------------
+// Underlined
+//-----------------------------------------
+u {
+	text-decoration: underline;
+}
+
+
+//-----------------------------------------
+// Higher
+//-----------------------------------------
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	top: -0.5em;
+	vertical-align: baseline;
+}
+
+
+//-----------------------------------------
+// Lower
+//-----------------------------------------
+sub {
+	bottom: -0.25em;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+
+//-----------------------------------------
+// Small Print
+//-----------------------------------------
+small {
+	font-size: rem-calc-calc(12);
+}
+
+
+//-----------------------------------------
+// Text Selection
+//-----------------------------------------
+::selection {
+	background: $color-primary;
+	color: $color-white;
+	text-shadow: none;
 }
