@@ -154,12 +154,8 @@ module.exports = env => {
 					to: 'images',
 				},
 				{
-					from: 'assets/source/css',
-					to: 'css',
-				},
-				{
 					// @todo We will no longer need this once pathing is updated for url().
-					from: 'assets/source/fonts/fonts',
+					from: 'assets/source/fonts',
 					to: 'fonts',
 				},
 			]),
