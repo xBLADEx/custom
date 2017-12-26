@@ -1,0 +1,49 @@
+//--------------------------------------------------------------
+// HELPERS
+//--------------------------------------------------------------
+
+.h-visual-hide {
+	@include visual-hide;
+}
+
+.h-reverse-visual-hide {
+	@include reverse-visual-hide;
+}
+
+.h-no-alias {
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: auto;
+}
+
+.h-cover-media {
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	min-height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.h-cover-background {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.h-cover-video {
+	height: auto;
+	max-height: none;
+	max-width: none;
+	min-height: 100%;
+	min-width: 100%;
+	width: auto;
+}
+
+.h-clearfix {
+	@include clearfix;
+}
+
+.h-text-center {
+	text-align: center;
+}
