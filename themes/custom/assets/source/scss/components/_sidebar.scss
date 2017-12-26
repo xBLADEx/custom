@@ -1,5 +1,5 @@
 //--------------------------------------------------------------
-// BLOG
+// SIDEBAR
 //--------------------------------------------------------------
 
 .sidebar-widget {
@@ -34,33 +34,5 @@ h2 {
 
 .tags {
 	span {
-	}
-}
-
-
-//-----------------------------------------
-// Pagination
-//-----------------------------------------
-.page-numbers {
-	margin: 0 0 20px 0;
-
-	li {
-		display: inline-block;
-
-		.page-numbers {
-			background: $color-black;
-			padding: 10px;
-
-			&:hover {
-				background: $color-white;
-				color: $color-black;
-			}
-		}
-
-		.current {
-			background: $color-white;
-			color: $color-black;
-			padding: 10px;
-		}
 	}
 }

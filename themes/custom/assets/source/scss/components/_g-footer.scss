@@ -2,6 +2,19 @@
 // FOOTER
 //--------------------------------------------------------------
 
+.footer {
+	background: $color-black;
+	position: relative;
+	width: 100%;
+
+	p {
+		color: $color-white;
+		font-size: rem-calc(14);
+		margin: 0;
+		text-align: center;
+	}
+}
+
 .g-footer {
 }
 
