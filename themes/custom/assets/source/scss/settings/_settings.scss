@@ -3,38 +3,69 @@
 //--------------------------------------------------------------
 
 //-----------------------------------------
+// Global
+//-----------------------------------------
+$global-width: 1140px;
+$global-padding: 20px;
+
+
+//-----------------------------------------
 // Media Queries
 //-----------------------------------------
-$mq-small: 320px;
+$mq-mobile-medium: 375px;
+$mq-mobile-large: 425px;
 $mq-medium: 640px;
+$mq-tablet: 768px;
 $mq-wpadmin: 783px;
 $mq-full: 960px;
-$mq-large: 1024px;
-$mq-xlarge: 1170px;
-$mq-xxlarge: 1500px;
+$mq-laptop: 1024px;
+$mq-global-width: $global-width;
+$mq-laptop-large: 1440px;
 
 
 //-----------------------------------------
 // Fonts
 //-----------------------------------------
+$font-path: '../fonts';
 $font-lato: 'Lato', sans-serif;
 $font-halant: 'Halant', serif;
 
+// Family
+$font-family-body: $font-halant;
+$font-family-heading: $font-lato;
+
+// Size
+$font-size-content: 18px;
+
+// Weight
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
 
 //-----------------------------------------
-// Colors Default
+// Colors
 //-----------------------------------------
-$color-black: #000;
-$color-white: #FFF;
-$color-gallery: #EAEAEA;
-$color-mine-shaft: #222;
+// Base Neutrals
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-gray: #CACACA;
 
-
-//-----------------------------------------
-// Colors Theme
-//-----------------------------------------
-$color-hippie-blue: #5C8FB2; // Link.
-$color-chestnut-rose: #C95555; // Link hover.
+// Theme Colors
+$color-hippie-blue: #5C8FB2;
+$color-chestnut-rose: #C95555;
 $color-alabaster: #FAFAFA;
 $color-dune: #2B2925;
 $color-lynch: #648591;
+
+// Roles
+$color-primary: $color-hippie-blue;
+$color-secondary: $color-chestnut-rose;
+$color-tertiary: $color-lynch;
+
+// Alerts
+$color-error: #EA595E;
+$color-warning: #F0BD2B;
+$color-success: #59EA9D;
