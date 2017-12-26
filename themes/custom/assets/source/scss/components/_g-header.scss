@@ -1,0 +1,29 @@
+//--------------------------------------------------------------
+// HEADER
+//--------------------------------------------------------------
+
+.g-header {
+	padding: 10px 0;
+	position: relative;
+	z-index: 2;
+
+	&__container {
+		align-items: center;
+		display: grid;
+		grid-gap: 50px;
+		grid-template-columns: 150px 1fr 150px;
+	}
+}
+
+
+//-----------------------------------------
+// Logo
+//-----------------------------------------
+.logo-primary {
+	svg {
+		display: block;
+		height: 150px;
+		margin: auto;
+		width: 150px;
+	}
+}

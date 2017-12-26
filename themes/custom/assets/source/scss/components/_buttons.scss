@@ -4,23 +4,43 @@
 
 .button {
 	appearance: none;
-	background: $color-black;
+	background-color: $color-primary;
 	border: 0;
+	border-radius: 5px;
 	color: $color-white;
 	cursor: pointer;
 	display: inline-block;
-	font-family: inherit;
-	font-size: rem(16);
-	line-height: 1.5;
-	margin: 0;
+	font-size: $font-size-content;
+	line-height: 1;
+	margin: 0 0 24px 0;
 	padding: 10px 15px;
 	position: relative;
 	text-align: center;
 	text-decoration: none;
+	transition: background-color 0.25s ease-out, color 0.25s ease-out;
+	width: auto;
 
 	&:hover,
 	&:focus {
-		background: $color-white;
-		color: $color-black;
+		background-color: $color-secondary;
+	}
+
+	&--full-width {
+		display: block;
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+
+	&--hollow {
+		background-color: transparent;
+		border: 1px solid $color-secondary;
+		color: $color-secondary;
+
+		&:hover,
+		&:focus {
+			background-color: $color-secondary;
+			color: $color-white;
+		}
 	}
 }

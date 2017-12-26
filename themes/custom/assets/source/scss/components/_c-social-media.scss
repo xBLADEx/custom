@@ -1,0 +1,46 @@
+//--------------------------------------------------------------
+// SOCIAL MEDIA
+//--------------------------------------------------------------
+
+.c-social-media {
+	background-color: $color-white;
+	display: inline-flex;
+	padding: 2px 10px 0;
+
+	// <li>
+	&__item {
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+
+		&:nth-child(even) {
+			svg {
+				&:hover {
+					transform: rotate(-20deg);
+				}
+			}
+		}
+
+		&:nth-child(odd) {
+			svg {
+				&:hover {
+					transform: rotate(20deg);
+				}
+			}
+		}
+	}
+
+	// <a>
+	&__link {
+		color: $color-primary;
+
+		&:hover {
+			color: $color-tertiary;
+		}
+	}
+
+	svg {
+		display: block;
+		transition: transform 0.2s ease-in-out;
+	}
+}
