@@ -2,9 +2,18 @@
 // COMPONENTS - INDEX
 //--------------------------------------------------------------
 
-@import 'typography';
-@import 'icons';
-@import 'images';
-@import 'videos';
+// Global Blocks
+@import 'g-header';
+@import 'g-footer';
+@import 'g-page-header';
+@import 'g-page-content';
+
+// Flexible Content
+@import 'block-content';
+
+// Components
+@import 'c-social-media';
+
+// Regular Blocks
 @import 'buttons';
-@import 'helper';
+@import 'skip-navigation';
