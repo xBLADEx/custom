@@ -1,0 +1,94 @@
+//--------------------------------------------------------------
+// WORDPRESS
+// WordPress Specific Elements Inserted Into WYSIWYG
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Media - Wrappers
+//-----------------------------------------
+.wp-image-wrap,
+.wp-caption {
+	margin: 0 auto;
+	max-width: none;
+	width: auto !important;
+}
+
+
+//-----------------------------------------
+// Media - Captions
+//-----------------------------------------
+.wp-caption-text {
+	color: $color-gray;
+	font-family: $font-family-body;
+	font-size: rem-calc(12);
+	line-height: 1.5;
+	margin: 6px 0 0;
+
+	@include mq($mq-full) {
+		font-size: rem-calc(14);
+	}
+}
+
+
+//-----------------------------------------
+// Media - Alignments
+//-----------------------------------------
+.aligncenter,
+.alignnone {
+	margin-bottom: 24px;
+	margin-top: 24px;
+
+	@include mq($mq-full) {
+		margin-bottom: 36px;
+		margin-top: 36px;
+	}
+}
+
+.alignleft,
+.alignright {
+	margin-bottom: 24px;
+	margin-top: 24px;
+
+	@include mq($mq-full) {
+		margin-bottom: 36px;
+		margin-top: 36px;
+		max-width: 50%;
+	}
+}
+
+.alignleft {
+	@include mq($mq-full) {
+		float: left;
+		margin-right: 36px;
+	}
+}
+
+.alignright {
+	@include mq($mq-full) {
+		float: right;
+		margin-left: 36px;
+	}
+}
+
+
+//-----------------------------------------
+// Admin Bar
+//-----------------------------------------
+.admin-bar {
+}
+
+
+//-----------------------------------------
+// Other Required Classes
+//-----------------------------------------
+.sticky {
+}
+
+.screen-reader-text {
+}
+
+.gallery-caption {
+}
+
+.bypostauthor {
+}
