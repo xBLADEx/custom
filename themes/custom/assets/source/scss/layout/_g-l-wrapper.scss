@@ -1,0 +1,23 @@
+//--------------------------------------------------------------
+// Wrapper
+//--------------------------------------------------------------
+
+.g-l-wrapper {
+	display: flow-root;
+	margin: 0 auto;
+	max-width: $global-width;
+	padding: 0 $global-padding;
+
+	// We need this until 'flow-root' is fully supported.
+	&--clearfix {
+		@include clearfix;
+	}
+
+	&--medium {
+		max-width: 800px;
+	}
+
+	&--small {
+		max-width: 400px;
+	}
+}
