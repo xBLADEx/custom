@@ -29,6 +29,7 @@
 *~
 .DS_Store
 ._*
+.editorconfig
 .htaccess
 .scssc
 error_log
