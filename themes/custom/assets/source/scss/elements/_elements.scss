@@ -248,8 +248,6 @@ form {
 // Anchor
 //-----------------------------------------
 a {
-	@include transition;
-
 	color: inherit;
 	cursor: pointer;
 	outline: 0;
