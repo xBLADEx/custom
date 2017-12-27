@@ -91,7 +91,6 @@ module.exports = env => {
 					],
 					include: [
 						// @see https://webpack.js.org/configuration/module/#condition. Only include .svg if in fonts folders.
-						path.resolve(__dirname, 'assets/source/fonts/fonts'),
 						path.resolve(__dirname, 'assets/source/fonts'),
 					],
 				},
@@ -107,7 +106,6 @@ module.exports = env => {
 					],
 					exclude: [
 						// @see https://webpack.js.org/configuration/module/#condition. Exclude .svg files if in fonts folders.
-						path.resolve(__dirname, 'assets/source/fonts/fonts'),
 						path.resolve(__dirname, 'assets/source/fonts'),
 					],
 				},
