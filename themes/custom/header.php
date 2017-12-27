@@ -21,12 +21,12 @@
 	<header class="header-background">
 		<div class="row">
 			<div class="small-12 medium-3 columns">
-				<a href="/" class="logo"><?php include_once( 'assets/images/logo.svg' ); ?></a>
+				<a href="/" class="logo"><?php get_template_part( 'assets/dist/images/logo.svg' ); ?></a>
 			</div>
 
 			<div class="medium-9 columns">
 				<nav class="main-nav">
-					<?php get_template_part( 'templates/menu', 'nav' ); ?>
+					<?php get_template_part( 'templates/menu-nav' ); ?>
 				</nav>
 
 				<?php get_template_part( 'templates/form-search' ); ?>
