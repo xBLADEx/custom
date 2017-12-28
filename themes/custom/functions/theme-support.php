@@ -44,7 +44,7 @@ function base_hide_acf_admin() {
 	];
 
 	// If the url matches our dev url show the menu.
-	if ( in_array( $site_url, $show_menu ) ) {
+	if ( in_array( $site_url, $show_menu, true ) ) {
 		// Show the acf menu item
 		return true;
 	} else {
