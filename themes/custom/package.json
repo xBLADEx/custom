@@ -2,7 +2,7 @@
   "name": "custom",
   "version": "3.8.1",
   "private": true,
-  "description": "Custom Theme. Tested with NPM: v5.5.1, Node: v8.7.0.",
+  "description": "Custom Theme. Tested with NPM: v5.6.0, Node: v9.3.0.",
   "license": "MIT",
   "author": "Rich Edmunds",
   "repository": "git@github.com:xBLADEx/custom.git",
