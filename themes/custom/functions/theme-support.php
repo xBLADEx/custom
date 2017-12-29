@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin
+ * Support
  *
  * @package Custom
  */
@@ -52,7 +52,73 @@ if ( 'function' === typeof( QTags ) ) {
 
 add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
 
+/**
+ * Theme Support
+ */
+function custom_support() {
+	// Featured Images.
+	add_theme_support( 'post-thumbnails' );
+
+	/**
+	 * Post Formats
+	 *
+	 * @see http://codex.wordpress.org/Post_Formats.
+	 */
+	// add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery', 'status' ) );
+
+	/**
+	 * Image Sizes
+	 */
+	// add_image_size( 'name', 150, 80, true );
+}
+
+add_action( 'after_setup_theme', 'custom_support' );
+
 // ACF Options Page.
 if ( function_exists( 'acf_add_options_page' ) ) {
 	acf_add_options_page();
 }
+
+/**
+* Hide ACF Menu
+*
+* @author Rich Edmunds
+*/
+function base_hide_acf_admin() {
+	// Get the current site url
+	$site_url = get_bloginfo( 'url' );
+
+	$show_menu = [
+		'https://custom.test',
+	];
+
+	// If the url matches our dev url show the menu.
+	if ( in_array( $site_url, $show_menu, true ) ) {
+		// Show the acf menu item
+		return true;
+	} else {
+		// Hide the acf menu item
+		return false;
+	}
+}
+
+add_filter( 'acf/settings/show_admin', 'base_hide_acf_admin' );
+
+/**
+ * Add CSS Class Page Name
+ *
+ * @author Rich Edmunds
+ * @param  array $classes The current body classes.
+ * @return array $classes Add classes.
+ */
+function custom_body_classes( $classes ) {
+	if ( is_singular( 'page' ) ) {
+		global $post;
+
+		$classes[] = 'page-' . $post->post_name;
+	}
+
+	return $classes;
+}
+
+add_filter( 'body_class', 'custom_body_classes' );
