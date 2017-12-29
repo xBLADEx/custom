@@ -7,9 +7,10 @@
  */
 
 $files = [
-	'enqueue.php',
-	'theme-support.php',
 	'clean.php',
+	'theme-support.php',
+	'enqueue.php',
+	'media-custom.php',
 	'post-custom.php',
 	'register.php',
 	'class-custom-nav-menu.php',

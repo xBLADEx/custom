@@ -65,11 +65,6 @@ function custom_support() {
 	 * @see http://codex.wordpress.org/Post_Formats.
 	 */
 	// add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery', 'status' ) );
-
-	/**
-	 * Image Sizes
-	 */
-	// add_image_size( 'name', 150, 80, true );
 }
 
 add_action( 'after_setup_theme', 'custom_support' );
@@ -103,6 +98,24 @@ function base_hide_acf_admin() {
 }
 
 add_filter( 'acf/settings/show_admin', 'base_hide_acf_admin' );
+
+/**
+ * Loop through and output ACF flexible content blocks for the current page.
+ *
+ * @author Rich Edmunds
+ */
+function custom_display_content_blocks() {
+	if ( have_rows( 'content_blocks' ) ) :
+		while ( have_rows( 'content_blocks' ) ) :
+			the_row();
+			// Template part name MUST match layout ID (Name).
+			// @example block-media_section
+			get_template_part( 'templates/components/block', get_row_layout() );
+		endwhile;
+
+		wp_reset_postdata();
+	endif;
+}
 
 /**
  * Add CSS Class Page Name

@@ -1,12 +1,26 @@
 <?php
 /**
- * Post
+ * Post Custom
  *
  * @package Custom
  */
 
 /**
+ * Set Excerpt Length
+ *
+ * Return the amount of words to display.
+ *
+ * @author Rich Edmunds
+ */
+function custom_simple_excerpt() {
+	return 15;
+}
+
+add_filter( 'excerpt_length', 'custom_simple_excerpt', 999 );
+
+/**
  * Post Excerpt
+ * @todo Test this function.
  *
  * @param  string $text Text.
  * @return string       Modified excerpt.
@@ -88,3 +102,94 @@ function custom_pagination( $query = '' ) {
 
 	echo paginate_links( $args ); // WPCS: XSS OK.
 }
+
+/**
+ * @todo Test this.
+ * Base breadcrumbs
+ * Simple breadcrumbs function for displaying parent pages.
+ * Could be expanded to include categories, dates, ect. if needed.
+ *
+ * @author Paul Allen
+ */
+function base_display_page_breadcrumbs() {
+	// Bail if on home page
+	if ( is_front_page() ) {
+		return;
+	}
+
+	global $post;
+	$current_page_title = $post->post_title;
+	$post_parent = $post->post_parent;
+	$breadcrumbs = array();
+
+	while ( $post_parent ) {
+		$page       = get_post( $post_parent );
+		$page_id    = $page->ID;
+		$page_link  = get_permalink( $page_id );
+		$page_title = $page->post_title;
+		$breadcrumb = [
+			'title' => $page_title,
+			'url'   => $page_link,
+		];
+		array_unshift( $breadcrumbs, $breadcrumb ); // Add it to the beginning of the array
+
+		$post_parent = $page->post_parent; // Move up the chain by finding parent post if any
+	}
+	?>
+
+	<ul class="c-breadcrumbs">
+		<li class="c-breadcrumbs__item">
+			<a href="<?php echo esc_url( home_url() ); ?>" class="c-breadcrumbs__anchor"><?php esc_html_e( 'Home', 'base' ); ?></a>
+		</li>
+
+		<?php foreach ( $breadcrumbs as $link ) : ?>
+			<li class="c-breadcrumbs__item">
+				<a href="<?php echo esc_url( $link['url'] ); ?>" class="c-breadcrumbs__anchor"><?php echo esc_html( $link['title'] ); ?></a>
+			</li>
+		<?php endforeach; ?>
+
+		<li class="c-breadcrumbs__item"><?php echo esc_html( $current_page_title ); ?></li>
+	</ul>
+
+	<?php
+	wp_reset_postdata();
+}
+
+/*
+@todo Explore this, remove CPTUI plugin.
+add_action( 'init', 'base_post_init' );
+
+function base_post_init() {
+	$labels = array(
+		'name'               => 'base Post Type',
+		'singular_name'      => 'base Post',
+		'menu_name'          => 'base',
+		'add_new'            => 'Add New',
+		'add_new_item'       => 'Add New base Post',
+		'new_item'           => 'New base Post',
+		'edit_item'          => 'Edit base Post',
+		'view_item'          => 'View base Post',
+		'all_items'          => 'All base Posts',
+		'search_items'       => 'Search base Posts',
+		'parent_item_colon'  => '',
+		'not_found'          => 'No base Posts found.',
+		'not_found_in_trash' => 'No base Posts found in Trash.',
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => false,
+		'capability_type'    => 'post',
+		'has_archive'        => false,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'menu_icon'          => 'dashicons-editor-table',
+		'supports'           => array( 'title', 'custom-fields' )
+	);
+
+	register_post_type( 'base-post', $args );
+} */
