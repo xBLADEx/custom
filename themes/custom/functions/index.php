@@ -13,8 +13,6 @@ $files = [
 	'post-custom.php',
 	'register.php',
 	'class-custom-nav-menu.php',
-	'admin.php',
-	'view.php',
 	'template-parts.php',
 ];
 
