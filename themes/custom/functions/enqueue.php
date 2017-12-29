@@ -32,9 +32,24 @@ function custom_enqueue() {
 	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', true );
 	// wp_enqueue_script( 'jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), '1.11.4', true );
 	wp_enqueue_script( 'custom', THEME_JS . '/custom.js', array(), '6.2.4', true );
+	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.1/js/all.js', array(), null, true );
 }
 
 add_action( 'wp_enqueue_scripts', 'custom_enqueue' );
+
+/**
+ * Add attribute "defer".
+ */
+function base_add_attribute_defer( $tag, $handle ) {
+	// Bail early if not font awesome script.
+	if ( 'font-awesome' !== $handle ) {
+		return $tag;
+	}
+
+	return str_replace( ' src', ' defer src', $tag );
+}
+
+add_filter( 'script_loader_tag', 'base_add_attribute_defer', 10, 2 );
 
 
 /**
