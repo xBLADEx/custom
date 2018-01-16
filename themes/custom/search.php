@@ -6,13 +6,9 @@
  */
 
 get_header();
-?>
 
-<div class="row">
-	<div class="medium-12 columns">
-		<h1 class="page-title"><?php printf( 'Search Results for: %s', get_search_query() ); ?></h1>
-	</div>
-</div>
+custom_display_hero_content( 'Search Results' );
+?>
 
 <div class="row page-content">
 	<div class="medium-9 columns">
