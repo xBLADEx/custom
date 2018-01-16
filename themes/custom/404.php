@@ -6,12 +6,12 @@
  */
 
 get_header();
+
+custom_display_hero_content( 'Page Not Found!' );
 ?>
 
 <div class="row page-content">
 	<div class="medium-12 columns">
-		<h1 class="page-title"><?php esc_html_e( '404 Page Not Found!', 'custom' ); ?></h1>
-
 		<p><?php esc_html_e( 'This page no longer exists.', 'custom' ); ?></p>
 	</div>
 </div>
