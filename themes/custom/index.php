@@ -8,7 +8,7 @@
 if ( function_exists( 'get_header' ) ) {
 	get_header();
 } else {
-	header( 'Location: http://' . $_SERVER['HTTP_HOST'] . '' );
+	header( 'Location: https://' . $_SERVER['HTTP_HOST'] );
 	exit;
 }
 ?>
