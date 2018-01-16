@@ -118,7 +118,8 @@ function custom_display_content_blocks() {
 }
 
 /**
- * Add CSS Class Page Name
+ * Add Page Body CSS Class
+ * Add class name of page to the body element.
  *
  * @author Rich Edmunds
  * @param  array $classes The current body classes.
