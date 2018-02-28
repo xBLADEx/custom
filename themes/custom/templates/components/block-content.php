@@ -11,7 +11,7 @@
 $title          = get_sub_field( 'content_title' ); // Text
 $content        = get_sub_field( 'content_content' ); // WYSIWYG Editor
 $image          = get_sub_field( 'content_image' ); // Image
-$image_position = get_sub_field( 'content_image_position' ); // Options: Left, Right. Default: Left.
+$image_position = get_sub_field( 'image_position' ); // Options: Left, Right. Default: Left.
 
 // Modifier
 $block_modifier_position = $image ? $image_position : 'center';
