@@ -2,6 +2,10 @@
 // ELEMENTS
 //--------------------------------------------------------------
 
+* {
+	box-sizing: border-box;
+}
+
 html {
 	font-size: 100%;
 }
@@ -9,12 +13,26 @@ html {
 body {
 	background-color: $color-white;
 	color: $color-black;
-	font: {
-		family: $font-family-body;
-		size: $font-size-content;
-		weight: $font-weight-normal;
-	};
+	font-family: $font-family-body;
+	font-size: $font-size-content;
+	font-weight: $font-weight-normal;
 	line-height: 1.5;
+	margin: 0;
+}
+
+//-----------------------------------------
+// HTML 5
+//-----------------------------------------
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figcaption,
+figure,
+main {
+	display: block;
 }
 
 //-----------------------------------------
@@ -23,11 +41,9 @@ body {
 h1,
 .h1 {
 	color: $color-black;
-	font: {
-		family: $font-lato;
-		size: rem-calc(45);
-		weight: 900;
-	};
+	font-family: $font-lato;
+	font-size: rem-calc(45);
+	font-weight: 900;
 	line-height: 1.2;
 	margin: 0 0 10px 0;
 }
@@ -35,11 +51,9 @@ h1,
 h2,
 .h2 {
 	color: $color-black;
-	font: {
-		family: $font-lato;
-		size: rem-calc(32);
-		weight: 700;
-	};
+	font-family: $font-lato;
+	font-size: rem-calc(32);
+	font-weight: 700;
 	line-height: 1.2;
 	margin: 0 0 10px 0;
 	text-transform: uppercase;
@@ -48,44 +62,36 @@ h2,
 h3,
 .h3 {
 	color: $color-black;
-	font: {
-		family: $font-halant;
-		size: rem-calc(26);
-		weight: 600;
-	};
+	font-family: $font-halant;
+	font-size: rem-calc(26);
+	font-weight: 600;
 	line-height: 1.2;
 	margin: 0 0 10px 0;
 }
 
 h4,
 .h4 {
-	font: {
-		family: $font-lato;
-		size: rem-calc(22);
-		weight: 400;
-	};
+	font-family: $font-lato;
+	font-size: rem-calc(22);
+	font-weight: 400;
 	line-height: 1.2;
 	margin: 0 0 10px 0;
 }
 
 h5,
 .h5 {
-	font: {
-		family: $font-halant;
-		size: rem-calc(18);
-		weight: 600;
-	};
+	font-family: $font-halant;
+	font-size: rem-calc(18);
+	font-weight: 600;
 	line-height: 1.2;
 	margin: 0 0 10px 0;
 }
 
 h6,
 .h6 {
-	font: {
-		family: $font-halant;
-		size: rem-calc(16);
-		weight: 600;
-	};
+	font-family: $font-halant;
+	font-size: rem-calc(16);
+	font-weight: 600;
 	line-height: 1.2;
 	margin: 0 0 10px 0;
 }
@@ -239,6 +245,7 @@ form {
 // Anchor
 //-----------------------------------------
 a {
+	background-color: transparent;
 	color: inherit;
 	cursor: pointer;
 	outline: 0;
@@ -337,4 +344,11 @@ small {
 	background: $color-primary;
 	color: $color-white;
 	text-shadow: none;
+}
+
+//-----------------------------------------
+// SVG
+//-----------------------------------------
+svg:not(:root) {
+	overflow: hidden;
 }
