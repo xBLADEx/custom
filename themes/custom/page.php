@@ -29,4 +29,6 @@ get_header();
 	</div>
 </div>
 
+<?php custom_display_content_blocks(); ?>
+
 <?php get_footer(); ?>
