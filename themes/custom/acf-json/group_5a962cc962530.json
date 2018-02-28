@@ -70,7 +70,7 @@
                     "max": ""
                 }
             },
-            "button_label": "Add Row",
+            "button_label": "Add Block",
             "min": "",
             "max": ""
         }
@@ -92,5 +92,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1519791605
+    "modified": 1519793160
 }
