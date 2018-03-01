@@ -1,23 +1,13 @@
 //--------------------------------------------------------------
-// FOOTER
+// GLOBAL FOOTER
 //--------------------------------------------------------------
 
-.footer {
-	background: $color-black;
-	position: relative;
-	width: 100%;
-
-	p {
-		color: $color-white;
-		font-size: rem-calc(14);
-		margin: 0;
-		text-align: center;
-	}
-}
-
 .g-footer {
+	background-color: $color-black;
+	color: $color-white;
+	font-size: rem-calc(14);
+	width: 100%;
 }
-
 
 //-----------------------------------------
 // Top
@@ -32,7 +22,6 @@
 	&__nav {
 	}
 }
-
 
 //-----------------------------------------
 // Bottom
