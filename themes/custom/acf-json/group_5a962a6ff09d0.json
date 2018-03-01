@@ -121,6 +121,22 @@
             "placeholder": ""
         },
         {
+            "key": "field_5a97897fc6542",
+            "label": "Instagram",
+            "name": "global_instagram",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_5a962ab3e2084",
             "label": "Default",
             "name": "",
@@ -178,5 +194,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1519791103
+    "modified": 1519880601
 }

@@ -30,6 +30,7 @@
 				</nav>
 
 				<?php get_template_part( 'templates/form-search' ); ?>
+				<?php custom_display_social_icons(); ?>
 			</div>
 		</div>
 	</header>
