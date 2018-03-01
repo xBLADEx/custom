@@ -14,7 +14,7 @@
 // $no-mq - Whether to output mq styles in @media wrapper or not. Var is set in parent stylesheets with $legacy.
 //--------------------------------------------------------------
 
-@mixin mq($point, $width: true, $min: true) {
+@mixin mq($point, $min: true, $width: true ) {
 	// Width
 	@if $width {
 		// min-width
