@@ -110,6 +110,9 @@ ul,
 ol,
 dl {
 	font-size: $font-size-content;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
 // Unordered List
