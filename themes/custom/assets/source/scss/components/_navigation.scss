@@ -23,7 +23,7 @@
 	}
 
 	// Main nav parent link.
-	 > li {
+	& > li {
 		border-top: 1px solid $color-black;
 		position: relative;
 
@@ -32,10 +32,10 @@
 			float: left;
 		}
 
-		 > a {
+		& > a {
 			color: $color-black;
 			display: block;
-			font-size: rem(16);
+			font-size: rem-calc(16);
 			padding: 20px 25px;
 		}
 
@@ -48,8 +48,8 @@
 	}
 
 	// Parent link for dropdown.
-	 > .has-flyout {
-		 > a {
+	& > .has-flyout {
+		& > a {
 			padding-right: 40px;
 			position: relative;
 
@@ -92,7 +92,7 @@
 					background: $color-black;
 					color: $color-white;
 					display: block;
-					font-size: rem(12);
+					font-size: rem-calc(12);
 					padding: 15px 20px;
 					white-space: nowrap;
 
@@ -106,7 +106,7 @@
 	}
 
 	// Current page link.
-	 > .current-menu-item {
+	& > .current-menu-item {
 		background: $color-black;
 
 		a {
@@ -117,7 +117,7 @@
 	.menu-item {
 		.desc {
 			display: block;
-			font-size: rem(9);
+			font-size: rem-calc(9);
 			padding-left: 5px;
 		}
 	}
