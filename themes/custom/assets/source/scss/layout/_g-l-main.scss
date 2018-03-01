@@ -1,19 +1,9 @@
 //--------------------------------------------------------------
-// GLOBAL LAYOUT MAIN CONTAINER
+// GLOBAL LAYOUT MAIN
 //--------------------------------------------------------------
 
-.g-l-main-container {
+.g-l-main {
 	min-height: 100vh;
 	position: relative;
 	width: 100%;
-}
-
-.body-site {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
-
-.website-container {
-	flex: 1;
 }

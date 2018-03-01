@@ -16,7 +16,9 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'body-site' ); ?>>
+<body <?php body_class(); ?>>
+	<a href="#main" class="skip-navigation"><?php esc_html_e( 'Skip navigation to main content.', 'base' ); ?></a>
+
 	<header class="g-header">
 		<div class="g-l-row g-header__container">
 			<div class="g-header__logo-container">
@@ -38,4 +40,4 @@
 		</div>
 	</header>
 
-	<main class="website-container">
+	<main id="main" class="g-l-main">
