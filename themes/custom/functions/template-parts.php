@@ -71,12 +71,16 @@ function custom_display_hero_content( $title = '' ) {
  * Display Social Media
  */
 function custom_display_social_icons() {
+	$global_facebook  = get_field( 'global_facebook', 'options' );
+	$global_twitter   = get_field( 'global_twitter', 'options' );
+	$global_youtube   = get_field( 'global_youtube', 'options' );
+	$global_instagram = get_field( 'global_instagram', 'options' );
 	?>
 	<ul class="c-social-media">
-		<li class="c-social-media__item"><a href="#" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-facebook"></span></a></li>
-		<li class="c-social-media__item"><a href="#" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-linkedin"></span></a></li>
-		<li class="c-social-media__item"><a href="#" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-twitter"></span></a></li>
-		<li class="c-social-media__item"><a href="#" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-instagram"></span></a></li>
+		<li class="c-social-media__item"><a href="<?php echo esc_url( $global_facebook ); ?>" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-facebook"></span></a></li>
+		<li class="c-social-media__item"><a href="<?php echo esc_url( $global_twitter ); ?>" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-twitter"></span></a></li>
+		<li class="c-social-media__item"><a href="<?php echo esc_url( $global_youtube ); ?>" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-youtube"></span></a></li>
+		<li class="c-social-media__item"><a href="<?php echo esc_url( $global_instagram ); ?>" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-instagram"></span></a></li>
 	</ul>
 	<?php
 }
