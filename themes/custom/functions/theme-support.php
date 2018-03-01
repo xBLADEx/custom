@@ -110,7 +110,7 @@ function custom_display_content_blocks() {
 			the_row();
 			// Template part name MUST match layout ID (Name).
 			// @example block-media_section
-			get_template_part( 'templates/components/block', get_row_layout() );
+			get_template_part( 'components/block', get_row_layout() );
 		endwhile;
 
 		wp_reset_postdata();
