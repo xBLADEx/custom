@@ -4,7 +4,6 @@
 
 .button {
 	-webkit-appearance: none;
-	appearance: none;
 	background-color: $color-primary;
 	border: 0;
 	border-radius: 5px;
@@ -26,6 +25,11 @@
 		background-color: $color-secondary;
 	}
 
+	&--secondary {
+		background-color: $color-secondary;
+		color: $color-white;
+	}
+
 	&--full-width {
 		display: block;
 		margin-left: 0;
@@ -43,5 +47,9 @@
 			background-color: $color-secondary;
 			color: $color-white;
 		}
+	}
+
+	&--no-margin {
+		margin: 0;
 	}
 }
