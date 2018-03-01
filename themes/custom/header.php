@@ -26,9 +26,12 @@
 			</div>
 
 			<div class="g-header__navigation">
-				<nav class="main-nav">
-					<button class="mobile-menu-icon"><span><?php esc_html_e( 'Menu', 'custom' ); ?></span></button>
-					<?php get_template_part( 'templates/menu-nav' ); ?>
+				<nav class="navigation">
+					<button class="navigation__icon">
+						<span><?php esc_html_e( 'Menu', 'custom' ); ?></span>
+					</button>
+
+					<?php get_template_part( 'components/navigation' ); ?>
 				</nav>
 			</div>
 

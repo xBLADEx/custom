@@ -1,6 +1,6 @@
 <?php
 /**
- * Menu Nav
+ * Navigation
  *
  * @see http://codex.wordpress.org/Function_Reference/wp_nav_menu.
  * @package Custom
@@ -21,7 +21,7 @@ wp_nav_menu(
 		'after'           => '',
 		'link_before'     => '',
 		'link_after'      => '',
-		'items_wrap'      => '<ul class="navbar">%3$s</ul>',
+		'items_wrap'      => '<ul class="navigation__menu">%3$s</ul>',
 		'depth'           => 2,
 		'walker'          => new Custom_Nav_Menu(),
 	)
