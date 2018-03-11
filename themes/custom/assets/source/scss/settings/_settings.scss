@@ -44,17 +44,21 @@ $font-weight-extra-bold: 800;
 //-----------------------------------------
 // Colors
 //-----------------------------------------
-// Base Neutrals
+// Neutrals
 $color-black: #000000;
 $color-white: #FFFFFF;
-$color-gray: #CACACA;
+$color-gray: #808080;
 
 // Theme Colors
 $color-hippie-blue: #5C8FB2;
 $color-chestnut-rose: #C95555;
+$color-lynch: #648591;
+
+// Theme Neutrals
 $color-alabaster: #FAFAFA;
 $color-dune: #2B2925;
-$color-lynch: #648591;
+$color-theme-white: $color-alabaster;
+$color-theme-black: $color-dune;
 
 // Roles
 $color-primary: $color-hippie-blue;
