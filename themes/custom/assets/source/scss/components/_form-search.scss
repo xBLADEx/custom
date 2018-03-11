@@ -1,0 +1,27 @@
+//--------------------------------------------------------------
+// FORM SEARCH
+//--------------------------------------------------------------
+
+.form-search {
+	display: flex;
+	margin: 20px 0;
+	width: 260px;
+
+	&__input {
+		margin: 0;
+		width: auto;
+	}
+
+	&__button {
+		background: $color-black;
+		border: 0;
+		color: $color-white;
+		cursor: pointer;
+		padding: 0 20px;
+
+		&:hover {
+			background: $color-white;
+			color: $color-black;
+		}
+	}
+}
