@@ -68,7 +68,7 @@ module.exports = env => {
 							loader: 'babel-loader', // @see https://webpack.js.org/loaders/babel-loader/, https://github.com/babel/babel-loader
 							options: {
 								// @see https://babeljs.io/docs/usage/api/#options.
-								presets: ['es2015'], // @see https://babeljs.io/docs/plugins/. @todo setup `env` preset.
+								presets: ['env'], // @see https://babeljs.io/docs/plugins/. @todo setup `env` preset.
 							},
 						},
 					],
