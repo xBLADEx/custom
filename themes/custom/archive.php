@@ -10,8 +10,8 @@ get_header();
 
 <?php get_template_part( 'templates/content', 'title' ); ?>
 
-<div class="row page-content">
-	<div class="medium-9 columns">
+<div class="g-page-content">
+	<div class="g-l-row">
 		<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :
@@ -42,11 +42,11 @@ get_header();
 			custom_pagination();
 		endif;
 		?>
-	</div>
 
-	<aside class="medium-3 columns">
-		<?php dynamic_sidebar( 'Sidebar Blog' ); ?>
-	</aside>
+		<aside class="">
+			<?php dynamic_sidebar( 'Sidebar Blog' ); ?>
+		</aside>
+	</div>
 </div>
 
 <?php get_footer(); ?>

@@ -13,8 +13,8 @@ if ( function_exists( 'get_header' ) ) {
 }
 ?>
 
-<div class="row page-content">
-	<div class="medium-12 columns">
+<div class="g-page-content">
+	<div class="g-l-row">
 		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) {
