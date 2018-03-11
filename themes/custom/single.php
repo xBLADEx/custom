@@ -8,8 +8,8 @@
 get_header();
 ?>
 
-<div class="row page-content">
-	<div class="medium-9 columns">
+<div class="g-page-content">
+	<div class="g-l-row">
 		<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :
@@ -30,19 +30,17 @@ get_header();
 						<?php the_content(); ?>
 
 						<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
-
-						<?php comments_template(); ?>
 					</div>
 				</article>
 				<?php
 			endwhile;
 		endif;
 		?>
-	</div>
 
-	<aside class="medium-3 columns">
-		<?php dynamic_sidebar( 'Sidebar Blog' ); ?>
-	</aside>
+		<aside class="">
+			<?php dynamic_sidebar( 'Sidebar Blog' ); ?>
+		</aside>
+	</div>
 </div>
 
 <?php get_footer(); ?>
