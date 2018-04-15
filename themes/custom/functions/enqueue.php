@@ -18,13 +18,13 @@ function custom_enqueue() {
 	// If the cookie is set, load our CSS normally.
 	if ( isset( $_COOKIE['custom-css'] ) && 'true' === $_COOKIE['custom-css'] ) {
 		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CHalant:400,600', [], '1.0' );
-		wp_enqueue_style( 'custom', THEME_CSS . '/custom.css', [], '1.0' );
+		wp_enqueue_style( 'custom', esc_url( THEME_CSS ) . '/custom.css', [], '1.0' );
 	}
 
 	// Scripts.
 	wp_deregister_script( 'jquery' );
 	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], '3.3.1', true );
-	wp_enqueue_script( 'custom', THEME_JS . '/custom.js', [], '1', true );
+	wp_enqueue_script( 'custom', esc_url( THEME_JS ) . '/custom.js', [], '1', true );
 	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.1/js/all.js', [], null, true );
 }
 
@@ -47,7 +47,7 @@ add_filter( 'script_loader_tag', 'custom_add_attribute_defer', 10, 2 );
 
 /**
  * Critical CSS
- *
+ * @todo Set this up after package.json packages are setup.
  * Include critical CSS and set cookie.
  *
  * @see https://codex.wordpress.org/Function_Reference/locate_template.
