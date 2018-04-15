@@ -8,39 +8,33 @@
 /**
  * Enqueue Scripts
  *
- * @see http://codex.wordpress.org/Function_Reference/wp_enqueue_style.
- * @see http://codex.wordpress.org/Function_Reference/wp_enqueue_script
- * @see https://fonts.google.com/specimen/Lato?selection.family=Lato:300,400,700,900.
- * @see https://fonts.google.com/specimen/Halant?selection.family=Halant:400,600.
- * @see https://developers.google.com/speed/libraries/#jquery.
+ * @see https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+ * @see https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+ * @see https://developers.google.com/speed/libraries/#jquery
  * @example wp_enqueue_style( $handle, $src, $deps, $ver, $media ).
  * @example wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer ).
  */
 function custom_enqueue() {
-	// Styles.
-	// wp_enqueue_style( 'jquery-ui-css', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css', array(), '1.11.4' );
-	// wp_enqueue_style( 'custom', THEME_CSS . '/custom.css', array(), '1.0' );
-
 	// If the cookie is set, load our CSS normally.
 	if ( isset( $_COOKIE['custom-css'] ) && 'true' === $_COOKIE['custom-css'] ) {
-		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CHalant:400,600', array(), '1.0' );
-		wp_enqueue_style( 'custom', THEME_CSS . '/custom.css', array(), '1.0' );
+		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CHalant:400,600', [], '1.0' );
+		wp_enqueue_style( 'custom', THEME_CSS . '/custom.css', [], '1.0' );
 	}
 
 	// Scripts.
 	wp_deregister_script( 'jquery' );
-	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', true );
-	// wp_enqueue_script( 'jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), '1.11.4', true );
-	wp_enqueue_script( 'custom', THEME_JS . '/custom.js', array(), '6.2.4', true );
-	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.1/js/all.js', array(), null, true );
+	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], '3.3.1', true );
+	wp_enqueue_script( 'custom', THEME_JS . '/custom.js', [], '1', true );
+	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.1/js/all.js', [], null, true );
 }
 
 add_action( 'wp_enqueue_scripts', 'custom_enqueue' );
 
 /**
- * Add attribute "defer".
+ * Add Attributes To Scripts
+ * Add defer for Font Awesome.
  */
-function base_add_attribute_defer( $tag, $handle ) {
+function custom_add_attribute_defer( $tag, $handle ) {
 	// Bail early if not font awesome script.
 	if ( 'font-awesome' !== $handle ) {
 		return $tag;
@@ -49,8 +43,7 @@ function base_add_attribute_defer( $tag, $handle ) {
 	return str_replace( ' src', ' defer src', $tag );
 }
 
-add_filter( 'script_loader_tag', 'base_add_attribute_defer', 10, 2 );
-
+add_filter( 'script_loader_tag', 'custom_add_attribute_defer', 10, 2 );
 
 /**
  * Critical CSS
