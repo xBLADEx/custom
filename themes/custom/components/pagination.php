@@ -1,6 +1,6 @@
 <?php
 /**
- * Pagination Single
+ * Pagination
  *
  * @package Custom
  */
@@ -13,10 +13,10 @@ if ( empty( $next ) && empty( $previous ) ) {
 }
 ?>
 
-<nav class="pagination pagination-single">
-	<ul class="pagination-list">
+<nav class="pagination">
+	<ul class="pagination__list">
 		<?php if ( $previous ) : ?>
-			<li class="pagination-list-item pagination-previous">
+			<li class="pagination__list-item pagination__previous">
 				<a href="<?php echo esc_url( get_permalink( $previous->ID ) ); ?>" rel="<?php esc_attr_e( 'prev', 'custom' ); ?>">
 					<?php echo esc_html( $previous->post_title ); ?>
 				</a>
@@ -24,7 +24,7 @@ if ( empty( $next ) && empty( $previous ) ) {
 		<?php endif; ?>
 
 		<?php if ( $next ) : ?>
-			<li class="pagination-list-item pagination-next">
+			<li class="pagination__list-item pagination__next">
 				<a href="<?php echo esc_url( get_permalink( $next->ID ) ); ?>" rel="<?php esc_attr_e( 'next', 'custom' ); ?>">
 					<?php echo esc_html( $next->post_title ); ?>
 				</a>
