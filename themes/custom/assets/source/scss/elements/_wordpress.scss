@@ -89,3 +89,31 @@
 
 .bypostauthor {
 }
+
+//-----------------------------------------
+// Page Numbers
+//-----------------------------------------
+.page-numbers {
+	margin: 0;
+
+	li {
+		display: inline-block;
+
+		.page-numbers {
+			background-color: $color-primary;
+			color: $color-white;
+			padding: 10px;
+
+			&:hover,
+			&:focus {
+				background-color: $color-secondary;
+			}
+		}
+
+		.current {
+			background-color: $color-secondary;
+			color: $color-white;
+			padding: 10px;
+		}
+	}
+}
