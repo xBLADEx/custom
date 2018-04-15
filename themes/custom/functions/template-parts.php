@@ -50,7 +50,7 @@ function custom_display_hero_content( $title = '' ) {
 	$link_title = get_the_title( $link_id );
 	?>
 	<div class="g-page-header">
-		<div <?php custom_the_image_background_acf( $page_hero_image, 'sub-page-small', [ 'g-page-header__background' ] ); ?>></div>
+		<div <?php custom_the_image_background_acf( $page_hero_image, 'hero-small', [ 'g-page-header__background' ] ); ?>></div>
 
 		<div class="g-l-wrapper">
 			<h1><?php echo esc_html( $title ); ?></h1>
