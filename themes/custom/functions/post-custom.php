@@ -54,20 +54,6 @@ remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 add_filter( 'get_the_excerpt', 'custom_excerpt' );
 
 /**
- * Remove Sticky Post
- *
- * @param  string $classes Classes.
- * @return string          Classes.
- */
-function custom_remove_sticky( $classes ) {
-	$classes = array_diff( $classes, array( 'sticky' ) );
-
-	return $classes;
-}
-
-// add_filter( 'post_class', 'custom_remove_sticky' );
-
-/**
  * Custom Pagination
  *
  * @see http://codex.wordpress.org/Function_Reference/paginate_links.
@@ -101,58 +87,6 @@ function custom_pagination( $query = '' ) {
 	);
 
 	echo paginate_links( $args ); // WPCS: XSS OK.
-}
-
-/**
- * @todo Test this.
- * Base breadcrumbs
- * Simple breadcrumbs function for displaying parent pages.
- * Could be expanded to include categories, dates, ect. if needed.
- *
- * @author Paul Allen
- */
-function base_display_page_breadcrumbs() {
-	// Bail if on home page
-	if ( is_front_page() ) {
-		return;
-	}
-
-	global $post;
-	$current_page_title = $post->post_title;
-	$post_parent = $post->post_parent;
-	$breadcrumbs = array();
-
-	while ( $post_parent ) {
-		$page       = get_post( $post_parent );
-		$page_id    = $page->ID;
-		$page_link  = get_permalink( $page_id );
-		$page_title = $page->post_title;
-		$breadcrumb = [
-			'title' => $page_title,
-			'url'   => $page_link,
-		];
-		array_unshift( $breadcrumbs, $breadcrumb ); // Add it to the beginning of the array
-
-		$post_parent = $page->post_parent; // Move up the chain by finding parent post if any
-	}
-	?>
-
-	<ul class="c-breadcrumbs">
-		<li class="c-breadcrumbs__item">
-			<a href="<?php echo esc_url( home_url() ); ?>" class="c-breadcrumbs__anchor"><?php esc_html_e( 'Home', 'base' ); ?></a>
-		</li>
-
-		<?php foreach ( $breadcrumbs as $link ) : ?>
-			<li class="c-breadcrumbs__item">
-				<a href="<?php echo esc_url( $link['url'] ); ?>" class="c-breadcrumbs__anchor"><?php echo esc_html( $link['title'] ); ?></a>
-			</li>
-		<?php endforeach; ?>
-
-		<li class="c-breadcrumbs__item"><?php echo esc_html( $current_page_title ); ?></li>
-	</ul>
-
-	<?php
-	wp_reset_postdata();
 }
 
 /*
