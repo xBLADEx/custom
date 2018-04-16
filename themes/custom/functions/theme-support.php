@@ -1,6 +1,6 @@
 <?php
 /**
- * Support
+ * Theme Support
  *
  * @package Custom
  */
@@ -79,7 +79,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 *
 * @author Rich Edmunds
 */
-function base_hide_acf_admin() {
+function custom_hide_acf_admin() {
 	// Get the current site url
 	$site_url = get_bloginfo( 'url' );
 
@@ -97,9 +97,10 @@ function base_hide_acf_admin() {
 	}
 }
 
-add_filter( 'acf/settings/show_admin', 'base_hide_acf_admin' );
+add_filter( 'acf/settings/show_admin', 'custom_hide_acf_admin' );
 
 /**
+ * ACF Flexible Content
  * Loop through and output ACF flexible content blocks for the current page.
  *
  * @author Rich Edmunds
@@ -171,80 +172,80 @@ function custom_phpmailer_smtp( PHPMailer $phpmailer ) {
  * @return array Array of allowed tags.
  */
 function custom_allowed_tags() {
-	return array(
-		'a' => array(
-			'class' => array(),
-			'href'  => array(),
-			'rel'   => array(),
-			'title' => array(),
-		),
-		'abbr' => array(
-			'title' => array(),
-		),
-		'b' => array(),
-		'blockquote' => array(
-			'cite'  => array(),
-		),
-		'cite' => array(
-			'title' => array(),
-		),
-		'code' => array(),
-		'del' => array(
-			'datetime' => array(),
-			'title' => array(),
-		),
-		'dd' => array(),
-		'div' => array(
-			'class' => array(),
-			'title' => array(),
-			'style' => array(),
-		),
-		'dl' => array(),
-		'dt' => array(),
-		'em' => array(),
-		'h1' => array(),
-		'h2' => array(),
-		'h3' => array(),
-		'h4' => array(),
-		'h5' => array(),
-		'h6' => array(),
-		'i' => array(),
-		'iframe' => array(
-			'src'             => array(),
-			'height'          => array(),
-			'width'           => array(),
-			'frameborder'     => array(),
-			'allowfullscreen' => array(),
-		),
-		'img' => array(
-			'alt'    => array(),
-			'class'  => array(),
-			'height' => array(),
-			'src'    => array(),
-			'width'  => array(),
-		),
-		'li' => array(
-			'class' => array(),
-		),
-		'ol' => array(
-			'class' => array(),
-		),
-		'p' => array(
-			'class' => array(),
-		),
-		'q' => array(
-			'cite' => array(),
-			'title' => array(),
-		),
-		'span' => array(
-			'class' => array(),
-			'title' => array(),
-			'style' => array(),
-		),
-		'strike' => array(),
-		'strong' => array(),
-		'ul' => array(
-			'class' => array(),
-		),
-	);
+	return [
+		'a'          => [
+			'class' => [],
+			'href'  => [],
+			'rel'   => [],
+			'title' => [],
+		],
+		'abbr'       => [
+			'title' => [],
+		],
+		'b'          => [],
+		'blockquote' => [
+			'cite' => [],
+		],
+		'cite'       => [
+			'title' => [],
+		],
+		'code'       => [],
+		'del'        => [
+			'datetime' => [],
+			'title'    => [],
+		],
+		'dd'         => [],
+		'div'        => [
+			'class' => [],
+			'title' => [],
+			'style' => [],
+		],
+		'dl'         => [],
+		'dt'         => [],
+		'em'         => [],
+		'h1'         => [],
+		'h2'         => [],
+		'h3'         => [],
+		'h4'         => [],
+		'h5'         => [],
+		'h6'         => [],
+		'i'          => [],
+		'iframe'     => [
+			'src'             => [],
+			'height'          => [],
+			'width'           => [],
+			'frameborder'     => [],
+			'allowfullscreen' => [],
+		],
+		'img'        => [
+			'alt'    => [],
+			'class'  => [],
+			'height' => [],
+			'src'    => [],
+			'width'  => [],
+		],
+		'li'         => [
+			'class' => [],
+		],
+		'ol'         => [
+			'class' => [],
+		],
+		'p'          => [
+			'class' => [],
+		],
+		'q'          => [
+			'cite'  => [],
+			'title' => [],
+		],
+		'span'       => [
+			'class' => [],
+			'title' => [],
+			'style' => [],
+		],
+		'strike'     => [],
+		'strong'     => [],
+		'ul'         => [
+			'class' => [],
+		],
+	];
 }
