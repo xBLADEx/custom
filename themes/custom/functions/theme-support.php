@@ -58,6 +58,7 @@ add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
 function custom_support() {
 	// Featured Images.
 	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'title-tag' );
 
 	/**
 	 * Post Formats
