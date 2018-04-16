@@ -44,7 +44,7 @@ custom_display_hero_content( 'Search Results' );
 		?>
 
 		<aside class="">
-			<?php dynamic_sidebar( 'Sidebar Blog' ); ?>
+			<?php dynamic_sidebar( 'Sidebar' ); ?>
 		</aside>
 	</div>
 </div>

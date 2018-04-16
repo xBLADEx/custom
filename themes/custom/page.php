@@ -16,9 +16,13 @@ get_header();
 				the_post();
 				?>
 				<article id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php get_template_part( 'templates/content', 'title' ); ?>
+					<?php get_template_part( 'templates/content-title' ); ?>
 
-					<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+					<?php
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail();
+					}
+					?>
 
 					<?php the_content(); ?>
 				</article>
