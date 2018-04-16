@@ -29,31 +29,29 @@ custom_display_hero_content();
 			while ( $custom_query->have_posts() ) :
 				$custom_query->the_post();
 				?>
-				<div class="post-container">
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<header>
-							<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<header>
+						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 
-							<?php
-							if ( has_post_thumbnail() ) {
-								the_post_thumbnail();
-							}
-							?>
+						<?php
+						if ( has_post_thumbnail() ) {
+							the_post_thumbnail();
+						}
+						?>
 
-							<p class="date"><?php esc_html_e( 'Date:', 'custom' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></p>
+						<p class="date"><?php esc_html_e( 'Date:', 'custom' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></p>
 
-							<p class="categories"><?php esc_html_e( 'Categories:', 'custom' ); ?> <?php the_category( ', ' ); ?></p>
-						</header>
+						<p class="categories"><?php esc_html_e( 'Categories:', 'custom' ); ?> <?php the_category( ', ' ); ?></p>
+					</header>
 
-						<div>
-							<?php the_excerpt(); ?>
-						</div>
+					<div>
+						<?php the_excerpt(); ?>
+					</div>
 
-						<footer>
-							<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
-						</footer>
-					</article>
-				</div>
+					<footer>
+						<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
+					</footer>
+				</article>
 				<?php
 			endwhile;
 
