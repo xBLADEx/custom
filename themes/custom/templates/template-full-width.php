@@ -8,11 +8,9 @@
 get_header();
 ?>
 
-<div class="page-content">
-	<div class="row">
-		<div class="medium-12 columns">
-			<?php get_template_part( 'templates/content', 'title' ); ?>
-		</div>
+<div class="g-page-content">
+	<div class="g-l-row">
+		<?php get_template_part( 'templates/content', 'title' ); ?>
 	</div>
 
 	<?php

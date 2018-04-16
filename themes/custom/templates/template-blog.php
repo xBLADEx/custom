@@ -10,18 +10,18 @@ get_header();
 
 <?php get_template_part( 'templates/content', 'title' ); ?>
 
-<div class="row page-content">
-	<div class="medium-9 columns">
+<div class="g-page-content">
+	<div class="g-l-row">
 		<?php
 		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-		$args = array(
+		$args = [
 			'post_type'      => 'post',
 			'post_status'    => 'publish',
 			'posts_per_page' => '10',
 			'orderby'        => 'date',
 			'paged'          => $paged,
-		);
+		];
 
 		// @see http://codex.wordpress.org/Class_Reference/WP_Query.
 		$custom_query = new WP_Query( $args );
@@ -35,7 +35,11 @@ get_header();
 						<header>
 							<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 
-							<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+							<?php
+							if ( has_post_thumbnail() ) {
+								the_post_thumbnail();
+							}
+							?>
 
 							<p class="date"><?php esc_html_e( 'Date:', 'custom' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></p>
 
@@ -61,8 +65,8 @@ get_header();
 		?>
 	</div>
 
-	<aside class="medium-3 columns">
-		<?php dynamic_sidebar( 'Sidebar Blog' ); ?>
+	<aside class="">
+		<?php dynamic_sidebar( 'Sidebar' ); ?>
 	</aside>
 </div>
 

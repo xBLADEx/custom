@@ -8,12 +8,12 @@
 get_header();
 ?>
 
-<div class="row page-content">
-	<aside class="medium-3 columns">
-		<?php dynamic_sidebar( 'Sidebar Left' ); ?>
+<div class="g-page-content">
+	<aside class="">
+		<?php dynamic_sidebar( 'Sidebar' ); ?>
 	</aside>
 
-	<div class="medium-9 columns">
+	<div class="g-l-row">
 		<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :
@@ -24,7 +24,11 @@ get_header();
 						<?php get_template_part( 'templates/content', 'title' ); ?>
 					</header>
 
-					<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+					<?php
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail();
+					}
+					?>
 
 					<?php the_content(); ?>
 				</article>
