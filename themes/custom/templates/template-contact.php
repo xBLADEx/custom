@@ -12,7 +12,7 @@ get_header();
 	<div class="g-l-row">
 		<?php get_template_part( 'templates/content', 'title' ); ?>
 
-		<?php get_template_part( 'templates/form', 'contact' ); ?>
+		<?php get_template_part( 'components/form-contact' ); ?>
 
 		<div class="">
 			<?php
