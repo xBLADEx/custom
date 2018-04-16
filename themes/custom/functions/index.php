@@ -12,6 +12,7 @@ $files = [
 	'enqueue.php',
 	'media-custom.php',
 	'post-custom.php',
+	'post-types.php',
 	'register.php',
 	'class-custom-nav-menu.php',
 	'template-parts.php',
