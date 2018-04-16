@@ -20,7 +20,7 @@ custom_display_hero_content();
 			while ( have_posts() ) :
 				the_post();
 				?>
-				<article id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<article id="page-<?php the_ID(); ?>" <?php post_class( 'wysiwyg-content' ); ?>>
 					<?php
 					if ( has_post_thumbnail() ) {
 						the_post_thumbnail();

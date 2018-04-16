@@ -29,11 +29,11 @@ custom_display_hero_content();
 						<p class="categories"><?php esc_html_e( 'Categories:', 'custom' ); ?> <?php the_category( ', ' ); ?></p>
 					</header>
 
-					<div>
+					<div class="wysiwyg-content">
 						<?php the_content(); ?>
-
-						<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
 					</div>
+
+					<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
 				</article>
 				<?php
 			endwhile;

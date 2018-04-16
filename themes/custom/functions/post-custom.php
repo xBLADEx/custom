@@ -19,7 +19,6 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /**
  * Post Excerpt
- * @todo Test this function.
  *
  * @param  string $text Text.
  * @return string       Modified excerpt.

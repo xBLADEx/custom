@@ -19,7 +19,7 @@ custom_display_hero_content();
 				while ( have_posts() ) :
 					the_post();
 					?>
-					<div id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div id="page-<?php the_ID(); ?>" <?php post_class( 'wysiwyg-content' ); ?>>
 						<?php the_content(); ?>
 					</div>
 					<?php

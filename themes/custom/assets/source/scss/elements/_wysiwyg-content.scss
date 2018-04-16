@@ -1,40 +1,30 @@
 //--------------------------------------------------------------
 // WYSIWYG CONTENT
 //--------------------------------------------------------------
-// @todo review carefully.
+
 //-----------------------------------------
 // Default
 //-----------------------------------------
 .wysiwyg-content {
-	& >  {
-		// Hide empty WordPress injected <p> tags.
-		*:empty:not(hr):not(br) {
-			display: none;
-		}
+	// Hide empty WordPress injected <p> tags.
+	*:empty:not(hr):not(br) {
+		display: none;
+	}
 
-		// Remove top margin from first element (whether element or image).
-		*:first-child {
-			margin-top: 0;
+	// Remove top margin from first element.
+	*:first-child {
+		margin-top: 0;
 
-			& > img {
-				margin-top: 0;
-			}
-		}
-
-		.wp-image-wrap:nth-child(2) img {
+		& > img {
 			margin-top: 0;
 		}
+	}
 
-		// Remove bottom margin from last element (whether element or image).
-		*:last-child {
-			margin-bottom: 0;
+	// Remove bottom margin from last element.
+	*:last-child {
+		margin-bottom: 0;
 
-			& > img {
-				margin-bottom: 0;
-			}
-		}
-
-		.wp-image-wrap:nth-last-child(2) img {
+		& > img {
 			margin-bottom: 0;
 		}
 	}
@@ -43,11 +33,7 @@
 	.responsive-embed {
 		margin: 24px auto;
 		max-width: none;
-		width: auto !important;
-
-		@include mq($mq-full) {
-			margin: 60px auto;
-		}
+		width: auto;
 	}
 }
 
@@ -72,11 +58,9 @@
 	ol,
 	dl {
 		margin-bottom: 24px;
-		margin-top: 24px;
 
 		@include mq($mq-full) {
 			margin-bottom: 32px;
-			margin-top: 32px;
 		}
 	}
 
