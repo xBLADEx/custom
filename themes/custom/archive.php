@@ -21,7 +21,11 @@ get_header();
 					<header>
 						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 
-						<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+						<?php
+						if ( has_post_thumbnail() ) {
+							the_post_thumbnail();
+						}
+						?>
 
 						<p class="date"><?php esc_html_e( 'Date:', 'custom' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></p>
 
@@ -44,7 +48,7 @@ get_header();
 		?>
 
 		<aside class="">
-			<?php dynamic_sidebar( 'Sidebar Blog' ); ?>
+			<?php dynamic_sidebar( 'Sidebar' ); ?>
 		</aside>
 	</div>
 </div>
