@@ -6,12 +6,11 @@
  */
 
 get_header();
+custom_display_hero_content();
 ?>
 
 <div class="g-page-content">
 	<div class="g-l-row">
-		<?php get_template_part( 'templates/content', 'title' ); ?>
-
 		<?php get_template_part( 'components/form-contact' ); ?>
 
 		<div class="">

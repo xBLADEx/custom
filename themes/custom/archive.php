@@ -6,9 +6,8 @@
  */
 
 get_header();
+custom_display_hero_content();
 ?>
-
-<?php get_template_part( 'templates/content', 'title' ); ?>
 
 <div class="g-page-content">
 	<div class="g-l-row">
