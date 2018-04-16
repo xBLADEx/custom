@@ -7,16 +7,15 @@
 
 /**
  * Set Excerpt Length
- *
  * Return the amount of words to display.
  *
  * @author Rich Edmunds
  */
-function custom_simple_excerpt() {
+function custom_excerpt_length() {
 	return 15;
 }
 
-add_filter( 'excerpt_length', 'custom_simple_excerpt', 999 );
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /**
  * Post Excerpt
@@ -26,31 +25,32 @@ add_filter( 'excerpt_length', 'custom_simple_excerpt', 999 );
  * @return string       Modified excerpt.
  */
 function custom_excerpt( $text ) {
+	// Return early if not empty string.
+	if ( '' !== $text ) {
+		return;
+	}
+
 	global $post;
 
-	if ( '' === $text ) {
-		$text = get_the_content( '' );
-		$text = apply_filters( 'the_content', $text );
-		$text = str_replace( '\]\]\>', ']]&gt;', $text );
-		$text = preg_replace( '@<script[^>]*?>.*?</script>@si', '', $text );
-		$text = strip_tags( $text, '<p>' );
+	$text = apply_filters( 'the_content', get_the_content( '' ) );
+	$text = str_replace( '\]\]\>', ']]&gt;', $text );
+	$text = preg_replace( '@<script[^>]*?>.*?</script>@si', '', $text );
+	$text = strip_tags( $text, '<p>' );
 
-		$excerpt_length = 80;
+	$excerpt_length = custom_excerpt_length();
 
-		$words = explode( ' ', $text, $excerpt_length + 1 );
+	$words = explode( ' ', $text, $excerpt_length + 1 );
 
-		if ( count( $words ) > $excerpt_length ) {
-			array_pop( $words );
-			array_push( $words, '... <br><br><a href="' . get_permalink( $post->ID ) . '" class="button">Read More</a>' );
-			$text = implode( ' ', $words );
-		}
+	if ( count( $words ) > $excerpt_length ) {
+		array_pop( $words );
+		array_push( $words, '... <br><br><a href="' . get_permalink( $post->ID ) . '" class="button">' . esc_html__( 'Read More', 'custom' ) . '</a>' );
+		$text = implode( ' ', $words );
 	}
 
 	return $text;
 }
 
 remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
-
 add_filter( 'get_the_excerpt', 'custom_excerpt' );
 
 /**
@@ -65,7 +65,7 @@ function custom_remove_sticky( $classes ) {
 	return $classes;
 }
 
-add_filter( 'post_class', 'custom_remove_sticky' );
+// add_filter( 'post_class', 'custom_remove_sticky' );
 
 /**
  * Custom Pagination
