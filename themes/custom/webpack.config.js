@@ -99,7 +99,7 @@ module.exports = (env, argv) => {
 				},
 			],
 		},
-		// devtool: isProduction ? '' : 'inline-source-map',
+		devtool: isProduction ? '' : 'inline-source-map',
 		externals: {
 			// @see https://webpack.js.org/configuration/externals/
 			jquery: 'jQuery', // Exclude jQuery from the final output file, rely on WordPress enqueue jQuery from Google CDN.
