@@ -5,19 +5,19 @@
 //--------------------------------------------------------------
 
 const path = require('path'); // Needed for webpack to output path.
-const webpack = require('webpack'); // Needed for ProvidePlugin to import jQuery.
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // Extract CSS into separate files.
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin'); // Browsersync.
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin'); // Minify JS.
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin'); // Copies individual files or entire directories to the build directory.
-const proxy = 'custom.test'; // Localhost domain name without the protocol.
+const proxy = 'custom.test';
 
 module.exports = (env, argv) => {
 	const isProduction = 'production' === argv.mode; // Create boolean true if in production mode.
 
 	return {
 		entry: {
-			custom: './assets/source/js/index.js', // Entry files.
+			custom: './assets/source/js/index.js',
 		},
 		output: {
 			filename: 'js/[name].js', // [name] is generated from the object entry properties. Example output is custom.js because entry.custom above.
@@ -26,10 +26,8 @@ module.exports = (env, argv) => {
 		module: {
 			// @see https://webpack.js.org/loaders/
 			rules: [
-				// Previously named 'loaders' in Webpack 1.
 				{
 					test: /\.js$/,
-					// exclude: /node_modules/, // This wasn't compiling the ES6 from foundation when we excluded it.
 					use: [
 						{
 							loader: 'babel-loader', // @see https://webpack.js.org/loaders/babel-loader/, https://github.com/babel/babel-loader
@@ -47,9 +45,9 @@ module.exports = (env, argv) => {
 						{
 							loader: 'css-loader', // @see https://webpack.js.org/loaders/css-loader/
 							options: {
-								sourceMap: !isProduction, // @see https://github.com/webpack-contrib/sass-loader#source-maps
+								sourceMap: !isProduction,
 								importLoaders: 1, // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
-								url: false, // @todo, we need to figure out proper url() pathing for fonts.
+								url: false,
 							},
 						},
 						{
@@ -62,7 +60,7 @@ module.exports = (env, argv) => {
 							loader: 'sass-loader',
 							options: {
 								sourceMap: !isProduction, // @see https://github.com/webpack-contrib/sass-loader#source-maps
-								outputStyle: 'compact', // @see https://github.com/sass/node-sass#outputstyle. Note: Currently required due to node-sass & bug https://github.com/webpack-contrib/sass-loader/issues/351
+								outputStyle: 'compact', // @see https://github.com/sass/node-sass#outputstyle.
 							},
 						},
 					],
@@ -135,7 +133,6 @@ module.exports = (env, argv) => {
 					to: 'images',
 				},
 				{
-					// @todo We will no longer need this once pathing is updated for url().
 					from: 'assets/source/fonts',
 					to: 'fonts',
 				},
