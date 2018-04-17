@@ -17,7 +17,6 @@
 		"css-loader": "^0.28.11",
 		"css-mqpacker": "^6.0.2",
 		"cssnano": "^3.9.1",
-		"extract-text-webpack-plugin": "^3.0.1",
 		"file-loader": "^1.1.11",
 		"jquery": "^3.3.1",
 		"lazysizes": "^4.0.2",
@@ -32,8 +31,8 @@
 		"webpack-cli": "^2.0.14"
 	},
 	"scripts": {
-		"build": "webpack --env.development",
-		"prod": "webpack --env.production",
-		"watch": "webpack --env.development --watch"
+		"build": "webpack --mode=development",
+		"prod": "webpack --mode=production",
+		"watch": "webpack --mode=development --watch"
 	}
 }

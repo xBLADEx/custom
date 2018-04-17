@@ -12,11 +12,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin'); // Minify JS.
 const CopyWebpackPlugin = require('copy-webpack-plugin'); // Copies individual files or entire directories to the build directory.
 const proxy = 'custom.test'; // Localhost domain name without the protocol.
 
-module.exports = env => {
-	// @see https://webpack.js.org/guides/environment-variables/
-	const isProduction = true === env.production; // Create boolean true if in production mode.
-
-	let sourceMap = isProduction ? '' : 'inline-source-map'; // Set inline source map if not in production.
+module.exports = (env, argv) => {
+	const isProduction = 'production' === argv.mode; // Create boolean true if in production mode.
 
 	return {
 		entry: {
@@ -57,6 +54,9 @@ module.exports = env => {
 						},
 						{
 							loader: 'postcss-loader', // @see https://webpack.js.org/loaders/postcss-loader/.
+							options: {
+								sourceMap: !isProduction,
+							},
 						},
 						{
 							loader: 'sass-loader',
@@ -99,7 +99,7 @@ module.exports = env => {
 				},
 			],
 		},
-		devtool: sourceMap,
+		// devtool: isProduction ? '' : 'inline-source-map',
 		externals: {
 			// @see https://webpack.js.org/configuration/externals/
 			jquery: 'jQuery', // Exclude jQuery from the final output file, rely on WordPress enqueue jQuery from Google CDN.
