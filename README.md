@@ -2,7 +2,7 @@
 
 *   Name: Custom
 *   Author: Rich Edmunds
-*   Version: 3.11.0
+*   Version: 4.6.0
 
 ## Download
 
