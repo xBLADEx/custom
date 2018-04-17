@@ -115,16 +115,19 @@ module.exports = (env, argv) => {
 				test: /\.js$/i,
 				sourceMap: !isProduction,
 			}),
-			new BrowserSyncPlugin({
-				proxy: `https://${proxy}`,
-				host: 'localhost',
-				port: 3000,
-				https: {
-					key: './assets/source/ssl/localhost.key',
-					cert: './assets/source/ssl/localhost.cert',
+			new BrowserSyncPlugin(
+				{
+					proxy: `https://${proxy}`,
+					host: 'localhost',
+					port: 3000,
+					https: {
+						key: './assets/source/ssl/localhost.key',
+						cert: './assets/source/ssl/localhost.cert',
+					},
+					files: ['./assets/dist/js/*.js', './assets/dist/css/*.css', '**/*.php'],
 				},
-				files: ['**/*.php'],
-			}),
+				{ injectCss: true, injectChanges: true, reload: false }
+			),
 			new CopyWebpackPlugin([
 				// @see https://www.npmjs.com/package/copy-webpack-plugin
 				{
