@@ -76,7 +76,6 @@ add_action( 'wp_head', 'custom_theme_critical', 30 );
 
 /**
  * Noscript
- *
  * Include noscript in the footer.
  */
 function custom_theme_noscript() {

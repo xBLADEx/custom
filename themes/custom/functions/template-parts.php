@@ -10,7 +10,7 @@
  * Hero Content
  *
  * @author Rich Edmunds
- * @param string $title Main heading title.
+ * @param  string $title Main heading title.
  */
 function custom_display_hero_content( $title = '' ) {
 	// Bail early if not a string.

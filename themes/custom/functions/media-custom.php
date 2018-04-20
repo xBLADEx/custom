@@ -7,18 +7,18 @@
 
 /**
  * Add Image Sizes
- *
- * @author Rich Edmunds
- * @example A 1920 x 400 image is in the design. To make the aspect ratio correctly, upload a 1920 x 405.
+ * A 1920 x 400 image is in the design. To make the aspect ratio correctly, upload a 1920 x 405.
  * To properly include aspect ratios for the image to appear in the 'srcset' attribute, 3 image sizes should be generated.
- * @see https://andrew.hedges.name/experiments/aspect_ratio/
  * - Small: 960 width typically.
  * - Medium: 1280 width typically.
  * - Large: 1920+ or the size in design.
  *
  * A soft crop should not be used as it will load the full size uncompressed image.
+ *
+ * @author  Rich Edmunds
+ * @see     https://andrew.hedges.name/experiments/aspect_ratio/
+ * @see     https://developer.wordpress.org/reference/functions/add_image_size/#user-contributed-notes
  * @example add_image_size( 'soft', 1920, 400 );
- * @see https://developer.wordpress.org/reference/functions/add_image_size/#user-contributed-notes
  */
 function custom_image_sizes() {
 	// Page Hero
@@ -31,13 +31,12 @@ add_action( 'after_setup_theme', 'custom_image_sizes' );
 
 /**
  * Add Image ACF
- *
  * Return image with proper size and lazyload attributes.
  *
  * @author Rich Edmunds
- * @param array  $image      ACF image field.
- * @param string $image_size Image size, default medium_large.
- * @param array  $classes    List of class names, default empty array.
+ * @param  array  $image      ACF image field.
+ * @param  string $image_size Image size, default medium_large.
+ * @param  array  $classes    List of class names, default empty array.
  */
 function custom_display_image_acf( $image, $image_size = 'medium_large', $classes = [] ) {
 	// Bail early if empty or not an array.
@@ -66,9 +65,9 @@ function custom_display_image_acf( $image, $image_size = 'medium_large', $classe
  * Return attributes lazyload background image.
  *
  * @author Rich Edmunds
- * @param array  $image      ACF image field.
- * @param string $image_size Image size, default medium_large.
- * @param array  $classes    List of class names, default empty array.
+ * @param  array  $image      ACF image field.
+ * @param  string $image_size Image size, default medium_large.
+ * @param  array  $classes    List of class names, default empty array.
  */
 function custom_the_image_background_acf( $image, $image_size = 'medium_large', $classes = [] ) {
 	// Bail early if empty or not an array.

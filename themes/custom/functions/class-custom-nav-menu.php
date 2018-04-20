@@ -1,6 +1,12 @@
 <?php
 /**
  * Class Custom Nav Menu
+ *
+ * @package Custom
+ */
+
+/**
+ * Class Custom Nav Menu
  */
 class Custom_Nav_Menu extends Walker_Nav_Menu {
 	public $nav_bar = '';

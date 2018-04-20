@@ -54,18 +54,13 @@ add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
 
 /**
  * Theme Support
+ *
+ * @see http://codex.wordpress.org/Post_Formats
  */
 function custom_support() {
-	// Featured Images.
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
-
-	/**
-	 * Post Formats
-	 *
-	 * @see http://codex.wordpress.org/Post_Formats.
-	 */
-	// add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery', 'status' ) );
+	// add_theme_support( 'post-formats', [ 'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery', 'status' ] );
 }
 
 add_action( 'after_setup_theme', 'custom_support' );
@@ -141,7 +136,6 @@ add_filter( 'body_class', 'custom_body_classes' );
 
 /**
  * SMTP
- *
  * Overrides PHP mailer to send through SMTP.
  * Currently using MailGun.
  *
@@ -168,9 +162,9 @@ function custom_phpmailer_smtp( PHPMailer $phpmailer ) {
  * Allowed HTML Tags
  * The html tags allowed from a wysiwyg editor.
  *
+ * @author  Rich Edmunds
  * @example wp_kses( $content, custom_allowed_tags() )
- * @author Rich Edmunds
- * @return array Array of allowed tags.
+ * @return  array Array of allowed tags.
  */
 function custom_allowed_tags() {
 	return [
