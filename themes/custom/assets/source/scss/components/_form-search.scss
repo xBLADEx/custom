@@ -13,14 +13,14 @@
 	}
 
 	&__button {
-		background: $color-black;
+		background-color: $color-black;
 		border: 0;
 		color: $color-white;
 		cursor: pointer;
 		padding: 0 20px;
 
 		&:hover {
-			background: $color-white;
+			background-color: $color-white;
 			color: $color-black;
 		}
 	}
