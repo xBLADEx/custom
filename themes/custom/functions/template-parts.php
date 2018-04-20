@@ -3,7 +3,7 @@
  * Template Parts
  * Theme functions for templates.
  *
- * @package Base
+ * @package Custom
  */
 
 /**

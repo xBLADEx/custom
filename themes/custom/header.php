@@ -16,7 +16,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<a href="#main" class="skip-navigation"><?php esc_html_e( 'Skip navigation to main content.', 'base' ); ?></a>
+	<a href="#main" class="skip-navigation"><?php esc_html_e( 'Skip navigation to main content.', 'custom' ); ?></a>
 
 	<header class="g-header">
 		<div class="g-l-row g-header__container">
