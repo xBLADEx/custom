@@ -122,9 +122,9 @@ module.exports = (env, argv) => {
 						key: './assets/source/ssl/localhost.key',
 						cert: './assets/source/ssl/localhost.cert',
 					},
-					files: ['./assets/dist/js/*.js', './assets/dist/css/*.css', '**/*.php'],
+					files: ['./assets/source/js/*.js', './assets/dist/css/*.css', '**/*.php'],
 				},
-				{ injectCss: true, injectChanges: true, reload: false }
+				{ injectCss: true, reload: false }
 			),
 			new CopyWebpackPlugin([
 				// @see https://www.npmjs.com/package/copy-webpack-plugin
