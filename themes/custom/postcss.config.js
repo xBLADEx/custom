@@ -9,7 +9,9 @@
 module.exports = {
 	plugins: {
 		autoprefixer: {},
-		cssnano: {},
+		cssnano: {
+			zindex: false,
+		},
 		'css-mqpacker': {
 			sort: true,
 		},
