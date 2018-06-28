@@ -6,6 +6,11 @@
 	"license": "MIT",
 	"author": "Rich Edmunds",
 	"repository": "git@github.com:xBLADEx/custom.git",
+	"browserslist": [
+		"> 0.25%",
+		"not ie <= 11",
+		"not op_mini all"
+	],
 	"dependencies": {
 		"autoprefixer": "^8.6.3",
 		"babel-core": "^6.26.3",

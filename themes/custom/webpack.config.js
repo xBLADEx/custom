@@ -33,7 +33,7 @@ module.exports = (env, argv) => {
 							loader: 'babel-loader', // @see https://webpack.js.org/loaders/babel-loader/, https://github.com/babel/babel-loader
 							options: {
 								// @see https://babeljs.io/docs/usage/api/#options.
-								presets: ['env'], // @see https://babeljs.io/docs/plugins/.
+								presets: ['babel-preset-env'], // @see https://babeljs.io/docs/plugins/.
 							},
 						},
 					],
