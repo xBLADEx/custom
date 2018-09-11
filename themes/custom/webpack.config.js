@@ -132,10 +132,6 @@ module.exports = (env, argv) => {
 					from: 'assets/source/images',
 					to: 'images',
 				},
-				{
-					from: 'assets/source/fonts',
-					to: 'fonts',
-				},
 			]),
 		],
 	};
