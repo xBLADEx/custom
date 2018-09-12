@@ -1,26 +1,25 @@
 # Custom WordPress Theme
 
--   Name: Custom
--   Author: Rich Edmunds
--   Version: 4.12.1
+- Name: Custom
+- Author: Rich Edmunds
+- Version: `4.18.0`
+- NPM: `6.4.1`
+- Node: `10.10.0`
 
 ## Download
-
 Download this repository at:
 
 `git clone git@github.com:xBLADEx/custom.git`
 
-## Build Tools
-
+## Development
 To develop with this theme you will need to install the following:
 
--   [node](https://nodejs.org/)
+- [node](https://nodejs.org/)
+- `npm i -g npm` - Install the latest version globally.
 
-## Development
+In the theme folder the following commands are available:
 
-In the theme folder run the following commands:
-
--   `npm install`
--   `npm run watch`
-
-This will download the npm packages, then start the local [Browsersync](https://www.browsersync.io/docs) server in your browser.
+- `npm install` - Install the packages.
+- `npm run build` - Compile CSS and JS with sourcemaps.
+- `npm run prod` - Compile CSS and JS without sourcemaps.
+- `npm run watch` - Continuous compiling. Runs [Browsersync](https://www.browsersync.io/docs) in the browser.
