@@ -197,6 +197,7 @@ table {
 			font-weight: $font-weight-bold;
 			padding: 10px;
 			text-align: left;
+			word-break: break-word;
 		}
 	}
 
@@ -204,17 +205,21 @@ table {
 		background-color: $color-primary;
 		color: $color-white;
 
-		td {
+		th {
 			font-weight: $font-weight-bold;
 			padding: 10px;
 			text-align: left;
+			word-break: break-word;
 		}
 	}
 
 	tbody {
 		tr {
 			background-color: transparent;
-			border-bottom: 1px solid $color-gray;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid $color-primary;
+			}
 
 			&:nth-child(even) {
 				background-color: $color-gray;
@@ -229,6 +234,7 @@ table {
 			font-weight: $font-weight-bold;
 			padding: 10px;
 			text-align: left;
+			word-break: break-word;
 		}
 	}
 
@@ -243,6 +249,50 @@ table {
 // Form
 //-----------------------------------------
 form {
+}
+
+//-----------------------------------------
+// Label
+//-----------------------------------------
+label {
+	display: block;
+	font-weight: $font-weight-bold;
+}
+
+//-----------------------------------------
+// Input
+//-----------------------------------------
+input {
+	border: 1px solid $color-theme-black;
+	border-radius: $global-radius;
+	font-size: $font-size-content;
+	padding: 10px;
+
+	&[type='date'],
+	&[type='month'] {
+		padding: 7px;
+	}
+}
+
+//-----------------------------------------
+// Textarea
+//-----------------------------------------
+textarea {
+	border: 1px solid $color-theme-black;
+	border-radius: $global-radius;
+	font-size: $font-size-content;
+	padding: 10px;
+}
+
+//-----------------------------------------
+// Select Dropdown
+//-----------------------------------------
+select {
+	-webkit-appearance: none;
+	border: 1px solid $color-theme-black;
+	border-radius: $global-radius;
+	font-size: $font-size-content;
+	padding: 10px;
 }
 
 //-----------------------------------------
@@ -361,26 +411,5 @@ svg:not(:root) {
 // Button
 //-----------------------------------------
 button {
-	font: inherit;
-}
-
-//-----------------------------------------
-// Input
-//-----------------------------------------
-input {
-	font: inherit;
-}
-
-//-----------------------------------------
-// Textarea
-//-----------------------------------------
-textarea {
-	font: inherit;
-}
-
-//-----------------------------------------
-// Select Dropdown
-//-----------------------------------------
-select {
 	font: inherit;
 }

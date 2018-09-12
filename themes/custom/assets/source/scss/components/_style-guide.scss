@@ -1,0 +1,11 @@
+//--------------------------------------------------------------
+// STYLE GUIDE
+//--------------------------------------------------------------
+
+.style-guide {
+	&__heading {
+		border-bottom: 5px solid $color-primary;
+		color: $color-primary;
+		text-transform: uppercase;
+	}
+}
