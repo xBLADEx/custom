@@ -25,22 +25,23 @@ $mq-laptop-large: 1440px;
 //-----------------------------------------
 // Fonts
 //-----------------------------------------
-// Family
 $font-lato: 'Lato', sans-serif;
-$font-halant: 'Halant', serif;
-$font-family-body: $font-halant;
+$font-montserrat: 'Montserrat', sans-serif;
+
+// Family
+$font-family-body: $font-montserrat;
 $font-family-heading: $font-lato;
 
 // Size
-$font-size-content: 18px;
+$font-size-content: 21px;
 
 // Weight
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
+$font-weight-light: 300; // Lato, Montserrat
+$font-weight-normal: 400; // Lato, Montserrat
+$font-weight-medium: 500; // Montserrat
 $font-weight-semi-bold: 600;
-$font-weight-bold: 700;
-$font-weight-extra-bold: 800;
+$font-weight-bold: 700; // Lato, Montserrat
+$font-weight-black: 900; // Lato
 
 //-----------------------------------------
 // Colors
@@ -54,17 +55,16 @@ $color-gray: #808080;
 $color-hippie-blue: #5C8FB2;
 $color-chestnut-rose: #C95555;
 $color-lynch: #648591;
-
-// Theme Neutrals
 $color-alabaster: #FAFAFA;
 $color-dune: #2B2925;
-$color-theme-white: $color-alabaster;
-$color-theme-black: $color-dune;
 
 // Roles
 $color-primary: $color-hippie-blue;
 $color-secondary: $color-chestnut-rose;
 $color-tertiary: $color-lynch;
+$color-theme-black: $color-dune;
+$color-theme-white: $color-alabaster;
+$color-theme-gray: $color-gray;
 
 // Alerts
 $color-error: #EA595E;

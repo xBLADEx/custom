@@ -17,7 +17,7 @@
 function custom_enqueue() {
 	// If the cookie is set, load our CSS normally.
 	if ( isset( $_COOKIE['custom-css'] ) && 'true' === $_COOKIE['custom-css'] ) {
-		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CHalant:400,600', [], '1.0' );
+		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CMontserrat:300,400,500,700', [], '1.0' );
 		wp_enqueue_style( 'custom', esc_url( THEME_CSS ) . '/custom.css', [], '1.0' );
 	}
 
@@ -60,7 +60,7 @@ function custom_theme_critical() {
 		<style>
 			<?php locate_template( 'assets/scss/critical.css', true ); ?>
 		</style>
-		<link rel="preload" id="google-fonts-css" href="//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CHalant:400,600" as="style" onload="this.rel='stylesheet'">
+		<link rel="preload" id="google-fonts-css" href="//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CMontserrat:300,400,500,700" as="style" onload="this.rel='stylesheet'">
 		<link rel="preload" id="custom-css" href="<?php echo esc_url( THEME_CSS ); ?>/custom.css" as="style" onload="this.rel='stylesheet'">
 		<script>
 			<?php locate_template( 'assets/js/critical.js', true ); ?>
@@ -82,7 +82,7 @@ function custom_theme_noscript() {
 	// If cookie isn't set, load a noscript fallback.
 	if ( ! isset( $_COOKIE['custom-css'] ) || 'true' !== $_COOKIE['custom-css'] ) :
 		?>
-		<noscript><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CHalant:400,600"></noscript>
+		<noscript><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CMontserrat:300,400,500,700"></noscript>
 		<noscript><link rel="stylesheet" href="<?php echo esc_url( THEME_CSS ); ?>/custom.css"></noscript>
 		<?php
 	endif;
