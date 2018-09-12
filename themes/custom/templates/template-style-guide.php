@@ -124,27 +124,37 @@ custom_display_hero_content();
 	</ol>
 
 	<h2 class="style-guide__heading">Form</h2>
-	<form action="#" method="post">
-		<div>
+	<form action="#" method="post" class="form">
+		<div class="form__section">
 			<label for="label-text">Label - Text</label>
 			<input type="text" name="label-text" id="label-text" value="">
 		</div>
 
-		<div>
-			<label for="label-radio">Label - Radio</label>
-			<input type="radio" name="label-radio" id="label-radio" value="label-radio">
-			<label for="label-radio-1">Label - Radio 1</label>
-			<input type="radio" name="label-radio-1" id="label-radio-1" value="label-radio-1">
+		<div class="form__section form__radio">
+			<div class="form__group">
+				<input type="radio" name="label-radio" id="label-radio" value="label-radio">
+				<label for="label-radio">Label - Radio</label>
+			</div>
+
+			<div class="form__group">
+				<input type="radio" name="label-radio" id="label-radio-1" value="label-radio-1">
+				<label for="label-radio-1">Label - Radio 1</label>
+			</div>
 		</div>
 
-		<div>
-			<label for="label-checkbox">Label - Checkbox</label>
-			<input type="checkbox" name="label-checkbox" id="label-checkbox">
-			<label for="label-checkbox-1">Label - Checkbox 1</label>
-			<input type="checkbox" name="label-checkbox-1" id="label-checkbox-1">
+		<div class="form__section form__checkbox">
+			<div class="form__group">
+				<input type="checkbox" name="label-checkbox" id="label-checkbox">
+				<label for="label-checkbox">Label - Checkbox</label>
+			</div>
+
+			<div class="form__group">
+				<input type="checkbox" name="label-checkbox" id="label-checkbox-1">
+				<label for="label-checkbox-1">Label - Checkbox 1</label>
+			</div>
 		</div>
 
-		<div>
+		<div class="form__section">
 			<label for="label-select">Label - Select</label>
 			<select name="label-select" id="label-select">
 				<option value="Select 1">Select 1</option>
@@ -153,12 +163,12 @@ custom_display_hero_content();
 			</select>
 		</div>
 
-		<div>
+		<div class="form__section">
 			<label for="label-textarea">Label - Textarea</label>
 			<textarea name="label-textarea" id="label-textarea"></textarea>
 		</div>
 
-		<input type="submit" value="Submit">
+		<input type="submit" class="button" value="Submit">
 	</form>
 
 	<h2 class="style-guide__heading">Images</h2>
