@@ -208,14 +208,14 @@
 		position: relative;
 
 		&:not(.button) {
-			color: $color-black;
+			color: $color-primary;
 			text-decoration: underline;
 		}
 
 		&:hover,
 		&:focus {
 			&:not(.button) {
-				color: $color-black;
+				color: $color-secondary;
 			}
 		}
 	}
