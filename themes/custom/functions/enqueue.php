@@ -47,7 +47,6 @@ add_filter( 'script_loader_tag', 'custom_add_attribute_defer', 10, 2 );
 
 /**
  * Critical CSS
- * @todo Set this up after package.json packages are setup.
  * Include critical CSS and set cookie.
  *
  * @see https://codex.wordpress.org/Function_Reference/locate_template.
@@ -55,15 +54,14 @@ add_filter( 'script_loader_tag', 'custom_add_attribute_defer', 10, 2 );
  */
 function custom_theme_critical() {
 	// If we don't have a cookie set, load our inline styles and set cookie.
-	if ( ! isset( $_COOKIE['custom-css'] ) || 'true' !== $_COOKIE['custom-css'] ) :
+	if ( ! isset( $_COOKIE['custom-css'] ) ) :
 		?>
 		<style>
-			<?php locate_template( 'assets/scss/critical.css', true ); ?>
+			<?php locate_template( 'assets/dist/css/custom.css', true ); ?>
 		</style>
 		<link rel="preload" id="google-fonts-css" href="//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CMontserrat:300,400,500,700" as="style" onload="this.rel='stylesheet'">
 		<link rel="preload" id="custom-css" href="<?php echo esc_url( THEME_CSS ); ?>/custom.css" as="style" onload="this.rel='stylesheet'">
 		<script>
-			<?php locate_template( 'assets/js/critical.js', true ); ?>
 			// Set Cookie.
 			let expires = new Date( +new Date + ( 7 * 24 * 60 * 60 * 1000 ) ).toUTCString();
 			document.cookie = 'custom-css=true; expires=' + expires;
@@ -80,7 +78,7 @@ add_action( 'wp_head', 'custom_theme_critical', 30 );
  */
 function custom_theme_noscript() {
 	// If cookie isn't set, load a noscript fallback.
-	if ( ! isset( $_COOKIE['custom-css'] ) || 'true' !== $_COOKIE['custom-css'] ) :
+	if ( ! isset( $_COOKIE['custom-css'] ) ) :
 		?>
 		<noscript><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CMontserrat:300,400,500,700"></noscript>
 		<noscript><link rel="stylesheet" href="<?php echo esc_url( THEME_CSS ); ?>/custom.css"></noscript>
