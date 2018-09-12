@@ -9,20 +9,18 @@ get_header();
 custom_display_hero_content();
 ?>
 
-<div class="g-page-content">
-	<?php
-	if ( have_posts() ) :
-		while ( have_posts() ) :
-			the_post();
-			?>
-			<div id="page-<?php the_ID(); ?>" <?php post_class( 'wysiwyg-content' ); ?>>
-				<?php the_content(); ?>
-			</div>
-			<?php
-		endwhile;
-	endif;
-	?>
-</div>
+<?php
+if ( have_posts() ) :
+	while ( have_posts() ) :
+		the_post();
+		?>
+		<div id="page-<?php the_ID(); ?>" <?php post_class( 'wysiwyg-content' ); ?>>
+			<?php the_content(); ?>
+		</div>
+		<?php
+	endwhile;
+endif;
+?>
 
 <div class="g-l-row style-guide wysiwyg-content">
 	<h2 class="style-guide__heading">Headings</h2>
@@ -68,6 +66,21 @@ custom_display_hero_content();
 	<p>Text - <a href="#" target="_blank" rel="noopener noreferrer" title="Example">Hyperlink</a></p>
 	<p><blockquote>"Text - Blockquote" - Author</blockquote></p>
 
+	<h2 class="style-guide__heading">Lists</h2>
+	<strong>Un-ordered List</strong>
+	<ul>
+		<li>List item 1</li>
+		<li>List item 2</li>
+		<li>List item 3</li>
+	</ul>
+
+	<strong>Ordered List</strong>
+	<ol>
+		<li>List item 1</li>
+		<li>List item 2</li>
+		<li>List item 3</li>
+	</ol>
+
 	<h2 class="style-guide__heading">Table</h2>
 	<table>
 		<caption>Star Wars Table Caption</caption>
@@ -107,21 +120,6 @@ custom_display_hero_content();
 			</tr>
 		</tbody>
 	</table>
-
-	<h2 class="style-guide__heading">Lists</h2>
-	<strong>Un-ordered List</strong>
-	<ul>
-		<li>List item 1</li>
-		<li>List item 2</li>
-		<li>List item 3</li>
-	</ul>
-
-	<strong>Ordered List</strong>
-	<ol>
-		<li>List item 1</li>
-		<li>List item 2</li>
-		<li>List item 3</li>
-	</ol>
 
 	<h2 class="style-guide__heading">Form</h2>
 	<form action="#" method="post" class="form">
