@@ -7,7 +7,7 @@
 	position: relative;
 	z-index: 99;
 
-	@include mq($mq-medium) {
+	@include mq($mq-tablet) {
 		display: block;
 	}
 }

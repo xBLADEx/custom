@@ -12,15 +12,20 @@
 	&__container {
 		align-items: center;
 		display: grid;
-		grid-gap: 50px;
-		grid-template-columns: 150px 1fr 1fr;
+		grid-gap: 20px 50px;
+		grid-template-columns: 1fr;
+
+		@include mq($mq-tablet) {
+			grid-template-columns: 150px 1fr;
+		}
 	}
 
 	&__logo {
 		svg {
 			display: block;
 			height: auto;
-			margin: 8px 0;
+			margin: 0;
+			max-width: 150px;
 			width: 100%;
 		}
 	}
