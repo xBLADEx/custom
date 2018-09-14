@@ -11,17 +11,19 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin'); // Copies individual files or entire directories to the build directory.
 const proxy = 'custom.test';
+const pathSource = './assets/source';
+const pathDist = './assets/dist';
 
 module.exports = (env, argv) => {
 	const isProduction = 'production' === argv.mode; // Create boolean true if in production mode.
 
 	return {
 		entry: {
-			custom: './assets/source/js/index.js',
+			custom: `${pathSource}/js/index.js`,
 		},
 		output: {
 			filename: 'js/[name].js', // [name] is generated from the object entry properties. Example output is custom.js because entry.custom above.
-			path: path.resolve(__dirname, 'assets/dist'),
+			path: path.resolve(__dirname, `${pathDist}`),
 		},
 		module: {
 			// @see https://webpack.js.org/loaders/
@@ -77,7 +79,7 @@ module.exports = (env, argv) => {
 					],
 					include: [
 						// @see https://webpack.js.org/configuration/module/#condition. Only include .svg if in fonts folders.
-						path.resolve(__dirname, 'assets/source/fonts'),
+						path.resolve(__dirname, `${pathSource}/fonts`),
 					],
 				},
 				{
@@ -92,7 +94,7 @@ module.exports = (env, argv) => {
 					],
 					exclude: [
 						// @see https://webpack.js.org/configuration/module/#condition. Exclude .svg files if in fonts folders.
-						path.resolve(__dirname, 'assets/source/fonts'),
+						path.resolve(__dirname, `${pathSource}/fonts`),
 					],
 				},
 			],
@@ -119,17 +121,17 @@ module.exports = (env, argv) => {
 					host: 'localhost',
 					port: 3000,
 					https: {
-						key: './assets/source/ssl/localhost.key',
-						cert: './assets/source/ssl/localhost.cert',
+						key: `${pathSource}/ssl/localhost.key`,
+						cert: `${pathSource}/ssl/localhost.cert`,
 					},
-					files: ['./assets/source/js/*.js', './assets/dist/css/*.css', '**/*.php'],
+					files: [`${pathSource}/js/*.js`, `${pathDist}/css/*.css`, '**/*.php'],
 				},
 				{ injectCss: true, reload: false }
 			),
 			new CopyWebpackPlugin([
 				// @see https://www.npmjs.com/package/copy-webpack-plugin
 				{
-					from: 'assets/source/images',
+					from: `${pathSource}/images`,
 					to: 'images',
 				},
 			]),
