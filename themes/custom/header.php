@@ -33,12 +33,6 @@
 					<?php get_template_part( 'components/navigation' ); ?>
 				</nav>
 			</div>
-
-			<div class="g-header__actions">
-				<?php custom_display_social_icons(); ?>
-
-				<?php get_template_part( 'components/form-search' ); ?>
-			</div>
 		</div>
 	</header>
 

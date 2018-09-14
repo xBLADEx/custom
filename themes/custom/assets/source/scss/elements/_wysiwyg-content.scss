@@ -7,7 +7,7 @@
 //-----------------------------------------
 .wysiwyg-content {
 	// Hide empty WordPress injected <p> tags.
-	*:empty:not(hr):not(br):not(input):not(select):not(textarea) {
+	*:empty:not(hr):not(br):not(input):not(select):not(textarea):not(img):not(iframe) {
 		display: none;
 	}
 
