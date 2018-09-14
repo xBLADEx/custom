@@ -83,3 +83,13 @@ function custom_the_image_background_acf( $image, $image_size = 'medium_large', 
 	// Build / Output attributes
 	echo 'class="' . esc_attr( $classes ) . '" data-bgset="' . esc_attr( $image_sizes ) . '" data-sizes="auto"';
 }
+
+/**
+ * Increase Max Image Width
+ * Used by wp_get_attachment_image_srcset.
+ */
+function custom_max_srcset_image_width() {
+	return 1920;
+}
+
+add_filter( 'max_srcset_image_width', 'custom_max_srcset_image_width', 10 );
