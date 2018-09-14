@@ -30,12 +30,12 @@ module.exports = (env, argv) => {
 			rules: [
 				{
 					test: /\.js$/,
+					exclude: /node_modules/,
 					use: [
 						{
-							loader: 'babel-loader', // @see https://webpack.js.org/loaders/babel-loader/, https://github.com/babel/babel-loader
+							loader: 'babel-loader', // https://webpack.js.org/loaders/babel-loader/, https://github.com/babel/babel-loader
 							options: {
-								// @see https://babeljs.io/docs/usage/api/#options.
-								presets: ['babel-preset-env'], // @see https://babeljs.io/docs/plugins/.
+								presets: ['@babel/preset-env'], // https://babeljs.io/docs/en/babel-preset-env#options
 							},
 						},
 					],

@@ -7,7 +7,7 @@
 	"author": "Rich Edmunds",
 	"repository": "git@github.com:xBLADEx/custom.git",
 	"browserslist": [
-		"> 0.25%",
+		"> 1%",
 		"not ie <= 11",
 		"not op_mini all"
 	],
@@ -17,10 +17,10 @@
 		"slick-carousel": "^1.8.1"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.0.1",
+		"@babel/preset-env": "^7.0.0",
 		"autoprefixer": "^8.6.5",
-		"babel-core": "^6.26.3",
-		"babel-loader": "^7.1.5",
-		"babel-preset-env": "^1.7.0",
+		"babel-loader": "^8.0.2",
 		"browser-sync": "^2.24.7",
 		"browser-sync-webpack-plugin": "^2.2.2",
 		"copy-webpack-plugin": "^4.5.2",
