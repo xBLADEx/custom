@@ -26,8 +26,9 @@
 
 			<div class="g-header__navigation">
 				<nav class="navigation">
-					<button class="navigation__icon">
-						<span><?php esc_html_e( 'Menu', 'custom' ); ?></span>
+					<button class="button--reset navigation__menu-trigger" data-js-menu-trigger>
+						<span class="fas fa-bars"></span>
+						<span class="h-visual-hide"><?php esc_html_e( 'Menu', 'custom' ); ?></span>
 					</button>
 
 					<?php get_template_part( 'components/navigation' ); ?>

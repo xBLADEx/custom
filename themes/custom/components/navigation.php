@@ -20,7 +20,7 @@ wp_nav_menu( [
 	'after'           => '',
 	'link_before'     => '',
 	'link_after'      => '',
-	'items_wrap'      => '<ul class="navigation__menu">%3$s</ul>',
+	'items_wrap'      => '<ul class="navigation__menu" data-js-menu>%3$s</ul>',
 	'depth'           => 2,
 	'walker'          => new Custom_Nav_Menu(),
 ] );

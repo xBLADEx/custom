@@ -3,176 +3,209 @@
 //--------------------------------------------------------------
 
 .navigation {
-	display: none;
 	position: relative;
 	z-index: 99;
-
-	@include mq($mq-tablet) {
-		display: block;
-	}
 }
 
 //-----------------------------------------
 // Menu
 //-----------------------------------------
 .navigation {
+	// <ul>
 	&__menu {
+		display: none;
 		margin: 0;
 		padding: 0;
 
-		li {
-			list-style: none;
-			margin: 0;
-			padding: 0;
+		@include mq($mq-tablet) {
+			display: flex;
 		}
+	}
 
-		// Main nav parent link.
-		& > li {
-			border-top: 1px solid $color-black;
-			position: relative;
-
-			@include mq($mq-medium) {
-				border: 0;
-				float: left;
-			}
-
-			& > a {
-				color: $color-black;
-				display: block;
-				font-size: rem-calc(16);
-				padding: 20px 25px;
-			}
-
-			&:hover {
-				a {
-					background: $color-black;
-					color: $color-white;
-				}
-			}
-		}
-
-		// Parent link for dropdown.
-		& > .has-flyout {
-			& > a {
-				padding-right: 40px;
-				position: relative;
-
-				&::after {
-					border: 4px solid;
-					border-color: $color-black transparent transparent;
-					content: '';
-					display: block;
-					height: 0;
-					position: absolute;
-					right: 10px;
-					top: 30px;
-					width: 0;
-				}
-			}
-
-			&:hover {
-				a {
-					&::after {
-						border-color: $color-white transparent transparent;
-					}
-				}
-
-				.flyout {
-					display: block;
-				}
-			}
-
-			// Sub Nav.
-			.flyout {
-				display: none;
-				left: 0;
-				margin: 0;
-				padding: 0;
-				position: absolute;
-				z-index: 98;
-
-				li {
-					a {
-						background: $color-black;
-						color: $color-white;
-						display: block;
-						font-size: rem-calc(12);
-						padding: 15px 20px;
-						white-space: nowrap;
-
-						&:hover {
-							background: $color-white;
-							color: $color-black;
-						}
-					}
-				}
-			}
-		}
+	// <li>
+	&__item {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		position: relative;
 
 		// Current page link.
-		& > .current-menu-item {
-			background: $color-black;
-
+		&.current-menu-item {
 			a {
-				color: $color-white;
+				color: $color-primary;
 			}
 		}
+	}
 
-		.menu-item {
-			.desc {
-				display: block;
-				font-size: rem-calc(9);
-				padding-left: 5px;
+	// <a>
+	a {
+		color: $color-theme-black;
+		display: block;
+		font-size: rem-calc(16);
+		padding: 20px 25px;
+
+		&:hover,
+		&:focus {
+			background-color: $color-primary;
+			color: $color-theme-white;
+
+			&::after {
+				border-color: $color-theme-white transparent transparent;
 			}
 		}
 	}
 }
 
+
 //-----------------------------------------
-// Icon
+// Menu - Sub Menu - Parent
 //-----------------------------------------
 .navigation {
-	&__icon {
+	$nav: &;
+
+	// <li>
+	&__sub-menu-parent {
+		& > a {
+			&::after {
+				border: 4px solid;
+				border-color: $color-theme-black transparent transparent;
+				content: '';
+				display: block;
+				position: absolute;
+				right: 8px;
+				top: 30px;
+			}
+		}
+
+		&:hover {
+			// Keep parent <li> appearing hovered.
+			& > a {
+				background-color: $color-primary;
+				color: $color-theme-white;
+
+				&::after {
+					border-color: $color-theme-white transparent transparent;
+				}
+			}
+
+			#{$nav}__sub-menu {
+				display: block;
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Menu - Sub Menu
+//-----------------------------------------
+.navigation {
+	&__sub-menu {
+		box-shadow: 0 2px 3px 0 rgba($color-theme-black, 0.3);
+		display: none;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		z-index: 98;
+
+		a {
+			background-color: $color-theme-black;
+			color: $color-theme-white;
+			display: block;
+			font-size: rem-calc(12);
+			padding: 15px 20px;
+			white-space: nowrap;
+
+			&:hover {
+				background-color: $color-theme-white;
+				color: $color-theme-black;
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Menu - Description
+//-----------------------------------------
+.navigation {
+	&__description {
+		display: block;
+		font-size: rem-calc(9);
+		padding-left: 5px;
+	}
+}
+
+
+//-----------------------------------------
+// Menu - Active
+//-----------------------------------------
+.navigation {
+	&__menu.is-active {
+		background-color: $color-primary;
+		display: block;
+		height: 100%;
+		left: 0;
+		min-width: 230px;
+		overflow-y: auto;
+		position: fixed;
+		top: 0;
+
+		li {
+			border-bottom: 1px solid $color-theme-white;
+
+			a {
+				color: $color-theme-white;
+
+				&:hover,
+				&:focus {
+					background-color: darken($color-primary, 20%);
+				}
+
+				&::after {
+					border-color: $color-theme-white transparent transparent;
+				}
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Menu - Active - Sub Menu
+//-----------------------------------------
+.navigation {
+	$nav: &;
+
+	&__menu.is-active {
+		#{$nav}__sub-menu {
+			position: relative;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Menu Trigger
+//-----------------------------------------
+.navigation {
+	&__menu-trigger {
+		background-color: $color-secondary;
+		color: $color-theme-white;
 		cursor: pointer;
 		display: block;
-		height: 50px;
-		left: 20px;
-		position: absolute;
-		top: 20px;
-		width: 40px;
-		z-index: 999;
+		font-size: rem-calc(30);
+		line-height: 1;
+		padding: 10px;
 
-		@include mq($mq-medium) {
+		@include mq($mq-tablet) {
 			display: none;
 		}
 
-		span {
-			background-color: $color-black;
-			display: block;
-			font-size: 0;
-			height: 8%;
-			left: 0;
-			position: absolute;
-			top: 50%;
-			width: 100%;
-
-			&::before,
-			&::after {
-				background: $color-black;
-				content: '';
-				height: 100%;
-				left: 0;
-				position: absolute;
-				width: 100%;
-			}
-
-			&::before {
-				transform: translateY(-250%);
-			}
-
-			&::after {
-				transform: translateY(250%);
-			}
+		&:hover,
+		&:focus {
+			background-color: $color-primary;
 		}
 	}
 }

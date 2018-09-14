@@ -12,10 +12,10 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 	public $nav_bar = '';
 
 	function __construct( $nav_args = '' ) {
-		$defaults = array(
-			'item_type'     => 'li',
-			'in_top_bar'    => false,
-		);
+		$defaults = [
+			'item_type'  => 'li',
+			'in_top_bar' => false,
+		];
 
 		$this->nav_bar = apply_filters( 'req_nav_args', wp_parse_args( $nav_args, $defaults ) );
 	}
@@ -31,21 +31,18 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 	}
 
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-		$slug   = sanitize_title( $item->title );
-
+		$indent    = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+		$slug      = sanitize_title( $item->title );
 		$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
 		$classes   = preg_replace( '/(current([-_]page[-_])(item|parent|ancestor))/', '', $classes );
 		$classes   = preg_replace( '/^((menu|page)[-_\w+]+)+/', '', $classes );
-		$classes[] = 'menu-item menu-item-' . $slug;
+		$classes[] = 'navigation__item navigation__item--' . $slug;
 		$classes   = array_unique( $classes );
 
 		if ( $args->has_children && 'li' === $this->nav_bar['item_type'] ) {
 			if ( 0 === $depth && false === $this->nav_bar['in_top_bar'] ) {
-				$classes[] = 'has-flyout';
-			} elseif ( true === $this->nav_bar['in_top_bar'] ) {
-				$classes[] = 'has-dropdown';
+				$classes[] = 'navigation__sub-menu-parent';
 			}
 		}
 
@@ -53,9 +50,9 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 		if ( $depth > 0 ) {
-			$output .= $indent . '<li id="menu-item-' . $item->ID . '"' . $class_names . '>';
+			$output .= $indent . '<li ' . $class_names . '>';
 		} else {
-			$output .= $indent . ( true === $this->nav_bar['in_top_bar'] ? '<li class="divider"></li>' : '' ) . '<' . $this->nav_bar['item_type'] . ' id="menu-item-' . $item->ID . '"' . $class_names . '>';
+			$output .= $indent . '<' . $this->nav_bar['item_type'] . ' ' . $class_names . '>';
 		}
 
 		$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
@@ -66,7 +63,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		$item_output = $args->before;
 		$item_output .= '<a ' . $attributes . '>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output .= $item->description ? '<span class="desc">' . $item->description . '</span>' : '';
+		$item_output .= $item->description ? '<span class="navigation__description">' . $item->description . '</span>' : '';
 		$item_output .= '</a>';
 		$item_output .= $args->after;
 
@@ -83,16 +80,13 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		if ( 0 === $depth && 'li' === $this->nav_bar['item_type'] ) {
-			$indent = str_repeat( "\t", 1 );
-			$output .= true === $this->nav_bar['in_top_bar'] ? "\n$indent<ul class=\"dropdown\">\n" : "\n$indent<ul class=\"flyout\">\n";
+			$output .= '<ul class="navigation__sub-menu">';
 		} else {
-			$indent = str_repeat( "\t", $depth );
-			$output .= true === $this->nav_bar['in_top_bar'] ? "\n$indent<ul class=\"dropdown\">\n" : "\n$indent<ul class=\"level-$depth\">\n";
+			$output .= '<ul class="level-' . $depth . '">';
 		}
 	}
 
 	function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat( "\t", $depth );
-		$output .= "$indent</ul>\n";
+		$output .= '</ul>';
 	}
 }
