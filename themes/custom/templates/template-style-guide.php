@@ -125,7 +125,7 @@ endif;
 	<form action="#" method="post" class="form">
 		<div class="form__section">
 			<label for="label-text">Label - Text</label>
-			<input type="text" name="label-text" id="label-text" value="">
+			<input type="text" name="label-text" id="label-text" placeholder="Placeholder" value="">
 		</div>
 
 		<div class="form__section form__radio">
