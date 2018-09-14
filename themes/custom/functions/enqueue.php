@@ -28,7 +28,7 @@ function custom_enqueue() {
 	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.3.1/js/all.js', [], null, true );
 }
 
-add_action( 'wp_enqueue_scripts', 'custom_enqueue' );
+add_action( 'wp_enqueue_scripts', 'custom_enqueue', 99 );
 
 /**
  * Add Attributes To Scripts
