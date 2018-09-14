@@ -187,7 +187,7 @@ endif;
 		<p><img src="https://unsplash.it/1920/1080/?random" alt="" width="1920" height="1080"></p>
 
 		<h2 class="style-guide__heading">Video</h2>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/0evjtlI5QDY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		<iframe width="100%" height="500" src="https://www.youtube.com/embed/0evjtlI5QDY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 	</div>
 
 	<div>
