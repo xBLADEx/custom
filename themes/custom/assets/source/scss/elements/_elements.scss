@@ -267,6 +267,7 @@ input {
 	border-radius: $global-radius;
 	font-size: $font-size-content;
 	padding: 10px;
+	width: 100%;
 
 	&[type='date'],
 	&[type='month'] {
@@ -282,6 +283,7 @@ textarea {
 	border-radius: $global-radius;
 	font-size: $font-size-content;
 	padding: 10px;
+	width: 100%;
 }
 
 //-----------------------------------------
@@ -293,6 +295,7 @@ select {
 	border-radius: $global-radius;
 	font-size: $font-size-content;
 	padding: 10px;
+	width: 100%;
 }
 
 //-----------------------------------------

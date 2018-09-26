@@ -91,25 +91,31 @@ if ( isset( $_POST['submit'] ) ) :
 	endif;
 else :
 	?>
-	<form method="POST" class="form-contact">
-		<label>
-			<?php esc_html_e( 'Full Name', 'custom' ); ?>
-			<input type="text" name="full_name" placeholder="<?php esc_attr_e( 'John Doe', 'custom' ); ?>" required>
-		</label>
-		<label>
-			<?php esc_html_e( 'Email', 'custom' ); ?>
-			<input type="email" name="email" placeholder="<?php esc_attr_e( 'john@example.com', 'custom' ); ?>" required>
-		</label>
-		<label>
-			<?php esc_html_e( 'Phone', 'custom' ); ?>
-			<input type="tel" maxlength="12" name="phone" pattern="\d{3}[\-]?\d{3}[\-]?\d{4}" placeholder="<?php esc_attr_e( '555-555-5555', 'custom' ); ?>" required>
-		</label>
-		<label>
-			<?php esc_html_e( 'Questions or Comments', 'custom' ); ?>
-			<textarea class="form-comment" name="comment" placeholder="<?php esc_attr_e( 'What\'s on your mind?', 'custom' ); ?>"></textarea>
-		</label>
-		<input type="text" name="main_address" value="" class="hide">
-		<input type="submit" name="submit" value="Submit" class="button">
+	<form method="POST" class="form form--contact">
+		<div class="form__section form__group">
+			<label for="form-full-name"><?php esc_html_e( 'Full Name *', 'custom' ); ?></label>
+			<input type="text" name="full_name" id="form-full-name" class="form__input" placeholder="<?php esc_attr_e( 'Full Name', 'custom' ); ?>" required>
+		</div>
+
+		<div class="form__section form__group">
+			<label for="form-email"><?php esc_html_e( 'Email *', 'custom' ); ?></label>
+			<input type="email" name="email" id="form-email" class="form__input" placeholder="<?php esc_attr_e( 'name@example.com', 'custom' ); ?>" required>
+		</div>
+
+		<div class="form__section form__group">
+			<label for="form-phone"><?php esc_html_e( 'Phone', 'custom' ); ?></label>
+			<input type="tel" name="phone" id="form-phone" class="form__input" maxlength="12" pattern="\d{3}[\-]?\d{3}[\-]?\d{4}" placeholder="<?php esc_attr_e( '555-555-5555', 'custom' ); ?>" required>
+		</div>
+
+		<div class="form__section form__group">
+			<label for="form-comment"><?php esc_html_e( 'Questions or Comments', 'custom' ); ?></label>
+			<textarea class="form-comment" name="comment" id="form-comment" class="form__textarea" placeholder="<?php esc_attr_e( 'What\'s on your mind?', 'custom' ); ?>"></textarea>
+		</div>
+
+		<div class="form__section form__group">
+			<input type="text" name="main_address" value="" class="h-hidden">
+			<input type="submit" name="submit" value="Submit" class="button">
+		</div>
 	</form>
 	<?php
 endif;
