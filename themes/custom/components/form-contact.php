@@ -91,7 +91,7 @@ if ( isset( $_POST['submit'] ) ) :
 	endif;
 else :
 	?>
-	<form method="POST">
+	<form method="POST" class="form-contact">
 		<label>
 			<?php esc_html_e( 'Full Name', 'custom' ); ?>
 			<input type="text" name="full_name" placeholder="<?php esc_attr_e( 'John Doe', 'custom' ); ?>" required>
