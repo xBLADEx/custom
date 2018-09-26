@@ -1,0 +1,29 @@
+# https://circleci.com/docs/2.0/configuration-reference/
+
+version: 2
+jobs:
+  build:
+    docker:
+      # CircleCI maintains a library of pre-built images https://circleci.com/docs/2.0/circleci-images/
+      # Specify the version
+      - image: circleci/node:10.10.0
+
+    working_directory: ~/themes/custom
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # Fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: npm install
+      - run: npm run prod
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
