@@ -33,12 +33,12 @@ endif;
 		<h6>Heading - h6</h6>
 
 		<h2 class="style-guide__heading">Buttons</h2>
-		<p><a class="button" href="#">Button - a.button</a></p>
-		<p><button class="button">Button - button.button</button></p>
-		<p><button class="button button--secondary">Button - button.button.button--secondary</button></p>
-		<p><button class="button button--hollow">Button - button.button.button--hollow</button></p>
-		<p><button class="button button--full-width">Button - button.button.button--full-width</button></p>
-		<p><button>Button - button</button></p>
+		<p><a class="button" href="#">Button - &lt;a&gt; .button</a></p>
+		<p><button class="button">Button - &lt;button&gt; .button</button></p>
+		<p><button class="button button--secondary">Button - &lt;button&gt; .button .button--secondary</button></p>
+		<p><button class="button button--hollow">Button - &lt;button&gt; .button .button--hollow</button></p>
+		<p><button class="button button--full-width">Button - &lt;button&gt; .button .button--full-width</button></p>
+		<p><button>Button - &lt;button&gt;</button></p>
 
 		<h2 class="style-guide__heading">Text</h2>
 		<h1>Heading - h1</h1>
@@ -59,10 +59,10 @@ endif;
 		<h6>Heading - h6</h6>
 		<p>Quem Tiberina descensio festo illo die tanto gaudio affecit, quanto L. Hoc enim constituto in philosophia constituta sunt omnia. Ita enim vivunt quidam, ut eorum vita refellatur oratio. Dic in quovis conventu te omnia facere, ne doleas. Ita multo sanguine profuso in laetitia et in victoria est mortuus.</p>
 
-		<p><strong>Text - Bold - strong</strong></p>
-		<p><b>Text - Bold - b</b></p>
-		<p><em>Text - Italicized</em></p>
-		<p><del>Text - Strike</del></p>
+		<p><strong>Text - Bold - &lt;strong&gt;</strong></p>
+		<p><b>Text - Bold - &lt;b&gt;</b></p>
+		<p><em>Text - Italicized - &lt;em&gt;</em></p>
+		<p><del>Text - Strike - &lt;del&gt;</del></p>
 		<p><span style="text-decoration: underline;">Text - Underlined</span></p>
 		<p>Text - <a href="#" target="_blank" rel="noopener noreferrer" title="Example">Hyperlink</a></p>
 		<p><blockquote>"Text - Blockquote" - Author</blockquote></p>
