@@ -13,5 +13,5 @@
 		<input type="search" name="s" class="form-search__input" placeholder="<?php esc_attr_e( 'Search', 'custom' ); ?>" value="<?php echo get_search_query(); ?>">
 	</label>
 
-	<input type="submit" class="form-search__submit" value="<?php esc_attr_e( 'Go', 'custom' ); ?>">
+	<input type="submit" class="button form-search__submit" value="<?php esc_attr_e( 'Go', 'custom' ); ?>">
 </form>

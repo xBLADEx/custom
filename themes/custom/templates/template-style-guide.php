@@ -131,7 +131,7 @@ endif;
 
 			<div class="form__section form__radio">
 				<div class="form__group">
-					<input type="radio" name="label-radio" id="label-radio" value="label-radio">
+					<input type="radio" name="label-radio" id="label-radio" value="label-radio" checked>
 					<label for="label-radio">Label - Radio</label>
 				</div>
 
@@ -143,7 +143,7 @@ endif;
 
 			<div class="form__section form__checkbox">
 				<div class="form__group">
-					<input type="checkbox" name="label-checkbox" id="label-checkbox">
+					<input type="checkbox" name="label-checkbox" id="label-checkbox" checked>
 					<label for="label-checkbox">Label - Checkbox</label>
 				</div>
 
@@ -164,7 +164,7 @@ endif;
 
 			<div class="form__section">
 				<label for="label-textarea">Label - Textarea</label>
-				<textarea name="label-textarea" id="label-textarea"></textarea>
+				<textarea name="label-textarea" id="label-textarea" placeholder="Textarea"></textarea>
 			</div>
 
 			<input type="submit" class="button" value="Submit">

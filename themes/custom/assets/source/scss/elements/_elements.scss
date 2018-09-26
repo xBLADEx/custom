@@ -273,6 +273,11 @@ input {
 	&[type='month'] {
 		padding: 7px;
 	}
+
+	&[type='radio'],
+	&[type='checkbox'] {
+		width: auto;
+	}
 }
 
 //-----------------------------------------
@@ -281,6 +286,7 @@ input {
 textarea {
 	border: 1px solid $color-theme-black;
 	border-radius: $global-radius;
+	font-family: inherit;
 	font-size: $font-size-content;
 	padding: 10px;
 	width: 100%;
