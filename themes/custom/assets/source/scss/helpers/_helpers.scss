@@ -10,6 +10,18 @@
 	@include reverse-visual-hide;
 }
 
+.h-hidden {
+	display: none;
+}
+
+.h-clearfix {
+	@include clearfix;
+}
+
+
+//-----------------------------------------
+// Cover
+//-----------------------------------------
 .h-cover-absolute {
 	bottom: 0;
 	height: 100%;
@@ -35,10 +47,26 @@
 	width: auto;
 }
 
-.h-clearfix {
-	@include clearfix;
-}
 
+//-----------------------------------------
+// Text
+//-----------------------------------------
 .h-text-center {
 	text-align: center;
+}
+
+
+//-----------------------------------------
+// Colors
+//-----------------------------------------
+.h-color-primary {
+	color: $color-primary;
+}
+
+.h-color-secondary {
+	color: $color-secondary;
+}
+
+.h-color-tertiary {
+	color: $color-tertiary;
 }
