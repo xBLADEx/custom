@@ -1,0 +1,22 @@
+//--------------------------------------------------------------
+// COMPONENT NOTIFICATION BOX
+//--------------------------------------------------------------
+
+.c-notification-box {
+	background-color: $color-theme-gray;
+	border-radius: $global-radius;
+	color: $color-white;
+	padding: 5px 10px;
+
+	&--success {
+		background-color: $color-success;
+	}
+
+	&--warning {
+		background-color: $color-warning;
+	}
+
+	&--error {
+		background-color: $color-error;
+	}
+}
