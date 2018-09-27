@@ -5,7 +5,6 @@
 .skip-navigation {
 	@include visual-hide;
 
-	&:active,
 	&:focus,
 	&:hover {
 		@include reverse-visual-hide;
