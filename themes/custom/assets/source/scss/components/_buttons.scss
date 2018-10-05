@@ -60,4 +60,11 @@
 		background-color: transparent;
 		border: 0;
 	}
+
+	&[disabled] {
+		background-color: transparent;
+		border: 1px solid $color-theme-gray;
+		color: $color-theme-gray;
+		cursor: default;
+	}
 }

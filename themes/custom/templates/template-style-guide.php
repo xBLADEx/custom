@@ -39,6 +39,7 @@ endif;
 		<p><button class="button button--hollow">Button - &lt;button&gt; .button .button--hollow</button></p>
 		<p><button class="button button--full-width">Button - &lt;button&gt; .button .button--full-width</button></p>
 		<p><button>Button - &lt;button&gt;</button></p>
+		<p><button disabled>Button - &lt;button disabled&gt;</button></p>
 
 		<h2 class="style-guide__heading">Text</h2>
 		<h1>Heading - h1</h1>

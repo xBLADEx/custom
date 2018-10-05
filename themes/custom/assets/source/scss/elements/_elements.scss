@@ -427,5 +427,10 @@ svg:not(:root) {
 // Button
 //-----------------------------------------
 button {
+	cursor: pointer;
 	font: inherit;
+
+	&[disabled] {
+		cursor: default;
+	}
 }
