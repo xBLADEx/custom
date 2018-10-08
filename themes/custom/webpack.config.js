@@ -35,7 +35,14 @@ module.exports = (env, argv) => {
 						{
 							loader: 'babel-loader', // https://webpack.js.org/loaders/babel-loader/, https://github.com/babel/babel-loader
 							options: {
-								presets: ['@babel/preset-env'], // https://babeljs.io/docs/en/babel-preset-env#options
+								presets: [
+									[
+										'@babel/preset-env',
+										{
+											useBuiltIns: 'usage',
+										},
+									],
+								], // https://babeljs.io/docs/en/babel-preset-env#options
 							},
 						},
 					],
