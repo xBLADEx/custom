@@ -2,7 +2,7 @@
 
 - Name: Custom
 - Author: Rich Edmunds
-- Version: `4.20.2`
+- Version: `1.0.0`
 - NPM: `6.4.1`
 - Node: `10.11.0`
 
