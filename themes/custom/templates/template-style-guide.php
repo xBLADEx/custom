@@ -142,7 +142,8 @@ endif;
 				</div>
 			</div>
 
-			<div class="form__section form__checkbox">
+			<fieldset class="form__section form__checkbox">
+				<legend>Legend - Description of Checkbox Options</legend>
 				<div class="form__group">
 					<input type="checkbox" name="label-checkbox" id="label-checkbox" checked>
 					<label for="label-checkbox">Label - Checkbox</label>
@@ -152,7 +153,7 @@ endif;
 					<input type="checkbox" name="label-checkbox" id="label-checkbox-1">
 					<label for="label-checkbox-1">Label - Checkbox 1</label>
 				</div>
-			</div>
+			</fieldset>
 
 			<div class="form__section">
 				<label for="label-select">Label - Select</label>

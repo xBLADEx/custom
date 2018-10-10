@@ -252,6 +252,24 @@ form {
 }
 
 //-----------------------------------------
+// Fieldset
+//-----------------------------------------
+fieldset {
+	border: 1px solid $color-theme-black;
+	border-radius: $global-radius;
+	font-size: $font-size-content;
+	padding: 10px;
+	width: 100%;
+}
+
+//-----------------------------------------
+// Legend
+//-----------------------------------------
+legend {
+	font-weight: $font-weight-normal;
+}
+
+//-----------------------------------------
 // Label
 //-----------------------------------------
 label {
