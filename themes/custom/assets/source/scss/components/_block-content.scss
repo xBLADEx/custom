@@ -5,7 +5,7 @@
 .block-content {
 	color: $color-primary;
 	display: grid;
-	grid-gap: 35px;
+	gap: 35px;
 	margin: 0 auto 50px;
 	max-width: 1240px; // 1090 + 150
 	padding: 0 25px;
@@ -14,7 +14,7 @@
 		margin-bottom: 100px;
 	}
 	@include mq($mq-laptop) {
-		grid-gap: 65px;
+		gap: 65px;
 		padding: 0 75px;
 	}
 
