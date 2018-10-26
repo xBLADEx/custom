@@ -3,7 +3,7 @@
 - Name: Custom
 - Author: Rich Edmunds
 - NPM: `6.4.1`
-- Node: `11.0.0`
+- Node: `10.11.0`
 
 ## Download
 Download this repository at:
