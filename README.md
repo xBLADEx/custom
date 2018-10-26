@@ -2,9 +2,9 @@
 
 - Name: Custom
 - Author: Rich Edmunds
-- Version: `1.0.0`
+- Version: `1.1.0`
 - NPM: `6.4.1`
-- Node: `10.11.0`
+- Node: `11.0.0`
 
 ## Download
 Download this repository at:
