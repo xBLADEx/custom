@@ -3,10 +3,91 @@
 //--------------------------------------------------------------
 
 .style-guide {
+	$style: &;
+
 	&__heading {
 		border-bottom: 5px solid $color-primary;
 		color: $color-primary;
 		margin-top: 40px;
 		text-transform: uppercase;
+	}
+
+	&__colors-container {
+		display: grid;
+		gap: 20px 30px;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+		@include mq($mq-tablet) {
+			grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		}
+	}
+
+	.wysiwyg-content {
+		// <ul>
+		#{$style}__colors {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0;
+			padding: 0;
+		}
+
+		// <li>
+		#{$style}__color {
+			background-color: $color-black;
+			color: $color-white;
+			display: block;
+			height: 150px;
+			padding: 10px;
+			width: 150px;
+
+			&:not(:last-child) {
+				margin: 0 10px 10px 0;
+			}
+
+			&--primary {
+				background-color: $color-primary;
+			}
+
+			&--secondary {
+				background-color: $color-secondary;
+			}
+
+			&--tertiary {
+				background-color: $color-tertiary;
+			}
+
+			&--theme-white {
+				background-color: $color-theme-white;
+			}
+
+			&--theme-black {
+				background-color: $color-theme-black;
+			}
+
+			&--theme-gray {
+				background-color: $color-theme-gray;
+			}
+
+			&--error {
+				background-color: $color-error;
+			}
+
+			&--warning {
+				background-color: $color-warning;
+			}
+
+			&--success {
+				background-color: $color-success;
+			}
+
+			// For White Background
+			&--border {
+				border: 1px solid $color-black;
+			}
+
+			&--color-black {
+				color: $color-black;
+			}
+		}
 	}
 }

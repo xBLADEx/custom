@@ -24,6 +24,37 @@ endif;
 
 <div class="g-l-row style-guide">
 	<div class="wysiwyg-content">
+		<h2 class="style-guide__heading">Colors</h2>
+
+		<div class="style-guide__colors-container">
+			<div class="style-guide__colors-group">
+				<h3>Primary</h3>
+				<ul class="style-guide__colors">
+					<li class="style-guide__color style-guide__color--primary">Primary</li>
+					<li class="style-guide__color style-guide__color--secondary">Secondary</li>
+					<li class="style-guide__color style-guide__color--tertiary">Tertiary</li>
+				</ul>
+			</div>
+
+			<div class="style-guide__colors-group">
+				<h3>Theme</h3>
+				<ul class="style-guide__colors">
+					<li class="style-guide__color style-guide__color--theme-white style-guide__color--border style-guide__color--color-black">Theme White</li>
+					<li class="style-guide__color style-guide__color--theme-black">Theme Black</li>
+					<li class="style-guide__color style-guide__color--theme-gray">Theme Gray</li>
+				</ul>
+			</div>
+
+			<div class="style-guide__colors-group">
+				<h3>Alert</h3>
+				<ul class="style-guide__colors">
+					<li class="style-guide__color style-guide__color--error">Error</li>
+					<li class="style-guide__color style-guide__color--warning">Warning</li>
+					<li class="style-guide__color style-guide__color--success">Success</li>
+				</ul>
+			</div>
+		</div>
+
 		<h2 class="style-guide__heading">Headings</h2>
 		<h1>Heading - h1</h1>
 		<h2>Heading - h2</h2>
