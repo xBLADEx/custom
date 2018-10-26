@@ -32,8 +32,8 @@
 .editorconfig
 .htaccess
 .scssc
+.vscode
 error_log
-
 
 # //-----------------------------------------
 # // WordPress
