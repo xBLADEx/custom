@@ -1,20 +1,15 @@
 # Custom WordPress Theme
 
-- Name: Custom
 - Author: Rich Edmunds
 - NPM: `6.4.1`
 - Node: `10.11.0`
-
-## Download
-Download this repository at:
-
-`git clone git@github.com:xBLADEx/custom.git`
+- Theme: `git clone git@github.com:xBLADEx/custom.git`
 
 ## Development
 To develop with this theme you will need to install the following:
 
 - [node](https://nodejs.org/)
-- `npm i -g npm` - Install the latest version globally.
+- `npm i -g npm` - Install the latest npm version globally.
 
 In the theme folder the following commands are available:
 
