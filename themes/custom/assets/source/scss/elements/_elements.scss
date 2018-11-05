@@ -314,7 +314,7 @@ textarea {
 // Select Dropdown
 //-----------------------------------------
 select {
-	-webkit-appearance: none;
+	appearance: none;
 	border: 1px solid $color-theme-black;
 	border-radius: $global-radius;
 	font-size: $font-size-content;
