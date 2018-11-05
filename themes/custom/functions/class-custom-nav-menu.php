@@ -11,7 +11,7 @@
 class Custom_Nav_Menu extends Walker_Nav_Menu {
 	public $nav_bar = '';
 
-	function __construct( $nav_args = '' ) {
+	public function __construct( $nav_args = '' ) {
 		$defaults = [
 			'item_type'  => 'li',
 			'in_top_bar' => false,
@@ -20,7 +20,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		$this->nav_bar = apply_filters( 'req_nav_args', wp_parse_args( $nav_args, $defaults ) );
 	}
 
-	function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
+	public function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
 		$id_field = $this->db_fields['id'];
 
 		if ( is_object( $args[0] ) ) {
@@ -30,7 +30,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
 	}
 
-	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent    = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		$slug      = sanitize_title( $item->title );
 		$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -55,12 +55,12 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 			$output .= $indent . '<' . $this->nav_bar['item_type'] . ' ' . $class_names . '>';
 		}
 
-		$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
+		$attributes  = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
 		$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
 		$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) . '"' : '';
 		$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
 
-		$item_output = $args->before;
+		$item_output  = $args->before;
 		$item_output .= '<a ' . $attributes . '>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= $item->description ? '<span class="navigation__description">' . $item->description . '</span>' : '';
@@ -70,7 +70,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 
-	function end_el( &$output, $item, $depth = 0, $args = array() ) {
+	public function end_el( &$output, $item, $depth = 0, $args = array() ) {
 		if ( $depth > 0 ) {
 			$output .= "</li>\n";
 		} else {
@@ -78,7 +78,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		}
 	}
 
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		if ( 0 === $depth && 'li' === $this->nav_bar['item_type'] ) {
 			$output .= '<ul class="navigation__sub-menu">';
 		} else {
@@ -86,7 +86,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		}
 	}
 
-	function end_lvl( &$output, $depth = 0, $args = array() ) {
+	public function end_lvl( &$output, $depth = 0, $args = array() ) {
 		$output .= '</ul>';
 	}
 }

@@ -68,4 +68,4 @@ function custom_post_type() {
 	register_taxonomy( 'custom_name', 'custom', $taxonomy_args_name );
 }
 
-// add_action( 'init', 'custom_post_type' );
+// add_action( 'init', 'custom_post_type' ); // @codingStandardsIgnoreStart

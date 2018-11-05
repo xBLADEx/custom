@@ -11,14 +11,14 @@ custom_display_hero_content();
 
 <div class="g-l-row">
 	<?php
-	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+	$custom_paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 	$args = [
 		'post_type'      => 'post',
 		'post_status'    => 'publish',
 		'posts_per_page' => '10',
 		'orderby'        => 'date',
-		'paged'          => $paged,
+		'paged'          => $custom_paged,
 	];
 
 	// @see http://codex.wordpress.org/Class_Reference/WP_Query.

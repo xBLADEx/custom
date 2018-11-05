@@ -11,4 +11,3 @@ require('lazysizes/plugins/bgset/ls.bgset'); // @see https://github.com/aFarkas/
 
 // JS
 import './menu';
-import './custom';

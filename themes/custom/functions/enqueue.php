@@ -25,7 +25,7 @@ function custom_enqueue() {
 	wp_deregister_script( 'jquery' );
 	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], '3.3.1', true );
 	wp_enqueue_script( 'custom', esc_url( THEME_JS ) . '/custom.js', [], '1', true );
-	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.3.1/js/all.js', [], null, true );
+	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.3.1/js/all.js', [], '5.3.1', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'custom_enqueue', 99 );
@@ -54,6 +54,7 @@ add_filter( 'script_loader_tag', 'custom_add_attribute_defer', 10, 2 );
  */
 function custom_theme_critical() {
 	// If we don't have a cookie set, load our inline styles and set cookie.
+	// @codingStandardsIgnoreStart
 	if ( ! isset( $_COOKIE['custom-css'] ) ) :
 		?>
 		<style>
@@ -68,6 +69,7 @@ function custom_theme_critical() {
 		</script>
 		<?php
 	endif;
+	// @codingStandardsIgnoreEnd
 }
 
 add_action( 'wp_head', 'custom_theme_critical', 30 );
@@ -78,12 +80,14 @@ add_action( 'wp_head', 'custom_theme_critical', 30 );
  */
 function custom_theme_noscript() {
 	// If cookie isn't set, load a noscript fallback.
+	// @codingStandardsIgnoreStart
 	if ( ! isset( $_COOKIE['custom-css'] ) ) :
 		?>
 		<noscript><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CMontserrat:300,400,500,700"></noscript>
 		<noscript><link rel="stylesheet" href="<?php echo esc_url( THEME_CSS ); ?>/custom.css"></noscript>
 		<?php
 	endif;
+	// @codingStandardsIgnoreEnd
 }
 
 add_action( 'wp_footer', 'custom_theme_noscript', 30 );

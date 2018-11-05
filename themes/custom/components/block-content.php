@@ -8,7 +8,7 @@
  */
 
 // ACF
-$title          = get_sub_field( 'content_title' ); // Text
+$block_title    = get_sub_field( 'content_title' ); // Text
 $content        = get_sub_field( 'content_content' ); // WYSIWYG Editor
 $image          = get_sub_field( 'content_image' ); // Image
 $image_position = get_sub_field( 'image_position' ); // Options: Left, Right. Default: Left.
@@ -23,7 +23,7 @@ $block_modifier_position = $image ? $image_position : 'center';
 	<?php if ( $content ) : ?>
 		<div class="wysiwyg-content block-content__content block-content__content--<?php echo esc_attr( $block_modifier_position ); ?>">
 			<?php if ( $title ) : ?>
-				<h2><?php echo esc_html( $title ); ?></h2>
+				<h2><?php echo esc_html( $block_title ); ?></h2>
 			<?php endif; ?>
 
 			<?php echo wp_kses_post( $content ); ?>

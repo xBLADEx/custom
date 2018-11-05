@@ -21,7 +21,7 @@ if ( isset( $_POST['submit'] ) && ! wp_verify_nonce( 'custom_form_contact_name',
 	$full_name = wp_unslash( $_POST['full_name'] );
 	$email     = $_POST['email'];
 	$phone     = $_POST['phone'];
-	$comment   = $_POST['comment'];
+	$question  = $_POST['comment'];
 
 	// Set required fields.
 	$required_fields = [
@@ -60,10 +60,10 @@ if ( isset( $_POST['submit'] ) && ! wp_verify_nonce( 'custom_form_contact_name',
 	$message  = '<html><body>';
 	$message .= '<table rules="all" style="border-color: #B8B8B8;" cellpadding="10">';
 	$message .= '<tr style="background: #5979FF; color: #FFF; font-weight: bold;"><th>FIELD</th><th>INFORMATION</th></tr>';
-	$message .= '<tr><td><strong>Name:</strong></td><td>' . strip_tags( $full_name ) . '</td></tr>';
-	$message .= '<tr><td><strong>Email:</strong></td><td>' . strip_tags( $email ) . '</td></tr>';
-	$message .= '<tr><td><strong>Phone:</strong></td><td>' . strip_tags( $phone ) . '</td></tr>';
-	$message .= '<tr><td><strong>Comment:</strong></td><td>' . strip_tags( stripslashes( $comment ) ) . '</td></tr>';
+	$message .= '<tr><td><strong>Name:</strong></td><td>' . wp_strip_all_tags( $full_name ) . '</td></tr>';
+	$message .= '<tr><td><strong>Email:</strong></td><td>' . wp_strip_all_tags( $email ) . '</td></tr>';
+	$message .= '<tr><td><strong>Phone:</strong></td><td>' . wp_strip_all_tags( $phone ) . '</td></tr>';
+	$message .= '<tr><td><strong>Comment:</strong></td><td>' . wp_strip_all_tags( stripslashes( $question ) ) . '</td></tr>';
 	$message .= '</table>';
 	$message .= '</body></html>';
 

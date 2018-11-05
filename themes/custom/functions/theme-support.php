@@ -60,7 +60,9 @@ add_action( 'admin_print_footer_scripts', 'custom_add_quicktags' );
 function custom_support() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
+	// @codingStandardsIgnoreStart
 	// add_theme_support( 'post-formats', [ 'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery', 'status' ] );
+	// @codingStandardsIgnoreEnd
 }
 
 add_action( 'after_setup_theme', 'custom_support' );
@@ -145,6 +147,7 @@ add_filter( 'body_class', 'custom_body_classes' );
  * @param  PHPMailer $phpmailer Object to set values.
  */
 function custom_phpmailer_smtp( PHPMailer $phpmailer ) {
+	// @codingStandardsIgnoreStart
 	$phpmailer->isSMTP();
 	$phpmailer->Host       = 'smtp.mailgun.org';
 	$phpmailer->SMTPAuth   = true;
@@ -156,7 +159,7 @@ function custom_phpmailer_smtp( PHPMailer $phpmailer ) {
 	// $phpmailer->FromName   = '{Full Name}'; // Optional.
 }
 
-// add_action( 'phpmailer_init', 'custom_phpmailer_smtp' );
+// add_action( 'phpmailer_init', 'custom_phpmailer_smtp' ); // @codingStandardsIgnoreEnd
 
 /**
  * Allowed HTML Tags
