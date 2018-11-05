@@ -32,15 +32,11 @@ custom_display_hero_content();
 				<header>
 					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 
-					<?php
-					if ( has_post_thumbnail() ) {
-						the_post_thumbnail();
-					}
-					?>
+					<?php get_template_part( 'components/post-thumbnail' ); ?>
 
-					<p class="date"><?php esc_html_e( 'Date:', 'custom' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></p>
+					<?php get_template_part( 'components/post-date' ); ?>
 
-					<p class="categories"><?php esc_html_e( 'Categories:', 'custom' ); ?> <?php the_category( ', ' ); ?></p>
+					<?php get_template_part( 'components/post-categories' ); ?>
 				</header>
 
 				<div>
@@ -48,7 +44,7 @@ custom_display_hero_content();
 				</div>
 
 				<footer>
-					<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
+					<?php get_template_part( 'components/post-tags' ); ?>
 				</footer>
 			</article>
 			<?php
