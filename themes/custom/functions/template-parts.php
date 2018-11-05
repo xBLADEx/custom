@@ -61,10 +61,33 @@ function custom_display_social_icons() {
 	$global_instagram = get_field( 'global_instagram', 'options' );
 	?>
 	<ul class="c-social-media">
-		<li class="c-social-media__item"><a href="<?php echo esc_url( $global_facebook ); ?>" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-facebook"></span></a></li>
-		<li class="c-social-media__item"><a href="<?php echo esc_url( $global_twitter ); ?>" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-twitter"></span></a></li>
-		<li class="c-social-media__item"><a href="<?php echo esc_url( $global_youtube ); ?>" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-youtube"></span></a></li>
-		<li class="c-social-media__item"><a href="<?php echo esc_url( $global_instagram ); ?>" class="c-social-media__link" rel="noopener" target="_blank"><span class="fab fa-instagram"></span></a></li>
+		<li class="c-social-media__item">
+			<a href="<?php echo esc_url( $global_facebook ); ?>" class="c-social-media__link" rel="noopener" target="_blank">
+				<span class="fab fa-facebook"></span>
+				<span class="h-visual-hide"><?php esc_html_e( 'Facebook', 'custom' ); ?></span>
+			</a>
+		</li>
+
+		<li class="c-social-media__item">
+			<a href="<?php echo esc_url( $global_twitter ); ?>" class="c-social-media__link" rel="noopener" target="_blank">
+				<span class="fab fa-twitter"></span>
+				<span class="h-visual-hide"><?php esc_html_e( 'Twitter', 'custom' ); ?></span>
+			</a>
+		</li>
+
+		<li class="c-social-media__item">
+			<a href="<?php echo esc_url( $global_youtube ); ?>" class="c-social-media__link" rel="noopener" target="_blank">
+				<span class="fab fa-youtube"></span>
+				<span class="h-visual-hide"><?php esc_html_e( 'YouTube', 'custom' ); ?></span>
+			</a>
+		</li>
+
+		<li class="c-social-media__item">
+			<a href="<?php echo esc_url( $global_instagram ); ?>" class="c-social-media__link" rel="noopener" target="_blank">
+				<span class="fab fa-instagram"></span>
+				<span class="h-visual-hide"><?php esc_html_e( 'Instagram', 'custom' ); ?></span>
+			</a>
+		</li>
 	</ul>
 	<?php
 }
