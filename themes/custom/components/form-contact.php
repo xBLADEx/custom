@@ -13,7 +13,10 @@ if ( isset( $_POST['submit'] ) && ! wp_verify_nonce( 'custom_form_contact_name',
 	}
 
 	// Define emails, website, and domain.
-	define( 'EMAIL', get_field( 'global_form_email', 'options' ) );
+	$form_email    = get_field( 'global_form_email', 'options' );
+	$email_address = $form_email ? $form_email : get_bloginfo( 'admin_email' );
+
+	define( 'EMAIL', $email_address );
 	define( 'WEBSITE', get_bloginfo( 'name' ) );
 	define( 'DOMAIN', str_replace( 'www.', '', $_SERVER['HTTP_HOST'] ) );
 
@@ -63,7 +66,7 @@ if ( isset( $_POST['submit'] ) && ! wp_verify_nonce( 'custom_form_contact_name',
 	$message .= '<tr><td><strong>Name:</strong></td><td>' . wp_strip_all_tags( $full_name ) . '</td></tr>';
 	$message .= '<tr><td><strong>Email:</strong></td><td>' . wp_strip_all_tags( $email ) . '</td></tr>';
 	$message .= '<tr><td><strong>Phone:</strong></td><td>' . wp_strip_all_tags( $phone ) . '</td></tr>';
-	$message .= '<tr><td><strong>Comment:</strong></td><td>' . wp_strip_all_tags( stripslashes( $question ) ) . '</td></tr>';
+	$message .= '<tr><td><strong>Comments:</strong></td><td>' . wp_strip_all_tags( $question ) . '</td></tr>';
 	$message .= '</table>';
 	$message .= '</body></html>';
 
