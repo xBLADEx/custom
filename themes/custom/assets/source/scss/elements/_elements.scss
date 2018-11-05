@@ -39,61 +39,41 @@ main {
 // Headings
 //-----------------------------------------
 h1,
-.h1 {
-	color: $color-black;
-	font-family: $font-family-heading;
-	font-size: rem-calc(45);
-	font-weight: 900;
-	line-height: 1.2;
-	margin: 0 0 10px 0;
-}
-
 h2,
-.h2 {
-	color: $color-black;
-	font-family: $font-family-heading;
-	font-size: rem-calc(32);
-	font-weight: 700;
-	line-height: 1.2;
-	margin: 0 0 10px 0;
-	text-transform: uppercase;
-}
-
 h3,
-.h3 {
+h4,
+h5,
+h6 {
 	color: $color-black;
 	font-family: $font-family-heading;
+	font-weight: $font-weight-bold;
+	line-height: 1.2;
+	margin: 0 0 10px 0;
+}
+
+h1 {
+	font-size: rem-calc(45);
+	font-weight: $font-weight-black;
+}
+
+h2 {
+	font-size: rem-calc(32);
+}
+
+h3 {
 	font-size: rem-calc(26);
-	font-weight: 600;
-	line-height: 1.2;
-	margin: 0 0 10px 0;
 }
 
-h4,
-.h4 {
-	font-family: $font-family-heading;
+h4 {
 	font-size: rem-calc(22);
-	font-weight: 400;
-	line-height: 1.2;
-	margin: 0 0 10px 0;
 }
 
-h5,
-.h5 {
-	font-family: $font-family-heading;
+h5 {
 	font-size: rem-calc(18);
-	font-weight: 600;
-	line-height: 1.2;
-	margin: 0 0 10px 0;
 }
 
-h6,
-.h6 {
-	font-family: $font-family-heading;
+h6 {
 	font-size: rem-calc(16);
-	font-weight: 600;
-	line-height: 1.2;
-	margin: 0 0 10px 0;
 }
 
 //-----------------------------------------

@@ -2,9 +2,9 @@
 // BACKGROUND IMAGE
 //--------------------------------------------------------------
 
-@mixin background-image($image, $position: center) {
+@mixin background-image($image, $position: center, $repeat: no-repeat, $size: cover) {
 	background-image: url('../images/#{$image}');
 	background-position: $position;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-repeat: $repeat;
+	background-size: $size;
 }
