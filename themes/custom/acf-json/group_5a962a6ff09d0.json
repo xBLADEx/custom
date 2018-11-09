@@ -210,42 +210,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_5be59f96c68d1",
-            "label": "SMTP Domain",
-            "name": "global_form_domain",
-            "type": "text",
-            "instructions": "{websitename}@mailgun.{domain}.com",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5be5a09cc68d2",
-            "label": "SMTP Password",
-            "name": "global_form_password",
-            "type": "password",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         }
     ],
     "location": [
@@ -265,5 +229,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1541775543
+    "modified": 1537997468
 }
