@@ -97,7 +97,7 @@ endif;
 		<p><del>Text - Strike - &lt;del&gt;</del></p>
 		<p><span style="text-decoration: underline;">Text - Underlined</span></p>
 		<p>Text - <a href="#" target="_blank" rel="noopener noreferrer" title="Example">Hyperlink</a></p>
-		<p><blockquote>"Text - Blockquote" - Author</blockquote></p>
+		<blockquote>"Text - Blockquote" - Author</blockquote>
 
 		<h2 class="style-guide__heading">Lists</h2>
 		<strong>Un-ordered List</strong>
@@ -125,14 +125,6 @@ endif;
 				</tr>
 			</thead>
 
-			<tfoot>
-				<tr>
-					<th>Name</th>
-					<th>Side</th>
-					<th>Role</th>
-				</tr>
-			</tfoot>
-
 			<tbody>
 				<tr>
 					<td>Darth Vader</td>
@@ -152,6 +144,14 @@ endif;
 					<td>Scumbag</td>
 				</tr>
 			</tbody>
+
+			<tfoot>
+				<tr>
+					<th>Name</th>
+					<th>Side</th>
+					<th>Role</th>
+				</tr>
+			</tfoot>
 		</table>
 
 		<h2 class="style-guide__heading">Form</h2>

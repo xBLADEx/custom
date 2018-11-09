@@ -40,10 +40,20 @@ function custom_add_attribute_defer( $tag, $handle ) {
 		return $tag;
 	}
 
-	return str_replace( ' src', ' defer src', $tag );
+	return str_replace( 'src', 'defer src', $tag );
 }
 
 add_filter( 'script_loader_tag', 'custom_add_attribute_defer', 10, 2 );
+
+/**
+ * Remove Attribute Type
+ * Remove the type='text/javascript' attribute.
+ */
+function custom_remove_attribute_type( $tag, $handle ) {
+	return str_replace( "type='text/javascript' ", '', $tag );
+}
+
+add_filter( 'script_loader_tag', 'custom_remove_attribute_type', 10, 2 );
 
 /**
  * Critical CSS

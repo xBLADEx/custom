@@ -28,10 +28,10 @@ custom_display_hero_content();
 		endwhile;
 	endif;
 	?>
-</div>
 
-<aside class="">
-	<?php dynamic_sidebar( 'Sidebar' ); ?>
-</aside>
+	<aside>
+		<?php dynamic_sidebar( 'Sidebar' ); ?>
+	</aside>
+</div>
 
 <?php get_footer(); ?>

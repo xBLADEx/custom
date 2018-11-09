@@ -9,11 +9,11 @@ get_header();
 custom_display_hero_content();
 ?>
 
-<aside class="">
-	<?php dynamic_sidebar( 'Sidebar' ); ?>
-</aside>
-
 <div class="g-l-row">
+	<aside>
+		<?php dynamic_sidebar( 'Sidebar' ); ?>
+	</aside>
+
 	<?php
 	if ( have_posts() ) :
 		while ( have_posts() ) :
