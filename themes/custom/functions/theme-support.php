@@ -147,19 +147,22 @@ add_filter( 'body_class', 'custom_body_classes' );
  * @param  PHPMailer $phpmailer Object to set values.
  */
 function custom_phpmailer_smtp( PHPMailer $phpmailer ) {
+	$global_form_domain   = get_field( 'global_form_domain', 'options' );
+	$global_form_password = get_field( 'global_form_password', 'options' );
 	// @codingStandardsIgnoreStart
 	$phpmailer->isSMTP();
 	$phpmailer->Host       = 'smtp.mailgun.org';
 	$phpmailer->SMTPAuth   = true;
 	$phpmailer->Port       = 465;
-	$phpmailer->Username   = '{websitename}@mg.domain.com';
-	$phpmailer->Password   = '{password}';
+	$phpmailer->Username   = $global_form_domain;
+	$phpmailer->Password   = $global_form_password;
 	$phpmailer->SMTPSecure = 'ssl'; // SSL or TLS.
 	$phpmailer->From       = 'no-reply@' . $_SERVER['HTTP_HOST'];
 	// $phpmailer->FromName   = '{Full Name}'; // Optional.
+	// @codingStandardsIgnoreEnd
 }
 
-// add_action( 'phpmailer_init', 'custom_phpmailer_smtp' ); // @codingStandardsIgnoreEnd
+add_action( 'phpmailer_init', 'custom_phpmailer_smtp' );
 
 /**
  * Allowed HTML Tags
