@@ -9,18 +9,27 @@
 *._*
 *.bak
 *.bz2
+*.com
 *.cvs
 *.db
+*.dll
 *.dmg
+*.exe
 *.gz
 *.idea
 *.iso
 *.jar
 *.log
 *.map
+*.o
 *.pot
 *.rar
 *.sass-cache
+*.so
+*.sql
+*.sqlite
+*.sublime-project
+*.sublime-workspace
 *.svn
 *.swp
 *.tar
@@ -33,6 +42,8 @@
 .htaccess
 .scssc
 .vscode
+Thumbs.db
+ehthumbs.db
 error_log
 
 # //-----------------------------------------
