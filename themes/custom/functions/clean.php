@@ -29,6 +29,9 @@ function custom_clean_header() {
 	add_filter( 'script_loader_src', 'custom_remove_cssjs_ver', 10, 2 );
 	// Widgets Comments
 	add_action( 'widgets_init', 'custom_remove_recent_comments_style' );
+
+	// Remove WP Caption Style Width
+	add_filter( 'img_caption_shortcode_width', '__return_false' );
 }
 
 add_action( 'after_setup_theme', 'custom_clean_header' );
