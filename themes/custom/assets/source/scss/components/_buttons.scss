@@ -20,8 +20,8 @@
 	transition: background-color 0.25s ease-out, color 0.25s ease-out;
 	width: auto;
 
-	&:hover,
-	&:focus {
+	&:focus,
+	&:hover {
 		background-color: $color-secondary;
 		color: $color-white;
 	}
@@ -30,8 +30,8 @@
 		background-color: $color-secondary;
 		color: $color-white;
 
-		&:hover,
-		&:focus {
+		&:focus,
+		&:hover {
 			background-color: $color-primary;
 			color: $color-white;
 		}
@@ -49,8 +49,8 @@
 		border: 1px solid $color-secondary;
 		color: $color-secondary;
 
-		&:hover,
-		&:focus {
+		&:focus,
+		&:hover {
 			background-color: $color-secondary;
 			color: $color-white;
 		}

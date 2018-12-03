@@ -104,8 +104,8 @@
 			color: $color-white;
 			padding: 10px;
 
-			&:hover,
-			&:focus {
+			&:focus,
+			&:hover {
 				background-color: $color-secondary;
 			}
 		}

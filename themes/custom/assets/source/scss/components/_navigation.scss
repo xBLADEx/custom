@@ -44,8 +44,8 @@
 		font-size: rem-calc(16);
 		padding: 20px 25px;
 
-		&:hover,
-		&:focus {
+		&:focus,
+		&:hover {
 			background-color: $color-primary;
 			color: $color-theme-white;
 
@@ -115,6 +115,7 @@
 			padding: 15px 20px;
 			white-space: nowrap;
 
+			&:focus,
 			&:hover {
 				background-color: $color-theme-white;
 				color: $color-theme-black;
@@ -155,8 +156,8 @@
 			a {
 				color: $color-theme-white;
 
-				&:hover,
-				&:focus {
+				&:focus,
+				&:hover {
 					background-color: darken($color-primary, 20%);
 				}
 
@@ -198,8 +199,8 @@
 			display: none;
 		}
 
-		&:hover,
-		&:focus {
+		&:focus,
+		&:hover {
 			background-color: $color-primary;
 		}
 	}

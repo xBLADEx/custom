@@ -10,28 +10,13 @@
 		&:not(:last-child) {
 			margin-right: 20px;
 		}
-
-		&:nth-child(even) {
-			svg {
-				&:hover {
-					transform: rotate(-20deg);
-				}
-			}
-		}
-
-		&:nth-child(odd) {
-			svg {
-				&:hover {
-					transform: rotate(20deg);
-				}
-			}
-		}
 	}
 
 	// <a>
 	&__link {
 		color: $color-primary;
 
+		&:focus,
 		&:hover {
 			color: $color-tertiary;
 		}
@@ -39,6 +24,5 @@
 
 	svg {
 		display: block;
-		transition: transform 0.2s ease-in-out;
 	}
 }

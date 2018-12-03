@@ -212,8 +212,8 @@
 			text-decoration: underline;
 		}
 
-		&:hover,
-		&:focus {
+		&:focus,
+		&:hover {
 			&:not(.button) {
 				color: $color-secondary;
 			}

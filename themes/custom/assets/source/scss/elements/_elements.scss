@@ -312,13 +312,13 @@ a {
 	outline: 0;
 	text-decoration: none;
 
-	&:hover,
-	&:focus {
-		color: $color-primary;
-	}
-
 	&:focus {
 		outline: 1px dotted;
+	}
+
+	&:focus,
+	&:hover {
+		color: $color-primary;
 	}
 }
 
