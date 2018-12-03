@@ -93,15 +93,21 @@
 //-----------------------------------------
 // Page Numbers
 //-----------------------------------------
-.page-numbers {
+// Specificity needed because class name is shared below.
+ul.page-numbers {
+	display: flex;
 	margin: 0;
 
 	li {
-		display: inline-block;
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
 
+		// <a>, <span>
 		.page-numbers {
 			background-color: $color-primary;
 			color: $color-white;
+			display: block;
 			padding: 10px;
 
 			&:focus,
@@ -110,6 +116,7 @@
 			}
 		}
 
+		// <span>
 		.current {
 			background-color: $color-secondary;
 			color: $color-white;
