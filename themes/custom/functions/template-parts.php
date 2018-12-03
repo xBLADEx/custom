@@ -39,41 +39,47 @@ function custom_display_hero_content( $title = '' ) {
 
 /**
  * Display Social Media
+ *
+ * @param string $modifier Class name BEM modifier.
  */
-function custom_display_social_icons() {
+function custom_display_social_icons( $modifier = '' ) {
 	$global_facebook  = get_field( 'global_facebook', 'options' );
 	$global_twitter   = get_field( 'global_twitter', 'options' );
 	$global_youtube   = get_field( 'global_youtube', 'options' );
 	$global_instagram = get_field( 'global_instagram', 'options' );
+	$modifier         = $modifier ? "c-social-media--{$modifier}" : '';
+	$social_media     = [
+		[
+			'link' => $global_facebook,
+			'icon' => 'facebook',
+			'name' => 'Facebook',
+		],
+		[
+			'link' => $global_twitter,
+			'icon' => 'twitter',
+			'name' => 'Twitter',
+		],
+		[
+			'link' => $global_youtube,
+			'icon' => 'youtube',
+			'name' => 'YouTube',
+		],
+		[
+			'link' => $global_instagram,
+			'icon' => 'instagram',
+			'name' => 'Instagram',
+		],
+	];
 	?>
-	<ul class="c-social-media">
-		<li class="c-social-media__item">
-			<a href="<?php echo esc_url( $global_facebook ); ?>" class="c-social-media__link" rel="noopener" target="_blank">
-				<span class="fab fa-facebook"></span>
-				<span class="h-visual-hide"><?php esc_html_e( 'Facebook', 'custom' ); ?></span>
-			</a>
-		</li>
-
-		<li class="c-social-media__item">
-			<a href="<?php echo esc_url( $global_twitter ); ?>" class="c-social-media__link" rel="noopener" target="_blank">
-				<span class="fab fa-twitter"></span>
-				<span class="h-visual-hide"><?php esc_html_e( 'Twitter', 'custom' ); ?></span>
-			</a>
-		</li>
-
-		<li class="c-social-media__item">
-			<a href="<?php echo esc_url( $global_youtube ); ?>" class="c-social-media__link" rel="noopener" target="_blank">
-				<span class="fab fa-youtube"></span>
-				<span class="h-visual-hide"><?php esc_html_e( 'YouTube', 'custom' ); ?></span>
-			</a>
-		</li>
-
-		<li class="c-social-media__item">
-			<a href="<?php echo esc_url( $global_instagram ); ?>" class="c-social-media__link" rel="noopener" target="_blank">
-				<span class="fab fa-instagram"></span>
-				<span class="h-visual-hide"><?php esc_html_e( 'Instagram', 'custom' ); ?></span>
-			</a>
-		</li>
+	<ul class="c-social-media <?php echo esc_attr( $modifier ); ?>">
+		<?php foreach ( $social_media as $media ) : ?>
+			<li class="c-social-media__item">
+				<a href="<?php echo esc_url( $media['link'] ); ?>" class="c-social-media__link" rel="noopener" target="_blank">
+					<span class="fab fa-<?php echo esc_attr( $media['icon'] ); ?>"></span>
+					<span class="h-visual-hide"><?php echo esc_html( $media['name'] ); ?></span>
+				</a>
+			</li>
+		<?php endforeach; ?>
 	</ul>
 	<?php
 }
