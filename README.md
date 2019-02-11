@@ -8,7 +8,7 @@
 ## Development
 To develop with this theme you will need to install the following:
 
-- [node](https://nodejs.org/)
+- [node](https://nodejs.org/download/release/v10.11.0/)
 - `npm i -g npm` - Install the latest npm version globally.
 
 In the theme folder the following commands are available:
