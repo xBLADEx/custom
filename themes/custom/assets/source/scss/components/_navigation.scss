@@ -177,6 +177,7 @@
 
 	&__menu.is-active {
 		#{$nav}__sub-menu {
+			display: block;
 			position: relative;
 		}
 	}
