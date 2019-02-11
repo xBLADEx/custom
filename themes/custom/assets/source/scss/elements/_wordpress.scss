@@ -23,7 +23,7 @@
 	line-height: 1.5;
 	margin: 6px 0 0;
 
-	@include mq($mq-full) {
+	@include mq($mq-tablet) {
 		font-size: rem-calc(14);
 	}
 }
@@ -36,7 +36,7 @@
 	margin-bottom: 24px;
 	margin-top: 24px;
 
-	@include mq($mq-full) {
+	@include mq($mq-tablet) {
 		margin-bottom: 36px;
 		margin-top: 36px;
 	}
@@ -47,7 +47,7 @@
 	margin-bottom: 24px;
 	margin-top: 24px;
 
-	@include mq($mq-full) {
+	@include mq($mq-tablet) {
 		margin-bottom: 36px;
 		margin-top: 36px;
 		max-width: 50%;
@@ -55,14 +55,14 @@
 }
 
 .alignleft {
-	@include mq($mq-full) {
+	@include mq($mq-tablet) {
 		float: left;
 		margin-right: 36px;
 	}
 }
 
 .alignright {
-	@include mq($mq-full) {
+	@include mq($mq-tablet) {
 		float: right;
 		margin-left: 36px;
 	}

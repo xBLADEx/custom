@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<div class="g-l-row">
+<div class="g-row">
 	<?php
 	if ( have_posts() ) {
 		while ( have_posts() ) {

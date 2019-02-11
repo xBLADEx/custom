@@ -9,7 +9,7 @@ get_header();
 custom_display_hero_content();
 ?>
 
-<div class="g-l-row">
+<div class="g-row">
 	<?php
 	if ( have_posts() ) :
 		while ( have_posts() ) :

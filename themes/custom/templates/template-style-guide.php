@@ -22,7 +22,7 @@ if ( have_posts() ) :
 endif;
 ?>
 
-<div class="g-l-row style-guide">
+<div class="g-row style-guide">
 	<div class="wysiwyg-content">
 		<h2 class="style-guide__heading">Colors</h2>
 

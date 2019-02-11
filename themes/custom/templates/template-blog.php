@@ -9,7 +9,7 @@ get_header();
 custom_display_hero_content();
 ?>
 
-<div class="g-l-row">
+<div class="g-row">
 	<?php
 	$custom_paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 

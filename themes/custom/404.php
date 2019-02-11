@@ -10,7 +10,7 @@ get_header();
 custom_display_hero_content( 'Page Not Found!' );
 ?>
 
-<div class="g-l-row">
+<div class="g-row">
 	<p><?php esc_html_e( 'This page no longer exists.', 'custom' ); ?></p>
 </div>
 

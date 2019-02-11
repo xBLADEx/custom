@@ -30,7 +30,7 @@ function custom_display_hero_content( $title = '' ) {
 	<div class="g-page-header">
 		<div <?php custom_the_image_background_acf( $page_hero_image, 'hero-small', [ 'g-page-header__background' ] ); ?>></div>
 
-		<div class="g-l-row">
+		<div class="g-row">
 			<h1><?php echo esc_html( $title ); ?></h1>
 		</div>
 	</div>

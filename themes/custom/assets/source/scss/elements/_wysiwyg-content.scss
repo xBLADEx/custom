@@ -44,7 +44,7 @@
 	p {
 		margin-bottom: 12px;
 
-		@include mq($mq-full) {
+		@include mq($mq-tablet) {
 			margin-bottom: 24px;
 		}
 	}
@@ -59,7 +59,7 @@
 	dl {
 		margin-bottom: 24px;
 
-		@include mq($mq-full) {
+		@include mq($mq-tablet) {
 			margin-bottom: 32px;
 		}
 	}
@@ -70,7 +70,7 @@
 		padding-left: 1em;
 		padding-right: 2em;
 
-		@include mq($mq-full) {
+		@include mq($mq-tablet) {
 			padding-right: 3em;
 		}
 	}
@@ -82,7 +82,7 @@
 		padding-left: 0;
 		padding-right: 2em;
 
-		@include mq($mq-full) {
+		@include mq($mq-tablet) {
 			padding-right: 3em;
 		}
 	}
@@ -92,7 +92,7 @@
 		padding-left: 0;
 		padding-right: 2em;
 
-		@include mq($mq-full) {
+		@include mq($mq-tablet) {
 			padding-right: 3em;
 		}
 	}
