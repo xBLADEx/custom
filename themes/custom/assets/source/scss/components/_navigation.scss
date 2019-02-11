@@ -206,3 +206,20 @@
 		}
 	}
 }
+
+//-----------------------------------------
+// Overlay
+//-----------------------------------------
+.navigation {
+	&__overlay {
+		background-color: rgba($color-black, 0.7);
+		bottom: 0;
+		display: block;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 100%;
+		z-index: 98;
+	}
+}
