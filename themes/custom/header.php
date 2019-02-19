@@ -21,7 +21,10 @@
 	<header class="g-header">
 		<div class="g-row g-header__container">
 			<div class="g-header__logo-container">
-				<a href="<?php echo esc_url( home_url() ); ?>" class="g-header__logo"><?php get_template_part( 'assets/dist/images/logo.svg' ); ?></a>
+				<a href="<?php echo esc_url( home_url() ); ?>" class="g-header__logo">
+					<span class="h-visual-hide"><?php esc_html_e( 'Custom', 'custom' ); ?></span>
+					<?php get_template_part( 'assets/dist/images/logo.svg' ); ?>
+				</a>
 			</div>
 
 			<div class="g-header__navigation">
