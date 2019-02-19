@@ -17,7 +17,7 @@
 function custom_enqueue() {
 	// If the cookie is set, load our CSS normally.
 	if ( isset( $_COOKIE['custom-css'] ) && 'true' === $_COOKIE['custom-css'] ) {
-		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CMontserrat:300,400,500,700', [], '1.0' );
+		wp_enqueue_style( 'google-fonts', esc_url( GOOGLE_FONTS ), [], '1.0' );
 		wp_enqueue_style( 'custom', esc_url( THEME_CSS ) . '/custom.css', [], '1.0' );
 	}
 
@@ -70,7 +70,7 @@ function custom_theme_critical() {
 		<style>
 			<?php locate_template( 'assets/dist/css/custom.css', true ); ?>
 		</style>
-		<link rel="preload" id="google-fonts-css" href="//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CMontserrat:300,400,500,700" as="style" onload="this.rel='stylesheet'">
+		<link rel="preload" id="google-fonts-css" href="<?php echo esc_url( GOOGLE_FONTS ); ?>" as="style" onload="this.rel='stylesheet'">
 		<link rel="preload" id="custom-css" href="<?php echo esc_url( THEME_CSS ); ?>/custom.css" as="style" onload="this.rel='stylesheet'">
 		<script>
 			// Set Cookie.
@@ -93,7 +93,7 @@ function custom_theme_noscript() {
 	// @codingStandardsIgnoreStart
 	if ( ! isset( $_COOKIE['custom-css'] ) ) :
 		?>
-		<noscript><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700,900%7CMontserrat:300,400,500,700"></noscript>
+		<noscript><link rel="stylesheet" href="<?php echo esc_url( GOOGLE_FONTS ); ?>"></noscript>
 		<noscript><link rel="stylesheet" href="<?php echo esc_url( THEME_CSS ); ?>/custom.css"></noscript>
 		<?php
 	endif;
