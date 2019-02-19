@@ -85,5 +85,5 @@ function custom_pagination( $query = '' ) {
 		'after_page_number'  => '',
 	);
 
-	echo paginate_links( $args ); // WPCS: XSS OK.
+	echo paginate_links( $args ); // phpcs:ignore
 }
