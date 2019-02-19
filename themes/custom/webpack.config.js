@@ -140,6 +140,10 @@ module.exports = (env, argv) => {
 					from: `${pathSource}/images`,
 					to: 'images',
 				},
+				// {
+				// 	from: `${pathSource}/fonts`,
+				// 	to: 'fonts',
+				// },
 			]),
 		],
 	};

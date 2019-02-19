@@ -10,4 +10,5 @@ require('lazysizes/plugins/parent-fit/ls.parent-fit'); // @see https://github.co
 require('lazysizes/plugins/bgset/ls.bgset'); // @see https://github.com/aFarkas/lazysizes#bgset-plugin---lazy-responsive-background-image
 
 // JS
+// import './slick-slider';
 import './menu';

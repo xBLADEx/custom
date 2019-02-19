@@ -17,3 +17,9 @@ In the theme folder the following commands are available:
 - `npm run build` - Compile CSS and JS with sourcemaps.
 - `npm run prod` - Compile CSS and JS without sourcemaps.
 - `npm run watch` - Continuous compiling. Runs [Browsersync](https://www.browsersync.io/docs) in the browser.
+
+## Slick Slider
+To enable:
+- Uncomment fonts path in CopyWebpackPlugin.
+- Uncomment imports in vendor > index.scss.
+- Uncomment slick-slider in js > index.js.
