@@ -293,6 +293,8 @@ textarea {
 // Select Dropdown
 //-----------------------------------------
 select {
+	@include background-image('icon-arrow-down.svg', $position: right 10px center, $size: 16px);
+
 	appearance: none;
 	border: 1px solid $color-theme-black;
 	border-radius: $global-radius;
