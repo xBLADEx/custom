@@ -14,10 +14,6 @@
 		display: grid;
 		gap: 20px 50px;
 		grid-template-columns: 150px 1fr;
-
-		@include mq($mq-tablet) {
-			grid-template-columns: 150px 1fr;
-		}
 	}
 
 	&__logo {
