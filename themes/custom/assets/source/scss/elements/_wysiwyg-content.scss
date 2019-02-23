@@ -21,7 +21,7 @@
 	}
 
 	// Remove bottom margin from last element.
-	*:last-child {
+	*:last-child:not(.label-custom-radio):not(.label-custom-checkbox) {
 		margin-bottom: 0;
 
 		& > img {

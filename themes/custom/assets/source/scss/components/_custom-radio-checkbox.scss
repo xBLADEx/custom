@@ -1,0 +1,132 @@
+//--------------------------------------------------------------
+// CUSTOM RADIO CHECKBOX
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Radio
+//-----------------------------------------
+// Input
+.input-custom-radio {
+	// If checked
+	&:checked {
+		// Highlight label
+		& + .label-custom-radio {
+			color: $color-primary;
+
+			// Fill radio
+			&::before {
+				background-color: $color-primary;
+			}
+		}
+	}
+
+	// If focused
+	&:focus {
+		// Get label
+		& + .label-custom-radio {
+			color: $color-primary;
+
+			&::before {
+				border-color: $color-primary;
+			}
+		}
+	}
+}
+
+// Label
+.label-custom-radio {
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	line-height: 1;
+	margin-bottom: 15px;
+
+	// Circle
+	&::before {
+		background-clip: content-box;
+		background-color: transparent;
+		border: 1px solid $color-theme-gray;
+		border-radius: 50%;
+		content: '';
+		display: inline-block;
+		height: 20px;
+		margin-right: 10px;
+		padding: 2px;
+		transition: background-color 0.3s ease-in;
+		width: 20px;
+	}
+}
+
+//-----------------------------------------
+// Checkbox
+//-----------------------------------------
+// Input
+.input-custom-checkbox {
+	// If checked
+	&:checked {
+		// Highlight label
+		& + .label-custom-checkbox {
+			color: $color-primary;
+
+			// Fill checkbox
+			&::before {
+				background-color: $color-primary;
+				border-color: $color-primary;
+			}
+
+			// Display checkmark
+			&::after {
+				display: block;
+			}
+		}
+	}
+
+	// If focused
+	&:focus {
+		& + .label-custom-checkbox {
+			color: $color-primary;
+
+			&::before {
+				border-color: $color-primary;
+			}
+		}
+	}
+}
+
+// Label
+.label-custom-checkbox {
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	line-height: 1;
+	margin-bottom: 15px;
+	position: relative;
+
+	// Checkmark
+	&::after {
+		border: solid $color-white;
+		border-width: 0 2px 2px 0;
+		content: '';
+		display: none;
+		height: 10px;
+		left: 7px;
+		position: absolute;
+		top: calc(50% - 7px); // IE 11, Safari
+		transform: rotate(45deg);
+		width: 5px;
+	}
+
+	// Box
+	&::before {
+		background-clip: content-box;
+		background-color: $color-white;
+		border: 1px solid $color-theme-gray;
+		content: '';
+		display: inline-block;
+		flex-shrink: 0;
+		height: 20px;
+		margin-right: 10px;
+		transition: background-color 0.3s ease-in;
+		width: 20px;
+	}
+}

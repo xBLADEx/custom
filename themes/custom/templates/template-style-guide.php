@@ -164,7 +164,7 @@ endif;
 			<div class="form__section form__radio">
 				<div class="form__group">
 					<input type="radio" name="label-radio" id="label-radio" value="label-radio" checked>
-					<label for="label-radio">Label - Radio</label>
+					<label for="label-radio">Label - Radio Checked</label>
 				</div>
 
 				<div class="form__group">
@@ -173,16 +173,41 @@ endif;
 				</div>
 			</div>
 
+			<div class="form__section">
+				<div class="form__group">
+					<input type="radio" name="custom-radio" id="custom-radio" class="h-visual-hide input-custom-radio" value="custom-radio" >
+					<label for="custom-radio" class="label-custom-radio">Label - Custom Radio Checked</label>
+				</div>
+
+				<div class="form__group">
+					<input type="radio" name="custom-radio" id="custom-radio-1" class="h-visual-hide input-custom-radio" value="custom-radio-1">
+					<label for="custom-radio-1" class="label-custom-radio">Label - Custom Radio 1</label>
+				</div>
+			</div>
+
 			<fieldset class="form__section form__checkbox">
 				<legend>Legend - Description of Checkbox Options</legend>
 				<div class="form__group">
 					<input type="checkbox" name="label-checkbox" id="label-checkbox" checked>
-					<label for="label-checkbox">Label - Checkbox</label>
+					<label for="label-checkbox">Label - Checkbox Checked</label>
 				</div>
 
 				<div class="form__group">
 					<input type="checkbox" name="label-checkbox" id="label-checkbox-1">
 					<label for="label-checkbox-1">Label - Checkbox 1</label>
+				</div>
+			</fieldset>
+
+			<fieldset class="form__section">
+				<legend>Custom Checkbox</legend>
+				<div class="form__group">
+					<input type="checkbox" name="custom-checkbox" id="custom-checkbox" class="h-visual-hide input-custom-checkbox" checked>
+					<label for="custom-checkbox" class="label-custom-checkbox">Custom Checkbox Checked</label>
+				</div>
+
+				<div class="form__group">
+					<input type="checkbox" name="custom-checkbox" id="custom-checkbox-1" class="h-visual-hide input-custom-checkbox">
+					<label for="custom-checkbox-1" class="label-custom-checkbox">Custom Checkbox 1</label>
 				</div>
 			</fieldset>
 
