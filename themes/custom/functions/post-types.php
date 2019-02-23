@@ -22,6 +22,7 @@ function custom_post_type() {
 	];
 
 	$taxonomies = [
+		// 'category', // Show post categories.
 		'custom_name',
 	];
 
@@ -38,6 +39,7 @@ function custom_post_type() {
 		'menu_position'      => null,
 		'menu_icon'          => 'dashicons-layout', // https://developer.wordpress.org/resource/dashicons/
 		'supports'           => $supports,
+		'show_in_rest'       => true, // Enable Gutenberg Blocks.
 		'rewrite'            => [
 			'slug' => 'post-custom-name',
 		],
