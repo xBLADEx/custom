@@ -31,6 +31,7 @@ function custom_display_hero_content( $title = '' ) {
 		<div <?php custom_the_image_background_acf( $page_hero_image, 'hero-small', [ 'g-page-header__background' ] ); ?>></div>
 
 		<div class="g-row">
+			<?php get_template_part( 'components/breadcrumbs' ); ?>
 			<h1><?php echo esc_html( $title ); ?></h1>
 		</div>
 	</div>

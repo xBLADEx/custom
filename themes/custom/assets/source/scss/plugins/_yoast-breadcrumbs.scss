@@ -1,0 +1,20 @@
+//--------------------------------------------------------------
+// YOAST BREADCRUMBS
+//--------------------------------------------------------------
+
+.yoast-breadcrumbs {
+	color: $color-primary;
+	font-size: 14px;
+	margin: 30px 0;
+
+	.breadcrumb_last {
+		font-weight: bold;
+	}
+
+	a {
+		&:focus,
+		&:hover {
+			color: $color-secondary;
+		}
+	}
+}
