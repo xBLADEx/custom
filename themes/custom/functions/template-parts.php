@@ -41,6 +41,7 @@ function custom_display_hero_content( $title = '' ) {
 /**
  * Display Social Media
  *
+ * @author Rich Edmunds
  * @param string $modifier Class name BEM modifier.
  */
 function custom_display_social_icons( $modifier = '' ) {
