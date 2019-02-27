@@ -18,10 +18,10 @@
 	text-align: center;
 	text-decoration: none;
 	transition: background-color 0.25s ease-out, color 0.25s ease-out;
-	width: auto;
+	width: 100%;
 
-	@include mq($mq-tablet, false) {
-		width: 100%;
+	@include mq($mq-tablet) {
+		width: auto;
 	}
 
 	&:focus,

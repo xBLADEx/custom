@@ -175,7 +175,7 @@ endif;
 
 			<div class="form__section">
 				<div class="form__group">
-					<input type="radio" name="custom-radio" id="custom-radio" class="h-visual-hide input-custom-radio" value="custom-radio" >
+					<input type="radio" name="custom-radio" id="custom-radio" class="h-visual-hide input-custom-radio" value="custom-radio">
 					<label for="custom-radio" class="label-custom-radio">Label - Custom Radio Checked</label>
 				</div>
 
