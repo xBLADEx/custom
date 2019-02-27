@@ -105,7 +105,7 @@ else :
 
 		<div class="form__section form__group">
 			<label for="form-comment"><?php esc_html_e( 'Questions or Comments', 'custom' ); ?></label>
-			<textarea name="comment" id="form-comment" class="form__textarea" placeholder="<?php esc_attr_e( 'What\'s on your mind?', 'custom' ); ?>"></textarea>
+			<textarea name="comment" id="form-comment" class="form__textarea" placeholder="<?php esc_attr_e( 'What is on your mind?', 'custom' ); ?>"></textarea>
 		</div>
 
 		<div class="form__section form__group">
