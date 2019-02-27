@@ -16,8 +16,7 @@
 //-----------------------------------------
 .wysiwyg-content {
 	ul,
-	ol,
-	dl {
+	ol {
 		margin: 0 0 $global-spacing 0;
 	}
 
@@ -33,11 +32,6 @@
 		list-style-type: decimal;
 		padding: 0 ($global-padding * 2) 0 0;
 	}
-
-	// Definition List
-	dl {
-		padding: 0 ($global-padding * 2) 0 $global-padding;
-	}
 }
 
 //-----------------------------------------
@@ -47,32 +41,6 @@
 	li {
 		&:not(:last-child) {
 			margin-bottom: ($global-spacing / 2);
-		}
-	}
-
-	// Unordered List Item
-	ul {
-		li {
-		}
-	}
-
-	// Ordered List Item
-	ol {
-		li {
-		}
-	}
-
-	// Definition List
-	dl {
-		// Definition Term
-		dt {
-		}
-
-		// Definition Name
-		dd {
-			&:not(:last-child) {
-				margin-bottom: ($global-spacing / 2);
-			}
 		}
 	}
 }
@@ -104,22 +72,6 @@
 		&::before {
 			content: '\2014';
 		}
-	}
-}
-
-//-----------------------------------------
-// Table
-//-----------------------------------------
-.wysiwyg-content {
-	table {
-	}
-}
-
-//-----------------------------------------
-// Form
-//-----------------------------------------
-.wysiwyg-content {
-	form {
 	}
 }
 
