@@ -152,7 +152,9 @@ cite {
 // Horizontal Rule
 //-----------------------------------------
 hr {
-	border-top: 1px solid $color-gray;
+	border-bottom: 0;
+	border-top: 2px solid $color-theme-black;
+	margin: 0 0 $global-spacing 0;
 }
 
 //-----------------------------------------
@@ -403,7 +405,7 @@ small {
 // Text Selection
 //-----------------------------------------
 ::selection {
-	background: $color-primary;
+	background-color: $color-primary;
 	color: $color-white;
 	text-shadow: none;
 }
@@ -432,4 +434,36 @@ button {
 	&[disabled] {
 		cursor: default;
 	}
+}
+
+//-----------------------------------------
+// Figure
+//-----------------------------------------
+figure {
+	margin-top: 0;
+}
+
+//-----------------------------------------
+// Code
+//-----------------------------------------
+code {
+	display: block;
+	font-size: 16px;
+	line-height: 1.75;
+	max-width: 100%;
+	min-width: 100px;
+	overflow-x: auto;
+	padding: 30px;
+}
+
+//-----------------------------------------
+// Preformatted
+//-----------------------------------------
+pre {
+	background-color: $color-theme-black;
+	color: $color-theme-white;
+	margin: 0 0 $global-spacing 0;
+	max-width: 100%;
+	min-width: 100px;
+	overflow: hidden;
 }

@@ -3,50 +3,11 @@
 //--------------------------------------------------------------
 
 //-----------------------------------------
-// Default
-//-----------------------------------------
-.wysiwyg-content {
-	// Hide empty WordPress injected <p> tags.
-	*:empty:not(hr):not(br):not(input):not(select):not(textarea):not(img):not(iframe) {
-		display: none;
-	}
-
-	// Remove top margin from first element.
-	*:first-child {
-		margin-top: 0;
-
-		& > img {
-			margin-top: 0;
-		}
-	}
-
-	// Remove bottom margin from last element.
-	*:last-child:not(.label-custom-radio):not(.label-custom-checkbox) {
-		margin-bottom: 0;
-
-		& > img {
-			margin-bottom: 0;
-		}
-	}
-
-	// Responsive Media
-	.responsive-embed {
-		margin: 24px auto;
-		max-width: none;
-		width: auto;
-	}
-}
-
-//-----------------------------------------
 // Paragraph
 //-----------------------------------------
 .wysiwyg-content {
 	p {
-		margin-bottom: 12px;
-
-		@include mq($mq-tablet) {
-			margin-bottom: 24px;
-		}
+		margin: 0 0 $global-spacing 0;
 	}
 }
 
@@ -57,44 +18,25 @@
 	ul,
 	ol,
 	dl {
-		margin-bottom: 24px;
-
-		@include mq($mq-tablet) {
-			margin-bottom: 32px;
-		}
+		margin: 0 0 $global-spacing 0;
 	}
 
 	// Unordered List
 	ul {
 		list-style-type: disc;
-		padding-left: 1em;
-		padding-right: 2em;
-
-		@include mq($mq-tablet) {
-			padding-right: 3em;
-		}
+		padding: 0 ($global-padding * 2) 0 $global-padding;
 	}
 
 	// Ordered List
 	ol {
-		counter-reset: item;
+		list-style-position: inside;
 		list-style-type: decimal;
-		padding-left: 0;
-		padding-right: 2em;
-
-		@include mq($mq-tablet) {
-			padding-right: 3em;
-		}
+		padding: 0 ($global-padding * 2) 0 0;
 	}
 
 	// Definition List
 	dl {
-		padding-left: 0;
-		padding-right: 2em;
-
-		@include mq($mq-tablet) {
-			padding-right: 3em;
-		}
+		padding: 0 ($global-padding * 2) 0 $global-padding;
 	}
 }
 
@@ -104,7 +46,7 @@
 .wysiwyg-content {
 	li {
 		&:not(:last-child) {
-			margin-bottom: 18px;
+			margin-bottom: ($global-spacing / 2);
 		}
 	}
 
@@ -117,18 +59,6 @@
 	// Ordered List Item
 	ol {
 		li {
-			counter-increment: item;
-			list-style-type: none;
-			padding-left: 1em;
-			position: relative;
-
-			&::before {
-				content: counter(item) '.';
-				font-weight: $font-weight-bold;
-				left: 0;
-				position: absolute;
-				top: 0;
-			}
 		}
 	}
 
@@ -140,7 +70,9 @@
 
 		// Definition Name
 		dd {
-			margin-bottom: 20px;
+			&:not(:last-child) {
+				margin-bottom: ($global-spacing / 2);
+			}
 		}
 	}
 }
@@ -150,13 +82,12 @@
 //-----------------------------------------
 .wysiwyg-content {
 	blockquote {
-		border-left: 2px solid $color-black;
-		margin: 30px 0;
+		border-left: 5px solid $color-black;
+		margin: 0 0 $global-spacing 0;
 		padding: 15px;
 
 		& > p {
-			color: $color-gray;
-			line-height: 1.5;
+			color: $color-primary;
 		}
 	}
 }
@@ -166,21 +97,13 @@
 //-----------------------------------------
 .wysiwyg-content {
 	cite {
-		color: $color-primary;
+		color: $color-theme-black;
 		display: block;
+		font-size: 14px;
 
 		&::before {
-			content: '\2014 \0020';
+			content: '\2014';
 		}
-	}
-}
-
-//-----------------------------------------
-// Horizontal Rule
-//-----------------------------------------
-.wysiwyg-content {
-	hr {
-		margin: 24px auto;
 	}
 }
 
@@ -210,11 +133,9 @@
 		&:not(.button) {
 			color: $color-primary;
 			text-decoration: underline;
-		}
 
-		&:focus,
-		&:hover {
-			&:not(.button) {
+			&:focus,
+			&:hover {
 				color: $color-secondary;
 			}
 		}

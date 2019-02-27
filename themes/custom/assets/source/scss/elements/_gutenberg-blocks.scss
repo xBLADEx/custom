@@ -1,0 +1,120 @@
+//--------------------------------------------------------------
+// GUTENBERG BLOCKS
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Inline Elements
+//-----------------------------------------
+.wysiwyg-content {
+	p {
+		img {
+			display: inline;
+		}
+	}
+}
+
+//-----------------------------------------
+// Common Blocks
+//-----------------------------------------
+// Paragraph
+
+// Heading
+
+// List
+
+// Quote
+
+// Image
+.wp-block-image {
+	.alignleft,
+	.alignright {
+		@include mq($mq-tablet, false) {
+			float: none;
+			margin: 0 0 $global-spacing 0;
+		}
+	}
+}
+
+// Gallery
+.wysiwyg-content {
+	// <ul>
+	.wp-block-gallery {
+		list-style-type: none;
+		margin-bottom: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+// Audio
+
+// Cover
+
+// File
+
+// Video
+
+//-----------------------------------------
+// Formatting
+//-----------------------------------------
+// Pullquote
+
+// Preformatted
+
+// Verse
+
+// Code
+// .wp-block-code {
+// }
+
+// Classic
+
+// Custom HTML
+
+// Table
+
+//-----------------------------------------
+// Layout Elements
+//-----------------------------------------
+// Columns
+
+// Media & Text
+
+// Spacer
+
+// Button
+
+// More
+
+// Page Break
+
+// Separator
+
+//-----------------------------------------
+// Widgets
+//-----------------------------------------
+// Latest Posts
+
+// Categories
+
+// Latest Comments
+
+// Shortcode
+
+// Archives
+
+//-----------------------------------------
+// Embeds
+//-----------------------------------------
+.wp-block-embed {
+	margin: 0 0 $global-spacing 0;
+
+	iframe {
+		display: block;
+		width: 100%;
+
+		@include mq($mq-tablet) {
+			max-width: 500px;
+		}
+	}
+}
