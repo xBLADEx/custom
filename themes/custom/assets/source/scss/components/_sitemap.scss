@@ -1,0 +1,27 @@
+//--------------------------------------------------------------
+// SITEMAP
+//--------------------------------------------------------------
+
+.sitemap {
+	display: grid;
+	gap: 50px;
+	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+	margin-bottom: $global-spacing;
+
+	&__column {
+	}
+
+	&__description {
+		margin-bottom: $global-spacing;
+	}
+
+	&__list {
+		list-style-type: disc;
+		padding-left: $global-padding;
+
+		.children {
+			list-style-type: disc;
+			padding-left: $global-padding;
+		}
+	}
+}
