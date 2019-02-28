@@ -33,6 +33,10 @@
 			margin: 0 0 $global-spacing 0;
 		}
 	}
+
+	figcaption {
+		margin: ($global-spacing / 2) 0 0;
+	}
 }
 
 // Gallery
@@ -40,7 +44,6 @@
 	// <ul>
 	.wp-block-gallery {
 		list-style-type: none;
-		margin-bottom: 0;
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -79,6 +82,9 @@
 // Columns
 
 // Media & Text
+.wp-block-media-text {
+	margin-bottom: $global-spacing;
+}
 
 // Spacer
 
