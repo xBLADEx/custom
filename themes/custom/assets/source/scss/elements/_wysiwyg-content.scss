@@ -82,7 +82,7 @@
 	a {
 		position: relative;
 
-		&:not(.button) {
+		&:not(.button):not(.wp-block-button__link) {
 			color: $color-primary;
 			text-decoration: underline;
 
