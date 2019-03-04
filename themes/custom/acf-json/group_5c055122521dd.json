@@ -25,25 +25,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_5c0551c18c03d",
-            "label": "Title",
-            "name": "page_title",
-            "type": "text",
-            "instructions": "Defaults to post title.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -68,5 +49,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1543852556
+    "modified": 1551716865
 }

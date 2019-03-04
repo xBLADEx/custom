@@ -19,13 +19,12 @@ function custom_display_hero_content( $title = '' ) {
 	}
 
 	$page_hero_image = get_field( 'page_hero_image' );
-	$page_title      = get_field( 'page_title' );
 
 	// Set a hero fallback image.
 	$page_hero_image = $page_hero_image ? $page_hero_image : get_field( 'global_hero_image', 'options' );
 
 	// Is title set in the function, use it, else use the ACF field, fallback to the post title.
-	$title = $title ? $title : ( $page_title ? $page_title : get_the_title() );
+	$title = $title ? $title : get_the_title();
 	?>
 	<div class="g-page-header">
 		<div <?php custom_the_image_background_acf( $page_hero_image, 'hero-small', [ 'g-page-header__background' ] ); ?>></div>
