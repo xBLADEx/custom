@@ -228,6 +228,19 @@ endif;
 			<input type="submit" class="button" value="Submit">
 		</form>
 
+		<h2 class="style-guide__heading">Accordion</h2>
+		<div class="faqs">
+			<details class="faqs__question">
+				<summary class="faqs__title">Question Title 1</summary>
+				<div class="faqs__content">Are they away? They have just made the jump into hyperspace. You're sure the homing beacon is secure aboard their ship? I'm taking an awful risk, Vader. This had better work.</div>
+			</details>
+
+			<details class="faqs__question">
+				<summary class="faqs__title">Question Title 2</summary>
+				<div class="faqs__content">Are they away? They have just made the jump into hyperspace. You're sure the homing beacon is secure aboard their ship? I'm taking an awful risk, Vader. This had better work.</div>
+			</details>
+		</div>
+
 		<h2 class="style-guide__heading">Images</h2>
 		<p><strong>Thumbnail (150x150)</strong></p>
 		<p><img src="https://unsplash.it/150/150/?random" alt="" width="150" height="150"></p>
