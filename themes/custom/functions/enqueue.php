@@ -16,7 +16,7 @@
  */
 function custom_enqueue() {
 	// If the cookie is set, load our CSS normally.
-	if ( isset( $_COOKIE['custom-css'] ) && 'true' === $_COOKIE['custom-css'] ) {
+	if ( isset( $_COOKIE['custom-css'] ) ) {
 		wp_enqueue_style( 'google-fonts', esc_url( GOOGLE_FONTS ), [], '1.0' );
 		wp_enqueue_style( 'custom', esc_url( THEME_CSS ) . '/custom.css', [], '1.0' );
 	}
