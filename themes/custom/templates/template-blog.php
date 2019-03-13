@@ -21,7 +21,6 @@ custom_display_hero_content();
 		'paged'          => $custom_paged,
 	];
 
-	// @see http://codex.wordpress.org/Class_Reference/WP_Query.
 	$custom_query = new WP_Query( $args );
 
 	if ( $custom_query->have_posts() ) :
@@ -30,7 +29,7 @@ custom_display_hero_content();
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header>
-					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+					<?php get_template_part( 'components/post-title' ); ?>
 
 					<?php get_template_part( 'components/post-thumbnail' ); ?>
 
@@ -39,9 +38,7 @@ custom_display_hero_content();
 					<?php get_template_part( 'components/post-categories' ); ?>
 				</header>
 
-				<div>
-					<?php the_excerpt(); ?>
-				</div>
+				<?php get_template_part( 'components/post-excerpt' ); ?>
 
 				<footer>
 					<?php get_template_part( 'components/post-tags' ); ?>
@@ -55,10 +52,10 @@ custom_display_hero_content();
 		wp_reset_postdata();
 	endif;
 	?>
-</div>
 
-<aside class="">
-	<?php dynamic_sidebar( 'Sidebar' ); ?>
-</aside>
+	<div class="">
+		<?php dynamic_sidebar( 'Sidebar' ); ?>
+	</div>
+</div>
 
 <?php get_footer(); ?>

@@ -63,6 +63,8 @@ function custom_support() {
 	// @codingStandardsIgnoreStart
 	// add_theme_support( 'post-formats', [ 'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery', 'status' ] );
 	// @codingStandardsIgnoreEnd
+	// Add Excerpt To Pages
+	add_post_type_support( 'page', 'excerpt' );
 }
 
 add_action( 'after_setup_theme', 'custom_support' );

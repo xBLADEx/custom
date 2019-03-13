@@ -17,8 +17,6 @@ custom_display_hero_content();
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header>
-					<?php get_template_part( 'components/post-thumbnail' ); ?>
-
 					<?php get_template_part( 'components/post-date' ); ?>
 
 					<?php get_template_part( 'components/post-categories' ); ?>
@@ -37,9 +35,9 @@ custom_display_hero_content();
 	endif;
 	?>
 
-	<aside class="">
+	<div class="">
 		<?php dynamic_sidebar( 'Sidebar' ); ?>
-	</aside>
+	</div>
 </div>
 
 <?php get_footer(); ?>

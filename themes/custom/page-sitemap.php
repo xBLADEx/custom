@@ -1,6 +1,6 @@
 <?php
 /**
- * Page
+ * Page Sitemap
  *
  * @package Custom
  */
@@ -16,12 +16,6 @@ custom_display_hero_content();
 			the_post();
 			?>
 			<article id="page-<?php the_ID(); ?>" <?php post_class( 'wysiwyg-content' ); ?>>
-				<?php
-				if ( has_post_thumbnail() ) {
-					the_post_thumbnail();
-				}
-				?>
-
 				<?php the_content(); ?>
 			</article>
 			<?php

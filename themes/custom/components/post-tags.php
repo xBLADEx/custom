@@ -7,4 +7,4 @@
 
 ?>
 
-<p class="tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
+<p class="post-tags"><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
