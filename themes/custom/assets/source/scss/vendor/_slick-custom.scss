@@ -3,6 +3,46 @@
 //--------------------------------------------------------------
 
 //-----------------------------------------
+// Slick Slider
+//-----------------------------------------
+.slick-slider {
+	position: relative;
+	width: 100%;
+
+	&.slick-dotted {
+		margin-bottom: 0;
+	}
+
+	&__slide {
+		display: block !important;
+		max-height: 500px;
+	}
+
+	&__heading {
+		color: $color-white;
+		font-family: $font-montserrat;
+		font-size: 35px;
+		line-height: 1.1;
+		max-width: 610px;
+		padding: 120px 30px 0;
+		position: absolute;
+		text-shadow: 0 0 9px rgba($color-black, 0.5);
+		z-index: 2;
+
+		@include mq($mq-tablet) {
+			font-size: 50px;
+		}
+	}
+
+	&__image {
+		@include mq($mq-tablet, false) {
+			height: 360px;
+			object-fit: cover;
+		}
+	}
+}
+
+//-----------------------------------------
 // Slick Theme
 //-----------------------------------------
 .slick-prev,
@@ -11,16 +51,29 @@
 }
 
 .slick-prev {
-	left: 0;
+	left: 20px;
 }
 
 .slick-next {
-	right: 0;
+	right: 20px;
 }
 
 .slick-dots {
 	bottom: 15px;
 	margin: 0;
+
+	li {
+		&.slick-active {
+			button::before {
+				color: $color-white;
+			}
+		}
+
+		button::before {
+			color: $color-white;
+			font-size: rem-calc(20);
+		}
+	}
 }
 
 //-----------------------------------------

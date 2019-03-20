@@ -89,6 +89,9 @@
 // Spacer
 
 // Button
+.wp-block-button__link {
+	@extend .button;
+}
 
 // More
 
