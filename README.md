@@ -1,14 +1,14 @@
 # Custom WordPress Theme
 
 - Author: Rich Edmunds
-- NPM: `6.4.1`
-- Node: `10.11.0`
+- NPM: `6.9.0`
+- Node: `10.15.3` LTS
 - Theme: `git clone git@github.com:xBLADEx/custom.git`
 
 ## Development
 To develop with this theme you will need to install the following:
 
-- [node](https://nodejs.org/download/release/v10.11.0/)
+- [node](https://nodejs.org/)
 - `npm i -g npm` - Install the latest npm version globally.
 
 In the theme folder the following commands are available:
