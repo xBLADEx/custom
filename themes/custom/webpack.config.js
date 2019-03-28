@@ -40,6 +40,7 @@ module.exports = (env, argv) => {
 										'@babel/preset-env',
 										{
 											useBuiltIns: 'usage',
+											corejs: '3.0',
 										},
 									],
 								], // https://babeljs.io/docs/en/babel-preset-env#options
