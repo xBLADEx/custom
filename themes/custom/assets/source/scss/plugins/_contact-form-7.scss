@@ -1,0 +1,18 @@
+//--------------------------------------------------------------
+// CONTACT FORM 7
+//--------------------------------------------------------------
+
+// Button
+.wpcf7-submit {
+	@extend .button;
+}
+
+// Google Recaptcha
+.grecaptcha-badge {
+	display: none;
+
+	// Show on specific page
+	.page-contact & {
+		display: block;
+	}
+}
