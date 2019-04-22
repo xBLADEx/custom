@@ -85,6 +85,7 @@
 		&:not(.button):not(.wp-block-button__link) {
 			color: $color-primary;
 			text-decoration: underline;
+			word-break: break-all;
 
 			&:focus,
 			&:hover {
