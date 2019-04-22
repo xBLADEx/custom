@@ -31,6 +31,15 @@ function custom_enqueue() {
 add_action( 'wp_enqueue_scripts', 'custom_enqueue', 99 );
 
 /**
+ * Admin Scripts
+ */
+function custom_admin_enqueue() {
+	wp_enqueue_style( 'custom-admin', esc_url( THEME_CSS ) . '/admin.css', [], '1.0' );
+}
+
+add_action( 'admin_enqueue_scripts', 'custom_admin_enqueue', 99 );
+
+/**
  * Add Attributes To Scripts
  * Add defer for Font Awesome.
  */

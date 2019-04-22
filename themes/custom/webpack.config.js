@@ -20,6 +20,7 @@ module.exports = (env, argv) => {
 	return {
 		entry: {
 			custom: `${pathSource}/js/index.js`,
+			admin: `${pathSource}/js/index-admin.js`,
 		},
 		output: {
 			filename: 'js/[name].js', // [name] is generated from the object entry properties. Example output is custom.js because entry.custom above.
