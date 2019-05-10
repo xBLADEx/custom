@@ -5,6 +5,10 @@
  * @package Custom
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 get_header();
 
 custom_display_hero_content( 'Page Not Found!' );

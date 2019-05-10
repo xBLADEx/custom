@@ -5,12 +5,11 @@
  * @package Custom
  */
 
-if ( function_exists( 'get_header' ) ) {
-	get_header();
-} else {
-	header( 'Location: https://' . $_SERVER['HTTP_HOST'] );
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+get_header();
 ?>
 
 <div class="g-row">

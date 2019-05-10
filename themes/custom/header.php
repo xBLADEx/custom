@@ -5,6 +5,9 @@
  * @package Custom
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?>
 
 <!DOCTYPE html>

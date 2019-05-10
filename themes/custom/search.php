@@ -5,8 +5,11 @@
  * @package Custom
  */
 
-get_header();
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
+get_header();
 custom_display_hero_content( 'Search Results' );
 ?>
 

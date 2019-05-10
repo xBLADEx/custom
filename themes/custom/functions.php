@@ -5,6 +5,10 @@
  * @package Custom
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 define( 'THEME_URI', get_template_directory_uri() );
 define( 'THEME_IMAGES', THEME_URI . '/assets/dist/images' );
 define( 'THEME_CSS', THEME_URI . '/assets/dist/css' );
