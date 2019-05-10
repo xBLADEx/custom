@@ -119,6 +119,21 @@ function custom_display_content_blocks() {
 }
 
 /**
+ * ACF Display Custom Blocks
+ *
+ * @author Rich Edmunds
+ */
+function custom_acf_display_blocks( $block ) {
+	// Convert name "acf/example" into path friendly slug "example".
+	$slug = str_replace( 'acf/', '', $block['name'] );
+
+	// Include a template part from within the "components/block" folder.
+	if ( file_exists( get_theme_file_path( "/components/block-{$slug}.php" ) ) ) {
+		include get_theme_file_path( "/components/block-{$slug}.php" );
+	}
+}
+
+/**
  * Add Page Body CSS Class
  * Add class name of page to the body element.
  *

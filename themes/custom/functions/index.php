@@ -16,6 +16,7 @@ $files = [
 	'register.php',
 	'class-custom-nav-menu.php',
 	'template-parts.php',
+	'blocks.php',
 ];
 
 foreach ( $files as $file ) {
