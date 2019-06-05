@@ -2,7 +2,7 @@
 
 - Author: Rich Edmunds
 - NPM: `6.9.0`
-- Node: `10.15.3` LTS
+- Node: `10.16.0` LTS
 - Theme: `git clone git@github.com:xBLADEx/custom.git`
 
 ## Development
