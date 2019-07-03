@@ -45,7 +45,10 @@
 		display: block;
 		margin-left: 0;
 		margin-right: 0;
-		width: 100%;
+
+		@include mq($mq-tablet) {
+			width: 100%;
+		}
 	}
 
 	&--hollow {

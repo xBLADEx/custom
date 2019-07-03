@@ -78,30 +78,33 @@ endif;
 
 		<h2 class="style-guide__heading">Text</h2>
 		<h1>Heading - h1</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tu vero, inquam, ducas licet, si sequetur; Haec et tu ita posuisti, et verba vestra sunt. Atque his de rebus et splendida est eorum et illustris oratio. Eam stabilem appellas. Nam Pyrrho, Aristo, Erillus iam diu abiecti. Illa sunt similia: hebes acies est cuipiam oculorum, corpore alius senescit; Est enim effectrix multarum et magnarum voluptatum. Duo Reges: constructio interrete.</p>
+		<p>He is here... Obi-Wan Kenobi! What makes you think so? A tremor in the Force. The last time I felt it was in the presence of my old master. Surely he must be dead by now. Don't underestimate the power of the Force. The Jedi are extinct, their fire has gone out of the universe. You, my friend, are all that's left of their religion. Yes. Governor Tarkin, we have an emergency alert in detention block A A-twenty-three. The princess! Put all sections on alert!</p>
 
 		<h2>Heading - h2</h2>
-		<p>Ita multo sanguine profuso in laetitia et in victoria est mortuus. Quae duo sunt, unum facit. Expectoque quid ad id, quod quaerebam, respondeas. At ille pellit, qui permulcet sensum voluptate. Illud dico, ea, quae dicat, praeclare inter se cohaerere. Stoici autem, quod finem bonorum in una virtute ponunt, similes sunt illorum;</p>
+		<p>Where could they be? Close the blast doors! Open the blast doors! Open the blast doors! I've been waiting for you, Obi-Wan. We meet again, at last. The circle is now complete. When I left you, I was but the learner, now I am the master. Only a master of evil, Darth. Your powers are weak, old man. You can't win, Darth. If you strike me down, I shall become more powerful than you can possibly imagine.</p>
 
 		<h3>Heading - h3</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non enim, si omnia non sequebatur, idcirco non erat ortus illinc. Quae quo sunt excelsiores, eo dant clariora indicia naturae. Si qua in iis corrigere voluit, deteriora fecit. Videsne quam sit magna dissensio?</p>
+		<p>Did you find any droids? No, sir. If there were any on board, they must also have jettisoned. Send a scanning crew on board. I want every part of this ship checked. Yes, sir. I sense something...a presence I haven't felt since... Get me a scanning crew in here on the double.</p>
 
 		<h4>Heading - h4</h4>
-		<p>Sed tu istuc dixti bene Latine, parum plane. Obsecro, inquit, Torquate, haec dicit Epicurus? Prioris generis est docilitas, memoria; Duo Reges: constructio interrete. Sed virtutem ipsam inchoavit, nihil amplius. Terram, mihi crede, ea lanx et maria deprimet. Isto modo ne improbos quidem, si essent boni viri.</p>
+		<p>The ship's all yours. If the scanners pick up anything, report it immediately. All right, let's go. Hey down there, could you give us a hand with this? TX-four-one-two. Why aren't you at your post? TX-four-one-two, do you copy?</p>
 
 		<h5>Heading - h5</h5>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nummus in Croesi divitiis obscuratur, pars est tamen divitiarum. Optime, inquam. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres. Illa tamen simplicia, vestra versuta. Duo Reges: constructio interrete. Quod cum dixissent, ille contra.</p>
+		<p>Take over. We've got a bad transmitter. I'll see what I can do. You know, between his howling and your blasting everything in sight, it's a wonder the whole station doesn't know we're here. Bring them on!</p>
 
 		<h6>Heading - h6</h6>
-		<p>Quem Tiberina descensio festo illo die tanto gaudio affecit, quanto L. Hoc enim constituto in philosophia constituta sunt omnia. Ita enim vivunt quidam, ut eorum vita refellatur oratio. Dic in quovis conventu te omnia facere, ne doleas. Ita multo sanguine profuso in laetitia et in victoria est mortuus.</p>
+		<p>I prefer a straight fight to all this sneaking around. We found the computer outlet, sir. Plug in. He should be able to interpret the entire Imperial computer network.</p>
 
-		<p><strong>Text - Bold - &lt;strong&gt;</strong></p>
 		<p><b>Text - Bold - &lt;b&gt;</b></p>
-		<p><em>Text - Italicized - &lt;em&gt;</em></p>
-		<p><del>Text - Strike - &lt;del&gt;</del></p>
+		<p><strong>Text - Bold - &lt;strong&gt;</strong> - SEO</p>
+		<p><em>Text - Italicized - &lt;em&gt;</em> - SEO</p>
+		<p><s>Text - Strike - &lt;s&gt;</s></p>
 		<p><span style="text-decoration: underline;">Text - Underlined</span></p>
 		<p>Text - <a href="#" target="_blank" rel="noopener noreferrer" title="Example">Hyperlink</a></p>
-		<blockquote>"Text - Blockquote" - Author</blockquote>
+		<blockquote>
+			"Text - Blockquote" - Author
+			<cite>Cite</cite>
+		</blockquote>
 
 		<h2 class="style-guide__heading">Lists</h2>
 		<strong>Un-ordered List</strong>
@@ -179,7 +182,7 @@ endif;
 
 			<div class="form__section">
 				<div class="form__group">
-					<input type="radio" name="custom-radio" id="custom-radio" class="h-visual-hide input-custom-radio" value="custom-radio">
+					<input type="radio" name="custom-radio" id="custom-radio" class="h-visual-hide input-custom-radio" value="custom-radio" checked>
 					<label for="custom-radio" class="label-custom-radio">Label - Custom Radio Checked</label>
 				</div>
 
