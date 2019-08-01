@@ -1,0 +1,18 @@
+//--------------------------------------------------------------
+// FULL WIDTH
+//
+// Enable overflow-x: hidden; on body when using.
+//
+// This technique doesn't naturally cause horizontal overflow,
+// but once there is natural vertical overflow (scrollbar),
+// it causes horizontal overflow.
+//--------------------------------------------------------------
+
+@mixin full-width {
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	position: relative;
+	right: 50%;
+	width: 100vw;
+}
