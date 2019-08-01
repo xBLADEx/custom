@@ -84,6 +84,4 @@ custom_display_hero_content();
 	</div>
 </div>
 
-<?php custom_display_content_blocks(); ?>
-
 <?php get_footer(); ?>
