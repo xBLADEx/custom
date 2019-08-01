@@ -18,6 +18,7 @@ function custom_acf_register_blocks() {
 			'category'        => 'custom-theme',
 			'icon'            => 'admin-comments',
 			'keywords'        => [ 'testimonial', 'quote' ],
+			'mode'            => 'edit',
 		]
 	);
 }

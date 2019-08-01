@@ -34,6 +34,18 @@
 		}
 	}
 
+	.alignleft {
+		@include mq($mq-tablet) {
+			padding-right: $global-spacing;
+		}
+	}
+
+	.alignright {
+		@include mq($mq-tablet) {
+			padding-left: $global-spacing;
+		}
+	}
+
 	figcaption {
 		margin: ($global-spacing / 2) 0 0;
 	}
@@ -116,6 +128,8 @@
 // Embeds
 //-----------------------------------------
 .wp-block-embed {
+	$parent: &;
+
 	margin: 0 0 $global-spacing 0;
 
 	iframe {
@@ -124,6 +138,25 @@
 
 		@include mq($mq-tablet) {
 			max-width: 500px;
+		}
+	}
+
+	&.alignleft {
+		max-width: none;
+	}
+
+	&.aligncenter {
+		iframe {
+			margin: auto;
+		}
+	}
+
+	&.alignright {
+		max-width: none;
+
+		#{$parent}__wrapper {
+			display: flex;
+			justify-content: flex-end;
 		}
 	}
 }
