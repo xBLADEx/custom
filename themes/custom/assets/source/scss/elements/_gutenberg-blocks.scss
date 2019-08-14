@@ -9,6 +9,15 @@
 	p {
 		img {
 			display: inline;
+
+			&.aligncenter {
+				display: block;
+			}
+
+			&.alignright {
+				display: block;
+				margin-right: 0;
+			}
 		}
 	}
 }
