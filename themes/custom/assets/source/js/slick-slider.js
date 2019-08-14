@@ -23,13 +23,13 @@ function filterSliderButtons() {
 
 	$('.slick-slider .slick-prev')
 		.append('<span class="fas fa-arrow-left"></span>')
-		.addClass('button button--round')
+		.addClass('button')
 		.contents()
 		.filter(isTextNode)
 		.remove();
 	$('.slick-slider .slick-next')
 		.append('<span class="fas fa-arrow-right"></span>')
-		.addClass('button button--round')
+		.addClass('button')
 		.contents()
 		.filter(isTextNode)
 		.remove();
