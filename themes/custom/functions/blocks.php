@@ -21,6 +21,19 @@ function custom_acf_register_blocks() {
 			'mode'            => 'edit',
 		]
 	);
+
+	acf_register_block(
+		[
+			'name'            => 'accordion',
+			'title'           => __( 'Accordion', 'custom' ),
+			'description'     => __( 'Accordion layout.', 'custom' ),
+			'render_callback' => 'custom_acf_display_blocks',
+			'category'        => 'custom-theme',
+			'icon'            => 'menu-alt',
+			'keywords'        => [ 'accordion' ],
+			'mode'            => 'edit',
+		]
+	);
 }
 
 add_action( 'acf/init', 'custom_acf_register_blocks' );

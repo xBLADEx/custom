@@ -1,0 +1,63 @@
+//--------------------------------------------------------------
+// BLOCK ACCORDION
+//--------------------------------------------------------------
+
+.block-accordion {
+	$accordion: &;
+
+	margin-bottom: 75px;
+
+	// <details>
+	&__item {
+		margin-bottom: 1px;
+
+		&[open] {
+			#{$accordion}__title {
+				background-color: $color-secondary;
+			}
+
+			#{$accordion}__icon-open {
+				display: block;
+			}
+
+			#{$accordion}__icon-close {
+				display: none;
+			}
+		}
+	}
+
+	// <summary>
+	&__title {
+		align-items: center;
+		background-color: $color-primary;
+		color: $color-white;
+		display: flex;
+		font-size: rem-calc(20);
+		font-weight: $font-weight-bold;
+		padding: 20px;
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		&:focus,
+		&:hover {
+			background-color: $color-secondary;
+		}
+	}
+
+	// Content
+	&__content {
+		background-color: $color-theme-gray;
+		padding: 20px;
+	}
+
+	// Icons
+	&__icons {
+		margin-right: 10px;
+	}
+
+	&__icon-open {
+		display: none;
+	}
+}
