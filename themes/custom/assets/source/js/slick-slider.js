@@ -16,3 +16,23 @@ $('.slick-slider').slick({
 	pauseOnHover: false,
 	fade: false,
 });
+
+// Filter slider buttons.
+function filterSliderButtons() {
+	const isTextNode = (_, el) => el.nodeType === Node.TEXT_NODE;
+
+	$('.slick-slider .slick-prev')
+		.append('<span class="fas fa-arrow-left"></span>')
+		.addClass('button button--round')
+		.contents()
+		.filter(isTextNode)
+		.remove();
+	$('.slick-slider .slick-next')
+		.append('<span class="fas fa-arrow-right"></span>')
+		.addClass('button button--round')
+		.contents()
+		.filter(isTextNode)
+		.remove();
+}
+
+// filterSliderButtons();

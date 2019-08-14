@@ -86,3 +86,36 @@
 		width: 100%;
 	}
 }
+
+//-----------------------------------------
+// Custom Buttons
+//-----------------------------------------
+.custom-slider {
+	// Slide Buttons
+	.slick-prev,
+	.slick-next {
+		background-color: $color-primary;
+		color: $color-white;
+		display: none;
+		font-size: initial;
+		height: auto;
+		left: 0;
+		padding: 12px 16px;
+		right: 0;
+		top: 0;
+
+		@include mq($mq-tablet) {
+			display: block;
+		}
+
+		&::before {
+			display: none;
+		}
+
+		&:focus,
+		&:hover {
+			background-color: $color-secondary;
+			color: $color-white;
+		}
+	}
+}
