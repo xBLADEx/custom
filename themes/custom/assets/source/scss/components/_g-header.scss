@@ -17,6 +17,8 @@
 	}
 
 	&__logo {
+		display: block;
+
 		svg {
 			display: block;
 			height: auto;
@@ -24,6 +26,10 @@
 			max-width: 150px;
 			width: 100%;
 		}
+	}
+
+	&__logo-image {
+		display: block;
 	}
 
 	&__navigation {

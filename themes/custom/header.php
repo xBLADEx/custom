@@ -27,6 +27,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<a href="<?php echo esc_url( home_url() ); ?>" class="g-header__logo">
 					<span class="h-visual-hide"><?php esc_html_e( 'Custom', 'custom' ); ?></span>
 					<?php get_template_part( 'assets/dist/images/logo.svg' ); ?>
+					<?php
+					/*
+					<img
+						src="<?php echo esc_url( THEME_IMAGES ); ?>/logo.png"
+						class="g-header__logo-image"
+						alt="<?php bloginfo(); ?>"
+					>
+					*/
+					?>
 				</a>
 			</div>
 
