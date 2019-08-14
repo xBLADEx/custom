@@ -65,17 +65,18 @@ function custom_display_image_acf( $image, $image_size = 'medium_large', $classe
  * Return attributes lazyload background image.
  *
  * @author Rich Edmunds
- * @param  array  $image      ACF image field.
+ * @param  mixed  $image      ACF image field array or featured image id.
  * @param  string $image_size Image size, default medium_large.
  * @param  array  $classes    List of class names, default empty array.
  */
 function custom_the_image_background_acf( $image, $image_size = 'medium_large', $classes = [] ) {
-	// Bail early if empty or not an array.
-	if ( empty( $image ) || ! is_array( $image ) ) {
+	// Bail early if empty.
+	if ( empty( $image ) ) {
 		return;
 	}
 
-	$image_sizes     = wp_get_attachment_image_srcset( $image['id'], $image_size );
+	$image_id        = is_array( $image ) ? $image['id'] : $image;
+	$image_sizes     = wp_get_attachment_image_srcset( $image_id, $image_size );
 	$classes_default = [ 'h-cover-background lazyload' ];
 	$classes_merged  = wp_parse_args( $classes, $classes_default );
 	$classes         = implode( ' ', $classes_merged );

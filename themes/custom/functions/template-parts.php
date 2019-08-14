@@ -18,12 +18,10 @@ function custom_display_hero_content( $title = '' ) {
 		return;
 	}
 
-	$page_hero_image = get_field( 'page_hero_image' );
+	// Set the featured image or hero fallback image.
+	$page_hero_image = has_post_thumbnail() ? get_post_thumbnail_id() : get_field( 'global_hero_image', 'options' );
 
-	// Set a hero fallback image.
-	$page_hero_image = $page_hero_image ? $page_hero_image : get_field( 'global_hero_image', 'options' );
-
-	// Is title set in the function, use it, else use the ACF field, fallback to the post title.
+	// Is title set in the function, use it, else fallback to the post title.
 	$title = $title ? $title : get_the_title();
 	?>
 	<div class="g-page-header">
