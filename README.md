@@ -27,3 +27,6 @@ To enable:
 ## Required Plugins
 - [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) - Required for `<title>` tag and breadcrumbs.
 - [ACF PRO](https://www.advancedcustomfields.com/pro/) - Required for page sub header and customization.
+
+## reCAPTCHA v3
+- [reCAPTCHA](https://www.google.com/recaptcha) - Required for custom form. Add keys to functions.php and google-recaptcha.js.

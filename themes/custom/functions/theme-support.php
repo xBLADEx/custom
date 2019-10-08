@@ -245,3 +245,9 @@ function custom_allowed_tags() {
 		],
 	];
 }
+
+function get_custom_recaptcha( $response_value ) {
+	$response = file_get_contents( 'https://www.google.com/recaptcha/api/siteverify?secret=' . esc_attr( RECAPTCHA_SECRET_KEY ) . '&response=' . esc_attr( $response_value ) );
+	$json     = json_decode( $response );
+	return $json;
+}

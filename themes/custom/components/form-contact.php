@@ -25,6 +25,7 @@ if ( isset( $_POST['submit'] ) && ! wp_verify_nonce( 'custom_form_contact_name',
 	$email     = $_POST['email'];
 	$phone     = $_POST['phone'];
 	$question  = $_POST['comment'];
+	$captcha   = get_custom_recaptcha( $_POST['g-recaptcha-response'] );
 
 	// Set required fields.
 	$required_fields = [
@@ -74,7 +75,7 @@ if ( isset( $_POST['submit'] ) && ! wp_verify_nonce( 'custom_form_contact_name',
 	$message = wordwrap( $message, 70 );
 
 	// If no errors - send. Else - alert.
-	if ( ! $field_errors ) :
+	if ( ! $field_errors && $captcha->success ) :
 		wp_mail( $to, $subject, $message, $headers );
 		?>
 		<p class="c-notification-box c-notification-box--success"><?php esc_html_e( 'Thank you for contacting us!', 'custom' ); ?></p>
@@ -88,6 +89,8 @@ else :
 	?>
 	<form method="POST" class="form form--contact">
 		<?php wp_nonce_field( 'custom_form_contact_action', 'custom_form_contact_name' ); ?>
+		<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+
 		<div class="form__section form__group">
 			<label for="form-full-name"><?php esc_html_e( 'Full Name *', 'custom' ); ?></label>
 			<input type="text" name="full_name" id="form-full-name" class="form__input" placeholder="<?php esc_attr_e( 'Full Name', 'custom' ); ?>" required>
