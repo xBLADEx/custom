@@ -72,18 +72,20 @@ function custom_display_social_icons( $modifier = '' ) {
 	?>
 	<ul class="c-social-media <?php echo esc_attr( $modifier ); ?>">
 		<?php foreach ( $social_media as $media ) : ?>
-			<li class="c-social-media__item">
-				<a
-					href="<?php echo esc_url( $media['link'] ); ?>"
-					class="c-social-media__link"
-					data-color="<?php echo esc_attr( $media['icon'] ); ?>"
-					rel="noopener"
-					target="_blank"
-				>
-					<span class="fab fa-<?php echo esc_attr( $media['icon'] ); ?>"></span>
-					<span class="h-visual-hide"><?php echo esc_html( $media['name'] ); ?></span>
-				</a>
-			</li>
+			<?php if ( $media['link'] ) : ?>
+				<li class="c-social-media__item">
+					<a
+						href="<?php echo esc_url( $media['link'] ); ?>"
+						class="c-social-media__link"
+						data-color="<?php echo esc_attr( $media['icon'] ); ?>"
+						rel="noopener"
+						target="_blank"
+					>
+						<span class="fab fa-<?php echo esc_attr( $media['icon'] ); ?>"></span>
+						<span class="h-visual-hide"><?php echo esc_html( $media['name'] ); ?></span>
+					</a>
+				</li>
+			<?php endif; ?>
 		<?php endforeach; ?>
 	</ul>
 	<?php
