@@ -68,6 +68,10 @@
 		border: 0;
 	}
 
+	&--no-expand {
+		width: auto;
+	}
+
 	&[disabled] {
 		background-color: transparent;
 		border: 1px solid $color-theme-gray;
