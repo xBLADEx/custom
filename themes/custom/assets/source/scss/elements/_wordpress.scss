@@ -30,7 +30,7 @@
 // Specificity needed because class name is shared below.
 ul.page-numbers {
 	display: flex;
-	margin: 0;
+	margin: 0 0 $global-spacing 0;
 
 	li {
 		&:not(:last-child) {
@@ -40,6 +40,7 @@ ul.page-numbers {
 		// <a>, <span>
 		.page-numbers {
 			background-color: $color-primary;
+			border-radius: $global-radius;
 			color: $color-white;
 			display: block;
 			padding: 10px;

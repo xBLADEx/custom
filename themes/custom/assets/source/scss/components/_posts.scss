@@ -37,6 +37,25 @@
 // Tags
 //-----------------------------------------
 .post-tags {
+	margin-bottom: $global-spacing;
+
 	span {
+		display: inline-block;
+		margin: 0 5px 5px 0;
+
+		a {
+			background-color: $color-primary;
+			border-radius: $global-radius;
+			color: $color-white;
+			display: block;
+			font-size: rem-calc(14);
+			padding: 5px 8px;
+
+			&:focus,
+			&:hover {
+				background-color: $color-secondary;
+				color: $color-white;
+			}
+		}
 	}
 }
