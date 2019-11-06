@@ -13,3 +13,4 @@ require('lazysizes/plugins/bgset/ls.bgset'); // @see https://github.com/aFarkas/
 // import './slick-slider';
 import './menu';
 import './google-recaptcha';
+import './table-wrap';
