@@ -204,6 +204,30 @@
 		&:hover {
 			background-color: $color-primary;
 		}
+
+		// Mobile Animation
+		// &::before {
+		// 	background: $color-primary;
+		// 	border-radius: 200vh;
+		// 	content: ' ';
+		// 	display: block;
+		// 	height: 260vmax;
+		// 	left: calc(-130vmax + 50%);
+		// 	opacity: 0;
+		// 	position: absolute;
+		// 	top: calc(-130vmax + 50%);
+		// 	transform: scale3d(0, 0, 0);
+		// 	transform-origin: 50% 50%;
+		// 	transition: 0.5s ease-in-out transform, 0.2s 0.4s ease-in-out opacity;
+		// 	width: 260vmax;
+		// 	z-index: -1;
+		// }
+
+		// &[aria-expanded='true']::before {
+		// 	opacity: 1;
+		// 	transform: scale3d(1, 1, 1);
+		// 	transition: 0.5s ease-in-out transform, 0.1s ease-in-out opacity;
+		// }
 	}
 }
 

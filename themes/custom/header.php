@@ -41,7 +41,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="g-header__navigation">
 				<nav class="navigation">
-					<button class="button--reset navigation__menu-trigger" data-js-menu-trigger>
+					<button
+						class="button--reset navigation__menu-trigger"
+						data-js-menu-trigger
+						aria-expanded="false"
+						aria-controls="menu"
+					>
 						<span class="fas fa-bars"></span>
 						<span class="h-visual-hide"><?php esc_html_e( 'Menu', 'custom' ); ?></span>
 					</button>

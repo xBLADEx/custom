@@ -33,7 +33,7 @@
 	}
 
 	&__navigation {
-		@include mq($mq-tablet, false) {
+		@include mq($mq-laptop, false) {
 			justify-self: end;
 		}
 	}
