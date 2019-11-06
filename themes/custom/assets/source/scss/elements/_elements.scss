@@ -478,3 +478,12 @@ summary {
 	cursor: pointer;
 	display: inline-block;
 }
+
+//-----------------------------------------
+// Iframe
+//-----------------------------------------
+iframe {
+	@include mq($mq-tablet, false) {
+		width: 100%;
+	}
+}
