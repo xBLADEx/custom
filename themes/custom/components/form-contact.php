@@ -57,7 +57,7 @@ if ( isset( $_POST['submit'] ) && ! wp_verify_nonce( 'custom_form_contact_name',
 	}
 
 	$to       = EMAIL;
-	$subject  = WEBSITE . ' Contact Form' . "\r\n";
+	$subject  = wp_strip_all_tags( $full_name ) . ' - ' . html_entity_decode( WEBSITE ) . ' Contact Form' . "\r\n";
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 	$headers .= 'From: contact@' . DOMAIN . "\r\nReply-To: noreply@" . DOMAIN . "\r\n";
