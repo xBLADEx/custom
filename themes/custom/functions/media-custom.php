@@ -34,18 +34,19 @@ add_action( 'after_setup_theme', 'custom_image_sizes' );
  * Return image with proper size and lazyload attributes.
  *
  * @author Rich Edmunds
- * @param  array  $image      ACF image field.
+ * @param  array  $image      ACF image field or image id.
  * @param  string $image_size Image size, default medium_large.
  * @param  array  $classes    List of class names, default empty array.
  */
 function custom_display_image_acf( $image, $image_size = 'medium_large', $classes = [] ) {
-	// Bail early if empty or not an array.
-	if ( empty( $image ) || ! is_array( $image ) ) {
+	// Bail early if empty.
+	if ( empty( $image ) ) {
 		return;
 	}
 
-	$image_alt       = $image['alt'];
-	$image_sizes     = wp_get_attachment_image_srcset( $image['id'], $image_size );
+	$image_id        = is_array( $image ) ? $image['id'] : $image;
+	$image_alt       = is_array( $image ) ? $image['alt'] : get_post_meta( $image, '_wp_attachment_image_alt', true );
+	$image_sizes     = wp_get_attachment_image_srcset( $image_id, $image_size );
 	$classes_default = [ 'lazyload' ];
 	$classes_merged  = wp_parse_args( $classes, $classes_default );
 	$classes         = implode( ' ', $classes_merged );
