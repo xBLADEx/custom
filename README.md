@@ -1,7 +1,7 @@
 # Custom WordPress Theme
 
 - Author: Rich Edmunds
-- NPM: `6.9.0`
+- NPM: `6.13.0`
 - Node: `10.16.0` LTS
 - Theme: `git clone git@github.com:xBLADEx/custom.git`
 
