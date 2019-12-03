@@ -18,14 +18,14 @@ function custom_enqueue() {
 	// If the cookie is set, load our CSS normally.
 	if ( isset( $_COOKIE['custom-css'] ) ) {
 		wp_enqueue_style( 'google-fonts', esc_url( GOOGLE_FONTS ), [], '1.0' );
-		wp_enqueue_style( 'custom', esc_url( THEME_CSS ) . '/custom.css', [], '1.0' );
+		wp_enqueue_style( 'custom', esc_url( THEME_CSS ) . '/custom.css?v=' . VERSION_CSS, [], '1.0' );
 	}
 
 	// Scripts.
 	wp_deregister_script( 'jquery' );
 	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js', [], '3.4.0', true );
 	wp_enqueue_script( 'google-recaptcha', 'https://www.google.com/recaptcha/api.js?render=' . esc_attr( RECAPTCHA_SITE_KEY ), [], '3.0', true );
-	wp_enqueue_script( 'custom', esc_url( THEME_JS ) . '/custom.js', [], '1', true );
+	wp_enqueue_script( 'custom', esc_url( THEME_JS ) . '/custom.js?v=' . VERSION_JS, [], '1.0', true );
 	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.7.2/js/all.js', [], '5.7.2', true );
 }
 
@@ -81,7 +81,7 @@ function custom_theme_critical() {
 			<?php locate_template( 'assets/dist/css/custom.css', true ); ?>
 		</style>
 		<link rel="preload" id="google-fonts-css" href="<?php echo esc_url( GOOGLE_FONTS ); ?>" as="style" onload="this.rel='stylesheet'">
-		<link rel="preload" id="custom-css" href="<?php echo esc_url( THEME_CSS ); ?>/custom.css" as="style" onload="this.rel='stylesheet'">
+		<link rel="preload" id="custom-css" href="<?php echo esc_url( THEME_CSS ); ?>/custom.css?v=<?php esc_attr_e( VERSION_CSS ); ?>" as="style" onload="this.rel='stylesheet'">
 		<script>
 			// Set Cookie.
 			let expires = new Date( +new Date + ( 7 * 24 * 60 * 60 * 1000 ) ).toUTCString();
@@ -104,7 +104,7 @@ function custom_theme_noscript() {
 	if ( ! isset( $_COOKIE['custom-css'] ) ) :
 		?>
 		<noscript><link rel="stylesheet" href="<?php echo esc_url( GOOGLE_FONTS ); ?>"></noscript>
-		<noscript><link rel="stylesheet" href="<?php echo esc_url( THEME_CSS ); ?>/custom.css"></noscript>
+		<noscript><link rel="stylesheet" href="<?php echo esc_url( THEME_CSS ); ?>/custom.css?v=<?php esc_attr_e( VERSION_CSS ); ?>"></noscript>
 		<?php
 	endif;
 	// @codingStandardsIgnoreEnd
