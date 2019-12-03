@@ -25,6 +25,11 @@ function custom_image_sizes() {
 	add_image_size( 'hero-small', 960, 200, true );
 	add_image_size( 'hero-medium', 1280, 267, true );
 	add_image_size( 'hero-large', 1920, 400, true );
+
+	// Slider
+	// add_image_size( 'slider-small', 960, 400, true );
+	// add_image_size( 'slider-medium', 1280, 533, true );
+	// add_image_size( 'slider-large', 1920, 800, true );
 }
 
 add_action( 'after_setup_theme', 'custom_image_sizes' );

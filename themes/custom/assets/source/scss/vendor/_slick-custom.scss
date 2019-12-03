@@ -15,7 +15,32 @@
 
 	&__slide {
 		display: block !important;
-		max-height: 500px;
+		max-height: 800px;
+	}
+
+	&__slide-content {
+		bottom: 15px;
+		display: grid;
+		grid-template: 'content';
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr auto;
+		padding: 0 20px;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+
+		@include mq($mq-tablet) {
+			bottom: initial;
+			top: 170px;
+		}
+		@include mq($mq-laptop) {
+			top: 120px;
+		}
+		@include mq($mq-global-width) {
+			grid-template: '. content .';
+			grid-template-columns: 1fr $global-width 1fr;
+			grid-template-rows: 1fr auto;
+		}
 	}
 
 	&__heading {
@@ -23,9 +48,8 @@
 		font-family: $font-family-heading;
 		font-size: 35px;
 		line-height: 1.1;
+		margin: 0 auto 20px;
 		max-width: 610px;
-		padding: 120px 30px 0;
-		position: absolute;
 		text-shadow: 0 0 9px rgba($color-black, 0.5);
 		z-index: 2;
 
@@ -34,9 +58,41 @@
 		}
 	}
 
+	&__sub-heading {
+		color: $color-white;
+		font-size: 20px;
+		font-weight: $font-weight-normal;
+		grid-area: content;
+		grid-row: 2;
+		line-height: 1.1;
+		margin: 0 auto 15px;
+		max-width: 750px;
+		text-align: center;
+		text-shadow: 0 0 9px rgba($color-black, 0.5);
+		z-index: 2;
+
+		@include mq($mq-tablet) {
+			margin: 0 auto 60px;
+		}
+		@include mq($mq-laptop) {
+			font-size: 28px;
+		}
+		@include mq($mq-laptop-large) {
+			font-size: 32px;
+		}
+	}
+
+	&__link {
+		grid-area: content;
+		grid-row: 3;
+		justify-self: center;
+		margin: auto; // IE 11
+		max-width: 250px;
+	}
+
 	&__image {
 		@include mq($mq-tablet, false) {
-			height: 360px;
+			height: 480px;
 			object-fit: cover;
 		}
 	}
@@ -60,18 +116,38 @@
 
 .slick-dots {
 	bottom: 15px;
+	display: none !important;
 	margin: 0;
+
+	@include mq($mq-laptop-large) {
+		display: block !important;
+	}
 
 	li {
 		&.slick-active {
-			button::before {
-				color: $color-white;
+			button {
+				background-color: $color-white;
+
+				&::before {
+					color: $color-white;
+				}
 			}
 		}
 
-		button::before {
-			color: $color-white;
-			font-size: rem-calc(20);
+		button {
+			background-color: rgba($color-primary, 0.50);
+			height: inherit;
+			width: inherit;
+
+			&:focus,
+			&:hover {
+				background-color: $color-white;
+			}
+
+			&::before {
+				color: $color-white;
+				font-size: rem-calc(20);
+			}
 		}
 	}
 }
@@ -96,16 +172,15 @@
 	.slick-next {
 		background-color: $color-primary;
 		color: $color-white;
-		display: none;
+		display: none !important;
 		font-size: initial;
 		height: auto;
-		left: 0;
+		left: 100px;
 		padding: 12px 16px;
-		right: 0;
-		top: 0;
+		right: initial;
 
-		@include mq($mq-tablet) {
-			display: block;
+		@include mq($mq-laptop) {
+			display: block !important;
 		}
 
 		&::before {
@@ -117,5 +192,10 @@
 			background-color: $color-secondary;
 			color: $color-white;
 		}
+	}
+
+	.slick-next {
+		left: initial;
+		right: 100px;
 	}
 }

@@ -23,6 +23,7 @@ To enable:
 - Uncomment fonts path in CopyWebpackPlugin.
 - Uncomment imports in vendor > index.scss.
 - Uncomment slick-slider in js > index.js.
+- Uncomment slider sizes in functions > media-custom.php.
 
 ## Required Plugins
 - [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) - Required for `<title>` tag and breadcrumbs.

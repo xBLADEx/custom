@@ -14,7 +14,8 @@ $('.slick-slider').slick({
 	slidesToShow: 1,
 	slidesToScroll: 1,
 	pauseOnHover: false,
-	fade: false,
+	fade: true,
+	arrows: false,
 });
 
 // Filter slider buttons.
