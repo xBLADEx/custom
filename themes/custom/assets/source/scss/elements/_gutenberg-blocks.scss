@@ -25,13 +25,23 @@
 //-----------------------------------------
 // Common Blocks
 //-----------------------------------------
-// Paragraph
+// Audio
+
+// Cover
+
+// File
+
+// Gallery
+.wysiwyg-content {
+	// <ul>
+	.wp-block-gallery {
+		list-style-type: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
 
 // Heading
-
-// List
-
-// Quote
 
 // Image
 .wp-block-image {
@@ -60,55 +70,46 @@
 	}
 }
 
-// Gallery
-.wysiwyg-content {
-	// <ul>
-	.wp-block-gallery {
-		list-style-type: none;
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
+// List
 
-// Audio
+// Paragraph
 
-// Cover
-
-// File
+// Quote
 
 // Video
 
 //-----------------------------------------
 // Formatting
 //-----------------------------------------
-// Pullquote
-
-// Preformatted
-
-// Verse
+// Classic
 
 // Code
-// .wp-block-code {
-// }
-
-// Classic
+.wp-block-code {
+}
 
 // Custom HTML
 
+// Preformatted
+
+// Pullquote
+
 // Table
+.wp-block-table {
+	&.aligncenter {
+	}
+
+	&.alignleft {
+	}
+
+	&.alignright {
+	}
+}
+
+// Verse
 
 //-----------------------------------------
 // Layout Elements
 //-----------------------------------------
-// Columns
-
-// Media & Text
-.wp-block-media-text {
-	margin-bottom: $global-spacing;
-}
-
-// Spacer
-
 // Button
 .wp-block-button {
 	color: $color-black;
@@ -118,24 +119,43 @@
 	}
 }
 
+// Columns
+
+// Group
+
+// Media & Text
+.wp-block-media-text {
+	margin-bottom: $global-spacing;
+}
+
 // More
 
 // Page Break
+
+// Spacer
 
 // Separator
 
 //-----------------------------------------
 // Widgets
 //-----------------------------------------
-// Latest Posts
+// Archives
+
+// Calendar
 
 // Categories
 
 // Latest Comments
 
+// Latest Posts
+
+// RSS
+
+// Search
+
 // Shortcode
 
-// Archives
+// Tag Cloud
 
 //-----------------------------------------
 // Embeds
