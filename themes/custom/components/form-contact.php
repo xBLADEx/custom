@@ -25,7 +25,7 @@ if ( isset( $_POST['submit'] ) && ! wp_verify_nonce( 'custom_form_contact_name',
 	$email     = $_POST['email'];
 	$phone     = $_POST['phone'];
 	$question  = $_POST['comment'];
-	$captcha   = get_custom_recaptcha( $_POST['g-recaptcha-response'] );
+	$captcha   = custom_get_recaptcha( $_POST['g-recaptcha-response'] );
 
 	// Set required fields.
 	$required_fields = [
