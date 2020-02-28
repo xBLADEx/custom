@@ -23,7 +23,7 @@ function custom_enqueue() {
 
 	// Scripts.
 	wp_deregister_script( 'jquery' );
-	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js', [], '3.4.0', true );
+	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', [], '3.4.1', true );
 	wp_enqueue_script( 'google-recaptcha', 'https://www.google.com/recaptcha/api.js?render=' . esc_attr( RECAPTCHA_SITE_KEY ), [], '3.0', true );
 	wp_enqueue_script( 'custom', esc_url( THEME_JS ) . '/custom.js?v=' . VERSION_JS, [], '1.0', true );
 	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.7.2/js/all.js', [], '5.7.2', true );
@@ -42,18 +42,23 @@ add_action( 'admin_enqueue_scripts', 'custom_admin_enqueue', 99 );
 
 /**
  * Add Attributes To Scripts
- * Add defer for Font Awesome.
+ *
+ * @see https://www.srihash.org/
+ * @author Rich Edmunds
  */
-function custom_add_attribute_defer( $tag, $handle ) {
-	// Bail early if not font awesome script.
-	if ( 'font-awesome' !== $handle ) {
-		return $tag;
+function custom_add_script_attributes( $tag, $handle, $src ) {
+	if ( 'font-awesome' === $handle ) {
+		$tag = '<script src="' . esc_url( $src ) . '" defer integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>' . "\n"; // @codingStandardsIgnoreLine
 	}
 
-	return str_replace( 'src', 'defer src', $tag );
+	if ( 'jquery' === $handle ) {
+		$tag = '<script src="' . esc_url( $src ) . '" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>' . "\n"; // @codingStandardsIgnoreLine
+	}
+
+	return $tag;
 }
 
-add_filter( 'script_loader_tag', 'custom_add_attribute_defer', 10, 2 );
+add_filter( 'script_loader_tag', 'custom_add_script_attributes', 10, 3 );
 
 /**
  * Remove Attribute Type
