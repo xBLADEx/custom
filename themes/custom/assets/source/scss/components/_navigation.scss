@@ -11,6 +11,8 @@
 // Menu
 //-----------------------------------------
 .navigation {
+	$nav: &;
+
 	// <ul>
 	&__menu {
 		display: none;
@@ -31,14 +33,19 @@
 
 		// Current page link.
 		&.current-menu-item {
-			& > a {
+			& > #{$nav}__link {
 				color: $color-primary;
+
+				&:focus,
+				&:hover {
+					color: $color-white;
+				}
 			}
 		}
 	}
 
 	// <a>
-	a {
+	&__link {
 		color: $color-theme-black;
 		display: block;
 		font-size: rem-calc(16);
@@ -54,17 +61,24 @@
 			}
 		}
 	}
+
+	// Description
+	&__description {
+		display: block;
+		font-size: rem-calc(9);
+		padding-left: 5px;
+	}
 }
 
 //-----------------------------------------
-// Menu - Sub Menu - Parent
+// Sub Menu - Parent Item
 //-----------------------------------------
 .navigation {
 	$nav: &;
 
 	// <li>
 	&__sub-menu-parent {
-		& > a {
+		& > #{$nav}__link {
 			&::after {
 				border: 4px solid;
 				border-color: $color-theme-black transparent transparent;
@@ -78,7 +92,7 @@
 
 		&:hover {
 			// Keep parent <li> appearing hovered.
-			& > a {
+			& > #{$nav}__link {
 				background-color: $color-primary;
 				color: $color-theme-white;
 
@@ -95,9 +109,11 @@
 }
 
 //-----------------------------------------
-// Menu - Sub Menu
+// Sub Menu
 //-----------------------------------------
 .navigation {
+	$nav: &;
+
 	&__sub-menu {
 		box-shadow: 0 2px 3px 0 rgba($color-theme-black, 0.3);
 		display: none;
@@ -107,7 +123,7 @@
 		position: absolute;
 		z-index: 98;
 
-		a {
+		#{$nav}__link {
 			background-color: $color-theme-black;
 			color: $color-theme-white;
 			display: block;
@@ -125,20 +141,11 @@
 }
 
 //-----------------------------------------
-// Menu - Description
+// Active
 //-----------------------------------------
 .navigation {
-	&__description {
-		display: block;
-		font-size: rem-calc(9);
-		padding-left: 5px;
-	}
-}
+	$nav: &;
 
-//-----------------------------------------
-// Menu - Active
-//-----------------------------------------
-.navigation {
 	&__menu.is-active {
 		background-color: $color-primary;
 		display: block;
@@ -150,41 +157,35 @@
 		top: 0;
 		z-index: 99;
 
-		li {
+		// <ul>
+		#{$nav}__sub-menu {
+			display: block;
+			position: relative;
+		}
+
+		// <li>
+		#{$nav}__item {
 			border-bottom: 1px solid $color-theme-white;
+		}
 
-			a {
-				color: $color-theme-white;
+		// <a>
+		#{$nav}__link {
+			color: $color-theme-white;
 
-				&:focus,
-				&:hover {
-					background-color: darken($color-primary, 20%);
-				}
+			&:focus,
+			&:hover {
+				background-color: darken($color-primary, 20%);
+			}
 
-				&::after {
-					border-color: $color-theme-white transparent transparent;
-				}
+			&::after {
+				border-color: $color-theme-white transparent transparent;
 			}
 		}
 	}
 }
 
 //-----------------------------------------
-// Menu - Active - Sub Menu
-//-----------------------------------------
-.navigation {
-	$nav: &;
-
-	&__menu.is-active {
-		#{$nav}__sub-menu {
-			display: block;
-			position: relative;
-		}
-	}
-}
-
-//-----------------------------------------
-// Menu Trigger
+// Trigger
 //-----------------------------------------
 .navigation {
 	&__menu-trigger {
@@ -204,30 +205,6 @@
 		&:hover {
 			background-color: $color-primary;
 		}
-
-		// Mobile Animation
-		// &::before {
-		// 	background: $color-primary;
-		// 	border-radius: 200vh;
-		// 	content: ' ';
-		// 	display: block;
-		// 	height: 260vmax;
-		// 	left: calc(-130vmax + 50%);
-		// 	opacity: 0;
-		// 	position: absolute;
-		// 	top: calc(-130vmax + 50%);
-		// 	transform: scale3d(0, 0, 0);
-		// 	transform-origin: 50% 50%;
-		// 	transition: 0.5s ease-in-out transform, 0.2s 0.4s ease-in-out opacity;
-		// 	width: 260vmax;
-		// 	z-index: -1;
-		// }
-
-		// &[aria-expanded='true']::before {
-		// 	opacity: 1;
-		// 	transform: scale3d(1, 1, 1);
-		// 	transition: 0.5s ease-in-out transform, 0.1s ease-in-out opacity;
-		// }
 	}
 }
 

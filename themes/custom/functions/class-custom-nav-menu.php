@@ -61,7 +61,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu {
 		$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
 
 		$item_output  = $args->before;
-		$item_output .= '<a ' . $attributes . '>';
+		$item_output .= '<a ' . $attributes . ' class="navigation__link">';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= $item->description ? '<span class="navigation__description">' . $item->description . '</span>' : '';
 		$item_output .= '</a>';
