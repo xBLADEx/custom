@@ -70,8 +70,11 @@ module.exports = (env, argv) => {
 						{
 							loader: 'sass-loader',
 							options: {
-								sourceMap: !isProduction, // https://github.com/webpack-contrib/sass-loader#source-maps
-								outputStyle: 'compact', // https://github.com/sass/node-sass#outputstyle.
+								// https://github.com/webpack-contrib/sass-loader#object
+								sassOptions: {
+									sourceMap: !isProduction, // https://github.com/webpack-contrib/sass-loader#source-maps
+									outputStyle: 'compact', // https://github.com/sass/node-sass#outputstyle.
+								},
 							},
 						},
 					],
