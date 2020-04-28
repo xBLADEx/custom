@@ -75,10 +75,10 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 }
 
 /**
-* Hide ACF Menu
-*
-* @author Rich Edmunds
-*/
+ * Hide ACF Menu
+ *
+ * @author Rich Edmunds
+ */
 function custom_hide_acf_admin() {
 	// Get the current site url
 	$site_url = get_bloginfo( 'url' );
