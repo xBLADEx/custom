@@ -47,39 +47,7 @@ ehthumbs.db
 error_log
 
 # //-----------------------------------------
-# // Symlink
-# //-----------------------------------------
-uploads
-
-# //-----------------------------------------
-# // WordPress
-# //-----------------------------------------
-advanced-cache.php
-backup-db/
-backups/
-blogs.dir/
-cache-config.php
-cache/
-gallery/
-local-config.php
-logs/
-mu-plugins/*
-ngg/
-ngg_styles/
-object-cache.php
-plugins/*
-tests/
-themes/twenty*/
-upgrade/
-uploads/
-wp-cache-config.php
-
-# //-----------------------------------------
 # // Theme
 # //-----------------------------------------
 dist/
-
-# //-----------------------------------------
-# // NPM, Node, Configs
-# //-----------------------------------------
 node_modules/
