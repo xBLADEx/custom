@@ -4,6 +4,7 @@
     "node": true,
     "es2020": true
   },
+  "extends": ["eslint:recommended", "prettier", "prettier/react"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
