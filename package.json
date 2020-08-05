@@ -1,6 +1,6 @@
 {
   "name": "custom",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "private": true,
   "description": "Custom Theme.",
   "license": "MIT",
@@ -35,6 +35,7 @@
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
+    "sass-lint": "^1.13.1",
     "sass-loader": "^9.0.2",
     "terser-webpack-plugin": "^4.0.0",
     "webpack": "^4.44.1",
@@ -44,6 +45,6 @@
     "build": "webpack --mode=development",
     "prod": "webpack --mode=production",
     "watch": "webpack --mode=development --watch",
-    "lint": "eslint \"assets/source/**/*.{js,jsx}\" --quiet"
+    "lint": "sass-lint -c .sasslintrc \"assets/source/scss/**/*.scss\" -v -q && eslint \"assets/source/**/*.{js,jsx}\" --quiet"
   }
 }

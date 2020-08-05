@@ -1,0 +1,163 @@
+{
+  "rules": {
+    "placeholder-in-extend": 0,
+    "property-sort-order": [
+      1,
+      {
+        "ignore-custom-properties": true
+      }
+    ],
+    "mixins-before-declarations": [
+      1,
+      {
+        "exclude": [
+          "mq"
+        ]
+      }
+    ],
+    "empty-line-between-blocks": [
+      1,
+      {
+        "allow-single-line-rulesets": false
+      }
+    ],
+    "no-color-literals": [
+      1,
+      {
+        "allow-rgba": true
+      }
+    ],
+    "no-debug": 0,
+    "no-ids": 0,
+    "no-mergeable-selectors": 0,
+    "no-qualifying-elements": [
+      1,
+      {
+        "allow-element-with-attribute": true,
+        "allow-element-with-class": true,
+        "allow-element-with-id": false
+      }
+    ],
+    "no-vendor-prefixes": 0,
+    "no-warn": 0,
+    "no-empty-rulesets": 0,
+    "force-attribute-nesting": 0,
+    "force-element-nesting": 0,
+    "force-pseudo-nesting": 0,
+    "function-name-format": [
+      1,
+      {
+        "convention-explanation": "Please use hyphenated lowercase for function names."
+      }
+    ],
+    "mixin-name-format": [
+      1,
+      {
+        "convention-explanation": "Please use hyphenated lowercase for mixin names."
+      }
+    ],
+    "placeholder-name-format": [
+      1,
+      {
+        "convention-explanation": "Please use hyphenated lowercase for placeholder names."
+      }
+    ],
+    "variable-name-format": [
+      1,
+      {
+        "allow-leading-underscore": false,
+        "convention-explanation": "Please use hyphenated lowercase for variable names."
+      }
+    ],
+    "attribute-quotes": 1,
+    "border-zero": 0,
+    "brace-style": [
+      1,
+      {
+        "style": 2,
+        "allow-single-line": false
+      }
+    ],
+    "class-name-format": 0,
+    "empty-args": 0,
+    "hex-length": [
+      1,
+      {
+        "style": "long"
+      }
+    ],
+    "hex-notation": [
+      1,
+      {
+        "style": "uppercase"
+      }
+    ],
+    "id-name-format": [
+      1,
+      {
+        "convention-explanation": "Please use hyphenated lowercase ID name format."
+      }
+    ],
+    "indentation": [
+      1,
+      {
+        "character": "space"
+      }
+    ],
+    "leading-zero": [
+      1,
+      {
+        "include": true
+      }
+    ],
+    "no-trailing-zero": 0,
+    "nesting-depth": [
+      1,
+      {
+        "max-depth": 4
+      }
+    ],
+    "property-units": [
+      1,
+      {
+        "per-property": {
+          "border": [
+            "px"
+          ],
+          "box-shadow": [
+            "px"
+          ],
+          "text-shadow": [
+            "px"
+          ]
+        }
+      }
+    ],
+    "quotes": [
+      1,
+      {
+        "style": "single"
+      }
+    ],
+    "shorthand-values": [
+      1,
+      {
+        "allowed-shorthands": [
+          1,
+          2
+        ]
+      }
+    ],
+    "space-between-parens": 0,
+    "final-newline": 0,
+    "no-misspelled-properties": [
+      1,
+      {
+        "extra-properties": [
+          "-webkit-overflow-scrolling",
+          "gap"
+        ]
+      }
+    ]
+  }
+}
