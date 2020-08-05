@@ -1,45 +1,49 @@
 {
-	"name": "custom",
-	"version": "1.5.1",
-	"private": true,
-	"description": "Custom Theme.",
-	"license": "MIT",
-	"author": "Rich Edmunds",
-	"repository": "git@github.com:xBLADEx/custom.git",
-	"browserslist": [
-		"> 1%",
-		"not ie <= 11",
-		"not op_mini all"
-	],
-	"dependencies": {
-		"core-js": "^3.6.4",
-		"jquery": "^3.4.1",
-		"lazysizes": "^5.2.0",
-		"slick-carousel": "^1.8.1"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.9.0",
-		"@babel/preset-env": "^7.9.0",
-		"autoprefixer": "^9.7.5",
-		"babel-loader": "^8.1.0",
-		"browser-sync": "^2.26.7",
-		"browser-sync-webpack-plugin": "^2.2.2",
-		"copy-webpack-plugin": "^5.1.1",
-		"css-loader": "^3.4.2",
-		"css-mqpacker": "^7.0.0",
-		"cssnano": "^4.1.10",
-		"file-loader": "^6.0.0",
-		"mini-css-extract-plugin": "^0.9.0",
-		"node-sass": "^4.13.1",
-		"postcss-loader": "^3.0.0",
-		"sass-loader": "^8.0.2",
-		"terser-webpack-plugin": "^2.3.5",
-		"webpack": "^4.42.1",
-		"webpack-cli": "^3.3.11"
-	},
-	"scripts": {
-		"build": "webpack --mode=development",
-		"prod": "webpack --mode=production",
-		"watch": "webpack --mode=development --watch"
-	}
+  "name": "custom",
+  "version": "1.5.1",
+  "private": true,
+  "description": "Custom Theme.",
+  "license": "MIT",
+  "author": "Rich Edmunds",
+  "repository": "git@github.com:xBLADEx/custom.git",
+  "browserslist": [
+    "> 1%",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "jquery": "^3.4.1",
+    "lazysizes": "^5.2.0",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "autoprefixer": "^9.7.5",
+    "babel-loader": "^8.1.0",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "file-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^2.0.5",
+    "sass-loader": "^8.0.2",
+    "terser-webpack-plugin": "^2.3.5",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "build": "webpack --mode=development",
+    "prod": "webpack --mode=production",
+    "watch": "webpack --mode=development --watch",
+    "lint": "eslint \"assets/source/**/*.{js,jsx}\" --quiet"
+  }
 }
