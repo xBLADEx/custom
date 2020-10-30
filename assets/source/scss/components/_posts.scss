@@ -6,56 +6,56 @@
 // Title
 //-----------------------------------------
 // <h2>
-.post-title {
-}
+// .post-title {
+// }
 
 //-----------------------------------------
 // Thumbnail
 //-----------------------------------------
-.post-thumbnail {
-}
+// .post-thumbnail {
+// }
 
 //-----------------------------------------
 // Date
 //-----------------------------------------
-.post-date {
-}
+// .post-date {
+// }
 
 //-----------------------------------------
 // Categories
 //-----------------------------------------
-.post-categories {
-}
+// .post-categories {
+// }
 
 //-----------------------------------------
 // Excerpt
 //-----------------------------------------
-.post-excerpt {
-}
+// .post-excerpt {
+// }
 
 //-----------------------------------------
 // Tags
 //-----------------------------------------
 .post-tags {
-	margin-bottom: $global-spacing;
+  margin-bottom: $global-spacing;
 
-	span {
-		display: inline-block;
-		margin: 0 5px 5px 0;
+  span {
+    display: inline-block;
+    margin: 0 5px 5px 0;
 
-		a {
-			background-color: $color-primary;
-			border-radius: $global-radius;
-			color: $color-white;
-			display: block;
-			font-size: rem-calc(14);
-			padding: 5px 8px;
+    a {
+      background-color: $color-primary;
+      border-radius: $global-radius;
+      color: $color-white;
+      display: block;
+      font-size: rem-calc(14);
+      padding: 5px 8px;
 
-			&:focus,
-			&:hover {
-				background-color: $color-secondary;
-				color: $color-white;
-			}
-		}
-	}
+      &:focus,
+      &:hover {
+        background-color: $color-secondary;
+        color: $color-white;
+      }
+    }
+  }
 }

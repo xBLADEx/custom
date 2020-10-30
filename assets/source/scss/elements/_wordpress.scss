@@ -15,7 +15,7 @@
 }
 
 .screen-reader-text {
-	@include visual-hide;
+  @include visual-hide;
 }
 
 .gallery-caption {
@@ -29,33 +29,33 @@
 //-----------------------------------------
 // Specificity needed because class name is shared below.
 ul.page-numbers {
-	display: flex;
-	margin: 0 0 $global-spacing 0;
+  display: flex;
+  margin: 0 0 $global-spacing 0;
 
-	li {
-		&:not(:last-child) {
-			margin-right: 10px;
-		}
+  li {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
 
-		// <a>, <span>
-		.page-numbers {
-			background-color: $color-primary;
-			border-radius: $global-radius;
-			color: $color-white;
-			display: block;
-			padding: 10px;
+    // <a>, <span>
+    .page-numbers {
+      background-color: $color-primary;
+      border-radius: $global-radius;
+      color: $color-white;
+      display: block;
+      padding: 10px;
 
-			&:focus,
-			&:hover {
-				background-color: $color-secondary;
-			}
-		}
+      &:focus,
+      &:hover {
+        background-color: $color-secondary;
+      }
+    }
 
-		// <span>
-		.current {
-			background-color: $color-secondary;
-			color: $color-white;
-			padding: 10px;
-		}
-	}
+    // <span>
+    .current {
+      background-color: $color-secondary;
+      color: $color-white;
+      padding: 10px;
+    }
+  }
 }

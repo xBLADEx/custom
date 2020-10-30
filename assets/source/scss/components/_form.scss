@@ -3,32 +3,15 @@
 //--------------------------------------------------------------
 
 .form {
-	&__checkbox,
-	&__radio {
-		label,
-		input {
-			display: inline-block;
-		}
-	}
+  &__checkbox,
+  &__radio {
+    label,
+    input {
+      display: inline-block;
+    }
+  }
 
-	&__group {
-	}
-
-	&__section {
-		margin-bottom: 20px;
-	}
-
-	&__input {
-	}
-
-	&__textarea {
-	}
-}
-
-//-----------------------------------------
-// Contact
-//-----------------------------------------
-.form {
-	&--contact {
-	}
+  &__section {
+    margin-bottom: 20px;
+  }
 }

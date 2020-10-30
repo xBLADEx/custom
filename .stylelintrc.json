@@ -1,0 +1,30 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-sass-guidelines"],
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "ignore": ["after-comment", "blockless-after-blockless", "inside-block"],
+        "ignoreAtRules": ["else", "if", "include", "media"]
+      }
+    ],
+    "block-closing-brace-newline-after": [
+      "always",
+      {
+        "ignoreAtRules": ["else", "if"]
+      }
+    ],
+    "color-hex-length": "long",
+    "declaration-colon-newline-after": "always-multi-line",
+    "max-nesting-depth": 3,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute"]
+      }
+    ]
+  }
+}

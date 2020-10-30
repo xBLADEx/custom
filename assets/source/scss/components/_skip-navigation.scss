@@ -3,21 +3,21 @@
 //--------------------------------------------------------------
 
 .skip-navigation {
-	@include visual-hide;
+  @include visual-hide;
 
-	&:focus,
-	&:hover {
-		@include reverse-visual-hide;
+  &:focus,
+  &:hover {
+    @include reverse-visual-hide;
 
-		background-color: $color-primary;
-		border: 0;
-		border-radius: 5px;
-		color: $color-white;
-		font-size: rem-calc(20);
-		left: 0;
-		padding: 10px 15px;
-		position: fixed;
-		top: 0;
-		z-index: 10000;
-	}
+    background-color: $color-primary;
+    border: 0;
+    border-radius: 5px;
+    color: $color-white;
+    font-size: rem-calc(20);
+    left: 0;
+    padding: 10px 15px;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+  }
 }

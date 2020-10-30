@@ -6,106 +6,106 @@
 // Paragraph
 //-----------------------------------------
 .wysiwyg-content {
-	p {
-		margin: 0 0 $global-spacing 0;
-	}
+  p {
+    margin: 0 0 $global-spacing 0;
+  }
 }
 
 //-----------------------------------------
 // List
 //-----------------------------------------
 .wysiwyg-content {
-	ul,
-	ol {
-		margin: 0 0 $global-spacing 0;
-	}
+  ul,
+  ol {
+    margin: 0 0 $global-spacing 0;
+  }
 
-	// Unordered List
-	ul {
-		list-style-type: disc;
-		padding: 0 ($global-padding * 2) 0 $global-padding;
-	}
+  // Unordered List
+  ul {
+    list-style-type: disc;
+    padding: 0 ($global-padding * 2) 0 $global-padding;
+  }
 
-	// Ordered List
-	ol {
-		list-style-position: inside;
-		list-style-type: decimal;
-		padding: 0 ($global-padding * 2) 0 0;
-	}
+  // Ordered List
+  ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+    padding: 0 ($global-padding * 2) 0 0;
+  }
 }
 
 //-----------------------------------------
 // List Item
 //-----------------------------------------
 .wysiwyg-content {
-	li {
-		&:not(:last-child) {
-			margin-bottom: ($global-spacing / 2);
-		}
-	}
+  li {
+    &:not(:last-child) {
+      margin-bottom: ($global-spacing / 2);
+    }
+  }
 }
 
 //-----------------------------------------
 // Blockquote
 //-----------------------------------------
 .wysiwyg-content {
-	blockquote {
-		border-left: 5px solid $color-black;
-		margin: 0 0 $global-spacing 0;
-		padding: 15px;
+  blockquote {
+    border-left: 5px solid $color-black;
+    margin: 0 0 $global-spacing 0;
+    padding: 15px;
 
-		& > p {
-			color: $color-primary;
-		}
-	}
+    & > p {
+      color: $color-primary;
+    }
+  }
 }
 
 //-----------------------------------------
 // Cite
 //-----------------------------------------
 .wysiwyg-content {
-	cite {
-		color: $color-theme-black;
-		display: block;
-		font-size: 14px;
+  cite {
+    color: $color-theme-black;
+    display: block;
+    font-size: 14px;
 
-		&::before {
-			content: '\2014';
-		}
-	}
+    &::before {
+      content: '\2014';
+    }
+  }
 }
 
 //-----------------------------------------
 // Anchor
 //-----------------------------------------
 .wysiwyg-content {
-	a {
-		position: relative;
+  a {
+    position: relative;
 
-		&:not(.button):not(.wp-block-button__link) {
-			color: $color-primary;
-			text-decoration: underline;
+    &:not(.button):not(.wp-block-button__link) {
+      color: $color-primary;
+      text-decoration: underline;
 
-			@include mq($mq-tablet, false) {
-				word-break: break-all;
-			}
+      @include mq($mq-tablet, false) {
+        word-break: break-all;
+      }
 
-			&:focus,
-			&:hover {
-				color: $color-secondary;
-			}
-		}
-	}
+      &:focus,
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
 }
 
 //-----------------------------------------
 // Image
 //-----------------------------------------
 .wysiwyg-content {
-	img {
-		display: block;
-		height: auto;
-		line-height: 0;
-		width: auto;
-	}
+  img {
+    display: block;
+    height: auto;
+    line-height: 0;
+    width: auto;
+  }
 }

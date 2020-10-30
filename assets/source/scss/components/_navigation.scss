@@ -3,224 +3,224 @@
 //--------------------------------------------------------------
 
 .navigation {
-	position: relative;
-	z-index: 99;
+  position: relative;
+  z-index: 99;
 }
 
 //-----------------------------------------
 // Menu
 //-----------------------------------------
 .navigation {
-	$nav: &;
+  $nav: &;
 
-	// <ul>
-	&__menu {
-		display: none;
-		margin: 0;
-		padding: 0;
+  // <ul>
+  &__menu {
+    display: none;
+    margin: 0;
+    padding: 0;
 
-		@include mq($mq-laptop) {
-			display: flex;
-		}
-	}
+    @include mq($mq-laptop) {
+      display: flex;
+    }
+  }
 
-	// <li>
-	&__item {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		position: relative;
+  // <li>
+  &__item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
 
-		// Current page link.
-		&.current-menu-item {
-			& > #{$nav}__link {
-				color: $color-primary;
+    // Current page link.
+    &.current-menu-item {
+      > #{$nav}__link {
+        color: $color-primary;
 
-				&:focus,
-				&:hover {
-					color: $color-white;
-				}
-			}
-		}
-	}
+        &:focus,
+        &:hover {
+          color: $color-white;
+        }
+      }
+    }
+  }
 
-	// <a>
-	&__link {
-		color: $color-theme-black;
-		display: block;
-		font-size: rem-calc(16);
-		padding: 20px 25px;
+  // <a>
+  &__link {
+    color: $color-theme-black;
+    display: block;
+    font-size: rem-calc(16);
+    padding: 20px 25px;
 
-		&:focus,
-		&:hover {
-			background-color: $color-primary;
-			color: $color-theme-white;
+    &:focus,
+    &:hover {
+      background-color: $color-primary;
+      color: $color-theme-white;
 
-			&::after {
-				border-color: $color-theme-white transparent transparent;
-			}
-		}
-	}
+      &::after {
+        border-color: $color-theme-white transparent transparent;
+      }
+    }
+  }
 
-	// Description
-	&__description {
-		display: block;
-		font-size: rem-calc(9);
-		padding-left: 5px;
-	}
+  // Description
+  &__description {
+    display: block;
+    font-size: rem-calc(9);
+    padding-left: 5px;
+  }
 }
 
 //-----------------------------------------
 // Sub Menu - Parent Item
 //-----------------------------------------
 .navigation {
-	$nav: &;
+  $nav: &;
 
-	// <li>
-	&__sub-menu-parent {
-		& > #{$nav}__link {
-			&::after {
-				border: 4px solid;
-				border-color: $color-theme-black transparent transparent;
-				content: '';
-				display: block;
-				position: absolute;
-				right: 8px;
-				top: 30px;
-			}
-		}
+  // <li>
+  &__sub-menu-parent {
+    > #{$nav}__link {
+      &::after {
+        border: 4px solid;
+        border-color: $color-theme-black transparent transparent;
+        content: '';
+        display: block;
+        position: absolute;
+        right: 8px;
+        top: 30px;
+      }
+    }
 
-		&:hover {
-			// Keep parent <li> appearing hovered.
-			& > #{$nav}__link {
-				background-color: $color-primary;
-				color: $color-theme-white;
+    &:hover {
+      // Keep parent <li> appearing hovered.
+      > #{$nav}__link {
+        background-color: $color-primary;
+        color: $color-theme-white;
 
-				&::after {
-					border-color: $color-theme-white transparent transparent;
-				}
-			}
+        &::after {
+          border-color: $color-theme-white transparent transparent;
+        }
+      }
 
-			#{$nav}__sub-menu {
-				display: block;
-			}
-		}
-	}
+      #{$nav}__sub-menu {
+        display: block;
+      }
+    }
+  }
 }
 
 //-----------------------------------------
 // Sub Menu
 //-----------------------------------------
 .navigation {
-	$nav: &;
+  $nav: &;
 
-	&__sub-menu {
-		box-shadow: 0 2px 3px 0 rgba($color-theme-black, 0.3);
-		display: none;
-		left: 0;
-		margin: 0;
-		padding: 0;
-		position: absolute;
-		z-index: 98;
+  &__sub-menu {
+    box-shadow: 0 2px 3px 0 rgba($color-theme-black, 0.3);
+    display: none;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 98;
 
-		#{$nav}__link {
-			background-color: $color-theme-black;
-			color: $color-theme-white;
-			display: block;
-			font-size: rem-calc(12);
-			padding: 15px 20px;
-			white-space: nowrap;
+    #{$nav}__link {
+      background-color: $color-theme-black;
+      color: $color-theme-white;
+      display: block;
+      font-size: rem-calc(12);
+      padding: 15px 20px;
+      white-space: nowrap;
 
-			&:focus,
-			&:hover {
-				background-color: $color-theme-white;
-				color: $color-theme-black;
-			}
-		}
-	}
+      &:focus,
+      &:hover {
+        background-color: $color-theme-white;
+        color: $color-theme-black;
+      }
+    }
+  }
 }
 
 //-----------------------------------------
 // Active
 //-----------------------------------------
 .navigation {
-	$nav: &;
+  $nav: &;
 
-	&__menu.is-active {
-		background-color: $color-primary;
-		display: block;
-		height: 100%;
-		left: 0;
-		min-width: 230px;
-		overflow-y: auto;
-		position: fixed;
-		top: 0;
-		z-index: 99;
+  &__menu.is-active {
+    background-color: $color-primary;
+    display: block;
+    height: 100%;
+    left: 0;
+    min-width: 230px;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    z-index: 99;
 
-		// <ul>
-		#{$nav}__sub-menu {
-			display: block;
-			position: relative;
-		}
+    // <ul>
+    #{$nav}__sub-menu {
+      display: block;
+      position: relative;
+    }
 
-		// <li>
-		#{$nav}__item {
-			border-bottom: 1px solid $color-theme-white;
-		}
+    // <li>
+    #{$nav}__item {
+      border-bottom: 1px solid $color-theme-white;
+    }
 
-		// <a>
-		#{$nav}__link {
-			color: $color-theme-white;
+    // <a>
+    #{$nav}__link {
+      color: $color-theme-white;
 
-			&:focus,
-			&:hover {
-				background-color: darken($color-primary, 20%);
-			}
+      &:focus,
+      &:hover {
+        background-color: darken($color-primary, 20%);
+      }
 
-			&::after {
-				border-color: $color-theme-white transparent transparent;
-			}
-		}
-	}
+      &::after {
+        border-color: $color-theme-white transparent transparent;
+      }
+    }
+  }
 }
 
 //-----------------------------------------
 // Trigger
 //-----------------------------------------
 .navigation {
-	&__menu-trigger {
-		background-color: $color-secondary;
-		color: $color-theme-white;
-		cursor: pointer;
-		display: block;
-		font-size: rem-calc(30);
-		line-height: 1;
-		padding: 10px;
+  &__menu-trigger {
+    background-color: $color-secondary;
+    color: $color-theme-white;
+    cursor: pointer;
+    display: block;
+    font-size: rem-calc(30);
+    line-height: 1;
+    padding: 10px;
 
-		@include mq($mq-laptop) {
-			display: none;
-		}
+    @include mq($mq-laptop) {
+      display: none;
+    }
 
-		&:focus,
-		&:hover {
-			background-color: $color-primary;
-		}
-	}
+    &:focus,
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
 }
 
 //-----------------------------------------
 // Overlay
 //-----------------------------------------
 .navigation {
-	&__overlay {
-		background-color: rgba($color-black, 0.7);
-		bottom: 0;
-		display: block;
-		left: 0;
-		position: fixed;
-		right: 0;
-		top: 0;
-		width: 100%;
-		z-index: 98;
-	}
+  &__overlay {
+    background-color: rgba($color-black, 0.7);
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 98;
+  }
 }

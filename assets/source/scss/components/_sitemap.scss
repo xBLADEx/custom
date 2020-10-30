@@ -3,25 +3,28 @@
 //--------------------------------------------------------------
 
 .sitemap {
-	display: grid;
-	gap: 50px;
-	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-	margin-bottom: $global-spacing;
+  margin-bottom: $global-spacing;
 
-	&__column {
-	}
+  @include mq($mq-tablet) {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
 
-	&__description {
-		margin-bottom: $global-spacing;
-	}
+  // &__column {
+  // }
 
-	&__list {
-		list-style-type: disc;
-		padding-left: $global-padding;
+  &__description {
+    margin-bottom: $global-spacing;
+  }
 
-		.children {
-			list-style-type: disc;
-			padding-left: $global-padding;
-		}
-	}
+  &__list {
+    list-style-type: disc;
+    padding-left: $global-padding;
+
+    .children {
+      list-style-type: disc;
+      padding-left: $global-padding;
+    }
+  }
 }

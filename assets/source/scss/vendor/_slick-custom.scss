@@ -6,95 +6,99 @@
 // Slick Slider
 //-----------------------------------------
 .slick-slider {
-	position: relative;
-	width: 100%;
+  position: relative;
+  width: 100%;
 
-	&.slick-dotted {
-		margin-bottom: 0;
-	}
+  &.slick-dotted {
+    margin-bottom: 0;
+  }
 
-	&__slide {
-		display: block !important;
-		max-height: 800px;
-	}
+  &__slide {
+    display: block !important;
+    max-height: 800px;
+  }
 
-	&__slide-content {
-		bottom: 15px;
-		display: grid;
-		grid-template: 'content';
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr auto;
-		padding: 0 20px;
-		position: absolute;
-		text-align: center;
-		width: 100%;
+  &__slide-content {
+    bottom: 15px;
+    display: grid;
+    grid-template: 'content';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    padding: 0 20px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
 
-		@include mq($mq-tablet) {
-			bottom: initial;
-			top: 170px;
-		}
-		@include mq($mq-laptop) {
-			top: 120px;
-		}
-		@include mq($mq-global-width) {
-			grid-template: '. content .';
-			grid-template-columns: 1fr $global-width 1fr;
-			grid-template-rows: 1fr auto;
-		}
-	}
+    @include mq($mq-tablet) {
+      bottom: initial;
+      top: 170px;
+    }
 
-	&__heading {
-		color: $color-white;
-		font-family: $font-family-heading;
-		font-size: 35px;
-		line-height: 1.1;
-		margin: 0 auto 20px;
-		max-width: 610px;
-		text-shadow: 0 0 9px rgba($color-black, 0.5);
-		z-index: 2;
+    @include mq($mq-laptop) {
+      top: 120px;
+    }
 
-		@include mq($mq-tablet) {
-			font-size: 50px;
-		}
-	}
+    @include mq($mq-global-width) {
+      grid-template: '. content .';
+      grid-template-columns: 1fr $global-width 1fr;
+      grid-template-rows: 1fr auto;
+    }
+  }
 
-	&__sub-heading {
-		color: $color-white;
-		font-size: 20px;
-		font-weight: $font-weight-normal;
-		grid-area: content;
-		grid-row: 2;
-		line-height: 1.1;
-		margin: 0 auto 15px;
-		max-width: 750px;
-		text-align: center;
-		text-shadow: 0 0 9px rgba($color-black, 0.5);
-		z-index: 2;
+  &__heading {
+    color: $color-white;
+    font-family: $font-family-heading;
+    font-size: 35px;
+    line-height: 1.1;
+    margin: 0 auto 20px;
+    max-width: 610px;
+    text-shadow: 0 0 9px rgba($color-black, 0.5);
+    z-index: 2;
 
-		@include mq($mq-tablet) {
-			margin: 0 auto 60px;
-		}
-		@include mq($mq-laptop) {
-			font-size: 28px;
-		}
-		@include mq($mq-laptop-large) {
-			font-size: 32px;
-		}
-	}
+    @include mq($mq-tablet) {
+      font-size: 50px;
+    }
+  }
 
-	&__link {
-		grid-area: content;
-		grid-row: 3;
-		justify-self: center;
-		max-width: 250px;
-	}
+  &__sub-heading {
+    color: $color-white;
+    font-size: 20px;
+    font-weight: $font-weight-normal;
+    grid-area: content;
+    grid-row: 2;
+    line-height: 1.1;
+    margin: 0 auto 15px;
+    max-width: 750px;
+    text-align: center;
+    text-shadow: 0 0 9px rgba($color-black, 0.5);
+    z-index: 2;
 
-	&__image {
-		@include mq($mq-tablet, false) {
-			height: 480px;
-			object-fit: cover;
-		}
-	}
+    @include mq($mq-tablet) {
+      margin: 0 auto 60px;
+    }
+
+    @include mq($mq-laptop) {
+      font-size: 28px;
+    }
+
+    @include mq($mq-laptop-large) {
+      font-size: 32px;
+    }
+  }
+
+  &__link {
+    grid-area: content;
+    grid-row: 3;
+    justify-self: center;
+    max-width: 250px;
+  }
+
+  &__image {
+    @include mq($mq-tablet, false) {
+      height: 480px;
+      object-fit: cover;
+    }
+  }
 }
 
 //-----------------------------------------
@@ -102,99 +106,99 @@
 //-----------------------------------------
 .slick-prev,
 .slick-next {
-	z-index: 99;
+  z-index: 99;
 }
 
 .slick-prev {
-	left: 20px;
+  left: 20px;
 }
 
 .slick-next {
-	right: 20px;
+  right: 20px;
 }
 
 .slick-dots {
-	bottom: 15px;
-	display: none !important;
-	margin: 0;
+  bottom: 15px;
+  display: none !important;
+  margin: 0;
 
-	@include mq($mq-laptop-large) {
-		display: block !important;
-	}
+  @include mq($mq-laptop-large) {
+    display: block !important;
+  }
 
-	li {
-		&.slick-active {
-			button {
-				background-color: $color-white;
+  li {
+    &.slick-active {
+      button {
+        background-color: $color-white;
 
-				&::before {
-					color: $color-white;
-				}
-			}
-		}
+        &::before {
+          color: $color-white;
+        }
+      }
+    }
 
-		button {
-			background-color: rgba($color-primary, 0.50);
-			height: inherit;
-			width: inherit;
+    button {
+      background-color: rgba($color-primary, 0.5);
+      height: inherit;
+      width: inherit;
 
-			&:focus,
-			&:hover {
-				background-color: $color-white;
-			}
+      &:focus,
+      &:hover {
+        background-color: $color-white;
+      }
 
-			&::before {
-				color: $color-white;
-				font-size: rem-calc(20);
-			}
-		}
-	}
+      &::before {
+        color: $color-white;
+        font-size: rem-calc(20);
+      }
+    }
+  }
 }
 
 //-----------------------------------------
 // Slick
 //-----------------------------------------
 .slick-slide {
-	img {
-		// background-size: cover;
-		display: block;
-		width: 100%;
-	}
+  img {
+    // background-size: cover;
+    display: block;
+    width: 100%;
+  }
 }
 
 //-----------------------------------------
 // Custom Buttons
 //-----------------------------------------
 .custom-slider {
-	// Slide Buttons
-	.slick-prev,
-	.slick-next {
-		background-color: $color-primary;
-		color: $color-white;
-		display: none !important;
-		font-size: initial;
-		height: auto;
-		left: 100px;
-		padding: 12px 16px;
-		right: initial;
+  // Slide Buttons
+  .slick-prev,
+  .slick-next {
+    background-color: $color-primary;
+    color: $color-white;
+    display: none !important;
+    font-size: initial;
+    height: auto;
+    left: 100px;
+    padding: 12px 16px;
+    right: initial;
 
-		@include mq($mq-laptop) {
-			display: block !important;
-		}
+    @include mq($mq-laptop) {
+      display: block !important;
+    }
 
-		&::before {
-			display: none;
-		}
+    &::before {
+      display: none;
+    }
 
-		&:focus,
-		&:hover {
-			background-color: $color-secondary;
-			color: $color-white;
-		}
-	}
+    &:focus,
+    &:hover {
+      background-color: $color-secondary;
+      color: $color-white;
+    }
+  }
 
-	.slick-next {
-		left: initial;
-		right: 100px;
-	}
+  .slick-next {
+    left: initial;
+    right: 100px;
+  }
 }

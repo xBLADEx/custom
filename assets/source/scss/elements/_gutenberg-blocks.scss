@@ -6,20 +6,20 @@
 // Inline Elements
 //-----------------------------------------
 .wysiwyg-content {
-	p {
-		img {
-			display: inline;
+  p {
+    img {
+      display: inline;
 
-			&.aligncenter {
-				display: block;
-			}
+      &.aligncenter {
+        display: block;
+      }
 
-			&.alignright {
-				display: block;
-				margin-right: 0;
-			}
-		}
-	}
+      &.alignright {
+        display: block;
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 //-----------------------------------------
@@ -33,41 +33,41 @@
 
 // Gallery
 .wysiwyg-content {
-	// <ul>
-	.wp-block-gallery {
-		list-style-type: none;
-		padding-left: 0;
-		padding-right: 0;
-	}
+  // <ul>
+  .wp-block-gallery {
+    list-style-type: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 // Heading
 
 // Image
 .wp-block-image {
-	.alignleft,
-	.alignright {
-		@include mq($mq-tablet, false) {
-			float: none;
-			margin: 0 0 $global-spacing 0;
-		}
-	}
+  .alignleft,
+  .alignright {
+    @include mq($mq-tablet, false) {
+      float: none;
+      margin: 0 0 $global-spacing 0;
+    }
+  }
 
-	.alignleft {
-		@include mq($mq-tablet) {
-			padding-right: $global-spacing;
-		}
-	}
+  .alignleft {
+    @include mq($mq-tablet) {
+      padding-right: $global-spacing;
+    }
+  }
 
-	.alignright {
-		@include mq($mq-tablet) {
-			padding-left: $global-spacing;
-		}
-	}
+  .alignright {
+    @include mq($mq-tablet) {
+      padding-left: $global-spacing;
+    }
+  }
 
-	figcaption {
-		margin: ($global-spacing / 2) 0 0;
-	}
+  figcaption {
+    margin: ($global-spacing / 2) 0 0;
+  }
 }
 
 // List
@@ -95,14 +95,14 @@
 
 // Table
 .wp-block-table {
-	&.aligncenter {
-	}
+  // &.aligncenter {
+  // }
 
-	&.alignleft {
-	}
+  // &.alignleft {
+  // }
 
-	&.alignright {
-	}
+  // &.alignright {
+  // }
 }
 
 // Verse
@@ -112,11 +112,11 @@
 //-----------------------------------------
 // Button
 .wp-block-button {
-	color: $color-black;
+  color: $color-black;
 
-	&__link {
-		@extend .button;
-	}
+  &__link {
+    @extend .button;
+  }
 }
 
 // Columns
@@ -125,7 +125,7 @@
 
 // Media & Text
 .wp-block-media-text {
-	margin-bottom: $global-spacing;
+  margin-bottom: $global-spacing;
 }
 
 // More
@@ -161,35 +161,35 @@
 // Embeds
 //-----------------------------------------
 .wp-block-embed {
-	$parent: &;
+  $parent: &;
 
-	margin: 0 0 $global-spacing 0;
+  margin: 0 0 $global-spacing 0;
 
-	iframe {
-		display: block;
-		width: 100%;
+  iframe {
+    display: block;
+    width: 100%;
 
-		@include mq($mq-tablet) {
-			max-width: 500px;
-		}
-	}
+    @include mq($mq-tablet) {
+      max-width: 500px;
+    }
+  }
 
-	&.alignleft {
-		max-width: none;
-	}
+  &.alignleft {
+    max-width: none;
+  }
 
-	&.aligncenter {
-		iframe {
-			margin: auto;
-		}
-	}
+  &.aligncenter {
+    iframe {
+      margin: auto;
+    }
+  }
 
-	&.alignright {
-		max-width: none;
+  &.alignright {
+    max-width: none;
 
-		#{$parent}__wrapper {
-			display: flex;
-			justify-content: flex-end;
-		}
-	}
+    #{$parent}__wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
 }

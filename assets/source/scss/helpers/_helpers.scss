@@ -3,86 +3,86 @@
 //--------------------------------------------------------------
 
 .h-visual-hide {
-	@include visual-hide;
+  @include visual-hide;
 }
 
 .h-reverse-visual-hide {
-	@include reverse-visual-hide;
+  @include reverse-visual-hide;
 }
 
 .h-hidden {
-	display: none;
+  display: none;
 }
 
 .h-clearfix {
-	@include clearfix;
+  @include clearfix;
 }
 
 .h-table-responsive {
-	overflow-x: auto;
+  overflow-x: auto;
 
-	table {
-		min-width: 725px;
-	}
+  table {
+    min-width: 725px;
+  }
 }
 
 //-----------------------------------------
 // Cover
 //-----------------------------------------
 .h-cover-absolute {
-	bottom: 0;
-	height: 100%;
-	left: 0;
-	min-height: 100%;
-	position: absolute;
-	right: 0;
-	top: 0;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  min-height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .h-cover-background {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .h-cover-video {
-	height: auto;
-	max-height: none;
-	max-width: none;
-	min-height: 100%;
-	min-width: 100%;
-	width: auto;
+  height: auto;
+  max-height: none;
+  max-width: none;
+  min-height: 100%;
+  min-width: 100%;
+  width: auto;
 }
 
 //-----------------------------------------
 // Text
 //-----------------------------------------
 .h-text-center {
-	text-align: center;
+  text-align: center;
 }
 
 .h-text-bold {
-	font-weight: $font-weight-bold;
+  font-weight: $font-weight-bold;
 }
 
 //-----------------------------------------
 // Colors
 //-----------------------------------------
 .h-color-primary {
-	color: $color-primary;
+  color: $color-primary;
 }
 
 .h-color-secondary {
-	color: $color-secondary;
+  color: $color-secondary;
 }
 
 .h-color-tertiary {
-	color: $color-tertiary;
+  color: $color-tertiary;
 }
 
 //-----------------------------------------
 // Spacing
 //-----------------------------------------
 .h-spacing-bottom {
-	margin-bottom: $global-spacing;
+  margin-bottom: $global-spacing;
 }

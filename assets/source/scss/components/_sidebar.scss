@@ -3,27 +3,27 @@
 //--------------------------------------------------------------
 
 .sidebar-widget {
-	.searchform {
-		margin-bottom: $global-spacing;
+  .searchform {
+    margin-bottom: $global-spacing;
 
-		input[type='text'] {
-			margin-bottom: $global-spacing;
-		}
-	}
+    input[type='text'] {
+      margin-bottom: $global-spacing;
+    }
+  }
 
-	#searchsubmit {
-		@extend .button;
-	}
+  #searchsubmit {
+    @extend .button;
+  }
 }
 
 //-----------------------------------------
 // Content Sidebar
 //-----------------------------------------
 .content-sidebar {
-	display: grid;
-	gap: 30px;
+  display: grid;
+  gap: 30px;
 
-	@include mq($mq-laptop) {
-		grid-template-columns: 1fr 300px;
-	}
+  @include mq($mq-laptop) {
+    grid-template-columns: 1fr 300px;
+  }
 }

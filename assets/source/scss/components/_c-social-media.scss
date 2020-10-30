@@ -3,42 +3,42 @@
 //--------------------------------------------------------------
 
 .c-social-media {
-	display: inline-flex;
+  display: inline-flex;
 
-	// <li>
-	&__item {
-		&:not(:last-child) {
-			margin-right: 20px;
-		}
-	}
+  // <li>
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
 
-	// <a>
-	&__link {
-		color: $color-primary;
+  // <a>
+  &__link {
+    color: $color-primary;
 
-		&:focus,
-		&:hover {
-			color: $color-tertiary;
-		}
+    &:focus,
+    &:hover {
+      color: $color-tertiary;
+    }
 
-		// &[data-color='facebook'] {
-		// 	background-color: $color-facebook;
-		// }
+    // &[data-color='facebook'] {
+    // 	background-color: $color-facebook;
+    // }
 
-		// &[data-color='twitter'] {
-		// 	background-color: $color-twitter;
-		// }
+    // &[data-color='twitter'] {
+    // 	background-color: $color-twitter;
+    // }
 
-		// &[data-color='youtube'] {
-		// 	background-color: $color-youtube;
-		// }
+    // &[data-color='youtube'] {
+    // 	background-color: $color-youtube;
+    // }
 
-		// &[data-color='instagram'] {
-		// 	background-color: $color-instagram;
-		// }
-	}
+    // &[data-color='instagram'] {
+    // 	background-color: $color-instagram;
+    // }
+  }
 
-	svg {
-		display: block;
-	}
+  svg {
+    display: block;
+  }
 }

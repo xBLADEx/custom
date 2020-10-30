@@ -3,15 +3,12 @@
 //--------------------------------------------------------------
 
 .form-search {
-	display: flex;
-	margin: 20px 0;
-	width: 260px;
+  display: flex;
+  margin: 20px 0;
+  width: 260px;
 
-	&__input {
-		margin: 0;
-		width: 100%;
-	}
-
-	&__submit {
-	}
+  &__input {
+    margin: 0;
+    width: 100%;
+  }
 }

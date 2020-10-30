@@ -4,13 +4,13 @@
 
 .lazyload,
 .lazyloading {
-	opacity: 0;
-	transition: opacity 0.3s ease-out;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
 }
 
 .lazyloaded {
-	display: block;
-	opacity: 1;
-	transition: opacity 0.3s ease-out;
-	width: 100%;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+  width: 100%;
 }

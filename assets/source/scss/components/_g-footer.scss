@@ -3,13 +3,13 @@
 //--------------------------------------------------------------
 
 .g-footer {
-	background-color: $color-theme-black;
-	color: $color-theme-white;
-	padding: 20px 0;
-	width: 100%;
+  background-color: $color-theme-black;
+  color: $color-theme-white;
+  padding: 20px 0;
+  width: 100%;
 
-	&__copyright {
-		font-size: rem-calc(14);
-		text-align: center;
-	}
+  &__copyright {
+    font-size: rem-calc(14);
+    text-align: center;
+  }
 }

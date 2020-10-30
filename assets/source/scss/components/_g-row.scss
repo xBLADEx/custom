@@ -3,16 +3,16 @@
 //--------------------------------------------------------------
 
 .g-row {
-	display: flow-root;
-	margin: 0 auto;
-	max-width: $global-width;
-	padding: 0 $global-padding;
-	position: relative;
-	width: 100%;
+  display: flow-root;
+  margin: 0 auto;
+  max-width: $global-width;
+  padding: 0 $global-padding;
+  position: relative;
+  width: 100%;
 
-	// We need this until 'flow-root' is fully supported.
-	// https://caniuse.com/#search=flow
-	&--clearfix {
-		@include clearfix;
-	}
+  // We need this until 'flow-root' is fully supported.
+  // https://caniuse.com/#search=flow
+  &--clearfix {
+    @include clearfix;
+  }
 }
