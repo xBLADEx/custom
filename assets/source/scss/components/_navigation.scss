@@ -48,7 +48,7 @@
   &__link {
     color: $color-theme-black;
     display: block;
-    font-size: rem-calc(16);
+    font-size: 1rem;
     padding: 20px 25px;
 
     &:focus,
@@ -65,7 +65,7 @@
   // Description
   &__description {
     display: block;
-    font-size: rem-calc(9);
+    font-size: 0.5625rem;
     padding-left: 5px;
   }
 }
@@ -127,7 +127,7 @@
       background-color: $color-theme-black;
       color: $color-theme-white;
       display: block;
-      font-size: rem-calc(12);
+      font-size: 0.75rem;
       padding: 15px 20px;
       white-space: nowrap;
 
@@ -193,7 +193,7 @@
     color: $color-theme-white;
     cursor: pointer;
     display: block;
-    font-size: rem-calc(30);
+    font-size: 1.875rem;
     line-height: 1;
     padding: 10px;
 
