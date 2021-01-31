@@ -54,6 +54,8 @@
   },
   "config": {
     "commitizen": {
+      "disableSubjectLowerCase": true,
+      "maxHeaderWidth": 50,
       "path": "./node_modules/cz-conventional-changelog"
     }
   }
