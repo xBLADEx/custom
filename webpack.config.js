@@ -8,7 +8,6 @@ const path = require('path'); // Needed for webpack to output path.
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // Extract CSS into separate files.
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin'); // https://github.com/webpack-contrib/terser-webpack-plugin
 const CopyWebpackPlugin = require('copy-webpack-plugin'); // Copies individual files or entire directories to the build directory.
 const proxy = 'custom.test';
 const pathSource = './assets/source';
@@ -62,7 +61,7 @@ module.exports = (env, argv) => {
               },
             },
             {
-              loader: 'postcss-loader', // https://webpack.js.org/loaders/postcss-loader/.
+              loader: 'postcss-loader', // https://webpack.js.org/loaders/postcss-loader/
               options: {
                 sourceMap: !isProduction,
               },
@@ -71,9 +70,10 @@ module.exports = (env, argv) => {
               loader: 'sass-loader',
               options: {
                 // https://github.com/webpack-contrib/sass-loader#object
+                implementation: require("sass"),
                 sassOptions: {
                   sourceMap: !isProduction, // https://github.com/webpack-contrib/sass-loader#source-maps
-                  outputStyle: 'compact', // https://github.com/sass/node-sass#outputstyle.
+                  outputStyle: 'compressed', // https://github.com/sass/dart-sass#javascript-api
                 },
               },
             },
@@ -122,10 +122,6 @@ module.exports = (env, argv) => {
         jQuery: 'jquery',
       }),
       new MiniCssExtractPlugin({ filename: 'css/[name].css' }), // https://github.com/webpack-contrib/mini-css-extract-plugin
-      new TerserPlugin({
-        test: /\.js$/i,
-        sourceMap: !isProduction,
-      }),
       new BrowserSyncPlugin(
         {
           proxy: `https://${proxy}`,
