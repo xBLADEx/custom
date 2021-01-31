@@ -24,10 +24,12 @@
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
     "browser-sync-webpack-plugin": "^2.3.0",
+    "commitizen": "^4.2.3",
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.0.1",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
     "file-loader": "^6.2.0",
@@ -45,8 +47,14 @@
   },
   "scripts": {
     "build": "webpack --mode=development",
+    "cz": "cz",
+    "lint": "sass-lint -c .sasslintrc \"assets/source/scss/**/*.scss\" -v -q && eslint \"assets/source/**/*.{js,jsx}\" --quiet",
     "prod": "webpack --mode=production",
-    "watch": "webpack --mode=development --watch",
-    "lint": "sass-lint -c .sasslintrc \"assets/source/scss/**/*.scss\" -v -q && eslint \"assets/source/**/*.{js,jsx}\" --quiet"
+    "watch": "webpack --mode=development --watch"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
