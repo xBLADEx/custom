@@ -22,6 +22,7 @@
     "@babel/preset-env": "^7.12.11",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/git": "^9.0.0",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
@@ -78,5 +79,14 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "release": {
+    "branches": [
+      "master"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/git"
+    ]
   }
 }
