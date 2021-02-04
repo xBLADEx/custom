@@ -1,19 +1,13 @@
-//--------------------------------------------------------------
-// POSTCSS CONFIG
-//
-// Author: Rich Edmunds
-// @see https://webpack.js.org/loaders/postcss-loader/#usage
-// @see https://github.com/michael-ciniawsky/postcss-load-config
-//--------------------------------------------------------------
+// https://github.com/postcss/postcss-load-config#postcssrcjs-or-postcssconfigjs
 
 module.exports = {
-	plugins: {
-		autoprefixer: {},
-		cssnano: {
-			zindex: false,
-		},
-		'css-mqpacker': {
-			sort: true,
-		},
-	},
+  plugins: {
+    autoprefixer: {},
+    cssnano: {
+      zindex: false,
+    },
+    'css-mqpacker': {
+      sort: true,
+    },
+  },
 };
