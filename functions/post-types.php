@@ -61,6 +61,7 @@ function custom_post_type() {
 	$taxonomy_args_name = [
 		'labels'       => $taxonomy_labels_name,
 		'hierarchical' => true,
+    'show_in_rest' => true,
 		'rewrite'      => [
 			'slug' => 'taxonomy-custom-name',
 		],
