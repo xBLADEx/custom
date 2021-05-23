@@ -70,7 +70,7 @@ module.exports = (env, argv) => {
               loader: 'sass-loader',
               options: {
                 // https://github.com/webpack-contrib/sass-loader#object
-                implementation: require("sass"),
+                implementation: require('sass'),
                 sassOptions: {
                   sourceMap: !isProduction, // https://github.com/webpack-contrib/sass-loader#source-maps
                   outputStyle: 'compressed', // https://github.com/sass/dart-sass#javascript-api
@@ -111,7 +111,7 @@ module.exports = (env, argv) => {
         },
       ],
     },
-    devtool: isProduction ? '' : 'inline-source-map',
+    devtool: isProduction ? false : 'inline-source-map',
     externals: {
       // https://webpack.js.org/configuration/externals/
       jquery: 'jQuery', // Exclude jQuery from the final output file, rely on WordPress enqueue jQuery from Google CDN.
