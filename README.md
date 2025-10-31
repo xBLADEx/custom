@@ -15,11 +15,6 @@ To develop with this theme you will need to install the following:
 - [node](https://nodejs.org/)
 - `npm i -g npm` - Install the latest npm version globally.
 
-### Windows
-
-- [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools)
-- `npm install --global windows-build-tools` - Install so node modules can compile. Command Prompt (Run As Administator)
-
 In the theme folder the following commands are available:
 
 - `npm install` - Install the packages.
